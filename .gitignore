@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Database
+progress.db
+*.sqlite3
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node
+node_modules/

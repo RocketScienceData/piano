@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanon Piano Tutor - De Virtuoze Pianist</title>
+  <link rel="stylesheet" href="./static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎹</text></svg>">
+</head>
+<body>
+
+  <!-- Sleek Ultra-Compact Top Header & Controls -->
+  <header class="app-header">
+    <!-- Top Row: Brand, Exercise & Lesson pickers, Hand & Mode buttons, Tempo, Actions, Mic Monitor -->
+    <div class="header-row-primary">
+      <div class="brand">
+        <span class="brand-icon">🎹</span>
+        <span class="brand-title">Hanon AI</span>
+      </div>
+
+      <!-- Exercise select -->
+      <div class="control-unit">
+        <select id="exercise-select" class="select-micro" title="Kies oefening">
+          <option value="ex1" selected>🎹 Oefening 1 (Vingers 1-2 &amp; 4-5)</option>
+          <option value="ex2">🎹 Oefening 2 (Vingers 3-4)</option>
+        </select>
+      </div>
+
+      <!-- Lesson select -->
+      <div class="control-unit">
+        <select id="lesson-select" class="select-micro" title="Kies les">
+          <!-- Dynamically populated -->
+        </select>
+      </div>
+
+      <!-- Hand selector -->
+      <div class="control-unit">
+        <div class="btn-group-micro" id="hand-btn-group">
+          <button type="button" class="active" data-hand="rh" title="Rechterhand (Vioolsleutel)">🤚 R</button>
+          <button type="button" data-hand="lh" title="Linkerhand (Bassleutel)">✋ L</button>
+          <button type="button" data-hand="both" title="Beide Handen (Parallel)">🤝 Beide</button>
+        </div>
+      </div>
+
+      <!-- Mode selector -->
+      <div class="control-unit">
+        <div class="btn-group-micro" id="mode-btn-group">
+          <button type="button" class="active" data-mode="wait" title="Wacht rustig tot je de juiste noot aanslaat">🎯 Oefen</button>
+          <button type="button" data-mode="tempo" title="Metronoom tikt mee en meet timing">⏱️ Tempo</button>
+        </div>
+      </div>
+
+      <!-- Tempo / BPM -->
+      <div class="control-unit tempo-unit">
+        <input type="number" id="bpm-input" min="40" max="140" value="60" class="input-bpm-micro" title="Tempo in BPM">
+        <span class="unit-text">BPM</span>
+        <button id="btn-metronome" class="btn-icon-micro" title="Metronoom klik aan/uit">
+          <span id="metro-icon">🔔</span>
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-start" class="btn btn-sm btn-primary" title="Start of pauzeer de les">
+          <span id="start-btn-icon">▶️</span>
+          <span id="start-btn-text">Start</span>
+        </button>
+
+        <button id="btn-demo" class="btn btn-sm btn-outline" title="Laat de computer de geselecteerde maten voorspelen">
+          <span>🎧 Voor</span>
+        </button>
+
+        <button id="btn-reset" class="btn btn-sm btn-secondary" title="Begin opnieuw vanaf de eerste noot">
+          <span>🔄 Reset</span>
+        </button>
+
+        <button id="btn-history" class="btn btn-sm btn-outline" title="Bekijk eerdere resultaten en vooruitgang">
+          <span>📊 Voortgang</span>
+        </button>
+
+        <button id="btn-insights" class="btn btn-sm btn-outline" title="Bekijk cursusverbeteringsstatistieken en knelpunten">
+          <span>📈 Inzichten</span>
+        </button>
+
+        <a href="./IMSLP91547-PMLP03129-Hanon_Final.pdf" data-pdf="hanon-full" target="_blank" class="btn btn-sm btn-outline btn-pdf" title="Open het volledige originele Hanon boek (116 pagina's)">
+          <span>📚 Boek PDF</span>
+        </a>
+      </div>
+
+      <div class="mic-monitor-compact">
+        <div class="mic-canvas-wrapper" title="Real-time microfoongolf">
+          <canvas id="wave-canvas" width="60" height="18"></canvas>
+        </div>
+        <div class="mic-sens-inline" title="Ruisdrempel">
+          <label for="mic-sensitivity" class="control-label-micro">Drempel</label>
+          <input type="range" id="mic-sensitivity" min="1" max="50" value="12">
+        </div>
+        <select id="audio-source-select" class="select-micro" title="Selecteer invoerbron">
+          <option value="browser-mic" selected>🎙️ Mic</option>
+          <option value="python-mic">🐍 Systeem</option>
+          <option value="web-midi">🎹 MIDI</option>
+          <option value="virtual">💻 Scherm</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Secondary Row: Ultra-Compact Horizontal Score HUD & Integrated Coach Tip -->
+    <div class="score-hud-compact">
+      <!-- Target note badge -->
+      <div class="hud-strip-item hud-target" id="hud-target-card" title="De te spelen noot">
+        <span class="hud-micro-label">DOEL:</span>
+        <span class="hud-target-note" id="hud-target-note">
+          <strong id="target-note-name">C4</strong>
+          <span id="target-hand-icon">🤚</span>
+        </span>
+        <span class="hud-target-desc" id="target-finger-desc">Vinger 1 (Duim) • Maat 1</span>
+      </div>
+
+      <!-- Live Heard Pitch badge -->
+      <div class="hud-strip-item hud-live" id="hud-live-card" title="Wat de microfoon op dit moment hoort">
+        <span class="hud-micro-label">HOORT:</span>
+        <span class="hud-live-note" id="hud-live-note">
+          <strong id="live-note-name">--</strong>
+          <span id="live-hz" class="hud-hz"></span>
+        </span>
+        <span class="hud-cents-desc" id="live-cents-desc">Wacht op aanslag...</span>
+      </div>
+
+      <!-- Score counters -->
+      <div class="hud-strip-item hud-stats">
+        <div class="stat-pill text-green" title="Aantal juiste aanslagen">
+          <span class="stat-label">GOED</span>
+          <span class="stat-num" id="stat-correct">0</span>
+        </div>
+        <div class="stat-pill text-red" title="Aantal foutieve aanslagen">
+          <span class="stat-label">FOUT</span>
+          <span class="stat-num" id="stat-wrong">0</span>
+        </div>
+        <div class="stat-pill text-gold" title="Nauwkeurigheid">
+          <span class="stat-label">SCORE</span>
+          <span class="stat-num" id="stat-accuracy">100%</span>
+        </div>
+        <div class="stat-pill text-cyan" title="Reeks">
+          <span class="stat-num" id="stat-streak">🔥 0</span>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="hud-strip-item hud-progress">
+        <div class="progress-info">
+          <span id="stat-progress">Noot 0 / 233</span>
+          <span id="coach-state" class="coach-state-badge">GEREED</span>
+        </div>
+        <div class="progress-container-micro">
+          <div class="progress-bar" id="lesson-progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Integrated Sleek Coach Ticker -->
+      <div class="coach-ticker" id="coach-banner">
+        <span class="ticker-icon">💡</span>
+        <div class="ticker-msg" id="coach-message">
+          <strong>Hanon Tip:</strong> Speel rustig. Let op een vlakke pols en ontspannen vingers!
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Viewport: Preserved Max Vertical Space for Sheet, Piano, and Hands -->
+  <main class="tutor-main">
+    <!-- Sheet Music Visualizer -->
+    <section class="sheet-container">
+      <div class="sheet-header">
+        <div class="sheet-header-left">
+          <span id="sheet-title">🎼 C. L. Hanon - The Virtuoso Pianist • Oefening N°1 in C</span>
+          <a id="sheet-pdf-link" href="./Exercise%20N%C2%B01%20in%20C.pdf" target="_blank" class="badge badge-cyan" title="Open PDF van deze oefening">
+            📄 Oefening PDF
+          </a>
+          <div class="sheet-view-toggle btn-group-micro" id="sheet-view-toggle">
+            <button type="button" class="active" id="btn-view-vector" data-view="vector" title="Dynamische vector notenbalk (haarscherp, interactief)">
+              🎼 Dynamische Notenbalk (Vector)
+            </button>
+            <button type="button" id="btn-view-pdf" data-view="pdf" title="Originele PDF scan">
+              📄 PDF Scan
+            </button>
+          </div>
+        </div>
+        <span id="sheet-measure-indicator" class="measure-indicator">Maat 1 / 30</span>
+      </div>
+      <div class="sheet-scroll-area" id="sheet-scroll-area">
+        <!-- Dynamic Vector Sheet Music SVG View (Default) -->
+        <div class="sheet-vector-wrapper" id="sheet-vector-wrapper">
+          <!-- Dynamically populated SVG score -->
+        </div>
+        <!-- Scanned Image View (Toggleable Fallback) -->
+        <div class="sheet-wrapper" id="sheet-wrapper" style="display: none;">
+          <img src="./static/sheet_ex1.png" alt="Hanon Sheet Music" class="sheet-img" id="sheet-image">
+          <div class="measure-highlight" id="measure-highlight" style="display: none;"></div>
+          <div class="note-cursor" id="note-cursor" style="display: none;"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Full 88-Key Piano Keyboard Visualizer (A0 - C8) -->
+    <section class="piano-keyboard-wrapper">
+      <div class="keyboard-header">
+        <div class="keyboard-header-left">
+          <span class="keyboard-title">🎹 Volledig 88-Toetsen Klavier (A0 - C8)</span>
+          <span class="keyboard-subinfo">• Centrale C = C4</span>
+        </div>
+        <span id="keyboard-legend" class="keyboard-legend">🟡 Te spelen toets | 🟢 Goed | 🔴 Fout</span>
+      </div>
+      <div class="piano-container" id="piano-container">
+        <div class="piano-keys piano-88-keys" id="piano-keys">
+          <!-- Dynamically populated 88 keys: 52 white, 36 black -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Scrolling Hand Placement Guide (Positioned under the keyboard) -->
+    <section class="hand-placement-wrapper" id="hand-placement-wrapper">
+      <div class="hand-placement-header">
+        <div class="hand-placement-title">
+          <span>🖐️ Handpositie &amp; Vingerzetting per Maat</span>
+          <span class="hand-placement-sub">• Scrolt mee met je spel — klik op een maat om erheen te springen</span>
+        </div>
+        <div class="hand-placement-status" id="active-measure-summary">
+          Maat 1: RH [C4 - A4] (Vingers 1-2-3-4-5) | LH [C3 - A3] (Vingers 5-4-3-2-1)
+        </div>
+      </div>
+      <div class="hand-placement-scroll" id="hand-placement-scroll">
+        <div class="hand-placement-track" id="hand-placement-track">
+          <!-- Dynamically populated measure hand guide cards -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Post-Lesson Score & Feedback Modal -->
+  <div class="modal-backdrop" id="score-modal">
+    <div class="modal-box">
+      <div class="modal-stars" id="modal-stars">⭐️⭐️⭐️⭐️⭐️</div>
+      <h2 class="modal-title" id="modal-title">Les Voltooid!</h2>
+      <p class="modal-subtitle" id="modal-subtitle">
+        Geweldige prestatie op de Hanon methode
+      </p>
+
+      <div class="modal-stats">
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">GOED</div>
+          <div class="modal-stat-val text-green" id="modal-stat-correct">0</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">FOUT</div>
+          <div class="modal-stat-val text-red" id="modal-stat-wrong">0</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">SCORE</div>
+          <div class="modal-stat-val text-gold" id="modal-stat-accuracy">100%</div>
+        </div>
+      </div>
+
+      <div class="modal-feedback-list" id="modal-feedback-list">
+        <!-- AI / algorithmic tips injected here -->
+      </div>
+
+      <div class="modal-actions">
+        <button id="modal-btn-retry" class="btn btn-secondary">🔄 Opnieuw Proberen</button>
+        <button id="modal-btn-next" class="btn btn-primary">Volgende Les ▶️</button>
+        <button id="modal-btn-close" class="btn btn-outline">Sluiten</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Modal -->
+  <div class="modal-backdrop" id="history-modal">
+    <div class="modal-box modal-box-wide">
+      <h2 class="modal-title">📊 Jouw Hanon Voortgang</h2>
+      <p class="modal-subtitle">
+        Overzicht van gespeelde sessies en verbeteringen
+      </p>
+
+      <div class="table-scroll-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Datum &amp; Tijd</th>
+              <th>Oefening</th>
+              <th>Les</th>
+              <th>Hand</th>
+              <th>Goed / Fout</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="history-table-body">
+            <!-- Dynamically populated rows -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-actions">
+        <button id="history-btn-close" class="btn btn-primary">Sluiten</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Telemetry & Improvement Insights Modal -->
+  <div class="modal-backdrop" id="insights-modal">
+    <div class="modal-box modal-box-wide">
+      <h2 class="modal-title">📈 Cursusinzichten &amp; Verbeteranalyse</h2>
+      <p class="modal-subtitle">
+        Pedagogische telemetrie voor het continu verbeteren van lesopbouw en vingerbeheersing
+      </p>
+
+      <div class="insights-summary-grid">
+        <div class="insight-metric-card">
+          <div class="metric-label">TOTAAL NOTEN</div>
+          <div class="metric-val" id="ins-total-notes">--</div>
+        </div>
+        <div class="insight-metric-card">
+          <div class="metric-label">GEM. ACCURATESSE</div>
+          <div class="metric-val text-green" id="ins-avg-acc">--</div>
+        </div>
+        <div class="insight-metric-card">
+          <div class="metric-label">REACTIETIJD</div>
+          <div class="metric-val text-cyan" id="ins-avg-latency">-- ms</div>
+        </div>
+        <div class="insight-metric-card">
+          <div class="metric-label">AARZELING / PAUZE</div>
+          <div class="metric-val text-gold" id="ins-hesitation">--</div>
+        </div>
+      </div>
+
+      <div class="insights-section">
+        <h3 class="insights-section-title">🎯 Knelpunt Maten in de Oefening</h3>
+        <div id="ins-bottlenecks-list" class="bottlenecks-list">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <div class="insights-section">
+        <h3 class="insights-section-title">💡 Pedagogische Aanbevelingen voor Lesverbetering</h3>
+        <div id="ins-recommendations-list" class="recommendations-list">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="insights-btn-close" class="btn btn-primary">Sluiten</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="app-toast-container" id="app-toast-container"></div>
+
+  <script src="./static/sheet_renderer.js"></script>
+  <script src="./static/app.js"></script>
+</body>
+</html>
+

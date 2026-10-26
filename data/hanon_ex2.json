@@ -1,0 +1,5306 @@
+{
+  "title": "Hanon Exercise No. 2 in C",
+  "exercise_id": "ex2",
+  "total_measures": 29,
+  "total_notes": 225,
+  "measures": [
+    {
+      "measure": 1,
+      "type": "ascending",
+      "box": {
+        "x1": 115.0,
+        "y1": 380.0,
+        "x2": 391.0,
+        "y2": 620.0
+      },
+      "notes": [
+        {
+          "measure": 1,
+          "note_index": 0,
+          "rh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 1
+          },
+          "lh": {
+            "note": "C3",
+            "midi": 48,
+            "freq": 130.81,
+            "finger": 5
+          },
+          "box": {
+            "x1": 180.0,
+            "y1": 380.0,
+            "x2": 206.4,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 1,
+          "rh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E3",
+            "midi": 52,
+            "freq": 164.81,
+            "finger": 3
+          },
+          "box": {
+            "x1": 206.4,
+            "y1": 380.0,
+            "x2": 232.8,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 2,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 5
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 1
+          },
+          "box": {
+            "x1": 232.8,
+            "y1": 380.0,
+            "x2": 259.1,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 3,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 259.1,
+            "y1": 380.0,
+            "x2": 285.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 4,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 3
+          },
+          "box": {
+            "x1": 285.5,
+            "y1": 380.0,
+            "x2": 311.9,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 5,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 311.9,
+            "y1": 380.0,
+            "x2": 338.2,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 6,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 3
+          },
+          "box": {
+            "x1": 338.2,
+            "y1": 380.0,
+            "x2": 364.6,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 1,
+          "note_index": 7,
+          "rh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E3",
+            "midi": 52,
+            "freq": 164.81,
+            "finger": 4
+          },
+          "box": {
+            "x1": 364.6,
+            "y1": 380.0,
+            "x2": 391.0,
+            "y2": 620.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 2,
+      "type": "ascending",
+      "box": {
+        "x1": 391.0,
+        "y1": 380.0,
+        "x2": 592.0,
+        "y2": 620.0
+      },
+      "notes": [
+        {
+          "measure": 2,
+          "note_index": 0,
+          "rh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 1
+          },
+          "lh": {
+            "note": "D3",
+            "midi": 50,
+            "freq": 146.83,
+            "finger": 5
+          },
+          "box": {
+            "x1": 391.0,
+            "y1": 380.0,
+            "x2": 416.1,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 1,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 3
+          },
+          "box": {
+            "x1": 416.1,
+            "y1": 380.0,
+            "x2": 441.2,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 2,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 5
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 1
+          },
+          "box": {
+            "x1": 441.2,
+            "y1": 380.0,
+            "x2": 466.4,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 3,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 466.4,
+            "y1": 380.0,
+            "x2": 491.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 4,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 491.5,
+            "y1": 380.0,
+            "x2": 516.6,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 5,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 516.6,
+            "y1": 380.0,
+            "x2": 541.8,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 6,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 541.8,
+            "y1": 380.0,
+            "x2": 566.9,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 2,
+          "note_index": 7,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 4
+          },
+          "box": {
+            "x1": 566.9,
+            "y1": 380.0,
+            "x2": 592.0,
+            "y2": 620.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 3,
+      "type": "ascending",
+      "box": {
+        "x1": 592.0,
+        "y1": 380.0,
+        "x2": 796.0,
+        "y2": 620.0
+      },
+      "notes": [
+        {
+          "measure": 3,
+          "note_index": 0,
+          "rh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 1
+          },
+          "lh": {
+            "note": "E3",
+            "midi": 52,
+            "freq": 164.81,
+            "finger": 5
+          },
+          "box": {
+            "x1": 592.0,
+            "y1": 380.0,
+            "x2": 617.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 1,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 617.5,
+            "y1": 380.0,
+            "x2": 643.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 2,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 5
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 1
+          },
+          "box": {
+            "x1": 643.0,
+            "y1": 380.0,
+            "x2": 668.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 3,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 4
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 2
+          },
+          "box": {
+            "x1": 668.5,
+            "y1": 380.0,
+            "x2": 694.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 4,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 694.0,
+            "y1": 380.0,
+            "x2": 719.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 5,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 4
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 2
+          },
+          "box": {
+            "x1": 719.5,
+            "y1": 380.0,
+            "x2": 745.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 6,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 745.0,
+            "y1": 380.0,
+            "x2": 770.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 3,
+          "note_index": 7,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 770.5,
+            "y1": 380.0,
+            "x2": 796.0,
+            "y2": 620.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 4,
+      "type": "ascending",
+      "box": {
+        "x1": 796.0,
+        "y1": 380.0,
+        "x2": 995.0,
+        "y2": 620.0
+      },
+      "notes": [
+        {
+          "measure": 4,
+          "note_index": 0,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 1
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 5
+          },
+          "box": {
+            "x1": 796.0,
+            "y1": 380.0,
+            "x2": 820.9,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 1,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 820.9,
+            "y1": 380.0,
+            "x2": 845.8,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 2,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 5
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 1
+          },
+          "box": {
+            "x1": 845.8,
+            "y1": 380.0,
+            "x2": 870.6,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 3,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 4
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 2
+          },
+          "box": {
+            "x1": 870.6,
+            "y1": 380.0,
+            "x2": 895.5,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 4,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 3
+          },
+          "box": {
+            "x1": 895.5,
+            "y1": 380.0,
+            "x2": 920.4,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 5,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 4
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 2
+          },
+          "box": {
+            "x1": 920.4,
+            "y1": 380.0,
+            "x2": 945.2,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 6,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 3
+          },
+          "box": {
+            "x1": 945.2,
+            "y1": 380.0,
+            "x2": 970.1,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 4,
+          "note_index": 7,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 970.1,
+            "y1": 380.0,
+            "x2": 995.0,
+            "y2": 620.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 5,
+      "type": "ascending",
+      "box": {
+        "x1": 995.0,
+        "y1": 380.0,
+        "x2": 1195.0,
+        "y2": 620.0
+      },
+      "notes": [
+        {
+          "measure": 5,
+          "note_index": 0,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 1
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 995.0,
+            "y1": 380.0,
+            "x2": 1020.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 1,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1020.0,
+            "y1": 380.0,
+            "x2": 1045.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 2,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 5
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 1
+          },
+          "box": {
+            "x1": 1045.0,
+            "y1": 380.0,
+            "x2": 1070.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 3,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 4
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 2
+          },
+          "box": {
+            "x1": 1070.0,
+            "y1": 380.0,
+            "x2": 1095.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 4,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1095.0,
+            "y1": 380.0,
+            "x2": 1120.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 5,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 4
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 2
+          },
+          "box": {
+            "x1": 1120.0,
+            "y1": 380.0,
+            "x2": 1145.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 6,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1145.0,
+            "y1": 380.0,
+            "x2": 1170.0,
+            "y2": 620.0
+          }
+        },
+        {
+          "measure": 5,
+          "note_index": 7,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1170.0,
+            "y1": 380.0,
+            "x2": 1195.0,
+            "y2": 620.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 6,
+      "type": "ascending",
+      "box": {
+        "x1": 64.0,
+        "y1": 610.0,
+        "x2": 287.0,
+        "y2": 850.0
+      },
+      "notes": [
+        {
+          "measure": 6,
+          "note_index": 0,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 1
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 64.0,
+            "y1": 610.0,
+            "x2": 91.9,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 1,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 91.9,
+            "y1": 610.0,
+            "x2": 119.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 2,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 5
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 1
+          },
+          "box": {
+            "x1": 119.8,
+            "y1": 610.0,
+            "x2": 147.6,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 3,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 4
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "box": {
+            "x1": 147.6,
+            "y1": 610.0,
+            "x2": 175.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 4,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 3
+          },
+          "box": {
+            "x1": 175.5,
+            "y1": 610.0,
+            "x2": 203.4,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 5,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 4
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "box": {
+            "x1": 203.4,
+            "y1": 610.0,
+            "x2": 231.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 6,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 3
+          },
+          "box": {
+            "x1": 231.2,
+            "y1": 610.0,
+            "x2": 259.1,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 6,
+          "note_index": 7,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 4
+          },
+          "box": {
+            "x1": 259.1,
+            "y1": 610.0,
+            "x2": 287.0,
+            "y2": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 7,
+      "type": "ascending",
+      "box": {
+        "x1": 287.0,
+        "y1": 610.0,
+        "x2": 474.0,
+        "y2": 850.0
+      },
+      "notes": [
+        {
+          "measure": 7,
+          "note_index": 0,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 1
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 5
+          },
+          "box": {
+            "x1": 287.0,
+            "y1": 610.0,
+            "x2": 310.4,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 1,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 3
+          },
+          "box": {
+            "x1": 310.4,
+            "y1": 610.0,
+            "x2": 333.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 2,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 5
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 1
+          },
+          "box": {
+            "x1": 333.8,
+            "y1": 610.0,
+            "x2": 357.1,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 3,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 4
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 2
+          },
+          "box": {
+            "x1": 357.1,
+            "y1": 610.0,
+            "x2": 380.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 4,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 380.5,
+            "y1": 610.0,
+            "x2": 403.9,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 5,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 4
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 2
+          },
+          "box": {
+            "x1": 403.9,
+            "y1": 610.0,
+            "x2": 427.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 6,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 427.2,
+            "y1": 610.0,
+            "x2": 450.6,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 7,
+          "note_index": 7,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 4
+          },
+          "box": {
+            "x1": 450.6,
+            "y1": 610.0,
+            "x2": 474.0,
+            "y2": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 8,
+      "type": "ascending",
+      "box": {
+        "x1": 474.0,
+        "y1": 610.0,
+        "x2": 660.0,
+        "y2": 850.0
+      },
+      "notes": [
+        {
+          "measure": 8,
+          "note_index": 0,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 1
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 5
+          },
+          "box": {
+            "x1": 474.0,
+            "y1": 610.0,
+            "x2": 497.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 1,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 497.2,
+            "y1": 610.0,
+            "x2": 520.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 2,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 5
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 1
+          },
+          "box": {
+            "x1": 520.5,
+            "y1": 610.0,
+            "x2": 543.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 3,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 4
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 543.8,
+            "y1": 610.0,
+            "x2": 567.0,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 4,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "box": {
+            "x1": 567.0,
+            "y1": 610.0,
+            "x2": 590.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 5,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 4
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 590.2,
+            "y1": 610.0,
+            "x2": 613.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 6,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "box": {
+            "x1": 613.5,
+            "y1": 610.0,
+            "x2": 636.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 8,
+          "note_index": 7,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 4
+          },
+          "box": {
+            "x1": 636.8,
+            "y1": 610.0,
+            "x2": 660.0,
+            "y2": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 9,
+      "type": "ascending",
+      "box": {
+        "x1": 660.0,
+        "y1": 610.0,
+        "x2": 841.0,
+        "y2": 850.0
+      },
+      "notes": [
+        {
+          "measure": 9,
+          "note_index": 0,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 1
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 5
+          },
+          "box": {
+            "x1": 660.0,
+            "y1": 610.0,
+            "x2": 682.6,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 1,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "box": {
+            "x1": 682.6,
+            "y1": 610.0,
+            "x2": 705.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 2,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 5
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 1
+          },
+          "box": {
+            "x1": 705.2,
+            "y1": 610.0,
+            "x2": 727.9,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 3,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 727.9,
+            "y1": 610.0,
+            "x2": 750.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 4,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 3
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 750.5,
+            "y1": 610.0,
+            "x2": 773.1,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 5,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 773.1,
+            "y1": 610.0,
+            "x2": 795.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 6,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 3
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 795.8,
+            "y1": 610.0,
+            "x2": 818.4,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 9,
+          "note_index": 7,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 4
+          },
+          "box": {
+            "x1": 818.4,
+            "y1": 610.0,
+            "x2": 841.0,
+            "y2": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 10,
+      "type": "ascending",
+      "box": {
+        "x1": 841.0,
+        "y1": 610.0,
+        "x2": 1020.0,
+        "y2": 850.0
+      },
+      "notes": [
+        {
+          "measure": 10,
+          "note_index": 0,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 1
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 5
+          },
+          "box": {
+            "x1": 841.0,
+            "y1": 610.0,
+            "x2": 863.4,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 1,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 863.4,
+            "y1": 610.0,
+            "x2": 885.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 2,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 5
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 1
+          },
+          "box": {
+            "x1": 885.8,
+            "y1": 610.0,
+            "x2": 908.1,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 3,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 4
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "box": {
+            "x1": 908.1,
+            "y1": 610.0,
+            "x2": 930.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 4,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 930.5,
+            "y1": 610.0,
+            "x2": 952.9,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 5,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 4
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "box": {
+            "x1": 952.9,
+            "y1": 610.0,
+            "x2": 975.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 6,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 975.2,
+            "y1": 610.0,
+            "x2": 997.6,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 10,
+          "note_index": 7,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 997.6,
+            "y1": 610.0,
+            "x2": 1020.0,
+            "y2": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 11,
+      "type": "ascending",
+      "box": {
+        "x1": 1020.0,
+        "y1": 610.0,
+        "x2": 1197.0,
+        "y2": 850.0
+      },
+      "notes": [
+        {
+          "measure": 11,
+          "note_index": 0,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 1
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 5
+          },
+          "box": {
+            "x1": 1020.0,
+            "y1": 610.0,
+            "x2": 1042.1,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 1,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1042.1,
+            "y1": 610.0,
+            "x2": 1064.2,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 2,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 5
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 1
+          },
+          "box": {
+            "x1": 1064.2,
+            "y1": 610.0,
+            "x2": 1086.4,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 3,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 4
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "box": {
+            "x1": 1086.4,
+            "y1": 610.0,
+            "x2": 1108.5,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 4,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1108.5,
+            "y1": 610.0,
+            "x2": 1130.6,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 5,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 4
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "box": {
+            "x1": 1130.6,
+            "y1": 610.0,
+            "x2": 1152.8,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 6,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1152.8,
+            "y1": 610.0,
+            "x2": 1174.9,
+            "y2": 850.0
+          }
+        },
+        {
+          "measure": 11,
+          "note_index": 7,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1174.9,
+            "y1": 610.0,
+            "x2": 1197.0,
+            "y2": 850.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 12,
+      "type": "ascending",
+      "box": {
+        "x1": 66.0,
+        "y1": 850.0,
+        "x2": 289.0,
+        "y2": 1080.0
+      },
+      "notes": [
+        {
+          "measure": 12,
+          "note_index": 0,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 1
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 66.0,
+            "y1": 850.0,
+            "x2": 93.9,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 1,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "box": {
+            "x1": 93.9,
+            "y1": 850.0,
+            "x2": 121.8,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 2,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 5
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 1
+          },
+          "box": {
+            "x1": 121.8,
+            "y1": 850.0,
+            "x2": 149.6,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 3,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 4
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "box": {
+            "x1": 149.6,
+            "y1": 850.0,
+            "x2": 177.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 4,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "box": {
+            "x1": 177.5,
+            "y1": 850.0,
+            "x2": 205.4,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 5,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 4
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "box": {
+            "x1": 205.4,
+            "y1": 850.0,
+            "x2": 233.2,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 6,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "box": {
+            "x1": 233.2,
+            "y1": 850.0,
+            "x2": 261.1,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 12,
+          "note_index": 7,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 4
+          },
+          "box": {
+            "x1": 261.1,
+            "y1": 850.0,
+            "x2": 289.0,
+            "y2": 1080.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 13,
+      "type": "ascending",
+      "box": {
+        "x1": 289.0,
+        "y1": 850.0,
+        "x2": 476.0,
+        "y2": 1080.0
+      },
+      "notes": [
+        {
+          "measure": 13,
+          "note_index": 0,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 1
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 289.0,
+            "y1": 850.0,
+            "x2": 312.4,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 1,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "box": {
+            "x1": 312.4,
+            "y1": 850.0,
+            "x2": 335.8,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 2,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 5
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 1
+          },
+          "box": {
+            "x1": 335.8,
+            "y1": 850.0,
+            "x2": 359.1,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 3,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 4
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "box": {
+            "x1": 359.1,
+            "y1": 850.0,
+            "x2": 382.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 4,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "box": {
+            "x1": 382.5,
+            "y1": 850.0,
+            "x2": 405.9,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 5,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 4
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "box": {
+            "x1": 405.9,
+            "y1": 850.0,
+            "x2": 429.2,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 6,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "box": {
+            "x1": 429.2,
+            "y1": 850.0,
+            "x2": 452.6,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 13,
+          "note_index": 7,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 4
+          },
+          "box": {
+            "x1": 452.6,
+            "y1": 850.0,
+            "x2": 476.0,
+            "y2": 1080.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 14,
+      "type": "ascending",
+      "box": {
+        "x1": 476.0,
+        "y1": 850.0,
+        "x2": 666.0,
+        "y2": 1080.0
+      },
+      "notes": [
+        {
+          "measure": 14,
+          "note_index": 0,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 1
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 5
+          },
+          "box": {
+            "x1": 476.0,
+            "y1": 850.0,
+            "x2": 499.8,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 1,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "box": {
+            "x1": 499.8,
+            "y1": 850.0,
+            "x2": 523.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 2,
+          "rh": {
+            "note": "G6",
+            "midi": 91,
+            "freq": 1567.98,
+            "finger": 5
+          },
+          "lh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 1
+          },
+          "box": {
+            "x1": 523.5,
+            "y1": 850.0,
+            "x2": 547.2,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 3,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 4
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "box": {
+            "x1": 547.2,
+            "y1": 850.0,
+            "x2": 571.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 4,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "box": {
+            "x1": 571.0,
+            "y1": 850.0,
+            "x2": 594.8,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 5,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 4
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "box": {
+            "x1": 594.8,
+            "y1": 850.0,
+            "x2": 618.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 6,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "box": {
+            "x1": 618.5,
+            "y1": 850.0,
+            "x2": 642.2,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 14,
+          "note_index": 7,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 4
+          },
+          "box": {
+            "x1": 642.2,
+            "y1": 850.0,
+            "x2": 666.0,
+            "y2": 1080.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 15,
+      "type": "descending",
+      "box": {
+        "x1": 666.0,
+        "y1": 850.0,
+        "x2": 842.0,
+        "y2": 1080.0
+      },
+      "notes": [
+        {
+          "measure": 15,
+          "note_index": 0,
+          "rh": {
+            "note": "G6",
+            "midi": 91,
+            "freq": 1567.98,
+            "finger": 5
+          },
+          "lh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 1
+          },
+          "box": {
+            "x1": 666.0,
+            "y1": 850.0,
+            "x2": 688.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 1,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "box": {
+            "x1": 688.0,
+            "y1": 850.0,
+            "x2": 710.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 2,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 1
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 5
+          },
+          "box": {
+            "x1": 710.0,
+            "y1": 850.0,
+            "x2": 732.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 3,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 4
+          },
+          "box": {
+            "x1": 732.0,
+            "y1": 850.0,
+            "x2": 754.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 4,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 3
+          },
+          "box": {
+            "x1": 754.0,
+            "y1": 850.0,
+            "x2": 776.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 5,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 4
+          },
+          "box": {
+            "x1": 776.0,
+            "y1": 850.0,
+            "x2": 798.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 6,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 3
+          },
+          "box": {
+            "x1": 798.0,
+            "y1": 850.0,
+            "x2": 820.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 15,
+          "note_index": 7,
+          "rh": {
+            "note": "G6",
+            "midi": 91,
+            "freq": 1567.98,
+            "finger": 4
+          },
+          "lh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 2
+          },
+          "box": {
+            "x1": 820.0,
+            "y1": 850.0,
+            "x2": 842.0,
+            "y2": 1080.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 16,
+      "type": "descending",
+      "box": {
+        "x1": 842.0,
+        "y1": 850.0,
+        "x2": 1022.0,
+        "y2": 1080.0
+      },
+      "notes": [
+        {
+          "measure": 16,
+          "note_index": 0,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 5
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 1
+          },
+          "box": {
+            "x1": 842.0,
+            "y1": 850.0,
+            "x2": 864.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 1,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "box": {
+            "x1": 864.5,
+            "y1": 850.0,
+            "x2": 887.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 2,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 1
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 5
+          },
+          "box": {
+            "x1": 887.0,
+            "y1": 850.0,
+            "x2": 909.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 3,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 4
+          },
+          "box": {
+            "x1": 909.5,
+            "y1": 850.0,
+            "x2": 932.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 4,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "box": {
+            "x1": 932.0,
+            "y1": 850.0,
+            "x2": 954.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 5,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 4
+          },
+          "box": {
+            "x1": 954.5,
+            "y1": 850.0,
+            "x2": 977.0,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 6,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "box": {
+            "x1": 977.0,
+            "y1": 850.0,
+            "x2": 999.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 16,
+          "note_index": 7,
+          "rh": {
+            "note": "F6",
+            "midi": 89,
+            "freq": 1396.91,
+            "finger": 4
+          },
+          "lh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "box": {
+            "x1": 999.5,
+            "y1": 850.0,
+            "x2": 1022.0,
+            "y2": 1080.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 17,
+      "type": "descending",
+      "box": {
+        "x1": 1022.0,
+        "y1": 850.0,
+        "x2": 1197.0,
+        "y2": 1080.0
+      },
+      "notes": [
+        {
+          "measure": 17,
+          "note_index": 0,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 5
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 1
+          },
+          "box": {
+            "x1": 1022.0,
+            "y1": 850.0,
+            "x2": 1043.9,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 1,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1043.9,
+            "y1": 850.0,
+            "x2": 1065.8,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 2,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 1
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 5
+          },
+          "box": {
+            "x1": 1065.8,
+            "y1": 850.0,
+            "x2": 1087.6,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 3,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1087.6,
+            "y1": 850.0,
+            "x2": 1109.5,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 4,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1109.5,
+            "y1": 850.0,
+            "x2": 1131.4,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 5,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1131.4,
+            "y1": 850.0,
+            "x2": 1153.2,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 6,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1153.2,
+            "y1": 850.0,
+            "x2": 1175.1,
+            "y2": 1080.0
+          }
+        },
+        {
+          "measure": 17,
+          "note_index": 7,
+          "rh": {
+            "note": "E6",
+            "midi": 88,
+            "freq": 1318.51,
+            "finger": 4
+          },
+          "lh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "box": {
+            "x1": 1175.1,
+            "y1": 850.0,
+            "x2": 1197.0,
+            "y2": 1080.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 18,
+      "type": "descending",
+      "box": {
+        "x1": 67.0,
+        "y1": 1075.0,
+        "x2": 290.0,
+        "y2": 1310.0
+      },
+      "notes": [
+        {
+          "measure": 18,
+          "note_index": 0,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 5
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 1
+          },
+          "box": {
+            "x1": 67.0,
+            "y1": 1075.0,
+            "x2": 94.9,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 1,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "box": {
+            "x1": 94.9,
+            "y1": 1075.0,
+            "x2": 122.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 2,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 1
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 122.8,
+            "y1": 1075.0,
+            "x2": 150.6,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 3,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 4
+          },
+          "box": {
+            "x1": 150.6,
+            "y1": 1075.0,
+            "x2": 178.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 4,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "box": {
+            "x1": 178.5,
+            "y1": 1075.0,
+            "x2": 206.4,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 5,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 4
+          },
+          "box": {
+            "x1": 206.4,
+            "y1": 1075.0,
+            "x2": 234.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 6,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "box": {
+            "x1": 234.2,
+            "y1": 1075.0,
+            "x2": 262.1,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 18,
+          "note_index": 7,
+          "rh": {
+            "note": "D6",
+            "midi": 86,
+            "freq": 1174.66,
+            "finger": 4
+          },
+          "lh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "box": {
+            "x1": 262.1,
+            "y1": 1075.0,
+            "x2": 290.0,
+            "y2": 1310.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 19,
+      "type": "descending",
+      "box": {
+        "x1": 290.0,
+        "y1": 1075.0,
+        "x2": 477.0,
+        "y2": 1310.0
+      },
+      "notes": [
+        {
+          "measure": 19,
+          "note_index": 0,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 5
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 1
+          },
+          "box": {
+            "x1": 290.0,
+            "y1": 1075.0,
+            "x2": 313.4,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 1,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 313.4,
+            "y1": 1075.0,
+            "x2": 336.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 2,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 1
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 336.8,
+            "y1": 1075.0,
+            "x2": 360.1,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 3,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 360.1,
+            "y1": 1075.0,
+            "x2": 383.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 4,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "box": {
+            "x1": 383.5,
+            "y1": 1075.0,
+            "x2": 406.9,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 5,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 406.9,
+            "y1": 1075.0,
+            "x2": 430.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 6,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "box": {
+            "x1": 430.2,
+            "y1": 1075.0,
+            "x2": 453.6,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 19,
+          "note_index": 7,
+          "rh": {
+            "note": "C6",
+            "midi": 84,
+            "freq": 1046.5,
+            "finger": 4
+          },
+          "lh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "box": {
+            "x1": 453.6,
+            "y1": 1075.0,
+            "x2": 477.0,
+            "y2": 1310.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 20,
+      "type": "descending",
+      "box": {
+        "x1": 477.0,
+        "y1": 1075.0,
+        "x2": 663.0,
+        "y2": 1310.0
+      },
+      "notes": [
+        {
+          "measure": 20,
+          "note_index": 0,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 5
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 1
+          },
+          "box": {
+            "x1": 477.0,
+            "y1": 1075.0,
+            "x2": 500.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 1,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 500.2,
+            "y1": 1075.0,
+            "x2": 523.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 2,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 1
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 5
+          },
+          "box": {
+            "x1": 523.5,
+            "y1": 1075.0,
+            "x2": 546.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 3,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 546.8,
+            "y1": 1075.0,
+            "x2": 570.0,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 4,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 570.0,
+            "y1": 1075.0,
+            "x2": 593.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 5,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 593.2,
+            "y1": 1075.0,
+            "x2": 616.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 6,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 616.5,
+            "y1": 1075.0,
+            "x2": 639.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 20,
+          "note_index": 7,
+          "rh": {
+            "note": "B5",
+            "midi": 83,
+            "freq": 987.77,
+            "finger": 4
+          },
+          "lh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "box": {
+            "x1": 639.8,
+            "y1": 1075.0,
+            "x2": 663.0,
+            "y2": 1310.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 21,
+      "type": "descending",
+      "box": {
+        "x1": 663.0,
+        "y1": 1075.0,
+        "x2": 844.0,
+        "y2": 1310.0
+      },
+      "notes": [
+        {
+          "measure": 21,
+          "note_index": 0,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 5
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 1
+          },
+          "box": {
+            "x1": 663.0,
+            "y1": 1075.0,
+            "x2": 685.6,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 1,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "box": {
+            "x1": 685.6,
+            "y1": 1075.0,
+            "x2": 708.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 2,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 1
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 5
+          },
+          "box": {
+            "x1": 708.2,
+            "y1": 1075.0,
+            "x2": 730.9,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 3,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 4
+          },
+          "box": {
+            "x1": 730.9,
+            "y1": 1075.0,
+            "x2": 753.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 4,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 3
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 753.5,
+            "y1": 1075.0,
+            "x2": 776.1,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 5,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 4
+          },
+          "box": {
+            "x1": 776.1,
+            "y1": 1075.0,
+            "x2": 798.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 6,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 3
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 798.8,
+            "y1": 1075.0,
+            "x2": 821.4,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 21,
+          "note_index": 7,
+          "rh": {
+            "note": "A5",
+            "midi": 81,
+            "freq": 880.0,
+            "finger": 4
+          },
+          "lh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 821.4,
+            "y1": 1075.0,
+            "x2": 844.0,
+            "y2": 1310.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 22,
+      "type": "descending",
+      "box": {
+        "x1": 844.0,
+        "y1": 1075.0,
+        "x2": 1022.0,
+        "y2": 1310.0
+      },
+      "notes": [
+        {
+          "measure": 22,
+          "note_index": 0,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 5
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 1
+          },
+          "box": {
+            "x1": 844.0,
+            "y1": 1075.0,
+            "x2": 866.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 1,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 866.2,
+            "y1": 1075.0,
+            "x2": 888.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 2,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 1
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 5
+          },
+          "box": {
+            "x1": 888.5,
+            "y1": 1075.0,
+            "x2": 910.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 3,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 4
+          },
+          "box": {
+            "x1": 910.8,
+            "y1": 1075.0,
+            "x2": 933.0,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 4,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "box": {
+            "x1": 933.0,
+            "y1": 1075.0,
+            "x2": 955.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 5,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 4
+          },
+          "box": {
+            "x1": 955.2,
+            "y1": 1075.0,
+            "x2": 977.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 6,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "box": {
+            "x1": 977.5,
+            "y1": 1075.0,
+            "x2": 999.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 22,
+          "note_index": 7,
+          "rh": {
+            "note": "G5",
+            "midi": 79,
+            "freq": 783.99,
+            "finger": 4
+          },
+          "lh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "box": {
+            "x1": 999.8,
+            "y1": 1075.0,
+            "x2": 1022.0,
+            "y2": 1310.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 23,
+      "type": "descending",
+      "box": {
+        "x1": 1022.0,
+        "y1": 1075.0,
+        "x2": 1197.0,
+        "y2": 1310.0
+      },
+      "notes": [
+        {
+          "measure": 23,
+          "note_index": 0,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 5
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 1
+          },
+          "box": {
+            "x1": 1022.0,
+            "y1": 1075.0,
+            "x2": 1043.9,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 1,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1043.9,
+            "y1": 1075.0,
+            "x2": 1065.8,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 2,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 1
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 5
+          },
+          "box": {
+            "x1": 1065.8,
+            "y1": 1075.0,
+            "x2": 1087.6,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 3,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1087.6,
+            "y1": 1075.0,
+            "x2": 1109.5,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 4,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1109.5,
+            "y1": 1075.0,
+            "x2": 1131.4,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 5,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1131.4,
+            "y1": 1075.0,
+            "x2": 1153.2,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 6,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 3
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1153.2,
+            "y1": 1075.0,
+            "x2": 1175.1,
+            "y2": 1310.0
+          }
+        },
+        {
+          "measure": 23,
+          "note_index": 7,
+          "rh": {
+            "note": "F5",
+            "midi": 77,
+            "freq": 698.46,
+            "finger": 4
+          },
+          "lh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 2
+          },
+          "box": {
+            "x1": 1175.1,
+            "y1": 1075.0,
+            "x2": 1197.0,
+            "y2": 1310.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 24,
+      "type": "descending",
+      "box": {
+        "x1": 69.0,
+        "y1": 1305.0,
+        "x2": 308.0,
+        "y2": 1540.0
+      },
+      "notes": [
+        {
+          "measure": 24,
+          "note_index": 0,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 5
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 1
+          },
+          "box": {
+            "x1": 69.0,
+            "y1": 1305.0,
+            "x2": 98.9,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 1,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 98.9,
+            "y1": 1305.0,
+            "x2": 128.8,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 2,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 1
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 5
+          },
+          "box": {
+            "x1": 128.8,
+            "y1": 1305.0,
+            "x2": 158.6,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 3,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 4
+          },
+          "box": {
+            "x1": 158.6,
+            "y1": 1305.0,
+            "x2": 188.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 4,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 3
+          },
+          "box": {
+            "x1": 188.5,
+            "y1": 1305.0,
+            "x2": 218.4,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 5,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 2
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 4
+          },
+          "box": {
+            "x1": 218.4,
+            "y1": 1305.0,
+            "x2": 248.2,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 6,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 3
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 3
+          },
+          "box": {
+            "x1": 248.2,
+            "y1": 1305.0,
+            "x2": 278.1,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 24,
+          "note_index": 7,
+          "rh": {
+            "note": "E5",
+            "midi": 76,
+            "freq": 659.26,
+            "finger": 4
+          },
+          "lh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "box": {
+            "x1": 278.1,
+            "y1": 1305.0,
+            "x2": 308.0,
+            "y2": 1540.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 25,
+      "type": "descending",
+      "box": {
+        "x1": 308.0,
+        "y1": 1305.0,
+        "x2": 507.0,
+        "y2": 1540.0
+      },
+      "notes": [
+        {
+          "measure": 25,
+          "note_index": 0,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 5
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 1
+          },
+          "box": {
+            "x1": 308.0,
+            "y1": 1305.0,
+            "x2": 332.9,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 1,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 3
+          },
+          "box": {
+            "x1": 332.9,
+            "y1": 1305.0,
+            "x2": 357.8,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 2,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 1
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 357.8,
+            "y1": 1305.0,
+            "x2": 382.6,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 3,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 4
+          },
+          "box": {
+            "x1": 382.6,
+            "y1": 1305.0,
+            "x2": 407.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 4,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 407.5,
+            "y1": 1305.0,
+            "x2": 432.4,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 5,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 2
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 4
+          },
+          "box": {
+            "x1": 432.4,
+            "y1": 1305.0,
+            "x2": 457.2,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 6,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 3
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 3
+          },
+          "box": {
+            "x1": 457.2,
+            "y1": 1305.0,
+            "x2": 482.1,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 25,
+          "note_index": 7,
+          "rh": {
+            "note": "D5",
+            "midi": 74,
+            "freq": 587.33,
+            "finger": 4
+          },
+          "lh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 2
+          },
+          "box": {
+            "x1": 482.1,
+            "y1": 1305.0,
+            "x2": 507.0,
+            "y2": 1540.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 26,
+      "type": "descending",
+      "box": {
+        "x1": 507.0,
+        "y1": 1305.0,
+        "x2": 707.0,
+        "y2": 1540.0
+      },
+      "notes": [
+        {
+          "measure": 26,
+          "note_index": 0,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 5
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 1
+          },
+          "box": {
+            "x1": 507.0,
+            "y1": 1305.0,
+            "x2": 532.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 1,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 532.0,
+            "y1": 1305.0,
+            "x2": 557.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 2,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 1
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 5
+          },
+          "box": {
+            "x1": 557.0,
+            "y1": 1305.0,
+            "x2": 582.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 3,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 582.0,
+            "y1": 1305.0,
+            "x2": 607.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 4,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 3
+          },
+          "box": {
+            "x1": 607.0,
+            "y1": 1305.0,
+            "x2": 632.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 5,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 632.0,
+            "y1": 1305.0,
+            "x2": 657.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 6,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 3
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 3
+          },
+          "box": {
+            "x1": 657.0,
+            "y1": 1305.0,
+            "x2": 682.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 26,
+          "note_index": 7,
+          "rh": {
+            "note": "C5",
+            "midi": 72,
+            "freq": 523.25,
+            "finger": 4
+          },
+          "lh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 2
+          },
+          "box": {
+            "x1": 682.0,
+            "y1": 1305.0,
+            "x2": 707.0,
+            "y2": 1540.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 27,
+      "type": "descending",
+      "box": {
+        "x1": 707.0,
+        "y1": 1305.0,
+        "x2": 903.0,
+        "y2": 1540.0
+      },
+      "notes": [
+        {
+          "measure": 27,
+          "note_index": 0,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 5
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 1
+          },
+          "box": {
+            "x1": 707.0,
+            "y1": 1305.0,
+            "x2": 731.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 1,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 731.5,
+            "y1": 1305.0,
+            "x2": 756.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 2,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 1
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 5
+          },
+          "box": {
+            "x1": 756.0,
+            "y1": 1305.0,
+            "x2": 780.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 3,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 780.5,
+            "y1": 1305.0,
+            "x2": 805.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 4,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 805.0,
+            "y1": 1305.0,
+            "x2": 829.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 5,
+          "rh": {
+            "note": "G4",
+            "midi": 67,
+            "freq": 392.0,
+            "finger": 2
+          },
+          "lh": {
+            "note": "G3",
+            "midi": 55,
+            "freq": 196.0,
+            "finger": 4
+          },
+          "box": {
+            "x1": 829.5,
+            "y1": 1305.0,
+            "x2": 854.0,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 6,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 3
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 3
+          },
+          "box": {
+            "x1": 854.0,
+            "y1": 1305.0,
+            "x2": 878.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 27,
+          "note_index": 7,
+          "rh": {
+            "note": "B4",
+            "midi": 71,
+            "freq": 493.88,
+            "finger": 4
+          },
+          "lh": {
+            "note": "B3",
+            "midi": 59,
+            "freq": 246.94,
+            "finger": 2
+          },
+          "box": {
+            "x1": 878.5,
+            "y1": 1305.0,
+            "x2": 903.0,
+            "y2": 1540.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 28,
+      "type": "descending",
+      "box": {
+        "x1": 903.0,
+        "y1": 1305.0,
+        "x2": 1100.0,
+        "y2": 1540.0
+      },
+      "notes": [
+        {
+          "measure": 28,
+          "note_index": 0,
+          "rh": {
+            "note": "A4",
+            "midi": 69,
+            "freq": 440.0,
+            "finger": 5
+          },
+          "lh": {
+            "note": "A3",
+            "midi": 57,
+            "freq": 220.0,
+            "finger": 1
+          },
+          "box": {
+            "x1": 903.0,
+            "y1": 1305.0,
+            "x2": 927.6,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 1,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 2
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 3
+          },
+          "box": {
+            "x1": 927.6,
+            "y1": 1305.0,
+            "x2": 952.2,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 2,
+          "rh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 1
+          },
+          "lh": {
+            "note": "D3",
+            "midi": 50,
+            "freq": 146.83,
+            "finger": 5
+          },
+          "box": {
+            "x1": 952.2,
+            "y1": 1305.0,
+            "x2": 976.9,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 3,
+          "rh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E3",
+            "midi": 52,
+            "freq": 164.81,
+            "finger": 4
+          },
+          "box": {
+            "x1": 976.9,
+            "y1": 1305.0,
+            "x2": 1001.5,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 4,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1001.5,
+            "y1": 1305.0,
+            "x2": 1026.1,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 5,
+          "rh": {
+            "note": "E4",
+            "midi": 64,
+            "freq": 329.63,
+            "finger": 2
+          },
+          "lh": {
+            "note": "E3",
+            "midi": 52,
+            "freq": 164.81,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1026.1,
+            "y1": 1305.0,
+            "x2": 1050.8,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 6,
+          "rh": {
+            "note": "F4",
+            "midi": 65,
+            "freq": 349.23,
+            "finger": 3
+          },
+          "lh": {
+            "note": "F3",
+            "midi": 53,
+            "freq": 174.61,
+            "finger": 3
+          },
+          "box": {
+            "x1": 1050.8,
+            "y1": 1305.0,
+            "x2": 1075.4,
+            "y2": 1540.0
+          }
+        },
+        {
+          "measure": 28,
+          "note_index": 7,
+          "rh": {
+            "note": "D4",
+            "midi": 62,
+            "freq": 293.66,
+            "finger": 2
+          },
+          "lh": {
+            "note": "D3",
+            "midi": 50,
+            "freq": 146.83,
+            "finger": 4
+          },
+          "box": {
+            "x1": 1075.4,
+            "y1": 1305.0,
+            "x2": 1100.0,
+            "y2": 1540.0
+          }
+        }
+      ]
+    },
+    {
+      "measure": 29,
+      "type": "final",
+      "box": {
+        "x1": 1100.0,
+        "y1": 1305.0,
+        "x2": 1198.0,
+        "y2": 1540.0
+      },
+      "notes": [
+        {
+          "measure": 29,
+          "note_index": 0,
+          "rh": {
+            "note": "C4",
+            "midi": 60,
+            "freq": 261.63,
+            "finger": 1
+          },
+          "lh": {
+            "note": "C3",
+            "midi": 48,
+            "freq": 130.81,
+            "finger": 5
+          },
+          "box": {
+            "x1": 1100.0,
+            "y1": 1305.0,
+            "x2": 1198.0,
+            "y2": 1540.0
+          }
+        }
+      ]
+    }
+  ]
+}
