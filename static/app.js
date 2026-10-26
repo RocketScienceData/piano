@@ -276,7 +276,16 @@ async function loadData() {
     state.exercises = exercises || [];
     populateExerciseSelect();
     
+    // Preload all lessons for Main Menu Dashboard
+    const allLessons = await safeFetchJson("/api/lessons/all", "./data/all_lessons.json");
+    state.allLessonsMap = allLessons || {};
+
     await loadExerciseData(state.currentExerciseId);
+    initMainMenu();
+
+    if (window.location.hash === "#menu") {
+      toggleView("menu");
+    }
   } catch (err) {
     console.error("Fout bij inladen data:", err);
   }
@@ -642,11 +651,116 @@ function centerKeyInPianoView(keyEl) {
   container.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
 }
 
-// Highlight piano target key(s) on 88-key piano
+// Center piano view so BOTH hand zones (LH and RH) are centered on screen
+function centerHandPositionInPianoView(currentItem) {
+  if (!currentItem) return;
+  const container = document.getElementById("piano-container");
+  if (!container) return;
+
+  let centerMidi;
+  if (state.currentHand === "lh") {
+    centerMidi = currentItem.lh ? currentItem.lh.midi : 36;
+  } else if (state.currentHand === "rh") {
+    centerMidi = currentItem.rh ? currentItem.rh.midi : 48;
+  } else {
+    // Both hands: exact midpoint between Left Hand and Right Hand
+    const lhM = currentItem.lh ? currentItem.lh.midi : 36;
+    const rhM = currentItem.rh ? currentItem.rh.midi : 48;
+    centerMidi = Math.round((lhM + rhM) / 2);
+  }
+
+  const allKeys = Array.from(document.querySelectorAll(".white-key"));
+  if (!allKeys.length) return;
+
+  let closestKey = null;
+  let minDiff = 999;
+  allKeys.forEach(k => {
+    const m = parseInt(k.dataset.midi, 10);
+    const diff = Math.abs(m - centerMidi);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closestKey = k;
+    }
+  });
+
+  if (closestKey) {
+    centerKeyInPianoView(closestKey);
+  }
+}
+
+// Update the real-time hand positioning cockpit bar above the piano
+function updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes) {
+  const lhContainer = document.getElementById("lh-fingers-container");
+  const rhContainer = document.getElementById("rh-fingers-container");
+  const lhPosText = document.getElementById("lh-position-text");
+  const rhPosText = document.getElementById("rh-position-text");
+  const postureHint = document.getElementById("hand-posture-hint");
+  
+  if (!lhContainer || !rhContainer || !currentItem) return;
+
+  // LH fingers: 5, 4, 3, 2, 1
+  const lhFingerMap = { 5: "-", 4: "-", 3: "-", 2: "-", 1: "-" };
+  Object.entries(lhSpanNotes).forEach(([note, finger]) => {
+    if (lhFingerMap[finger] !== undefined) lhFingerMap[finger] = note;
+  });
+  
+  lhContainer.innerHTML = [5, 4, 3, 2, 1].map(f => {
+    const isActive = (state.currentHand === "lh" || state.currentHand === "both") && (currentItem.lh && currentItem.lh.finger === f);
+    return `
+      <div class="hfinger-pill ${isActive ? 'hfinger-active hfinger-lh-active' : ''}" title="Vinger ${f} Linkerhand (${lhFingerMap[f]})">
+        <span class="hfinger-f">V${f}</span>
+        <span class="hfinger-note">${lhFingerMap[f]}</span>
+      </div>
+    `;
+  }).join('');
+
+  // RH fingers: 1, 2, 3, 4, 5
+  const rhFingerMap = { 1: "-", 2: "-", 3: "-", 4: "-", 5: "-" };
+  Object.entries(rhSpanNotes).forEach(([note, finger]) => {
+    if (rhFingerMap[finger] !== undefined) rhFingerMap[finger] = note;
+  });
+
+  rhContainer.innerHTML = [1, 2, 3, 4, 5].map(f => {
+    const isActive = (state.currentHand === "rh" || state.currentHand === "both") && (currentItem.rh && currentItem.rh.finger === f);
+    return `
+      <div class="hfinger-pill ${isActive ? 'hfinger-active hfinger-rh-active' : ''}" title="Vinger ${f} Rechterhand (${rhFingerMap[f]})">
+        <span class="hfinger-f">V${f}</span>
+        <span class="hfinger-note">${rhFingerMap[f]}</span>
+      </div>
+    `;
+  }).join('');
+
+  if (lhPosText) {
+    const keys = Object.keys(lhSpanNotes);
+    const lhMin = keys[0] || (currentItem.lh ? currentItem.lh.note : "C2");
+    const lhMax = keys[keys.length - 1] || (currentItem.lh ? currentItem.lh.note : "A2");
+    lhPosText.textContent = `Positie: ${lhMin} t/m ${lhMax}`;
+  }
+  if (rhPosText) {
+    const keys = Object.keys(rhSpanNotes);
+    const rhMin = keys[0] || (currentItem.rh ? currentItem.rh.note : "C3");
+    const rhMax = keys[keys.length - 1] || (currentItem.rh ? currentItem.rh.note : "A3");
+    rhPosText.textContent = `Positie: ${rhMin} t/m ${rhMax}`;
+  }
+
+  if (postureHint) {
+    if (currentItem.measure === 1) {
+      postureHint.textContent = "Beide handen in basbalk • 1 octaaf parallel • Vlakke polsen";
+    } else if (currentItem.measure === 6) {
+      postureHint.textContent = "Rechterhand kruist naar vioolsleutel! Linkerhand blijft in bas";
+    } else if (currentItem.measure === 15) {
+      postureHint.textContent = "Keerpunt naar de afdaling! Vinger 5 & 4 sprong omlaag";
+    } else {
+      postureHint.textContent = "Ontspannen polsen • Til elke vinger hoog op als een hamertje";
+    }
+  }
+}
+
+// Highlight piano target key(s) on 88-key piano, showing exact hand positions for both hands
 function highlightPianoTarget(singleNote = null, singleFinger = null) {
-  // Clear existing active keys
+  // Clear existing active target keys and hand zone keys
   document.querySelectorAll(".white-key, .black-key").forEach(k => {
-    k.classList.remove("active-target");
+    k.classList.remove("active-target", "hand-key-lh", "hand-key-rh");
     const badge = k.querySelector(".finger-badge");
     if (badge) badge.remove();
   });
@@ -665,34 +779,90 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
   }
   
   if (!state.activeTarget) return;
+
+  const currentItem = state.activeTarget;
+  const mNum = currentItem.measure;
   
-  const targets = [];
-  if (state.currentHand === "lh") {
-    targets.push({ note: state.activeTarget.lh.note, finger: state.activeTarget.lh.finger });
-  } else if (state.currentHand === "rh") {
-    targets.push({ note: state.activeTarget.rh.note, finger: state.activeTarget.rh.finger });
-  } else {
-    // both
-    targets.push({ note: state.activeTarget.lh.note, finger: state.activeTarget.lh.finger });
-    targets.push({ note: state.activeTarget.rh.note, finger: state.activeTarget.rh.finger });
+  // 1. Determine hand placement keys for the current measure
+  let currentMeasureObj = null;
+  if (state.hanonData && state.hanonData.measures) {
+    currentMeasureObj = state.hanonData.measures.find(m => m.measure === mNum);
   }
   
+  const lhSpanNotes = {};
+  const rhSpanNotes = {};
+  
+  if (currentMeasureObj && currentMeasureObj.notes) {
+    currentMeasureObj.notes.forEach(n => {
+      if (n.lh && n.lh.note) lhSpanNotes[n.lh.note] = n.lh.finger;
+      if (n.rh && n.rh.note) rhSpanNotes[n.rh.note] = n.rh.finger;
+    });
+  } else {
+    if (currentItem.lh && currentItem.lh.note) lhSpanNotes[currentItem.lh.note] = currentItem.lh.finger;
+    if (currentItem.rh && currentItem.rh.note) rhSpanNotes[currentItem.rh.note] = currentItem.rh.finger;
+  }
+
+  // 2. Decorate Left Hand keys on piano (Cyan hand zone)
+  if (state.currentHand === "lh" || state.currentHand === "both") {
+    Object.entries(lhSpanNotes).forEach(([noteName, finger]) => {
+      const keyEl = document.querySelector(`[data-note="${noteName}"]`);
+      if (keyEl) {
+        keyEl.classList.add("hand-key-lh");
+        const b = document.createElement("div");
+        b.className = "finger-badge badge-lh";
+        b.textContent = finger;
+        keyEl.appendChild(b);
+      }
+    });
+  }
+
+  // 3. Decorate Right Hand keys on piano (Amber hand zone)
+  if (state.currentHand === "rh" || state.currentHand === "both") {
+    Object.entries(rhSpanNotes).forEach(([noteName, finger]) => {
+      const keyEl = document.querySelector(`[data-note="${noteName}"]`);
+      if (keyEl) {
+        keyEl.classList.add("hand-key-rh");
+        if (!keyEl.querySelector(".finger-badge")) {
+          const b = document.createElement("div");
+          b.className = "finger-badge badge-rh";
+          b.textContent = finger;
+          keyEl.appendChild(b);
+        }
+      }
+    });
+  }
+
+  // 4. Highlight the CURRENT active target key(s) (Pulsing Gold)
+  const targets = [];
+  if (state.currentHand === "lh") {
+    targets.push({ note: currentItem.lh.note, finger: currentItem.lh.finger, hand: "lh" });
+  } else if (state.currentHand === "rh") {
+    targets.push({ note: currentItem.rh.note, finger: currentItem.rh.finger, hand: "rh" });
+  } else {
+    // Both hands
+    targets.push({ note: currentItem.lh.note, finger: currentItem.lh.finger, hand: "lh" });
+    targets.push({ note: currentItem.rh.note, finger: currentItem.rh.finger, hand: "rh" });
+  }
+
   targets.forEach(t => {
     const keyEl = document.querySelector(`[data-note="${t.note}"]`);
     if (keyEl) {
       keyEl.classList.add("active-target");
-      const badge = document.createElement("div");
-      badge.className = "finger-badge";
+      let badge = keyEl.querySelector(".finger-badge");
+      if (!badge) {
+        badge = document.createElement("div");
+        keyEl.appendChild(badge);
+      }
+      badge.className = `finger-badge active-finger-badge ${t.hand === "lh" ? "badge-lh" : "badge-rh"}`;
       badge.textContent = t.finger;
-      keyEl.appendChild(badge);
     }
   });
-  
-  const primaryNote = state.currentHand === "lh" ? state.activeTarget.lh.note : state.activeTarget.rh.note;
-  const primaryKey = document.querySelector(`[data-note="${primaryNote}"]`);
-  if (primaryKey) {
-    centerKeyInPianoView(primaryKey);
-  }
+
+  // 5. Update the dedicated Hand Guide Bar above the piano
+  updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes);
+
+  // 6. Centering: Center the piano container so BOTH hand zones are clearly visible
+  centerHandPositionInPianoView(currentItem);
 }
 
 // Play feedback sound
@@ -1709,4 +1879,276 @@ async function openInsightsModal() {
   } catch (err) {
     console.error("Fout bij ophalen inzichten:", err);
   }
+}
+
+// ==========================================================================
+// Hoofdmenu & Voortgang Dashboard Implementation
+// ==========================================================================
+function getLessonProgressMap() {
+  const progress = {};
+  try {
+    const sessions = JSON.parse(localStorage.getItem("hanon_piano_sessions") || "[]");
+    sessions.forEach(s => {
+      if (!s.exercise_id || !s.lesson_id) return;
+      const key = `${s.exercise_id}_${s.lesson_id}`;
+      const acc = s.accuracy || 0;
+      const stars = acc >= 98 ? 5 : (acc >= 90 ? 4 : (acc >= 75 ? 3 : (acc >= 60 ? 2 : 1)));
+      if (!progress[key]) {
+        progress[key] = {
+          completed: acc >= 60,
+          best_accuracy: acc,
+          stars: stars,
+          best_bpm: s.bpm || 60,
+          attempts: 1,
+          last_played: s.timestamp
+        };
+      } else {
+        progress[key].attempts += 1;
+        if (acc > progress[key].best_accuracy) {
+          progress[key].best_accuracy = acc;
+          progress[key].stars = stars;
+        }
+        if (acc >= 60) progress[key].completed = true;
+        if ((s.bpm || 60) > progress[key].best_bpm) progress[key].best_bpm = s.bpm;
+      }
+    });
+  } catch(e) {}
+  return progress;
+}
+
+function initMainMenu() {
+  const btnToggle = document.getElementById("btn-toggle-menu");
+  if (btnToggle) {
+    btnToggle.addEventListener("click", () => {
+      toggleView(state.currentView === "menu" ? "tutor" : "menu");
+    });
+  }
+
+  const btnResume = document.getElementById("menu-btn-resume");
+  if (btnResume) {
+    btnResume.addEventListener("click", () => {
+      toggleView("tutor");
+    });
+  }
+
+  const btnRestart = document.getElementById("menu-btn-restart-ex1");
+  if (btnRestart) {
+    btnRestart.addEventListener("click", async () => {
+      await selectExerciseAndLesson("ex1", "les-1");
+    });
+  }
+
+  const modalBtnMenu = document.getElementById("modal-btn-menu");
+  if (modalBtnMenu) {
+    modalBtnMenu.addEventListener("click", () => {
+      closeModal("score-modal");
+      toggleView("menu");
+    });
+  }
+
+  // Filter toolbar
+  const filterBtns = document.querySelectorAll("#menu-filter-group button");
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderMainMenu(btn.dataset.filter);
+    });
+  });
+}
+
+function toggleView(viewName) {
+  state.currentView = viewName;
+  const menuView = document.getElementById("view-main-menu");
+  const tutorView = document.getElementById("view-tutor");
+  const toggleBtnText = document.getElementById("toggle-menu-text");
+  const toggleBtnIcon = document.getElementById("toggle-menu-icon");
+
+  if (viewName === "menu") {
+    if (menuView) menuView.style.display = "block";
+    if (tutorView) tutorView.style.display = "none";
+    if (toggleBtnText) toggleBtnText.textContent = "Naar Oefening";
+    if (toggleBtnIcon) toggleBtnIcon.textContent = "🎹";
+    renderMainMenu();
+  } else {
+    if (menuView) menuView.style.display = "none";
+    if (tutorView) tutorView.style.display = "flex";
+    if (toggleBtnText) toggleBtnText.textContent = "Hoofdmenu";
+    if (toggleBtnIcon) toggleBtnIcon.textContent = "🏠";
+  }
+}
+
+async function selectExerciseAndLesson(exerciseId, lessonId) {
+  if (state.currentExerciseId !== exerciseId) {
+    await switchExercise(exerciseId);
+    const sel = document.getElementById("exercise-select");
+    if (sel) sel.value = exerciseId;
+  }
+  
+  if (lessonId) {
+    state.currentLessonId = lessonId;
+    const lSel = document.getElementById("lesson-select");
+    if (lSel) lSel.value = lessonId;
+    loadLesson(lessonId);
+  }
+  
+  toggleView("tutor");
+}
+
+function renderMainMenu(filter = "all") {
+  const grid = document.getElementById("menu-exercises-grid");
+  if (!grid || !state.exercises.length) return;
+
+  const progressMap = getLessonProgressMap();
+  const allLessons = state.allLessonsMap || {};
+
+  // Compute stats across all exercises
+  let totalLessonsCount = 0;
+  let completedCount = 0;
+  let totalStars = 0;
+  let sumAcc = 0;
+  let accCount = 0;
+  let totalNotesPlayed = 0;
+
+  try {
+    const sessions = JSON.parse(localStorage.getItem("hanon_piano_sessions") || "[]");
+    sessions.forEach(s => {
+      totalNotesPlayed += (s.correct_notes || 0) + (s.wrong_notes || 0);
+    });
+  } catch(e) {}
+
+  state.exercises.forEach(ex => {
+    const lessons = allLessons[ex.id] || [];
+    lessons.forEach(l => {
+      totalLessonsCount += 1;
+      const prog = progressMap[`${ex.id}_${l.id}`];
+      if (prog && prog.completed) {
+        completedCount += 1;
+        totalStars += prog.stars || 0;
+        sumAcc += prog.best_accuracy || 0;
+        accCount += 1;
+      }
+    });
+  });
+
+  const avgAccuracy = accCount > 0 ? Math.round(sumAcc / accCount) : 100;
+
+  // Update Hero Stats
+  const statCompleted = document.getElementById("menu-stat-completed");
+  const statCompletedBar = document.getElementById("menu-stat-completed-bar");
+  const statStars = document.getElementById("menu-stat-stars");
+  const statAcc = document.getElementById("menu-stat-accuracy");
+  const statNotes = document.getElementById("menu-stat-notes");
+
+  if (statCompleted) statCompleted.textContent = `${completedCount} / ${totalLessonsCount || 120}`;
+  if (statCompletedBar) {
+    const pct = totalLessonsCount > 0 ? Math.round((completedCount / totalLessonsCount) * 100) : 0;
+    statCompletedBar.style.width = `${pct}%`;
+  }
+  if (statStars) statStars.textContent = `${totalStars} ⭐`;
+  if (statAcc) statAcc.textContent = `${avgAccuracy}%`;
+  if (statNotes) statNotes.textContent = totalNotesPlayed.toLocaleString("nl-NL");
+
+  // Filter exercises
+  let visibleExercises = state.exercises;
+  if (filter === "part1") {
+    visibleExercises = state.exercises.filter(e => e.number <= 10);
+  } else if (filter === "part2") {
+    visibleExercises = state.exercises.filter(e => e.number >= 11);
+  } else if (filter === "started") {
+    visibleExercises = state.exercises.filter(e => {
+      const lessons = allLessons[e.id] || [];
+      return lessons.some(l => progressMap[`${e.id}_${l.id}`]);
+    });
+  }
+
+  grid.innerHTML = "";
+
+  visibleExercises.forEach(ex => {
+    const lessons = allLessons[ex.id] || [];
+    let exCompleted = 0;
+    lessons.forEach(l => {
+      if (progressMap[`${ex.id}_${l.id}`] && progressMap[`${ex.id}_${l.id}`].completed) {
+        exCompleted += 1;
+      }
+    });
+    const exPct = lessons.length > 0 ? Math.round((exCompleted / lessons.length) * 100) : 0;
+    const isCurrent = (ex.id === state.currentExerciseId);
+
+    const card = document.createElement("div");
+    card.className = `menu-ex-card ${isCurrent ? 'active-ex-card' : ''}`;
+
+    let focus = "";
+    if (ex.subtitle && ex.subtitle.includes("(")) {
+      focus = ex.subtitle.split("(")[1].replace(")", "");
+    }
+
+    card.innerHTML = `
+      <div class="menu-ex-card-header">
+        <div>
+          <span class="menu-ex-badge">Oefening N°${ex.number}</span>
+          <h3 class="menu-ex-title">${ex.name}</h3>
+          <p class="menu-ex-sub">${focus ? `Vingerfocus: ${focus}` : ex.subtitle || ''}</p>
+        </div>
+        <a href="${ex.pdf_file ? `./${encodeURIComponent(ex.pdf_file)}` : './Exercise%20N%C2%B01%20in%20C.pdf'}" target="_blank" class="badge badge-cyan" title="Open originele partituur PDF">
+          📄 PDF
+        </a>
+      </div>
+
+      <div class="menu-ex-progress-bar">
+        <div class="menu-progress-track">
+          <div class="menu-progress-fill" style="width: ${exPct}%;"></div>
+        </div>
+        <span class="menu-progress-text">${exCompleted} / ${lessons.length} lessen (${exPct}%)</span>
+      </div>
+
+      <div class="menu-lessons-list">
+        ${lessons.map(l => {
+          const prog = progressMap[`${ex.id}_${l.id}`];
+          const isLCurrent = (isCurrent && l.id === state.currentLessonId);
+          let starHtml = "⚪ Niet gespeeld";
+          let actionLabel = "▶️ Start";
+          let btnClass = "btn-outline";
+
+          if (prog && prog.completed) {
+            const starsStr = "⭐".repeat(prog.stars || 3);
+            starHtml = `<span class="text-gold">${starsStr}</span> <span class="menu-lesson-accuracy">${prog.best_accuracy}%</span>`;
+            actionLabel = "🔄 Oefen";
+            btnClass = "btn-secondary";
+          } else if (prog && prog.attempts > 0) {
+            starHtml = `<span class="text-red">Nog oefenen (${prog.best_accuracy}%)</span>`;
+            actionLabel = "▶️ Hervat";
+            btnClass = "btn-primary";
+          }
+
+          return `
+            <div class="menu-lesson-row ${isLCurrent ? 'active-lesson' : ''}" data-ex="${ex.id}" data-lesson="${l.id}">
+              <div class="menu-lesson-meta">
+                <span class="menu-lesson-name">${l.title}</span>
+                <span class="menu-lesson-details">${l.subtitle} • ${l.total_notes} noten • Aanbevolen ${l.recommended_bpm} BPM</span>
+              </div>
+              <div class="menu-lesson-right">
+                <span class="menu-lesson-stars">${starHtml}</span>
+                <button type="button" class="btn btn-sm ${btnClass} menu-lesson-btn" data-ex="${ex.id}" data-lesson="${l.id}">
+                  ${actionLabel}
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+
+    // Row click listeners
+    card.querySelectorAll(".menu-lesson-row, .menu-lesson-btn").forEach(el => {
+      el.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const exId = el.dataset.ex;
+        const lessonId = el.dataset.lesson;
+        await selectExerciseAndLesson(exId, lessonId);
+      });
+    });
+
+    grid.appendChild(card);
+  });
 }

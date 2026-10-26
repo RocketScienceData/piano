@@ -378,6 +378,17 @@ class TestCompactUIAndKeyboard(unittest.TestCase):
         self.assertIn('id="insights-modal"', html)
         self.assertIn('id="btn-insights"', html)
 
+        # Main menu dashboard & lesson progress
+        self.assertIn('id="btn-toggle-menu"', html)
+        self.assertIn('id="view-main-menu"', html)
+        self.assertIn('id="menu-stat-completed"', html)
+        self.assertIn('id="menu-exercises-grid"', html)
+
+        # Real-time hand guide bar above piano
+        self.assertIn('id="piano-hand-guide-bar"', html)
+        self.assertIn('id="lh-fingers-container"', html)
+        self.assertIn('id="rh-fingers-container"', html)
+
     def test_88_key_piano_specifications(self):
         # 52 white keys from A0 to C8
         white_notes = ['A0', 'B0']

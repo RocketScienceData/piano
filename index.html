@@ -29,6 +29,12 @@
         <span class="brand-title">Hanon AI</span>
       </div>
 
+      <!-- Main Menu toggle button -->
+      <button id="btn-toggle-menu" class="btn btn-sm btn-menu" title="Open het hoofdmenu met lesoverzicht en voortgang">
+        <span id="toggle-menu-icon">🏠</span>
+        <span id="toggle-menu-text">Hoofdmenu</span>
+      </button>
+
       <!-- Exercise select -->
       <div class="control-unit">
         <select id="exercise-select" class="select-micro" title="Kies oefening">
@@ -176,8 +182,91 @@
     </div>
   </header>
 
+  <!-- Main Menu View: Progress Dashboard & Lesson Navigator -->
+  <div id="view-main-menu" class="main-menu-view" style="display: none;">
+    <div class="menu-container">
+      <!-- Menu Hero Section -->
+      <div class="menu-hero-card">
+        <div class="menu-hero-content">
+          <div class="menu-hero-header">
+            <span class="menu-hero-badge">🎓 C.L. Hanon: De Virtuoze Pianist</span>
+            <h1 class="menu-hero-title">Hoofdmenu &amp; Lesvoortgang</h1>
+            <p class="menu-hero-subtitle">
+              Beheers alle 20 oefeningen van Deel 1 stap voor stap. Ontwikkel soepelheid, onafhankelijkheid en gelijkmatigheid in beide handen.
+            </p>
+          </div>
+          <div class="menu-hero-actions">
+            <button id="menu-btn-resume" class="btn btn-primary btn-lg" title="Ga direct verder met de huidige les">
+              <span>▶️ Ga Verder Met Les</span>
+            </button>
+            <button id="menu-btn-restart-ex1" class="btn btn-outline" title="Start vanaf Oefening 1 Les 1">
+              <span>🔄 Start bij Les 1</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Global Progress Stats Cockpit -->
+        <div class="menu-stats-grid">
+          <div class="menu-stat-card">
+            <span class="menu-stat-icon">🏆</span>
+            <div class="menu-stat-info">
+              <span class="menu-stat-val" id="menu-stat-completed">0 / 120</span>
+              <span class="menu-stat-lbl">Lessen Voltooid</span>
+            </div>
+            <div class="menu-stat-bar-track">
+              <div class="menu-stat-bar-fill" id="menu-stat-completed-bar" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="menu-stat-card">
+            <span class="menu-stat-icon">⭐️</span>
+            <div class="menu-stat-info">
+              <span class="menu-stat-val text-gold" id="menu-stat-stars">0 ⭐</span>
+              <span class="menu-stat-lbl">Behaalde Sterren</span>
+            </div>
+          </div>
+
+          <div class="menu-stat-card">
+            <span class="menu-stat-icon">🎯</span>
+            <div class="menu-stat-info">
+              <span class="menu-stat-val text-green" id="menu-stat-accuracy">100%</span>
+              <span class="menu-stat-lbl">Gemiddelde Score</span>
+            </div>
+          </div>
+
+          <div class="menu-stat-card">
+            <span class="menu-stat-icon">🎵</span>
+            <div class="menu-stat-info">
+              <span class="menu-stat-val text-cyan" id="menu-stat-notes">0</span>
+              <span class="menu-stat-lbl">Noten Gespeeld</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="menu-toolbar">
+        <div class="menu-toolbar-left">
+          <span class="menu-section-title">📚 Hanon Oefeningen (Deel 1: N°1 t/m N°20)</span>
+          <span class="menu-section-desc">• Klik op een les om direct te starten</span>
+        </div>
+        <div class="btn-group-micro" id="menu-filter-group">
+          <button type="button" class="active" data-filter="all">Alle 20 Oefeningen</button>
+          <button type="button" data-filter="part1">Deel 1 (Ex 1-10)</button>
+          <button type="button" data-filter="part2">Deel 2 (Ex 11-20)</button>
+          <button type="button" data-filter="started">Alleen Begonnen</button>
+        </div>
+      </div>
+
+      <!-- Exercise Cards Grid -->
+      <div class="menu-exercises-grid" id="menu-exercises-grid">
+        <!-- Dynamically rendered 20 exercise cards with 6 lessons each -->
+      </div>
+    </div>
+  </div>
+
   <!-- Main Content Viewport: Preserved Max Vertical Space for Sheet, Piano, and Hands -->
-  <main class="tutor-main">
+  <main class="tutor-main" id="view-tutor">
     <!-- Sheet Music Visualizer -->
     <section class="sheet-container">
       <div class="sheet-header">
@@ -219,8 +308,37 @@
           <span class="keyboard-title">🎹 Volledig 88-Toetsen Klavier (A0 - C8)</span>
           <span class="keyboard-subinfo">• Centrale C = C4</span>
         </div>
-        <span id="keyboard-legend" class="keyboard-legend">🟡 Te spelen toets | 🟢 Goed | 🔴 Fout</span>
+        <span id="keyboard-legend" class="keyboard-legend">🔵 Linkerhand | 🟠 Rechterhand | 🟡 Te spelen toets</span>
       </div>
+
+      <!-- Real-Time Hand Positioning Bar (Both hands visible) -->
+      <div class="piano-hand-guide-bar" id="piano-hand-guide-bar">
+        <div class="hand-guide-card hand-guide-lh">
+          <div class="hand-guide-card-header">
+            <span class="hand-guide-badge badge-lh">✋ LINKERHAND</span>
+            <span class="hand-guide-pos" id="lh-position-text">Positie: C2 t/m A2</span>
+          </div>
+          <div class="hand-guide-fingers" id="lh-fingers-container">
+            <!-- 5 fingers (5, 4, 3, 2, 1) with note labels -->
+          </div>
+        </div>
+
+        <div class="hand-guide-center">
+          <span class="hand-guide-span-badge">↔️ 1 OCTAAF SPREIDING</span>
+          <span class="hand-guide-posture-hint" id="hand-posture-hint">Vlakke polsen • Vingers gewelfd als hamertjes</span>
+        </div>
+
+        <div class="hand-guide-card hand-guide-rh">
+          <div class="hand-guide-card-header">
+            <span class="hand-guide-badge badge-rh">🤚 RECHTERHAND</span>
+            <span class="hand-guide-pos" id="rh-position-text">Positie: C3 t/m A3</span>
+          </div>
+          <div class="hand-guide-fingers" id="rh-fingers-container">
+            <!-- 5 fingers (1, 2, 3, 4, 5) with note labels -->
+          </div>
+        </div>
+      </div>
+
       <div class="piano-container" id="piano-container">
         <div class="piano-keys piano-88-keys" id="piano-keys">
           <!-- Dynamically populated 88 keys: 52 white, 36 black -->
@@ -236,7 +354,7 @@
           <span class="hand-placement-sub">• Scrolt mee met je spel — klik op een maat om erheen te springen</span>
         </div>
         <div class="hand-placement-status" id="active-measure-summary">
-          Maat 1: RH [C4 - A4] (Vingers 1-2-3-4-5) | LH [C3 - A3] (Vingers 5-4-3-2-1)
+          Maat 1: RH [C3 - A3] (Vingers 1-2-3-4-5) | LH [C2 - A2] (Vingers 5-4-3-2-1)
         </div>
       </div>
       <div class="hand-placement-scroll" id="hand-placement-scroll">
@@ -278,6 +396,7 @@
       <div class="modal-actions">
         <button id="modal-btn-retry" class="btn btn-secondary">🔄 Opnieuw Proberen</button>
         <button id="modal-btn-next" class="btn btn-primary">Volgende Les ▶️</button>
+        <button id="modal-btn-menu" class="btn btn-outline">🏠 Naar Hoofdmenu</button>
         <button id="modal-btn-close" class="btn btn-outline">Sluiten</button>
       </div>
     </div>
