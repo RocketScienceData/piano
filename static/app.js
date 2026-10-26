@@ -11,7 +11,7 @@ const state = {
   hanonData: null,
   lessons: [],
   currentLessonId: "les-1",
-  currentHand: "rh", // 'rh', 'lh', 'both'
+  currentHand: "both", // 'both' (two hands) by default, 'rh', 'lh'
   currentMode: "wait", // 'wait', 'tempo'
   bpm: 60,
   metronomeOn: true,
@@ -577,9 +577,9 @@ function updateTargetDisplay() {
     handIcon = "✋";
     handName = "Linkerhand";
   } else if (state.currentHand === "both") {
-    targetNote = `${currentItem.lh.note} + ${currentItem.rh.note}`;
+    targetNote = `${currentItem.lh.note} (LH) + ${currentItem.rh.note} (RH)`;
     targetMidi = currentItem.rh.midi; // primary check
-    targetFinger = `LH ${currentItem.lh.finger} | RH ${currentItem.rh.finger}`;
+    targetFinger = `LH: Vinger ${currentItem.lh.finger} • RH: Vinger ${currentItem.rh.finger}`;
     handIcon = "🤝";
     handName = "Beide Handen";
   }
@@ -588,7 +588,9 @@ function updateTargetDisplay() {
   document.getElementById("target-note-name").textContent = targetNote;
   document.getElementById("target-hand-icon").textContent = handIcon;
   document.getElementById("target-finger-desc").textContent = 
-    `Vinger ${getFingerName(targetFinger)} • Maat ${currentItem.measure} (Noot ${currentItem.note_index + 1}/8)`;
+    (state.currentHand === "both")
+      ? `${targetFinger} • Maat ${currentItem.measure} (Noot ${currentItem.note_index + 1}/8)`
+      : `Vinger ${getFingerName(targetFinger)} • Maat ${currentItem.measure} (Noot ${currentItem.note_index + 1}/8)`;
   
   const maxMeasures = state.hanonData ? state.hanonData.total_measures : 30;
   document.getElementById("sheet-measure-indicator").textContent = `Maat ${currentItem.measure} / ${maxMeasures}`;
@@ -778,22 +780,95 @@ function updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes) {
   }
 }
 
+// Dynamic Hand Zone Brackets directly over keyboard keys
+function updatePianoHandBrackets(lhSpanNotes, rhSpanNotes) {
+  const pianoKeys = document.getElementById("piano-keys");
+  if (!pianoKeys) return;
+
+  let bracketLh = document.getElementById("piano-bracket-lh");
+  if (!bracketLh) {
+    bracketLh = document.createElement("div");
+    bracketLh.id = "piano-bracket-lh";
+    bracketLh.className = "piano-hand-bracket bracket-lh";
+    pianoKeys.appendChild(bracketLh);
+  }
+
+  let bracketRh = document.getElementById("piano-bracket-rh");
+  if (!bracketRh) {
+    bracketRh = document.createElement("div");
+    bracketRh.id = "piano-bracket-rh";
+    bracketRh.className = "piano-hand-bracket bracket-rh";
+    pianoKeys.appendChild(bracketRh);
+  }
+
+  // Left Hand bracket
+  const lhNotesArr = Object.keys(lhSpanNotes || {});
+  if (lhNotesArr.length > 0 && (state.currentHand === "lh" || state.currentHand === "both")) {
+    let minLeft = Infinity;
+    let maxRight = -Infinity;
+    lhNotesArr.forEach(noteName => {
+      const el = pianoKeys.querySelector(`[data-note="${noteName}"]`);
+      if (el) {
+        minLeft = Math.min(minLeft, el.offsetLeft);
+        maxRight = Math.max(maxRight, el.offsetLeft + el.offsetWidth);
+      }
+    });
+    if (minLeft !== Infinity && maxRight > minLeft) {
+      bracketLh.style.display = "flex";
+      bracketLh.style.left = `${minLeft}px`;
+      bracketLh.style.width = `${maxRight - minLeft}px`;
+      bracketLh.innerHTML = `<span class="bracket-tag">✋ Linkerhand</span>`;
+    } else {
+      bracketLh.style.display = "none";
+    }
+  } else {
+    bracketLh.style.display = "none";
+  }
+
+  // Right Hand bracket
+  const rhNotesArr = Object.keys(rhSpanNotes || {});
+  if (rhNotesArr.length > 0 && (state.currentHand === "rh" || state.currentHand === "both")) {
+    let minLeft = Infinity;
+    let maxRight = -Infinity;
+    rhNotesArr.forEach(noteName => {
+      const el = pianoKeys.querySelector(`[data-note="${noteName}"]`);
+      if (el) {
+        minLeft = Math.min(minLeft, el.offsetLeft);
+        maxRight = Math.max(maxRight, el.offsetLeft + el.offsetWidth);
+      }
+    });
+    if (minLeft !== Infinity && maxRight > minLeft) {
+      bracketRh.style.display = "flex";
+      bracketRh.style.left = `${minLeft}px`;
+      bracketRh.style.width = `${maxRight - minLeft}px`;
+      bracketRh.innerHTML = `<span class="bracket-tag">🤚 Rechterhand</span>`;
+    } else {
+      bracketRh.style.display = "none";
+    }
+  } else {
+    bracketRh.style.display = "none";
+  }
+}
+
 // Highlight piano target key(s) on 88-key piano, showing exact hand positions for both hands
 function highlightPianoTarget(singleNote = null, singleFinger = null) {
   // Clear existing active target keys and hand zone keys
   document.querySelectorAll(".white-key, .black-key").forEach(k => {
-    k.classList.remove("active-target", "hand-key-lh", "hand-key-rh");
+    k.classList.remove("active-target", "active-target-lh", "active-target-rh", "hand-key-lh", "hand-key-rh");
     const badge = k.querySelector(".finger-badge");
     if (badge) badge.remove();
+    const tag = k.querySelector(".hand-tag");
+    if (tag) tag.remove();
   });
   
   if (singleNote) {
     const keyEl = document.querySelector(`[data-note="${singleNote}"]`);
     if (keyEl) {
-      keyEl.classList.add("active-target");
+      const isLh = (state.currentHand === "lh");
+      keyEl.classList.add("active-target", isLh ? "active-target-lh" : "active-target-rh");
       const badge = document.createElement("div");
-      badge.className = "finger-badge";
-      badge.textContent = singleFinger || (state.currentHand === "lh" ? "L" : "R");
+      badge.className = `finger-badge active-finger-badge ${isLh ? "badge-lh" : "badge-rh"}`;
+      badge.textContent = singleFinger || (isLh ? "✋ L" : "🤚 R");
       keyEl.appendChild(badge);
       centerKeyInPianoView(keyEl);
     }
@@ -824,7 +899,7 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
     if (currentItem.rh && currentItem.rh.note) rhSpanNotes[currentItem.rh.note] = currentItem.rh.finger;
   }
 
-  // 2. Decorate Left Hand keys on piano (Cyan hand zone)
+  // 2. Decorate Left Hand keys on piano (Cyan hand zone with finger numbers & LH marker)
   if (state.currentHand === "lh" || state.currentHand === "both") {
     Object.entries(lhSpanNotes).forEach(([noteName, finger]) => {
       const keyEl = document.querySelector(`[data-note="${noteName}"]`);
@@ -832,13 +907,19 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
         keyEl.classList.add("hand-key-lh");
         const b = document.createElement("div");
         b.className = "finger-badge badge-lh";
-        b.textContent = finger;
+        b.textContent = `L${finger}`;
+        b.title = `Linkerhand Vinger ${finger}`;
         keyEl.appendChild(b);
+
+        const tag = document.createElement("span");
+        tag.className = "hand-tag tag-lh";
+        tag.textContent = "LH";
+        keyEl.appendChild(tag);
       }
     });
   }
 
-  // 3. Decorate Right Hand keys on piano (Amber hand zone)
+  // 3. Decorate Right Hand keys on piano (Amber hand zone with finger numbers & RH marker)
   if (state.currentHand === "rh" || state.currentHand === "both") {
     Object.entries(rhSpanNotes).forEach(([noteName, finger]) => {
       const keyEl = document.querySelector(`[data-note="${noteName}"]`);
@@ -847,21 +928,28 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
         if (!keyEl.querySelector(".finger-badge")) {
           const b = document.createElement("div");
           b.className = "finger-badge badge-rh";
-          b.textContent = finger;
+          b.textContent = `R${finger}`;
+          b.title = `Rechterhand Vinger ${finger}`;
           keyEl.appendChild(b);
+        }
+        if (!keyEl.querySelector(".hand-tag")) {
+          const tag = document.createElement("span");
+          tag.className = "hand-tag tag-rh";
+          tag.textContent = "RH";
+          keyEl.appendChild(tag);
         }
       }
     });
   }
 
-  // 4. Highlight the CURRENT active target key(s) (Pulsing Gold)
+  // 4. Highlight the CURRENT active target key(s) (Pulsing Gold / Cyan)
   const targets = [];
   if (state.currentHand === "lh") {
     targets.push({ note: currentItem.lh.note, finger: currentItem.lh.finger, hand: "lh" });
   } else if (state.currentHand === "rh") {
     targets.push({ note: currentItem.rh.note, finger: currentItem.rh.finger, hand: "rh" });
   } else {
-    // Both hands
+    // Both hands: both LH and RH targets highlighted simultaneously
     targets.push({ note: currentItem.lh.note, finger: currentItem.lh.finger, hand: "lh" });
     targets.push({ note: currentItem.rh.note, finger: currentItem.rh.finger, hand: "rh" });
   }
@@ -869,21 +957,24 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
   targets.forEach(t => {
     const keyEl = document.querySelector(`[data-note="${t.note}"]`);
     if (keyEl) {
-      keyEl.classList.add("active-target");
+      keyEl.classList.add("active-target", t.hand === "lh" ? "active-target-lh" : "active-target-rh");
       let badge = keyEl.querySelector(".finger-badge");
       if (!badge) {
         badge = document.createElement("div");
         keyEl.appendChild(badge);
       }
       badge.className = `finger-badge active-finger-badge ${t.hand === "lh" ? "badge-lh" : "badge-rh"}`;
-      badge.textContent = t.finger;
+      badge.textContent = t.hand === "lh" ? `✋ L${t.finger}` : `🤚 R${t.finger}`;
     }
   });
 
-  // 5. Update the dedicated Hand Guide Bar above the piano
+  // 5. Update floating Hand Zone Brackets directly on the piano keyboard
+  updatePianoHandBrackets(lhSpanNotes, rhSpanNotes);
+
+  // 6. Update the dedicated Hand Guide Bar below the piano
   updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes);
 
-  // 6. Centering: Center the piano container so BOTH hand zones are clearly visible
+  // 7. Centering: Center the piano container so BOTH hand zones are clearly visible
   centerHandPositionInPianoView(currentItem);
 }
 
@@ -1592,6 +1683,7 @@ function buildPianoKeys() {
     const key = document.createElement("div");
     key.className = "white-key";
     key.dataset.note = wn;
+    key.dataset.midi = noteNameToMidi(wn);
     
     const label = document.createElement("span");
     label.className = "key-label";
@@ -1621,6 +1713,7 @@ function buildPianoKeys() {
     const bkey = document.createElement("div");
     bkey.className = "black-key";
     bkey.dataset.note = bDef.note;
+    bkey.dataset.midi = noteNameToMidi(bDef.note);
     
     // Position percentage relative to 52 white keys
     const leftPct = ((bDef.afterWhiteIdx + 1) / totalWhite) * 100;
@@ -1635,6 +1728,19 @@ function buildPianoKeys() {
     
     pianoKeysContainer.appendChild(bkey);
   });
+
+  // Create Hand Zone Bracket overlays inside piano-keys container
+  const bracketLh = document.createElement("div");
+  bracketLh.id = "piano-bracket-lh";
+  bracketLh.className = "piano-hand-bracket bracket-lh";
+  bracketLh.style.display = "none";
+  pianoKeysContainer.appendChild(bracketLh);
+
+  const bracketRh = document.createElement("div");
+  bracketRh.id = "piano-bracket-rh";
+  bracketRh.className = "piano-hand-bracket bracket-rh";
+  bracketRh.style.display = "none";
+  pianoKeysContainer.appendChild(bracketRh);
 
   // Auto-center 88-key piano on Middle C (C4) so user immediately sees playable range
   requestAnimationFrame(() => {

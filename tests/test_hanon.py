@@ -384,10 +384,13 @@ class TestCompactUIAndKeyboard(unittest.TestCase):
         self.assertIn('id="menu-stat-completed"', html)
         self.assertIn('id="menu-exercises-grid"', html)
 
-        # Real-time hand guide bar above piano
+        # Real-time hand guide bar and default two hands mode
         self.assertIn('id="piano-hand-guide-bar"', html)
         self.assertIn('id="lh-fingers-container"', html)
         self.assertIn('id="rh-fingers-container"', html)
+        self.assertIn('class="active" data-hand="both"', html)
+        self.assertIn('pill-lh', html)
+        self.assertIn('pill-rh', html)
 
     def test_88_key_piano_specifications(self):
         # 52 white keys from A0 to C8
@@ -433,9 +436,11 @@ class TestCompactUIAndKeyboard(unittest.TestCase):
         with open(js_path, "r") as f:
             js = f.read()
         
-        # Safe container-only scrolling
+        # Safe container-only scrolling & hand markers
         self.assertIn("centerKeyInPianoView", js)
         self.assertIn("centerCardInHandGuideView", js)
+        self.assertIn("updatePianoHandBrackets", js)
+        self.assertIn('currentHand: "both"', js)
         self.assertIn("beforeunload", js)
 
 

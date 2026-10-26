@@ -50,12 +50,12 @@
         </select>
       </div>
 
-      <!-- Hand selector -->
+      <!-- Hand selector (Standaard: Twee Handen) -->
       <div class="control-unit">
         <div class="btn-group-micro" id="hand-btn-group">
-          <button type="button" class="active" data-hand="rh" title="Rechterhand (Vioolsleutel)">🤚 R</button>
-          <button type="button" data-hand="lh" title="Linkerhand (Bassleutel)">✋ L</button>
-          <button type="button" data-hand="both" title="Beide Handen (Parallel)">🤝 Beide</button>
+          <button type="button" data-hand="rh" title="Alleen Rechterhand (Vioolsleutel)">🤚 R</button>
+          <button type="button" data-hand="lh" title="Alleen Linkerhand (Bassleutel)">✋ L</button>
+          <button type="button" class="active" data-hand="both" title="Beide Handen (Parallel / Tweehandig)">🤝 Beide</button>
         </div>
       </div>
 
@@ -309,7 +309,11 @@
           <span class="keyboard-title">🎹 Volledig 88-Toetsen Klavier (A0 - C8)</span>
           <span class="keyboard-subinfo">• Centrale C = C4</span>
         </div>
-        <span id="keyboard-legend" class="keyboard-legend">🔵 Linkerhand | 🟠 Rechterhand | 🟡 Te spelen toets</span>
+        <span id="keyboard-legend" class="keyboard-legend">
+          <span class="legend-pill pill-lh">✋ Linkerhand (Cyaan)</span>
+          <span class="legend-pill pill-rh">🤚 Rechterhand (Amber)</span>
+          <span class="legend-pill pill-target">🟡 Actieve Toets</span>
+        </span>
       </div>
 
       <div class="piano-container" id="piano-container">
