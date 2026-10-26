@@ -441,7 +441,47 @@ class TestCompactUIAndKeyboard(unittest.TestCase):
         self.assertIn("centerCardInHandGuideView", js)
         self.assertIn("updatePianoHandBrackets", js)
         self.assertIn('currentHand: "both"', js)
+        self.assertIn("setupTheme", js)
+        self.assertIn("setupSettingsDrawer", js)
+        self.assertIn("exportProgressBackup", js)
         self.assertIn("beforeunload", js)
+
+
+class TestI18nAndSettingsAndLightMode(unittest.TestCase):
+    def test_i18n_file_exists_and_supports_languages(self):
+        i18n_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "i18n.js")
+        self.assertTrue(os.path.exists(i18n_path), "i18n.js must exist")
+        with open(i18n_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        self.assertIn("nl:", content)
+        self.assertIn("en:", content)
+        self.assertIn("de:", content)
+        self.assertIn("fr:", content)
+        self.assertIn("es:", content)
+        self.assertIn("applyTranslations", content)
+
+    def test_settings_drawer_and_hamburger_button_present(self):
+        index_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "index.html")
+        with open(index_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        self.assertIn('id="btn-hamburger"', html)
+        self.assertIn('id="settings-drawer"', html)
+        self.assertIn('id="settings-overlay"', html)
+        self.assertIn('id="lang-picker-group"', html)
+        self.assertIn('id="theme-picker-group"', html)
+        self.assertIn('id="btn-export-progress"', html)
+        self.assertIn('id="btn-reset-all-progress"', html)
+        self.assertIn('data-i18n=', html)
+
+    def test_light_mode_css_rules_present(self):
+        css_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "styles.css")
+        with open(css_path, "r", encoding="utf-8") as f:
+            css = f.read()
+        self.assertIn('[data-theme="light"]', css)
+        self.assertIn('.btn-hamburger', css)
+        self.assertIn('.settings-drawer', css)
+        self.assertIn('.drawer-overlay', css)
+        self.assertIn('.app-toast', css)
 
 
 if __name__ == "__main__":

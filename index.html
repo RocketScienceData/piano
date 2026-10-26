@@ -32,7 +32,7 @@
       <!-- Main Menu toggle button -->
       <button id="btn-toggle-menu" class="btn btn-sm btn-menu" title="Schakel tussen het hoofdmenu en de oefenruimte">
         <span id="toggle-menu-icon">🎹</span>
-        <span id="toggle-menu-text">Naar Oefening</span>
+        <span id="toggle-menu-text" data-i18n="btn_to_tutor">Naar Oefening</span>
       </button>
 
       <!-- Exercise select -->
@@ -53,17 +53,17 @@
       <!-- Hand selector (Standaard: Twee Handen) -->
       <div class="control-unit">
         <div class="btn-group-micro" id="hand-btn-group">
-          <button type="button" data-hand="rh" title="Alleen Rechterhand (Vioolsleutel)">🤚 R</button>
-          <button type="button" data-hand="lh" title="Alleen Linkerhand (Bassleutel)">✋ L</button>
-          <button type="button" class="active" data-hand="both" title="Beide Handen (Parallel / Tweehandig)">🤝 Beide</button>
+          <button type="button" data-hand="rh" data-i18n="hand_rh" title="Alleen Rechterhand (Vioolsleutel)">🤚 R</button>
+          <button type="button" data-hand="lh" data-i18n="hand_lh" title="Alleen Linkerhand (Bassleutel)">✋ L</button>
+          <button type="button" class="active" data-hand="both" data-i18n="hand_both" title="Beide Handen (Parallel / Tweehandig)">🤝 Beide</button>
         </div>
       </div>
 
       <!-- Mode selector -->
       <div class="control-unit">
         <div class="btn-group-micro" id="mode-btn-group">
-          <button type="button" class="active" data-mode="wait" title="Wacht rustig tot je de juiste noot aanslaat">🎯 Oefen</button>
-          <button type="button" data-mode="tempo" title="Metronoom tikt mee en meet timing">⏱️ Tempo</button>
+          <button type="button" class="active" data-mode="wait" data-i18n="mode_practice" title="Wacht rustig tot je de juiste noot aanslaat">🎯 Oefen</button>
+          <button type="button" data-mode="tempo" data-i18n="mode_tempo" title="Metronoom tikt mee en meet timing">⏱️ Tempo</button>
         </div>
       </div>
 
@@ -79,27 +79,27 @@
       <div class="header-actions">
         <button id="btn-start" class="btn btn-sm btn-primary" title="Start of pauzeer de les">
           <span id="start-btn-icon">▶️</span>
-          <span id="start-btn-text">Start</span>
+          <span id="start-btn-text" data-i18n="btn_start">Start</span>
         </button>
 
         <button id="btn-demo" class="btn btn-sm btn-outline" title="Laat de computer de geselecteerde maten voorspelen">
-          <span>🎧 Voor</span>
+          <span data-i18n="btn_demo">🎧 Voor</span>
         </button>
 
         <button id="btn-reset" class="btn btn-sm btn-secondary" title="Begin opnieuw vanaf de eerste noot">
-          <span>🔄 Reset</span>
+          <span data-i18n="btn_reset">🔄 Reset</span>
         </button>
 
         <button id="btn-history" class="btn btn-sm btn-outline" title="Bekijk eerdere resultaten en vooruitgang">
-          <span>📊 Voortgang</span>
+          <span data-i18n="btn_history">📊 Voortgang</span>
         </button>
 
         <button id="btn-insights" class="btn btn-sm btn-outline" title="Bekijk cursusverbeteringsstatistieken en knelpunten">
-          <span>📈 Inzichten</span>
+          <span data-i18n="btn_insights">📈 Inzichten</span>
         </button>
 
         <a href="./IMSLP91547-PMLP03129-Hanon_Final.pdf" data-pdf="hanon-full" target="_blank" class="btn btn-sm btn-outline btn-pdf" title="Open het volledige originele Hanon boek (116 pagina's)">
-          <span>📚 Boek PDF</span>
+          <span data-i18n="btn_pdf">📚 Boek PDF</span>
         </a>
       </div>
 
@@ -118,13 +118,18 @@
           <option value="virtual">💻 Scherm</option>
         </select>
       </div>
+
+      <!-- Hamburger Settings Menu Button (Always visible) -->
+      <button id="btn-hamburger" class="btn btn-sm btn-hamburger" title="Instellingen &amp; Opties" aria-label="Settings">
+        <span class="hamburger-icon">☰</span>
+      </button>
     </div>
 
     <!-- Secondary Row: Ultra-Compact Horizontal Score HUD & Integrated Coach Tip -->
     <div class="score-hud-compact">
       <!-- Target note badge -->
       <div class="hud-strip-item hud-target" id="hud-target-card" title="De te spelen noot">
-        <span class="hud-micro-label">DOEL:</span>
+        <span class="hud-micro-label" data-i18n="target_label">DOEL:</span>
         <span class="hud-target-note" id="hud-target-note">
           <strong id="target-note-name">C4</strong>
           <span id="target-hand-icon">🤚</span>
@@ -134,26 +139,26 @@
 
       <!-- Live Heard Pitch badge -->
       <div class="hud-strip-item hud-live" id="hud-live-card" title="Wat de microfoon op dit moment hoort">
-        <span class="hud-micro-label">HOORT:</span>
+        <span class="hud-micro-label" data-i18n="heard_label">HOORT:</span>
         <span class="hud-live-note" id="hud-live-note">
           <strong id="live-note-name">--</strong>
           <span id="live-hz" class="hud-hz"></span>
         </span>
-        <span class="hud-cents-desc" id="live-cents-desc">Wacht op aanslag...</span>
+        <span class="hud-cents-desc" id="live-cents-desc" data-i18n="waiting_strike">Wacht op aanslag...</span>
       </div>
 
       <!-- Score counters -->
       <div class="hud-strip-item hud-stats">
         <div class="stat-pill text-green" title="Aantal juiste aanslagen">
-          <span class="stat-label">GOED</span>
+          <span class="stat-label" data-i18n="stat_correct">GOED</span>
           <span class="stat-num" id="stat-correct">0</span>
         </div>
         <div class="stat-pill text-red" title="Aantal foutieve aanslagen">
-          <span class="stat-label">FOUT</span>
+          <span class="stat-label" data-i18n="stat_wrong">FOUT</span>
           <span class="stat-num" id="stat-wrong">0</span>
         </div>
         <div class="stat-pill text-gold" title="Nauwkeurigheid">
-          <span class="stat-label">SCORE</span>
+          <span class="stat-label" data-i18n="stat_score">SCORE</span>
           <span class="stat-num" id="stat-accuracy">100%</span>
         </div>
         <div class="stat-pill text-cyan" title="Reeks">
@@ -165,7 +170,7 @@
       <div class="hud-strip-item hud-progress">
         <div class="progress-info">
           <span id="stat-progress">Noot 0 / 233</span>
-          <span id="coach-state" class="coach-state-badge">GEREED</span>
+          <span id="coach-state" class="coach-state-badge" data-i18n="state_ready">GEREED</span>
         </div>
         <div class="progress-container-micro">
           <div class="progress-bar" id="lesson-progress-bar"></div>
@@ -189,18 +194,18 @@
       <div class="menu-hero-card">
         <div class="menu-hero-content">
           <div class="menu-hero-header">
-            <span class="menu-hero-badge">🎓 C.L. Hanon: De Virtuoze Pianist</span>
-            <h1 class="menu-hero-title">Hoofdmenu &amp; Lesvoortgang</h1>
-            <p class="menu-hero-subtitle">
+            <span class="menu-hero-badge" data-i18n="hero_badge">🎓 C.L. Hanon: De Virtuoze Pianist</span>
+            <h1 class="menu-hero-title" data-i18n="hero_title">Hoofdmenu &amp; Lesvoortgang</h1>
+            <p class="menu-hero-subtitle" data-i18n="hero_subtitle">
               Beheers alle 60 oefeningen (Deel 1, Deel 2 en Deel 3) van C.L. Hanon stap voor stap. Ontwikkel ultieme virtuositeit, soepelheid, onafhankelijkheid en gelijkmatigheid in beide handen.
             </p>
           </div>
           <div class="menu-hero-actions">
             <button id="menu-btn-resume" class="btn btn-primary btn-lg" title="Ga direct verder met de huidige les">
-              <span>▶️ Ga Verder Met Les</span>
+              <span data-i18n="btn_resume_lesson">▶️ Ga Verder Met Les</span>
             </button>
             <button id="menu-btn-restart-ex1" class="btn btn-outline" title="Start vanaf Oefening 1 Les 1">
-              <span>🔄 Start bij Les 1</span>
+              <span data-i18n="btn_start_les1">🔄 Start bij Les 1</span>
             </button>
           </div>
         </div>
@@ -211,7 +216,7 @@
             <span class="menu-stat-icon">🏆</span>
             <div class="menu-stat-info">
               <span class="menu-stat-val" id="menu-stat-completed">0 / 360</span>
-              <span class="menu-stat-lbl">Lessen Voltooid</span>
+              <span class="menu-stat-lbl" data-i18n="stat_lessons_done">Lessen Voltooid</span>
             </div>
             <div class="menu-stat-bar-track">
               <div class="menu-stat-bar-fill" id="menu-stat-completed-bar" style="width: 0%;"></div>
@@ -222,7 +227,7 @@
             <span class="menu-stat-icon">⭐️</span>
             <div class="menu-stat-info">
               <span class="menu-stat-val text-gold" id="menu-stat-stars">0 ⭐</span>
-              <span class="menu-stat-lbl">Behaalde Sterren</span>
+              <span class="menu-stat-lbl" data-i18n="stat_stars_won">Behaalde Sterren</span>
             </div>
           </div>
 
@@ -230,7 +235,7 @@
             <span class="menu-stat-icon">🎯</span>
             <div class="menu-stat-info">
               <span class="menu-stat-val text-green" id="menu-stat-accuracy">100%</span>
-              <span class="menu-stat-lbl">Gemiddelde Score</span>
+              <span class="menu-stat-lbl" data-i18n="stat_avg_accuracy">Gemiddelde Score</span>
             </div>
           </div>
 
@@ -238,7 +243,7 @@
             <span class="menu-stat-icon">🎵</span>
             <div class="menu-stat-info">
               <span class="menu-stat-val text-cyan" id="menu-stat-notes">0</span>
-              <span class="menu-stat-lbl">Noten Gespeeld</span>
+              <span class="menu-stat-lbl" data-i18n="stat_notes_played">Noten Gespeeld</span>
             </div>
           </div>
         </div>
@@ -247,15 +252,15 @@
       <!-- Filter & Search Toolbar -->
       <div class="menu-toolbar">
         <div class="menu-toolbar-left">
-          <span class="menu-section-title">📚 Hanon Cursus (Deel 1, 2 &amp; 3 • 60 Oefeningen • 360 Lessen)</span>
-          <span class="menu-section-desc">• Klik op een les om direct te starten</span>
+          <span class="menu-section-title" data-i18n="menu_section_title">📚 Hanon Cursus (Deel 1, 2 &amp; 3 • 60 Oefeningen • 360 Lessen)</span>
+          <span class="menu-section-desc" data-i18n="menu_section_desc">• Klik op een les om direct te starten</span>
         </div>
         <div class="btn-group-micro" id="menu-filter-group">
-          <button type="button" class="active" data-filter="all">Alle 60 Oefeningen</button>
-          <button type="button" data-filter="part1">Deel 1 (1 t/m 20)</button>
-          <button type="button" data-filter="part2">Deel 2 (21 t/m 43)</button>
-          <button type="button" data-filter="part3">Deel 3 (44 t/m 60)</button>
-          <button type="button" data-filter="started">Alleen Begonnen</button>
+          <button type="button" class="active" data-filter="all" data-i18n="filter_all">Alle 60 Oefeningen</button>
+          <button type="button" data-filter="part1" data-i18n="filter_part1">Deel 1 (1 t/m 20)</button>
+          <button type="button" data-filter="part2" data-i18n="filter_part2">Deel 2 (21 t/m 43)</button>
+          <button type="button" data-filter="part3" data-i18n="filter_part3">Deel 3 (44 t/m 60)</button>
+          <button type="button" data-filter="started" data-i18n="filter_started">Alleen Begonnen</button>
         </div>
       </div>
 
@@ -489,6 +494,104 @@
   <!-- Toast Notification Container -->
   <div class="app-toast-container" id="app-toast-container"></div>
 
+  <!-- Modern Settings Slide-Out Drawer & Backdrop Overlay -->
+  <div id="settings-overlay" class="drawer-overlay" style="display: none;"></div>
+
+  <aside id="settings-drawer" class="settings-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <span class="drawer-icon">⚙️</span>
+        <h2 class="drawer-title" data-i18n="settings_title">Instellingen &amp; Opties</h2>
+      </div>
+      <button id="btn-close-settings" class="btn-drawer-close" title="Sluiten" aria-label="Close">✕</button>
+    </div>
+
+    <div class="drawer-content">
+      <!-- Section: Language Selector -->
+      <div class="drawer-section">
+        <h3 class="section-label" data-i18n="section_lang">🌐 Taal / Language</h3>
+        <div class="lang-grid" id="lang-picker-group">
+          <button type="button" class="lang-btn active" data-lang="nl">🇳🇱 Nederlands</button>
+          <button type="button" class="lang-btn" data-lang="en">🇬🇧 English</button>
+          <button type="button" class="lang-btn" data-lang="de">🇩🇪 Deutsch</button>
+          <button type="button" class="lang-btn" data-lang="fr">🇫🇷 Français</button>
+          <button type="button" class="lang-btn" data-lang="es">🇪🇸 Español</button>
+        </div>
+      </div>
+
+      <!-- Section: Theme & Appearance -->
+      <div class="drawer-section">
+        <h3 class="section-label" data-i18n="section_theme">🎨 Uiterlijk &amp; Thema</h3>
+        <div class="theme-picker-group" id="theme-picker-group">
+          <button type="button" class="theme-btn active" data-theme="dark">
+            <span data-i18n="theme_dark">🌙 Donker</span>
+          </button>
+          <button type="button" class="theme-btn" data-theme="light">
+            <span data-i18n="theme_light">☀️ Licht</span>
+          </button>
+          <button type="button" class="theme-btn" data-theme="auto">
+            <span data-i18n="theme_auto">💻 Systeem</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Section: Keyboard & Sheet Options -->
+      <div class="drawer-section">
+        <h3 class="section-label" data-i18n="section_keyboard">🎹 Klavier &amp; Notenbalk</h3>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-brackets" data-i18n="opt_brackets">Toon zwevende handkaders boven toetsen</label>
+          <input type="checkbox" id="toggle-opt-brackets" class="switch-input" checked>
+        </div>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-badges" data-i18n="opt_finger_badges">Toon vingerzetting badges op toetsen</label>
+          <input type="checkbox" id="toggle-opt-badges" class="switch-input" checked>
+        </div>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-labels" data-i18n="opt_note_labels">Toon nootnamen op witte toetsen</label>
+          <input type="checkbox" id="toggle-opt-labels" class="switch-input" checked>
+        </div>
+      </div>
+
+      <!-- Section: Audio & Detection -->
+      <div class="drawer-section">
+        <h3 class="section-label" data-i18n="section_audio">🎙️ Geluid &amp; Detectie</h3>
+        <div class="drawer-slider-row">
+          <div class="slider-label-group">
+            <span data-i18n="opt_sensitivity">Microfoongevoeligheid</span>
+            <strong id="drawer-sens-val">12</strong>
+          </div>
+          <input type="range" id="drawer-sens-slider" min="1" max="50" value="12" class="drawer-slider">
+        </div>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-metro-sound" data-i18n="opt_metronome_sound">Metronoom klikgeluid actief</label>
+          <input type="checkbox" id="toggle-opt-metro-sound" class="switch-input" checked>
+        </div>
+      </div>
+
+      <!-- Section: Data & Progress Management -->
+      <div class="drawer-section">
+        <h3 class="section-label" data-i18n="section_data">📊 Voortgang &amp; Gegevens</h3>
+        <div class="drawer-buttons-stack">
+          <button type="button" id="btn-export-progress" class="btn btn-outline btn-block" data-i18n="btn_export_data">
+            💾 Exporteer Voortgang (JSON)
+          </button>
+          <button type="button" id="btn-import-trigger" class="btn btn-outline btn-block" data-i18n="btn_import_data">
+            📂 Importeer Voortgang
+          </button>
+          <input type="file" id="import-file-input" accept=".json" style="display: none;">
+          <button type="button" id="btn-reset-all-progress" class="btn btn-danger-outline btn-block" data-i18n="btn_reset_data">
+            🗑️ Wis Alle Voortgang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <span>Hanon AI Piano Tutor v2.2 • C.L. Hanon (1819–1900)</span>
+    </div>
+  </aside>
+
+  <script src="./static/i18n.js"></script>
   <script src="./static/sheet_renderer.js"></script>
   <script src="./static/app.js"></script>
 </body>

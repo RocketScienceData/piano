@@ -87,20 +87,26 @@ function freqToMidi(freq) {
   return 69.0 + 12.0 * Math.log2(freq / 440.0);
 }
 
-// Finger name translation (Dutch)
+// Finger name translation (i18n supported)
 function getFingerName(fingerNum) {
+  const t = (k) => (window.I18N ? window.I18N.t(k) : k);
   switch (fingerNum) {
-    case 1: return "1 (Duim)";
-    case 2: return "2 (Wijsvinger)";
-    case 3: return "3 (Middelvinger)";
-    case 4: return "4 (Ringvinger)";
-    case 5: return "5 (Pink)";
+    case 1: return t("finger_1");
+    case 2: return t("finger_2");
+    case 3: return t("finger_3");
+    case 4: return t("finger_4");
+    case 5: return t("finger_5");
     default: return `${fingerNum}`;
   }
 }
 
 // Initialize Application
 document.addEventListener("DOMContentLoaded", async () => {
+  setupTheme();
+  setupSettingsDrawer();
+  if (window.I18N) {
+    window.I18N.applyTranslations();
+  }
   setupUIEventListeners();
   buildPianoKeys();
   await loadData();
@@ -237,6 +243,246 @@ function setupUIEventListeners() {
     insClose.addEventListener("click", () => closeModal("insights-modal"));
   }
 }
+
+// ==========================================================================
+// Theme Management (Light / Dark / Auto)
+// ==========================================================================
+function setupTheme() {
+  const savedTheme = localStorage.getItem("hanon_piano_theme") || "dark";
+  applyTheme(savedTheme);
+
+  const themeBtns = document.querySelectorAll("#theme-picker-group .theme-btn");
+  themeBtns.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.theme === savedTheme);
+    btn.addEventListener("click", () => {
+      themeBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const chosenTheme = btn.dataset.theme;
+      applyTheme(chosenTheme);
+      localStorage.setItem("hanon_piano_theme", chosenTheme);
+    });
+  });
+}
+
+function applyTheme(theme) {
+  let effectiveTheme = theme;
+  if (theme === "auto") {
+    effectiveTheme = (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark";
+  }
+  document.documentElement.setAttribute("data-theme", effectiveTheme);
+}
+
+// ==========================================================================
+// Settings Drawer & Hamburger Menu
+// ==========================================================================
+function setupSettingsDrawer() {
+  const btnHamburger = document.getElementById("btn-hamburger");
+  const btnClose = document.getElementById("btn-close-settings");
+  const overlay = document.getElementById("settings-overlay");
+  const drawer = document.getElementById("settings-drawer");
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    if (overlay) overlay.style.display = "block";
+  }
+
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    if (overlay) overlay.style.display = "none";
+  }
+
+  if (btnHamburger) btnHamburger.addEventListener("click", openDrawer);
+  if (btnClose) btnClose.addEventListener("click", closeDrawer);
+  if (overlay) overlay.addEventListener("click", closeDrawer);
+
+  // Language buttons
+  const langBtns = document.querySelectorAll("#lang-picker-group .lang-btn");
+  const currentL = (window.I18N && window.I18N.currentLang) || "nl";
+  langBtns.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === currentL);
+    btn.addEventListener("click", () => {
+      langBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (window.I18N) {
+        window.I18N.setLang(btn.dataset.lang);
+      }
+    });
+  });
+
+  // Keyboard display toggles
+  const toggleBrackets = document.getElementById("toggle-opt-brackets");
+  if (toggleBrackets) {
+    toggleBrackets.checked = localStorage.getItem("hanon_show_brackets") !== "false";
+    toggleBrackets.addEventListener("change", (e) => {
+      localStorage.setItem("hanon_show_brackets", e.target.checked);
+      highlightPianoTarget();
+    });
+  }
+
+  const toggleBadges = document.getElementById("toggle-opt-badges");
+  if (toggleBadges) {
+    toggleBadges.checked = localStorage.getItem("hanon_show_badges") !== "false";
+    toggleBadges.addEventListener("change", (e) => {
+      localStorage.setItem("hanon_show_badges", e.target.checked);
+      highlightPianoTarget();
+    });
+  }
+
+  const toggleLabels = document.getElementById("toggle-opt-labels");
+  if (toggleLabels) {
+    toggleLabels.checked = localStorage.getItem("hanon_show_labels") !== "false";
+    toggleLabels.addEventListener("change", (e) => {
+      localStorage.setItem("hanon_show_labels", e.target.checked);
+      document.querySelectorAll(".white-key .key-label").forEach(l => {
+        l.style.display = e.target.checked ? "block" : "none";
+      });
+    });
+  }
+
+  // Synced Sensitivity Slider in drawer
+  const drawerSens = document.getElementById("drawer-sens-slider");
+  const drawerSensVal = document.getElementById("drawer-sens-val");
+  const mainSens = document.getElementById("mic-sensitivity");
+  if (drawerSens && drawerSensVal) {
+    drawerSens.value = state.sensitivity;
+    drawerSensVal.textContent = state.sensitivity;
+    drawerSens.addEventListener("input", (e) => {
+      const val = parseInt(e.target.value);
+      state.sensitivity = val;
+      drawerSensVal.textContent = val;
+      if (mainSens) mainSens.value = val;
+    });
+    if (mainSens) {
+      mainSens.addEventListener("input", (e) => {
+        drawerSens.value = e.target.value;
+        drawerSensVal.textContent = e.target.value;
+      });
+    }
+  }
+
+  // Metronome sound toggle
+  const toggleMetroSound = document.getElementById("toggle-opt-metro-sound");
+  if (toggleMetroSound) {
+    toggleMetroSound.checked = state.metronomeOn;
+    toggleMetroSound.addEventListener("change", (e) => {
+      state.metronomeOn = e.target.checked;
+      const metroBtn = document.getElementById("btn-metronome");
+      if (metroBtn) {
+        metroBtn.style.color = state.metronomeOn ? "var(--accent-gold)" : "var(--text-muted)";
+      }
+    });
+  }
+
+  // Data management
+  const btnExport = document.getElementById("btn-export-progress");
+  if (btnExport) btnExport.addEventListener("click", exportProgressBackup);
+
+  const btnImportTrigger = document.getElementById("btn-import-trigger");
+  const importInput = document.getElementById("import-file-input");
+  if (btnImportTrigger && importInput) {
+    btnImportTrigger.addEventListener("click", () => importInput.click());
+    importInput.addEventListener("change", importProgressBackup);
+  }
+
+  const btnResetAll = document.getElementById("btn-reset-all-progress");
+  if (btnResetAll) btnResetAll.addEventListener("click", resetAllProgressData);
+}
+
+// Data Export / Import / Reset
+function exportProgressBackup() {
+  const data = {
+    version: 2,
+    timestamp: new Date().toISOString(),
+    lessonProgress: JSON.parse(localStorage.getItem("hanon_piano_lesson_progress") || "{}"),
+    sessions: JSON.parse(localStorage.getItem("hanon_piano_sessions") || "[]"),
+    theme: localStorage.getItem("hanon_piano_theme") || "dark",
+    lang: localStorage.getItem("hanon_i18n_lang") || "nl"
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `hanon_ai_voortgang_${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast((window.I18N && window.I18N.t("export_done")) || "Voortgang geëxporteerd!");
+}
+
+function importProgressBackup(e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (evt) => {
+    try {
+      const parsed = JSON.parse(evt.target.result);
+      if (parsed && (parsed.lessonProgress || parsed.sessions)) {
+        if (parsed.lessonProgress) {
+          localStorage.setItem("hanon_piano_lesson_progress", JSON.stringify(parsed.lessonProgress));
+        }
+        if (parsed.sessions) {
+          localStorage.setItem("hanon_piano_sessions", JSON.stringify(parsed.sessions));
+        }
+        if (parsed.lang && window.I18N) {
+          window.I18N.setLang(parsed.lang);
+        }
+        if (parsed.theme) {
+          applyTheme(parsed.theme);
+        }
+        renderMainMenu();
+        showToast((window.I18N && window.I18N.t("import_done")) || "Voortgang succesvol geïmporteerd!");
+      } else {
+        alert((window.I18N && window.I18N.t("import_invalid")) || "Ongeldig bestand.");
+      }
+    } catch (err) {
+      alert((window.I18N && window.I18N.t("import_invalid")) || "Fout bij inlezen JSON.");
+    }
+  };
+  reader.readAsText(file);
+}
+
+function resetAllProgressData() {
+  const msg = (window.I18N && window.I18N.t("reset_confirm")) || "Weet je zeker dat je alle voortgang wilt wissen?";
+  if (confirm(msg)) {
+    localStorage.removeItem("hanon_piano_lesson_progress");
+    localStorage.removeItem("hanon_piano_sessions");
+    renderMainMenu();
+    showToast((window.I18N && window.I18N.t("reset_done")) || "Alle voortgang gereset.");
+  }
+}
+
+// Toast notification helper
+function showToast(msg) {
+  const container = document.getElementById("app-toast-container");
+  if (!container) return;
+  const toast = document.createElement("div");
+  toast.className = "app-toast";
+  toast.textContent = msg;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.classList.add("fade-out");
+    setTimeout(() => toast.remove(), 350);
+  }, 3200);
+}
+
+// Hook for language changed
+window.onLanguageChanged = function(lang) {
+  const toggleBtnText = document.getElementById("toggle-menu-text");
+  if (toggleBtnText) {
+    toggleBtnText.textContent = (state.currentView === "menu") 
+      ? ((window.I18N && window.I18N.t("btn_to_tutor")) || "Naar Oefening")
+      : ((window.I18N && window.I18N.t("btn_to_menu")) || "Hoofdmenu");
+  }
+  updateTargetDisplay();
+  renderMainMenu();
+  const c4Label = document.querySelector(".white-key.middle-c .key-label");
+  if (c4Label) {
+    c4Label.textContent = (window.I18N && window.I18N.t("middle_c_key")) || "C4 (Midden)";
+  }
+};
 
 // Global hook for vector notes click
 window.jumpToMeasureAndNote = function(measureNumber, noteIdx) {
@@ -801,6 +1047,13 @@ function updatePianoHandBrackets(lhSpanNotes, rhSpanNotes) {
     pianoKeys.appendChild(bracketRh);
   }
 
+  const showBrackets = localStorage.getItem("hanon_show_brackets") !== "false";
+  if (!showBrackets) {
+    bracketLh.style.display = "none";
+    bracketRh.style.display = "none";
+    return;
+  }
+
   // Left Hand bracket
   const lhNotesArr = Object.keys(lhSpanNotes || {});
   if (lhNotesArr.length > 0 && (state.currentHand === "lh" || state.currentHand === "both")) {
@@ -817,7 +1070,8 @@ function updatePianoHandBrackets(lhSpanNotes, rhSpanNotes) {
       bracketLh.style.display = "flex";
       bracketLh.style.left = `${minLeft}px`;
       bracketLh.style.width = `${maxRight - minLeft}px`;
-      bracketLh.innerHTML = `<span class="bracket-tag">✋ Linkerhand</span>`;
+      const tagLh = (window.I18N && window.I18N.t("bracket_lh")) || "✋ Linkerhand";
+      bracketLh.innerHTML = `<span class="bracket-tag">${tagLh}</span>`;
     } else {
       bracketLh.style.display = "none";
     }
@@ -841,7 +1095,8 @@ function updatePianoHandBrackets(lhSpanNotes, rhSpanNotes) {
       bracketRh.style.display = "flex";
       bracketRh.style.left = `${minLeft}px`;
       bracketRh.style.width = `${maxRight - minLeft}px`;
-      bracketRh.innerHTML = `<span class="bracket-tag">🤚 Rechterhand</span>`;
+      const tagRh = (window.I18N && window.I18N.t("bracket_rh")) || "🤚 Rechterhand";
+      bracketRh.innerHTML = `<span class="bracket-tag">${tagRh}</span>`;
     } else {
       bracketRh.style.display = "none";
     }
@@ -1687,11 +1942,14 @@ function buildPianoKeys() {
     
     const label = document.createElement("span");
     label.className = "key-label";
+    const showLabels = localStorage.getItem("hanon_show_labels") !== "false";
+    label.style.display = showLabels ? "block" : "none";
     
+    const middleCText = (window.I18N && window.I18N.t("middle_c_key")) || "C4 (Midden)";
     if (wn === "C4") {
       key.classList.add("middle-c");
       label.classList.add("middle-c-marker");
-      label.textContent = "C4 (Midden)";
+      label.textContent = middleCText;
     } else if (wn.startsWith("C") || wn === "A0" || wn === "C8") {
       label.classList.add("c-marker");
       label.textContent = wn;
@@ -2096,14 +2354,14 @@ function toggleView(viewName) {
     document.body.classList.add("in-menu-view");
     if (menuView) menuView.style.display = "block";
     if (tutorView) tutorView.style.display = "none";
-    if (toggleBtnText) toggleBtnText.textContent = "Naar Oefening";
+    if (toggleBtnText) toggleBtnText.textContent = (window.I18N && window.I18N.t("btn_to_tutor")) || "Naar Oefening";
     if (toggleBtnIcon) toggleBtnIcon.textContent = "🎹";
     renderMainMenu();
   } else {
     document.body.classList.remove("in-menu-view");
     if (menuView) menuView.style.display = "none";
     if (tutorView) tutorView.style.display = "flex";
-    if (toggleBtnText) toggleBtnText.textContent = "Hoofdmenu";
+    if (toggleBtnText) toggleBtnText.textContent = (window.I18N && window.I18N.t("btn_to_menu")) || "Hoofdmenu";
     if (toggleBtnIcon) toggleBtnIcon.textContent = "🏠";
   }
 }
@@ -2238,18 +2496,18 @@ function renderMainMenu(filter = "all") {
         ${lessons.map(l => {
           const prog = progressMap[`${ex.id}_${l.id}`];
           const isLCurrent = (isCurrent && l.id === state.currentLessonId);
-          let starHtml = "⚪ Niet gespeeld";
-          let actionLabel = "▶️ Start";
+          let starHtml = (window.I18N && window.I18N.t("not_played")) || "⚪ Niet gespeeld";
+          let actionLabel = (window.I18N && window.I18N.t("btn_start_lesson")) || "▶️ Start";
           let btnClass = "btn-outline";
 
           if (prog && prog.completed) {
             const starsStr = "⭐".repeat(prog.stars || 3);
             starHtml = `<span class="text-gold">${starsStr}</span> <span class="menu-lesson-accuracy">${prog.best_accuracy}%</span>`;
-            actionLabel = "🔄 Oefen";
+            actionLabel = (window.I18N && window.I18N.t("btn_retry_lesson")) || "🔄 Oefen";
             btnClass = "btn-secondary";
           } else if (prog && prog.attempts > 0) {
-            starHtml = `<span class="text-red">Nog oefenen (${prog.best_accuracy}%)</span>`;
-            actionLabel = "▶️ Hervat";
+            starHtml = `<span class="text-red">(${prog.best_accuracy}%)</span>`;
+            actionLabel = (window.I18N && window.I18N.t("btn_start_lesson")) || "▶️ Hervat";
             btnClass = "btn-primary";
           }
 
