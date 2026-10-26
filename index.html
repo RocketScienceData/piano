@@ -311,7 +311,13 @@
         <span id="keyboard-legend" class="keyboard-legend">🔵 Linkerhand | 🟠 Rechterhand | 🟡 Te spelen toets</span>
       </div>
 
-      <!-- Real-Time Hand Positioning Bar (Both hands visible) -->
+      <div class="piano-container" id="piano-container">
+        <div class="piano-keys piano-88-keys" id="piano-keys">
+          <!-- Dynamically populated 88 keys: 52 white, 36 black -->
+        </div>
+      </div>
+
+      <!-- Real-Time Hand Positioning Bar (Aligned directly below the keyboard keys) -->
       <div class="piano-hand-guide-bar" id="piano-hand-guide-bar">
         <div class="hand-guide-card hand-guide-lh">
           <div class="hand-guide-card-header">
@@ -336,12 +342,6 @@
           <div class="hand-guide-fingers" id="rh-fingers-container">
             <!-- 5 fingers (1, 2, 3, 4, 5) with note labels -->
           </div>
-        </div>
-      </div>
-
-      <div class="piano-container" id="piano-container">
-        <div class="piano-keys piano-88-keys" id="piano-keys">
-          <!-- Dynamically populated 88 keys: 52 white, 36 black -->
         </div>
       </div>
     </section>

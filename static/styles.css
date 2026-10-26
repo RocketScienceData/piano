@@ -494,9 +494,9 @@ body {
   overflow: hidden;
   position: relative;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  flex: 1 1 180px;
-  min-height: 150px;
-  max-height: 380px;
+  flex: 1 1 240px;
+  min-height: 180px;
+  max-height: 540px;
   display: flex;
   flex-direction: column;
 }
@@ -1453,8 +1453,9 @@ body {
   background: #090e1a;
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  padding: 4px 10px;
-  margin-bottom: 4px;
+  padding: 3px 10px;
+  margin-top: 4px;
+  margin-bottom: 2px;
   gap: 8px;
   flex-shrink: 0;
   user-select: none;
