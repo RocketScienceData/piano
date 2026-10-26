@@ -43,6 +43,7 @@ const I18N = {
       stat_streak: "Reeks",
       state_ready: "GEREED",
       state_playing: "AAN HET SPELEN",
+      state_paused: "GEPAUZEERD",
       state_demo: "DEMO VOORSPEEL",
       state_completed: "VOLTOOID! 🎉",
       stat_progress_fmt: "Noot {cur} / {total}",
@@ -171,7 +172,9 @@ const I18N = {
       finger_word: "Vinger",
       sheet_vector_toggle: "🎼 Dynamische Notenbalk (Vector)",
       sheet_pdf_toggle: "📄 PDF Scan",
-      sheet_pdf_btn: "📄 Oefening PDF"
+      sheet_pdf_btn: "📄 Oefening PDF",
+      lesson_word: "Les",
+      btn_resume: "Hervat"
     },
 
     en: {
@@ -210,6 +213,7 @@ const I18N = {
       stat_streak: "Streak",
       state_ready: "READY",
       state_playing: "PLAYING",
+      state_paused: "PAUSED",
       state_demo: "DEMO PREVIEW",
       state_completed: "COMPLETED! 🎉",
       stat_progress_fmt: "Note {cur} / {total}",
@@ -338,7 +342,9 @@ const I18N = {
       finger_word: "Finger",
       sheet_vector_toggle: "🎼 Dynamic Vector Score",
       sheet_pdf_toggle: "📄 PDF Scan",
-      sheet_pdf_btn: "📄 Exercise PDF"
+      sheet_pdf_btn: "📄 Exercise PDF",
+      lesson_word: "Lesson",
+      btn_resume: "Resume"
     },
 
     de: {
@@ -377,6 +383,7 @@ const I18N = {
       stat_streak: "Serie",
       state_ready: "BEREIT",
       state_playing: "AM SPIELEN",
+      state_paused: "PAUSIERT",
       state_demo: "DEMO-VORSPIEL",
       state_completed: "FERTIG! 🎉",
       stat_progress_fmt: "Note {cur} / {total}",
@@ -505,7 +512,9 @@ const I18N = {
       finger_word: "Finger",
       sheet_vector_toggle: "🎼 Dynamische Vektornoten",
       sheet_pdf_toggle: "📄 PDF Scan",
-      sheet_pdf_btn: "📄 Übung PDF"
+      sheet_pdf_btn: "📄 Übung PDF",
+      lesson_word: "Lektion",
+      btn_resume: "Fortsetzen"
     },
 
     fr: {
@@ -544,6 +553,7 @@ const I18N = {
       stat_streak: "Série",
       state_ready: "PRÊT",
       state_playing: "EN LECTURE",
+      state_paused: "EN PAUSE",
       state_demo: "DÉMONSTRATION",
       state_completed: "TERMINÉ ! 🎉",
       stat_progress_fmt: "Note {cur} / {total}",
@@ -672,7 +682,9 @@ const I18N = {
       finger_word: "Doigt",
       sheet_vector_toggle: "🎼 Partition dynamique (Vector)",
       sheet_pdf_toggle: "📄 Scan PDF",
-      sheet_pdf_btn: "📄 Exercice PDF"
+      sheet_pdf_btn: "📄 Exercice PDF",
+      lesson_word: "Leçon",
+      btn_resume: "Reprendre"
     },
 
     es: {
@@ -711,6 +723,7 @@ const I18N = {
       stat_streak: "Racha",
       state_ready: "LISTO",
       state_playing: "TOCANDO",
+      state_paused: "PAUSADO",
       state_demo: "DEMOSTRACIÓN",
       state_completed: "¡COMPLETADO! 🎉",
       stat_progress_fmt: "Nota {cur} / {total}",
@@ -839,7 +852,9 @@ const I18N = {
       finger_word: "Dedo",
       sheet_vector_toggle: "🎼 Partitura dinámica (Vector)",
       sheet_pdf_toggle: "📄 Escaneo PDF",
-      sheet_pdf_btn: "📄 Ejercicio PDF"
+      sheet_pdf_btn: "📄 Ejercicio PDF",
+      lesson_word: "Lección",
+      btn_resume: "Reanudar"
     }
   },
 

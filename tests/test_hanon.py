@@ -487,6 +487,7 @@ class TestI18nAndSettingsAndLightMode(unittest.TestCase):
         app_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "app.js")
         with open(app_path, "r", encoding="utf-8") as f:
             js = f.read()
+        self.assertIn("getLessonDisplayTitle", js)
         self.assertIn("updateAudioSourceSelectLabels", js)
         self.assertIn("exercise_badge_fmt", js)
         self.assertIn("exercise_name_fmt", js)
@@ -495,6 +496,13 @@ class TestI18nAndSettingsAndLightMode(unittest.TestCase):
         self.assertIn("posture_bass", js)
         self.assertIn("feedback_great", js)
         self.assertIn("feedback_mistake", js)
+
+        i18n_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "i18n.js")
+        with open(i18n_path, "r", encoding="utf-8") as f:
+            i18n = f.read()
+        self.assertIn("lesson_word", i18n)
+        self.assertIn("btn_resume", i18n)
+        self.assertIn("state_paused", i18n)
 
     def test_modals_and_sheet_have_i18n_attributes(self):
         index_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "index.html")

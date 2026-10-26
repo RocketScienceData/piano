@@ -100,6 +100,49 @@ function getFingerName(fingerNum) {
   }
 }
 
+// Dynamic Lesson Title localization (supports all 60 exercises & languages)
+function getLessonDisplayTitle(l, idx) {
+  if (!l) return "";
+  let step = (idx !== undefined) ? (idx + 1) : 1;
+  if (l.id) {
+    if (l.id.includes('-')) {
+      const parts = l.id.split('-');
+      const parsed = parseInt(parts[parts.length - 1], 10);
+      if (!isNaN(parsed) && parsed >= 1 && parsed <= 6) {
+        step = parsed;
+      }
+    } else {
+      const match = l.id.match(/\d+$/);
+      if (match) {
+        const parsed = parseInt(match[0], 10);
+        if (!isNaN(parsed) && parsed >= 1 && parsed <= 6) {
+          step = parsed;
+        }
+      }
+    }
+  }
+
+  const curLang = (window.I18N && window.I18N.currentLang) || "nl";
+  if (curLang === "nl") {
+    return l.title || `Les ${step}: Motief & Vingerzetting`;
+  }
+
+  if (window.I18N) {
+    const key = `lesson_${step}_title`;
+    const trans = window.I18N.t(key);
+    if (trans && trans !== key) {
+      return trans;
+    }
+  }
+
+  const lessonWord = (window.I18N && window.I18N.t("lesson_word")) || "Lesson";
+  if (l.title && l.title.startsWith("Les ")) {
+    return l.title.replace(/^Les (\d+)/, `${lessonWord} $1`);
+  }
+
+  return `${lessonWord} ${step}`;
+}
+
 // Initialize Application
 document.addEventListener("DOMContentLoaded", async () => {
   setupTheme();
@@ -685,10 +728,7 @@ function populateLessonSelect() {
   state.lessons.forEach((l, idx) => {
     const opt = document.createElement("option");
     opt.value = l.id;
-    const lesNum = l.id ? parseInt(l.id.replace(/\D/g, ''), 10) : (idx + 1);
-    const title = (window.I18N && lesNum >= 1 && lesNum <= 6)
-      ? window.I18N.t(`lesson_${lesNum}_title`)
-      : l.title;
+    const title = getLessonDisplayTitle(l, idx);
     const range = (window.I18N && l.start_measure && l.end_measure)
       ? window.I18N.t("measures_range_fmt", { start: l.start_measure, end: l.end_measure })
       : l.subtitle;
@@ -728,7 +768,7 @@ function loadLesson(lessonId) {
       // Update coach banner tip
       if (lesson.tips && lesson.tips.length > 0) {
         document.getElementById("coach-message").innerHTML = 
-          `<strong>${lesson.title}:</strong> ${lesson.tips[0]}`;
+          `<strong>${getLessonDisplayTitle(lesson)}:</strong> ${lesson.tips[0]}`;
       }
     }
   }
@@ -808,8 +848,8 @@ async function startLesson() {
   state.isPlaying = true;
   state.startTime = Date.now();
   document.getElementById("start-btn-icon").textContent = "⏸️";
-  document.getElementById("start-btn-text").textContent = "Pauze";
-  document.getElementById("coach-state").textContent = "AAN HET SPELEN";
+  document.getElementById("start-btn-text").textContent = (window.I18N && window.I18N.t("btn_pause")) || "Pauze";
+  document.getElementById("coach-state").textContent = (window.I18N && window.I18N.t("state_playing")) || "AAN HET SPELEN";
   document.getElementById("coach-state").style.color = "var(--accent-green)";
   
   updateTargetDisplay();
@@ -832,8 +872,8 @@ function pauseLesson() {
   state.isPlaying = false;
   stopTempoMode();
   document.getElementById("start-btn-icon").textContent = "▶️";
-  document.getElementById("start-btn-text").textContent = "Hervat";
-  document.getElementById("coach-state").textContent = "GEPAUZEERD";
+  document.getElementById("start-btn-text").textContent = (window.I18N && window.I18N.t("btn_resume")) || "Hervat";
+  document.getElementById("coach-state").textContent = (window.I18N && window.I18N.t("state_paused")) || "GEPAUZEERD";
   document.getElementById("coach-state").style.color = "var(--accent-gold)";
 }
 
@@ -2587,10 +2627,7 @@ function renderMainMenu(filter = "all") {
             btnClass = "btn-primary";
           }
 
-          const lesNum = l.id ? parseInt(l.id.replace(/\D/g, ''), 10) : (idx + 1);
-          const lesTitle = (window.I18N && lesNum >= 1 && lesNum <= 6)
-            ? window.I18N.t(`lesson_${lesNum}_title`)
-            : l.title;
+          const lesTitle = getLessonDisplayTitle(l, idx);
           
           const rangeStr = (window.I18N && l.start_measure && l.end_measure)
             ? window.I18N.t("measures_range_fmt", { start: l.start_measure, end: l.end_measure })
