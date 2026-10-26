@@ -25,7 +25,7 @@ class TestHanon20Part1(unittest.TestCase):
             self.assertGreaterEqual(data["total_notes"], 200, f"Ex {num} should have at least 200 notes")
             self.assertEqual(len(data["measures"]), data["total_measures"])
             
-            # Verify measure 1 structure
+            # Verify measure 1 structure & octave alignment
             m1 = data["measures"][0]
             self.assertEqual(m1["measure"], 1)
             self.assertEqual(len(m1["notes"]), 8)
@@ -38,6 +38,13 @@ class TestHanon20Part1(unittest.TestCase):
                 self.assertIn("note", note["lh"])
                 self.assertIn("midi", note["lh"])
                 self.assertIn("finger", note["lh"])
+                # Right Hand is always exactly 1 octave (12 semitones) above Left Hand
+                self.assertEqual(note["rh"]["midi"] - note["lh"]["midi"], 12)
+            
+            # Exercises starting on C start on C3 (48) for RH and C2 (36) for LH in bass clef
+            if num in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 16, 18, 19]:
+                self.assertEqual(m1["notes"][0]["rh"]["midi"], 48)
+                self.assertEqual(m1["notes"][0]["lh"]["midi"], 36)
 
     def test_all_20_exercises_lessons(self):
         for num in range(1, 21):

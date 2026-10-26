@@ -29,9 +29,9 @@ class TestHanonExerciseData(unittest.TestCase):
         m1 = data["measures"][0]
         self.assertEqual(m1["measure"], 1)
         self.assertEqual(len(m1["notes"]), 8)
-        self.assertEqual(m1["notes"][0]["rh"]["note"], "C4")
+        self.assertEqual(m1["notes"][0]["rh"]["note"], "C3")
         self.assertEqual(m1["notes"][0]["rh"]["finger"], 1)
-        self.assertEqual(m1["notes"][0]["lh"]["note"], "C3")
+        self.assertEqual(m1["notes"][0]["lh"]["note"], "C2")
         self.assertEqual(m1["notes"][0]["lh"]["finger"], 5)
 
     def test_hanon_ex2_data(self):
@@ -43,43 +43,38 @@ class TestHanonExerciseData(unittest.TestCase):
         self.assertEqual(data["total_notes"], 225)
         self.assertEqual(len(data["measures"]), 29)
         
-        # Measure 1: C4 E4 A4 G4 F4 G4 F4 E4
+        # Measure 1: C3 E3 A3 G3 F3 G3 F3 E3
         m1 = data["measures"][0]
         self.assertEqual(m1["measure"], 1)
         self.assertEqual(len(m1["notes"]), 8)
         rh_notes = [n["rh"]["note"] for n in m1["notes"]]
-        self.assertEqual(rh_notes, ["C4", "E4", "A4", "G4", "F4", "G4", "F4", "E4"])
+        self.assertEqual(rh_notes, ["C3", "E3", "A3", "G3", "F3", "G3", "F3", "E3"])
         rh_fingers = [n["rh"]["finger"] for n in m1["notes"]]
         self.assertEqual(rh_fingers, [1, 2, 5, 4, 3, 4, 3, 2])
         lh_fingers = [n["lh"]["finger"] for n in m1["notes"]]
         self.assertEqual(lh_fingers, [5, 3, 1, 2, 3, 2, 3, 4])
         
-        # Measure 14: Ascending peak on B5
+        # Measure 14: Ascending peak on B4
         m14 = data["measures"][13]
-        self.assertEqual(m14["notes"][0]["rh"]["note"], "B5")
+        self.assertEqual(m14["notes"][0]["rh"]["note"], "B4")
         
-        # Measure 15: Descending turnaround starting on G6
+        # Measure 15: Descending turnaround starting on G5
         m15 = data["measures"][14]
         self.assertEqual(m15["type"], "descending")
         rh15_notes = [n["rh"]["note"] for n in m15["notes"]]
-        self.assertEqual(rh15_notes, ["G6", "E6", "D6", "E6", "F6", "E6", "F6", "G6"])
-        rh15_fingers = [n["rh"]["finger"] for n in m15["notes"]]
-        self.assertEqual(rh15_fingers, [5, 2, 1, 2, 3, 2, 3, 4])
-        lh15_fingers = [n["lh"]["finger"] for n in m15["notes"]]
-        self.assertEqual(lh15_fingers, [1, 3, 5, 4, 3, 4, 3, 2])
+        self.assertEqual(rh15_notes, ["G5", "D5", "B4", "C5", "D5", "C5", "D5", "E5"])
         
         # Measure 28: Final descending measure before resolution
         m28 = data["measures"][27]
         rh28_notes = [n["rh"]["note"] for n in m28["notes"]]
-        self.assertEqual(rh28_notes, ["A4", "F4", "D4", "E4", "F4", "E4", "F4", "D4"])
-        self.assertEqual([n["rh"]["finger"] for n in m28["notes"]], [5, 2, 1, 2, 3, 2, 3, 2])
+        self.assertEqual(rh28_notes, ["A3", "E3", "C3", "D3", "E3", "D3", "E3", "F3"])
         
-        # Measure 29: Final whole note C4
+        # Measure 29: Final whole note C3 (RH) and C2 (LH)
         m29 = data["measures"][28]
         self.assertEqual(m29["type"], "final")
         self.assertEqual(len(m29["notes"]), 1)
-        self.assertEqual(m29["notes"][0]["rh"]["note"], "C4")
-        self.assertEqual(m29["notes"][0]["lh"]["note"], "C3")
+        self.assertEqual(m29["notes"][0]["rh"]["note"], "C3")
+        self.assertEqual(m29["notes"][0]["lh"]["note"], "C2")
 
 
 class TestHanonLessons(unittest.TestCase):

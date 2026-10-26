@@ -1482,11 +1482,11 @@ function buildHandPlacementGuide() {
     } else if (m.measure === 15) {
       cue = state.currentExerciseId === "ex2" 
         ? "Keerpunt naar dalend! Vinger 3 & 4 linkerhand."
-        : "Keerpunt! Pink op G5/G6, vinger 4 tertsval.";
+        : "Keerpunt! Pink op G5, vinger 4 tertsval.";
     } else if (m.measure === 1) {
       cue = state.currentExerciseId === "ex2"
-        ? "Spreiding 1-2 & 3-4 wip (C4-E4)."
-        : "Spreiding 1-2 (C4-E4), vlakke pols.";
+        ? "Spreiding 1-2 & 3-4 wip (C3-E3)."
+        : "Spreiding 1-2 (C3-E3), vlakke pols.";
     } else if (m.type === "ascending") {
       cue = `Stijgende sequentie maat ${m.measure}.`;
     } else {

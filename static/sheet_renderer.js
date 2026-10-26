@@ -317,18 +317,23 @@
         const rhStep = noteToDiatonicStep(singleNote.rh.note);
         const lhStep = noteToDiatonicStep(singleNote.lh.note);
 
-        const rhY = trebleLine1Y - (rhStep - 2) * (cfg.lineSpacing / 2);
+        const rhStaff = (rhStep < 0) ? "bass" : "treble";
+        const rhY = (rhStaff === "treble")
+          ? trebleLine1Y - (rhStep - 2) * (cfg.lineSpacing / 2)
+          : bassLine1Y - (rhStep + 10) * (cfg.lineSpacing / 2);
         const lhY = bassLine1Y - (lhStep + 10) * (cfg.lineSpacing / 2);
 
-        this.renderLedgerLines(group, cx, rhStep, "treble", trebleLine1Y);
+        this.renderLedgerLines(group, cx, rhStep, rhStaff, rhStaff === "treble" ? trebleLine1Y : bassLine1Y);
         this.renderLedgerLines(group, cx, lhStep, "bass", bassLine1Y);
 
         this.renderNoteHead(group, cx, rhY, singleNote, "rh", true);
         this.renderNoteHead(group, cx, lhY, singleNote, "lh", true);
 
         // Fingering
-        group.appendChild(this.createText(cx, rhY - 14, `${singleNote.rh.finger || 1}`, "fingering-number fingering-rh"));
-        group.appendChild(this.createText(cx, lhY + 20, `${singleNote.lh.finger || 5}`, "fingering-number fingering-lh"));
+        const rhFingY = rhY - 14;
+        const lhFingY = lhY + 20;
+        group.appendChild(this.createText(cx, rhFingY, `${singleNote.rh.finger || 1}`, "fingering-number fingering-rh"));
+        group.appendChild(this.createText(cx, lhFingY, `${singleNote.lh.finger || 5}`, "fingering-number fingering-lh"));
         return;
       }
 
@@ -344,11 +349,9 @@
         const cx = mX + notePad + i * noteSpacing;
         const rhStep = noteToDiatonicStep(n.rh.note);
         const lhStep = noteToDiatonicStep(n.lh.note);
-
-        const rhY = trebleLine1Y - (rhStep - 2) * (cfg.lineSpacing / 2);
         const lhY = bassLine1Y - (lhStep + 10) * (cfg.lineSpacing / 2);
 
-        positions.push({ cx, rhY, lhY, rhStep, lhStep, note: n, index: i });
+        positions.push({ cx, lhY, rhStep, lhStep, note: n, index: i });
       }
 
       // Group into beats: [0..3] and [4..7]
@@ -362,7 +365,22 @@
 
         const stemLen = cfg.stemLength; // 26px
         
-        // RH (treble, stems pointing up)
+        // Determine RH staff for this beat:
+        // In Hanon Part 1, RH begins in the Bass staff (C3). When notes climb above Middle C (C4, step 0),
+        // RH transitions to Treble staff. A beat belongs to Bass if its average step is < 0.
+        const rhAvgStep = beat.reduce((sum, p) => sum + p.rhStep, 0) / beat.length;
+        const rhStaff = (rhAvgStep < 0) ? "bass" : "treble";
+
+        beat.forEach(p => {
+          p.rhStaff = rhStaff;
+          if (rhStaff === "treble") {
+            p.rhY = trebleLine1Y - (p.rhStep - 2) * (cfg.lineSpacing / 2);
+          } else {
+            p.rhY = bassLine1Y - (p.rhStep + 10) * (cfg.lineSpacing / 2);
+          }
+        });
+
+        // RH (stems pointing up)
         const rhY0 = beat[0].rhY;
         const rhY3 = beat[beat.length - 1].rhY;
         const rhRawDiff = rhY3 - rhY0;
@@ -413,7 +431,7 @@
           group.appendChild(this.createLine(p.cx - 5.0, p.lhY, p.cx - 5.0, noteLhBeamY - (cfg.beamThickness + cfg.beamGap), "note-stem", 1.4));
 
           // Ledger lines
-          this.renderLedgerLines(group, p.cx, p.rhStep, "treble", trebleLine1Y);
+          this.renderLedgerLines(group, p.cx, p.rhStep, p.rhStaff, p.rhStaff === "treble" ? trebleLine1Y : bassLine1Y);
           this.renderLedgerLines(group, p.cx, p.lhStep, "bass", bassLine1Y);
 
           // Note heads

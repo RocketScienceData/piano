@@ -126,7 +126,7 @@ def parse_measure_tokens(tokens, is_relative, current_ref):
             octave += quotes_up - quotes_down
             current_ref = (octave, letter)
         else:
-            octave = 4 + quotes_up - quotes_down
+            octave = 3 + quotes_up - quotes_down
             current_ref = (octave, letter)
             
         midi = note_str_to_midi(letter, octave)
@@ -147,24 +147,22 @@ def parse_lily_exercise(num):
     is_lh_rel = lh_rel is not None
     
     if is_rh_rel:
-        if rh_rel == "c":
-            rh_ref = (4, "c")
-        elif rh_rel == "e":
-            rh_ref = (4, "e")
-        else:
-            rh_ref = (4, rh_rel[0])
+        rh_letter = rh_rel.replace("'", "").replace(",", "").lower()
+        rh_quotes_up = rh_rel.count("'")
+        rh_quotes_down = rh_rel.count(",")
+        rh_oct = 3 + rh_quotes_up - rh_quotes_down
+        rh_ref = (rh_oct, rh_letter)
     else:
-        rh_ref = (4, "c")
+        rh_ref = (3, "c")
         
     if is_lh_rel:
-        if lh_rel == "c,":
-            lh_ref = (2, "c")
-        elif lh_rel == "e,":
-            lh_ref = (3, "e")
-        else:
-            lh_ref = (2, lh_rel[0])
+        lh_letter = lh_rel.replace("'", "").replace(",", "").lower()
+        lh_quotes_up = lh_rel.count("'")
+        lh_quotes_down = lh_rel.count(",")
+        lh_oct = 3 + lh_quotes_up - lh_quotes_down
+        lh_ref = (lh_oct, lh_letter)
     else:
-        lh_ref = (3, "c")
+        lh_ref = (2, "c")
         
     rh_lines = rh_block.splitlines()
     lh_lines = lh_block.splitlines()
@@ -311,7 +309,7 @@ def build_exercise_json(num, rh_measures, lh_measures):
 
 def generate_all():
     data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
-    for num in range(3, 21):
+    for num in range(1, 21):
         rh_m, lh_m = parse_lily_exercise(num)
         ex_json = build_exercise_json(num, rh_m, lh_m)
         out_file = os.path.join(data_dir, f"hanon_ex{num}.json")
