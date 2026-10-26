@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupUIEventListeners();
   buildPianoKeys();
   await loadData();
+  updateAudioSourceSelectLabels();
   setupWaveformCanvas();
   window.addEventListener("beforeunload", () => {
     if (state.telemetryQueue && state.telemetryQueue.length > 0) {
@@ -476,13 +477,39 @@ window.onLanguageChanged = function(lang) {
       ? ((window.I18N && window.I18N.t("btn_to_tutor")) || "Naar Oefening")
       : ((window.I18N && window.I18N.t("btn_to_menu")) || "Hoofdmenu");
   }
-  updateTargetDisplay();
+  populateExerciseSelect();
+  populateLessonSelect();
+  updateAudioSourceSelectLabels();
   renderMainMenu();
+  updateTargetDisplay();
   const c4Label = document.querySelector(".white-key.middle-c .key-label");
   if (c4Label) {
     c4Label.textContent = (window.I18N && window.I18N.t("middle_c_key")) || "C4 (Midden)";
   }
+  const currentEx = state.exercises ? state.exercises.find(e => e.id === state.currentExerciseId) : null;
+  const sheetTitle = document.getElementById("sheet-title");
+  if (sheetTitle && currentEx) {
+    const exName = (window.I18N && window.I18N.t("exercise_name_fmt", { num: currentEx.number })) || currentEx.name;
+    sheetTitle.textContent = `🎼 C. L. Hanon - The Virtuoso Pianist • ${exName}`;
+  }
 };
+
+function updateAudioSourceSelectLabels() {
+  const sel = document.getElementById("audio-source-select");
+  if (!sel) return;
+  const options = sel.querySelectorAll("option");
+  options.forEach(opt => {
+    if (opt.value === "browser-mic") {
+      opt.textContent = (window.I18N && window.I18N.t("audio_src_mic")) || "🎙️ Mic";
+    } else if (opt.value === "python-mic") {
+      opt.textContent = (window.I18N && window.I18N.t("audio_src_system")) || "🐍 Systeem";
+    } else if (opt.value === "web-midi") {
+      opt.textContent = (window.I18N && window.I18N.t("audio_src_midi")) || "🎹 MIDI";
+    } else if (opt.value === "virtual") {
+      opt.textContent = (window.I18N && window.I18N.t("audio_src_virtual")) || "💻 Scherm";
+    }
+  });
+}
 
 // Global hook for vector notes click
 window.jumpToMeasureAndNote = function(measureNumber, noteIdx) {
@@ -543,14 +570,15 @@ async function loadData() {
 function populateExerciseSelect() {
   const sel = document.getElementById("exercise-select");
   if (!sel || !state.exercises.length) return;
+  const currentVal = sel.value;
   sel.innerHTML = "";
 
   const groupPart1 = document.createElement("optgroup");
-  groupPart1.label = "Deel 1: Voorbereidende Oefeningen (1 t/m 20)";
+  groupPart1.label = (window.I18N && window.I18N.t("part_group_1")) || "Deel 1: Voorbereidende Oefeningen (1 t/m 20)";
   const groupPart2 = document.createElement("optgroup");
-  groupPart2.label = "Deel 2: Gevorderde Techniek & Toonladders (21 t/m 43)";
+  groupPart2.label = (window.I18N && window.I18N.t("part_group_2")) || "Deel 2: Gevorderde Techniek & Toonladders (21 t/m 43)";
   const groupPart3 = document.createElement("optgroup");
-  groupPart3.label = "Deel 3: Virtuoze Oefeningen (44 t/m 60)";
+  groupPart3.label = (window.I18N && window.I18N.t("part_group_3")) || "Deel 3: Virtuoze Oefeningen (44 t/m 60)";
 
   state.exercises.forEach(ex => {
     const opt = document.createElement("option");
@@ -562,8 +590,9 @@ function populateExerciseSelect() {
       const parts = ex.title.split(":");
       focus = parts.length > 1 ? ` (${parts[1].trim()})` : "";
     }
-    opt.textContent = `🎹 ${ex.name}${focus}`;
-    if (ex.id === state.currentExerciseId) opt.selected = true;
+    const exName = (window.I18N && window.I18N.t("exercise_name_fmt", { num: ex.number })) || ex.name;
+    opt.textContent = `🎹 ${exName}${focus}`;
+    if (ex.id === (currentVal || state.currentExerciseId)) opt.selected = true;
 
     if (ex.number <= 20) {
       groupPart1.appendChild(opt);
@@ -577,6 +606,7 @@ function populateExerciseSelect() {
   if (groupPart1.children.length) sel.appendChild(groupPart1);
   if (groupPart2.children.length) sel.appendChild(groupPart2);
   if (groupPart3.children.length) sel.appendChild(groupPart3);
+  if (currentVal) sel.value = currentVal;
 }
 
 async function switchExercise(exerciseId) {
@@ -614,7 +644,8 @@ async function loadExerciseData(exerciseId) {
     // Update sheet title
     const sheetTitle = document.getElementById("sheet-title");
     if (sheetTitle && currentEx) {
-      sheetTitle.textContent = `🎼 C. L. Hanon - The Virtuoso Pianist • ${currentEx.name}`;
+      const exName = (window.I18N && window.I18N.t("exercise_name_fmt", { num: currentEx.number })) || currentEx.name;
+      sheetTitle.textContent = `🎼 C. L. Hanon - The Virtuoso Pianist • ${exName}`;
     }
     
     // Update PDF link
@@ -649,19 +680,28 @@ async function loadExerciseData(exerciseId) {
 function populateLessonSelect() {
   const sel = document.getElementById("lesson-select");
   if (!sel) return;
+  const currentVal = sel.value;
   sel.innerHTML = "";
   state.lessons.forEach((l, idx) => {
     const opt = document.createElement("option");
     opt.value = l.id;
-    opt.textContent = `${l.title} (${l.subtitle})`;
-    if (idx === 0) opt.selected = true;
+    const lesNum = l.id ? parseInt(l.id.replace(/\D/g, ''), 10) : (idx + 1);
+    const title = (window.I18N && lesNum >= 1 && lesNum <= 6)
+      ? window.I18N.t(`lesson_${lesNum}_title`)
+      : l.title;
+    const range = (window.I18N && l.start_measure && l.end_measure)
+      ? window.I18N.t("measures_range_fmt", { start: l.start_measure, end: l.end_measure })
+      : l.subtitle;
+    opt.textContent = `${title} (${range})`;
+    if (l.id === (currentVal || state.currentLessonId) || idx === 0) opt.selected = true;
     sel.appendChild(opt);
   });
   // Add custom option
   const customOpt = document.createElement("option");
   customOpt.value = "custom";
-  customOpt.textContent = "⚙️ Vrije Selectie (Kies maten)";
+  customOpt.textContent = (window.I18N && window.I18N.t("custom_range_select")) || "⚙️ Vrije Selectie (Kies maten)";
   sel.appendChild(customOpt);
+  if (currentVal) sel.value = currentVal;
 }
 
 // Load a specific lesson
@@ -814,20 +854,23 @@ function updateTargetDisplay() {
   let targetMidi = currentItem.rh.midi;
   let targetFinger = currentItem.rh.finger;
   let handIcon = "🤚";
-  let handName = "Rechterhand";
+  let handName = (window.I18N && window.I18N.t("hand_rh_full")) || "Rechterhand";
+  const measureWord = (window.I18N && window.I18N.t("measure_word")) || "Maat";
+  const noteWord = (window.I18N && window.I18N.t("note_word")) || "Noot";
+  const fingerWord = (window.I18N && window.I18N.t("finger_word")) || "Vinger";
   
   if (state.currentHand === "lh") {
     targetNote = currentItem.lh.note;
     targetMidi = currentItem.lh.midi;
     targetFinger = currentItem.lh.finger;
     handIcon = "✋";
-    handName = "Linkerhand";
+    handName = (window.I18N && window.I18N.t("hand_lh_full")) || "Linkerhand";
   } else if (state.currentHand === "both") {
     targetNote = `${currentItem.lh.note} (LH) + ${currentItem.rh.note} (RH)`;
     targetMidi = currentItem.rh.midi; // primary check
-    targetFinger = `LH: Vinger ${currentItem.lh.finger} • RH: Vinger ${currentItem.rh.finger}`;
+    targetFinger = `LH: ${fingerWord} ${currentItem.lh.finger} • RH: ${fingerWord} ${currentItem.rh.finger}`;
     handIcon = "🤝";
-    handName = "Beide Handen";
+    handName = (window.I18N && window.I18N.t("hand_both_full")) || "Beide Handen";
   }
   
   // Update HUD
@@ -835,11 +878,13 @@ function updateTargetDisplay() {
   document.getElementById("target-hand-icon").textContent = handIcon;
   document.getElementById("target-finger-desc").textContent = 
     (state.currentHand === "both")
-      ? `${targetFinger} • Maat ${currentItem.measure} (Noot ${currentItem.note_index + 1}/8)`
-      : `Vinger ${getFingerName(targetFinger)} • Maat ${currentItem.measure} (Noot ${currentItem.note_index + 1}/8)`;
+      ? `${targetFinger} • ${measureWord} ${currentItem.measure} (${noteWord} ${currentItem.note_index + 1}/8)`
+      : `${fingerWord} ${getFingerName(targetFinger)} • ${measureWord} ${currentItem.measure} (${noteWord} ${currentItem.note_index + 1}/8)`;
   
   const maxMeasures = state.hanonData ? state.hanonData.total_measures : 30;
-  document.getElementById("sheet-measure-indicator").textContent = `Maat ${currentItem.measure} / ${maxMeasures}`;
+  document.getElementById("sheet-measure-indicator").textContent = 
+    (window.I18N && window.I18N.t("measure_fmt", { cur: currentItem.measure, total: maxMeasures }))
+    || `${measureWord} ${currentItem.measure} / ${maxMeasures}`;
   
   // Update sheet highlighter
   highlightSheetPosition(currentItem);
@@ -1000,28 +1045,31 @@ function updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes) {
     `;
   }).join('');
 
+  const toWord = (window.I18N && window.I18N.t("word_to")) || "t/m";
+  const posFmt = (window.I18N && window.I18N.t("guide_pos_fmt")) || "Positie: {span}";
+
   if (lhPosText) {
     const keys = Object.keys(lhSpanNotes);
     const lhMin = keys[0] || (currentItem.lh ? currentItem.lh.note : "C2");
     const lhMax = keys[keys.length - 1] || (currentItem.lh ? currentItem.lh.note : "A2");
-    lhPosText.textContent = `Positie: ${lhMin} t/m ${lhMax}`;
+    lhPosText.textContent = posFmt.replace("{span}", `${lhMin} ${toWord} ${lhMax}`);
   }
   if (rhPosText) {
     const keys = Object.keys(rhSpanNotes);
     const rhMin = keys[0] || (currentItem.rh ? currentItem.rh.note : "C3");
     const rhMax = keys[keys.length - 1] || (currentItem.rh ? currentItem.rh.note : "A3");
-    rhPosText.textContent = `Positie: ${rhMin} t/m ${rhMax}`;
+    rhPosText.textContent = posFmt.replace("{span}", `${rhMin} ${toWord} ${rhMax}`);
   }
 
   if (postureHint) {
     if (currentItem.measure === 1) {
-      postureHint.textContent = "Beide handen in basbalk • 1 octaaf parallel • Vlakke polsen";
+      postureHint.textContent = (window.I18N && window.I18N.t("posture_bass")) || "Beide handen in basbalk • 1 octaaf parallel • Vlakke polsen";
     } else if (currentItem.measure === 6) {
-      postureHint.textContent = "Rechterhand kruist naar vioolsleutel! Linkerhand blijft in bas";
+      postureHint.textContent = (window.I18N && window.I18N.t("posture_cross")) || "Rechterhand kruist naar vioolsleutel! Linkerhand blijft in bas";
     } else if (currentItem.measure === 15) {
-      postureHint.textContent = "Keerpunt naar de afdaling! Vinger 5 & 4 sprong omlaag";
+      postureHint.textContent = (window.I18N && window.I18N.t("posture_turn")) || "Keerpunt naar de afdaling! Vinger 5 & 4 sprong omlaag";
     } else {
-      postureHint.textContent = "Ontspannen polsen • Til elke vinger hoog op als een hamertje";
+      postureHint.textContent = (window.I18N && window.I18N.t("posture_relaxed")) || "Ontspannen polsen • Til elke vinger hoog op als een hamertje";
     }
   }
 }
@@ -1355,8 +1403,14 @@ function handlePlayedNote(playedNoteName, hz = 0, cents = 0) {
       window.VectorSheetRenderer.flashCorrect(state.activeTarget.measure, state.activeTarget.note_index, state.currentHand);
     }
     
+    const greatStr = (window.I18N && window.I18N.t("feedback_great")) || "Goed zo!";
+    const cleanStr = (window.I18N && window.I18N.t("feedback_clean", {
+      note: playedNoteName,
+      finger: targetFinger
+    })) || `${playedNoteName} vlekkeloos geraakt (Vinger ${targetFinger}).`;
+    
     document.getElementById("coach-message").innerHTML = 
-      `<span style="color: var(--accent-green);">Goed zo!</span> ${playedNoteName} vlekkeloos geraakt (Vinger ${targetFinger}).`;
+      `<span style="color: var(--accent-green);">${greatStr}</span> ${cleanStr}`;
     
     // Advance to next note
     state.currentNoteIndex++;
@@ -1386,8 +1440,15 @@ function handlePlayedNote(playedNoteName, hz = 0, cents = 0) {
       played_note: playedNoteName
     });
     
+    const watchoutStr = (window.I18N && window.I18N.t("feedback_watchout")) || "Let op:";
+    const mistakeStr = (window.I18N && window.I18N.t("feedback_mistake", {
+      played: `<strong>${playedNoteName}</strong>`,
+      target: `<strong>${targetNote}</strong>`,
+      finger: getFingerName(targetFinger)
+    })) || `Je speelde <strong>${playedNoteName}</strong> in plaats van <strong>${targetNote}</strong>. Gebruik vinger ${getFingerName(targetFinger)}!`;
+    
     document.getElementById("coach-message").innerHTML = 
-      `<span style="color: var(--accent-red);">Let op:</span> Je speelde <strong>${playedNoteName}</strong> in plaats van <strong>${targetNote}</strong>. Gebruik vinger ${getFingerName(targetFinger)}!`;
+      `<span style="color: var(--accent-red);">${watchoutStr}</span> ${mistakeStr}`;
     
     updateScoreUI();
     
@@ -1434,7 +1495,9 @@ function updateScoreUI() {
   const queueLen = state.activeNotesQueue ? state.activeNotesQueue.length : 1;
   const pct = Math.min(100, Math.round((state.currentNoteIndex / queueLen) * 100));
   const currentNoteNum = Math.min(queueLen, state.currentNoteIndex + (state.isPlaying ? 1 : 0));
-  document.getElementById("stat-progress").textContent = `Noot ${currentNoteNum} / ${queueLen}`;
+  document.getElementById("stat-progress").textContent = 
+    (window.I18N && window.I18N.t("stat_progress_fmt", { cur: currentNoteNum, total: queueLen }))
+    || `Noot ${currentNoteNum} / ${queueLen}`;
   document.getElementById("lesson-progress-bar").style.width = `${pct}%`;
 }
 
@@ -2170,10 +2233,12 @@ async function openHistoryModal() {
     tbody.innerHTML = "";
     
     if (!history || history.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 20px; color: var(--text-muted);">Nog geen sessies opgeslagen. Speel een les om je voortgang te zien!</td></tr>`;
+      const emptyMsg = (window.I18N && window.I18N.t("history_empty")) || "Nog geen sessies opgeslagen. Speel een les om je voortgang te zien!";
+      tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 20px; color: var(--text-muted);">${emptyMsg}</td></tr>`;
     } else {
+      const langLocale = (window.I18N && window.I18N.currentLang === "en") ? "en-US" : (window.I18N && window.I18N.currentLang === "de") ? "de-DE" : (window.I18N && window.I18N.currentLang === "fr") ? "fr-FR" : (window.I18N && window.I18N.currentLang === "es") ? "es-ES" : "nl-NL";
       history.forEach(item => {
-        const dateStr = item.timestamp ? new Date(item.timestamp).toLocaleString("nl-NL", {
+        const dateStr = item.timestamp ? new Date(item.timestamp).toLocaleString(langLocale, {
           month: "short", day: "numeric", hour: "2-digit", minute: "2-digit"
         }) : "-";
         const exName = item.exercise_id ? `Ex. ${item.exercise_id.replace('ex', '')}` : "Ex. 1";
@@ -2234,19 +2299,21 @@ async function openInsightsModal() {
     // Bottlenecks list
     const bList = document.getElementById("ins-bottlenecks-list");
     bList.innerHTML = "";
+    const mWord = (window.I18N && window.I18N.t("measure_word")) || "Maat";
     if (data.bottlenecks && data.bottlenecks.length > 0) {
       data.bottlenecks.forEach(b => {
         const row = document.createElement("div");
         row.className = "bottleneck-row";
         row.innerHTML = `
-          <span><strong>Maat ${b.measure}</strong> (Knelpunt)</span>
-          <span style="color: var(--accent-red); font-weight: 700;">${b.errors} fouten</span>
-          <span style="color: var(--accent-cyan); font-weight: 600;">${Math.round(b.avg_latency_ms)} ms reactie</span>
+          <span><strong>${mWord} ${b.measure}</strong></span>
+          <span style="color: var(--accent-red); font-weight: 700;">${b.errors} errors</span>
+          <span style="color: var(--accent-cyan); font-weight: 600;">${Math.round(b.avg_latency_ms)} ms</span>
         `;
         bList.appendChild(row);
       });
     } else {
-      bList.innerHTML = `<div style="color: var(--text-muted); font-size: 12px; padding: 6px;">Nog geen significante knelpunten gedetecteerd. Blijf spelen om data te verzamelen!</div>`;
+      const emptyBottlenecks = (window.I18N && window.I18N.t("insights_empty_bottlenecks")) || "Nog geen significante knelpunten gedetecteerd. Blijf spelen om data te verzamelen!";
+      bList.innerHTML = `<div style="color: var(--text-muted); font-size: 12px; padding: 6px;">${emptyBottlenecks}</div>`;
     }
     
     // Recommendations list
@@ -2435,7 +2502,8 @@ function renderMainMenu(filter = "all") {
   }
   if (statStars) statStars.textContent = `${totalStars} ⭐`;
   if (statAcc) statAcc.textContent = `${avgAccuracy}%`;
-  if (statNotes) statNotes.textContent = totalNotesPlayed.toLocaleString("nl-NL");
+  const langLocale = (window.I18N && window.I18N.currentLang === "en") ? "en-US" : (window.I18N && window.I18N.currentLang === "de") ? "de-DE" : (window.I18N && window.I18N.currentLang === "fr") ? "fr-FR" : (window.I18N && window.I18N.currentLang === "es") ? "es-ES" : "nl-NL";
+  if (statNotes) statNotes.textContent = totalNotesPlayed.toLocaleString(langLocale);
 
   // Filter exercises
   let visibleExercises = state.exercises;
@@ -2473,14 +2541,22 @@ function renderMainMenu(filter = "all") {
       focus = ex.subtitle.split("(")[1].replace(")", "");
     }
 
+    const exBadge = (window.I18N && window.I18N.t("exercise_badge_fmt", { num: ex.number })) || `Oefening N°${ex.number}`;
+    const exTitle = (window.I18N && window.I18N.t("exercise_name_fmt", { num: ex.number })) || ex.name;
+    const focusSub = focus
+      ? ((window.I18N && window.I18N.t("finger_focus_fmt", { focus })) || `Vingerfocus: ${focus}`)
+      : (ex.subtitle || "");
+    const progressTxt = (window.I18N && window.I18N.t("lessons_progress_fmt", { done: exCompleted, total: lessons.length, pct: exPct }))
+      || `${exCompleted} / ${lessons.length} lessen (${exPct}%)`;
+
     card.innerHTML = `
       <div class="menu-ex-card-header">
         <div>
-          <span class="menu-ex-badge">Oefening N°${ex.number}</span>
-          <h3 class="menu-ex-title">${ex.name}</h3>
-          <p class="menu-ex-sub">${focus ? `Vingerfocus: ${focus}` : ex.subtitle || ''}</p>
+          <span class="menu-ex-badge">${exBadge}</span>
+          <h3 class="menu-ex-title">${exTitle}</h3>
+          <p class="menu-ex-sub">${focusSub}</p>
         </div>
-        <a href="${ex.pdf_file ? `./${encodeURIComponent(ex.pdf_file)}` : './Exercise%20N%C2%B01%20in%20C.pdf'}" target="_blank" class="badge badge-cyan" title="Open originele partituur PDF">
+        <a href="${ex.pdf_file ? `./${encodeURIComponent(ex.pdf_file)}` : './Exercise%20N%C2%B01%20in%20C.pdf'}" target="_blank" class="badge badge-cyan" title="PDF">
           📄 PDF
         </a>
       </div>
@@ -2489,11 +2565,11 @@ function renderMainMenu(filter = "all") {
         <div class="menu-progress-track">
           <div class="menu-progress-fill" style="width: ${exPct}%;"></div>
         </div>
-        <span class="menu-progress-text">${exCompleted} / ${lessons.length} lessen (${exPct}%)</span>
+        <span class="menu-progress-text">${progressTxt}</span>
       </div>
 
       <div class="menu-lessons-list">
-        ${lessons.map(l => {
+        ${lessons.map((l, idx) => {
           const prog = progressMap[`${ex.id}_${l.id}`];
           const isLCurrent = (isCurrent && l.id === state.currentLessonId);
           let starHtml = (window.I18N && window.I18N.t("not_played")) || "⚪ Niet gespeeld";
@@ -2503,19 +2579,32 @@ function renderMainMenu(filter = "all") {
           if (prog && prog.completed) {
             const starsStr = "⭐".repeat(prog.stars || 3);
             starHtml = `<span class="text-gold">${starsStr}</span> <span class="menu-lesson-accuracy">${prog.best_accuracy}%</span>`;
-            actionLabel = (window.I18N && window.I18N.t("btn_retry_lesson")) || "🔄 Oefen";
+            actionLabel = (window.I18N && window.I18N.t("btn_retry_lesson")) || "🔄 Opnieuw";
             btnClass = "btn-secondary";
           } else if (prog && prog.attempts > 0) {
             starHtml = `<span class="text-red">(${prog.best_accuracy}%)</span>`;
-            actionLabel = (window.I18N && window.I18N.t("btn_start_lesson")) || "▶️ Hervat";
+            actionLabel = (window.I18N && window.I18N.t("btn_start_lesson")) || "▶️ Start";
             btnClass = "btn-primary";
           }
+
+          const lesNum = l.id ? parseInt(l.id.replace(/\D/g, ''), 10) : (idx + 1);
+          const lesTitle = (window.I18N && lesNum >= 1 && lesNum <= 6)
+            ? window.I18N.t(`lesson_${lesNum}_title`)
+            : l.title;
+          
+          const rangeStr = (window.I18N && l.start_measure && l.end_measure)
+            ? window.I18N.t("measures_range_fmt", { start: l.start_measure, end: l.end_measure })
+            : l.subtitle;
+          const notesStr = (window.I18N && window.I18N.t("notes_count_fmt", { count: l.total_notes }))
+            || `${l.total_notes} noten`;
+          const bpmStr = (window.I18N && window.I18N.t("recommended_bpm_fmt", { bpm: l.recommended_bpm }))
+            || `Aanbevolen ${l.recommended_bpm} BPM`;
 
           return `
             <div class="menu-lesson-row ${isLCurrent ? 'active-lesson' : ''}" data-ex="${ex.id}" data-lesson="${l.id}">
               <div class="menu-lesson-meta">
-                <span class="menu-lesson-name">${l.title}</span>
-                <span class="menu-lesson-details">${l.subtitle} • ${l.total_notes} noten • Aanbevolen ${l.recommended_bpm} BPM</span>
+                <span class="menu-lesson-name">${lesTitle}</span>
+                <span class="menu-lesson-details">${rangeStr} • ${notesStr} • ${bpmStr}</span>
               </div>
               <div class="menu-lesson-right">
                 <span class="menu-lesson-stars">${starHtml}</span>

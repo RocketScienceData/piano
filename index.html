@@ -108,7 +108,7 @@
           <canvas id="wave-canvas" width="60" height="18"></canvas>
         </div>
         <div class="mic-sens-inline" title="Ruisdrempel">
-          <label for="mic-sensitivity" class="control-label-micro">Drempel</label>
+          <label for="mic-sensitivity" class="control-label-micro" data-i18n="threshold">Drempel</label>
           <input type="range" id="mic-sensitivity" min="1" max="50" value="12">
         </div>
         <select id="audio-source-select" class="select-micro" title="Selecteer invoerbron">
@@ -278,14 +278,14 @@
       <div class="sheet-header">
         <div class="sheet-header-left">
           <span id="sheet-title">🎼 C. L. Hanon - The Virtuoso Pianist • Oefening N°1 in C</span>
-          <a id="sheet-pdf-link" href="./Exercise%20N%C2%B01%20in%20C.pdf" target="_blank" class="badge badge-cyan" title="Open PDF van deze oefening">
+          <a id="sheet-pdf-link" href="./Exercise%20N%C2%B01%20in%20C.pdf" target="_blank" class="badge badge-cyan" title="Open PDF van deze oefening" data-i18n="sheet_pdf_btn">
             📄 Oefening PDF
           </a>
           <div class="sheet-view-toggle btn-group-micro" id="sheet-view-toggle">
-            <button type="button" class="active" id="btn-view-vector" data-view="vector" title="Dynamische vector notenbalk (haarscherp, interactief)">
+            <button type="button" class="active" id="btn-view-vector" data-view="vector" title="Dynamische vector notenbalk (haarscherp, interactief)" data-i18n="sheet_vector_toggle">
               🎼 Dynamische Notenbalk (Vector)
             </button>
-            <button type="button" id="btn-view-pdf" data-view="pdf" title="Originele PDF scan">
+            <button type="button" id="btn-view-pdf" data-view="pdf" title="Originele PDF scan" data-i18n="sheet_pdf_toggle">
               📄 PDF Scan
             </button>
           </div>
@@ -379,22 +379,22 @@
   <div class="modal-backdrop" id="score-modal">
     <div class="modal-box">
       <div class="modal-stars" id="modal-stars">⭐️⭐️⭐️⭐️⭐️</div>
-      <h2 class="modal-title" id="modal-title">Les Voltooid!</h2>
-      <p class="modal-subtitle" id="modal-subtitle">
+      <h2 class="modal-title" id="modal-title" data-i18n="modal_lesson_complete">Les Voltooid!</h2>
+      <p class="modal-subtitle" id="modal-subtitle" data-i18n="modal_lesson_subtitle">
         Geweldige prestatie op de Hanon methode
       </p>
 
       <div class="modal-stats">
         <div class="modal-stat-card">
-          <div class="modal-stat-label">GOED</div>
+          <div class="modal-stat-label" data-i18n="stat_correct">GOED</div>
           <div class="modal-stat-val text-green" id="modal-stat-correct">0</div>
         </div>
         <div class="modal-stat-card">
-          <div class="modal-stat-label">FOUT</div>
+          <div class="modal-stat-label" data-i18n="stat_wrong">FOUT</div>
           <div class="modal-stat-val text-red" id="modal-stat-wrong">0</div>
         </div>
         <div class="modal-stat-card">
-          <div class="modal-stat-label">SCORE</div>
+          <div class="modal-stat-label" data-i18n="stat_score">SCORE</div>
           <div class="modal-stat-val text-gold" id="modal-stat-accuracy">100%</div>
         </div>
       </div>
@@ -404,10 +404,10 @@
       </div>
 
       <div class="modal-actions">
-        <button id="modal-btn-retry" class="btn btn-secondary">🔄 Opnieuw Proberen</button>
-        <button id="modal-btn-next" class="btn btn-primary">Volgende Les ▶️</button>
-        <button id="modal-btn-menu" class="btn btn-outline">🏠 Naar Hoofdmenu</button>
-        <button id="modal-btn-close" class="btn btn-outline">Sluiten</button>
+        <button id="modal-btn-retry" class="btn btn-secondary" data-i18n="modal_btn_retry">🔄 Opnieuw Proberen</button>
+        <button id="modal-btn-next" class="btn btn-primary" data-i18n="modal_btn_next">Volgende Les ▶️</button>
+        <button id="modal-btn-menu" class="btn btn-outline" data-i18n="modal_btn_menu">🏠 Naar Hoofdmenu</button>
+        <button id="modal-btn-close" class="btn btn-outline" data-i18n="modal_btn_close">Sluiten</button>
       </div>
     </div>
   </div>
@@ -415,8 +415,8 @@
   <!-- History Modal -->
   <div class="modal-backdrop" id="history-modal">
     <div class="modal-box modal-box-wide">
-      <h2 class="modal-title">📊 Jouw Hanon Voortgang</h2>
-      <p class="modal-subtitle">
+      <h2 class="modal-title" data-i18n="history_title">📊 Jouw Hanon Voortgang</h2>
+      <p class="modal-subtitle" data-i18n="history_subtitle">
         Overzicht van gespeelde sessies en verbeteringen
       </p>
 
@@ -424,12 +424,12 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th>Datum &amp; Tijd</th>
-              <th>Oefening</th>
-              <th>Les</th>
-              <th>Hand</th>
-              <th>Goed / Fout</th>
-              <th>Score</th>
+              <th data-i18n="history_col_date">Datum &amp; Tijd</th>
+              <th data-i18n="history_col_exercise">Oefening</th>
+              <th data-i18n="history_col_lesson">Les</th>
+              <th data-i18n="history_col_hand">Hand</th>
+              <th data-i18n="history_col_score">Goed / Fout</th>
+              <th data-i18n="history_col_acc">Score</th>
             </tr>
           </thead>
           <tbody id="history-table-body">
@@ -439,7 +439,7 @@
       </div>
 
       <div class="modal-actions">
-        <button id="history-btn-close" class="btn btn-primary">Sluiten</button>
+        <button id="history-btn-close" class="btn btn-primary" data-i18n="modal_btn_close">Sluiten</button>
       </div>
     </div>
   </div>
@@ -447,46 +447,46 @@
   <!-- Course Telemetry & Improvement Insights Modal -->
   <div class="modal-backdrop" id="insights-modal">
     <div class="modal-box modal-box-wide">
-      <h2 class="modal-title">📈 Cursusinzichten &amp; Verbeteranalyse</h2>
-      <p class="modal-subtitle">
+      <h2 class="modal-title" data-i18n="insights_title">📈 Cursusinzichten &amp; Verbeteranalyse</h2>
+      <p class="modal-subtitle" data-i18n="insights_subtitle">
         Pedagogische telemetrie voor het continu verbeteren van lesopbouw en vingerbeheersing
       </p>
 
       <div class="insights-summary-grid">
         <div class="insight-metric-card">
-          <div class="metric-label">TOTAAL NOTEN</div>
+          <div class="metric-label" data-i18n="insights_tot_notes">TOTAAL NOTEN</div>
           <div class="metric-val" id="ins-total-notes">--</div>
         </div>
         <div class="insight-metric-card">
-          <div class="metric-label">GEM. ACCURATESSE</div>
+          <div class="metric-label" data-i18n="insights_avg_acc">GEM. ACCURATESSE</div>
           <div class="metric-val text-green" id="ins-avg-acc">--</div>
         </div>
         <div class="insight-metric-card">
-          <div class="metric-label">REACTIETIJD</div>
+          <div class="metric-label" data-i18n="insights_latency">REACTIETIJD</div>
           <div class="metric-val text-cyan" id="ins-avg-latency">-- ms</div>
         </div>
         <div class="insight-metric-card">
-          <div class="metric-label">AARZELING / PAUZE</div>
+          <div class="metric-label" data-i18n="insights_hesitation">AARZELING / PAUZE</div>
           <div class="metric-val text-gold" id="ins-hesitation">--</div>
         </div>
       </div>
 
       <div class="insights-section">
-        <h3 class="insights-section-title">🎯 Knelpunt Maten in de Oefening</h3>
+        <h3 class="insights-section-title" data-i18n="insights_bottlenecks">🎯 Knelpunt Maten in de Oefening</h3>
         <div id="ins-bottlenecks-list" class="bottlenecks-list">
           <!-- Dynamically populated -->
         </div>
       </div>
 
       <div class="insights-section">
-        <h3 class="insights-section-title">💡 Pedagogische Aanbevelingen voor Lesverbetering</h3>
+        <h3 class="insights-section-title" data-i18n="insights_recs">💡 Pedagogische Aanbevelingen voor Lesverbetering</h3>
         <div id="ins-recommendations-list" class="recommendations-list">
           <!-- Dynamically populated -->
         </div>
       </div>
 
       <div class="modal-actions">
-        <button id="insights-btn-close" class="btn btn-primary">Sluiten</button>
+        <button id="insights-btn-close" class="btn btn-primary" data-i18n="modal_btn_close">Sluiten</button>
       </div>
     </div>
   </div>

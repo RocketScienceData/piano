@@ -483,6 +483,30 @@ class TestI18nAndSettingsAndLightMode(unittest.TestCase):
         self.assertIn('.drawer-overlay', css)
         self.assertIn('.app-toast', css)
 
+    def test_dynamic_translations_in_app_js(self):
+        app_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "app.js")
+        with open(app_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("updateAudioSourceSelectLabels", js)
+        self.assertIn("exercise_badge_fmt", js)
+        self.assertIn("exercise_name_fmt", js)
+        self.assertIn("lessons_progress_fmt", js)
+        self.assertIn("measures_range_fmt", js)
+        self.assertIn("posture_bass", js)
+        self.assertIn("feedback_great", js)
+        self.assertIn("feedback_mistake", js)
+
+    def test_modals_and_sheet_have_i18n_attributes(self):
+        index_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "index.html")
+        with open(index_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        self.assertIn('data-i18n="modal_lesson_complete"', html)
+        self.assertIn('data-i18n="history_title"', html)
+        self.assertIn('data-i18n="insights_title"', html)
+        self.assertIn('data-i18n="sheet_vector_toggle"', html)
+        self.assertIn('data-i18n="sheet_pdf_toggle"', html)
+        self.assertIn('data-i18n="threshold"', html)
+
 
 if __name__ == "__main__":
     unittest.main()
