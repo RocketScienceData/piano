@@ -34,7 +34,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
 
 EXERCISE_DATA: Dict[str, Any] = {}
-for i in range(1, 21):
+for i in range(1, 61):
     ex_file = os.path.join(DATA_DIR, f"hanon_ex{i}.json")
     if os.path.exists(ex_file):
         with open(ex_file, "r") as f:
@@ -102,6 +102,15 @@ def get_single_hanon_data(exercise_id: str):
 @app.get("/api/lessons")
 def get_lessons(exercise: str = Query("ex1")):
     return JSONResponse(content=get_exercise_lessons(exercise))
+
+@app.get("/api/lessons/all")
+def get_all_lessons_map():
+    lessons_path = os.path.join(DATA_DIR, "all_lessons.json")
+    if os.path.exists(lessons_path):
+        with open(lessons_path, "r", encoding="utf-8") as f:
+            return JSONResponse(content=json.load(f))
+    from core.lessons import ALL_LESSONS_MAP
+    return JSONResponse(content=ALL_LESSONS_MAP)
 
 @app.get("/api/lessons/{lesson_id}")
 def get_single_lesson(lesson_id: str, exercise: Optional[str] = None):

@@ -270,7 +270,7 @@ async function safeFetchJson(apiUrl, staticFallbackUrl) {
 // Load exercises & initial Hanon data
 async function loadData() {
   try {
-    let exercises = await safeFetchJson("/api/exercises", "./data/exercises.json");
+    let exercises = await safeFetchJson("/api/exercises?all=true", "./data/exercises.json");
     if (!exercises || exercises.length === 0) {
       exercises = await safeFetchJson("./data/exercises.json");
     }
@@ -298,6 +298,14 @@ function populateExerciseSelect() {
   const sel = document.getElementById("exercise-select");
   if (!sel || !state.exercises.length) return;
   sel.innerHTML = "";
+
+  const groupPart1 = document.createElement("optgroup");
+  groupPart1.label = "Deel 1: Voorbereidende Oefeningen (1 t/m 20)";
+  const groupPart2 = document.createElement("optgroup");
+  groupPart2.label = "Deel 2: Gevorderde Techniek & Toonladders (21 t/m 43)";
+  const groupPart3 = document.createElement("optgroup");
+  groupPart3.label = "Deel 3: Virtuoze Oefeningen (44 t/m 60)";
+
   state.exercises.forEach(ex => {
     const opt = document.createElement("option");
     opt.value = ex.id;
@@ -310,8 +318,19 @@ function populateExerciseSelect() {
     }
     opt.textContent = `🎹 ${ex.name}${focus}`;
     if (ex.id === state.currentExerciseId) opt.selected = true;
-    sel.appendChild(opt);
+
+    if (ex.number <= 20) {
+      groupPart1.appendChild(opt);
+    } else if (ex.number <= 43) {
+      groupPart2.appendChild(opt);
+    } else {
+      groupPart3.appendChild(opt);
+    }
   });
+
+  if (groupPart1.children.length) sel.appendChild(groupPart1);
+  if (groupPart2.children.length) sel.appendChild(groupPart2);
+  if (groupPart3.children.length) sel.appendChild(groupPart3);
 }
 
 async function switchExercise(exerciseId) {
@@ -2045,7 +2064,7 @@ function renderMainMenu(filter = "all") {
   const statAcc = document.getElementById("menu-stat-accuracy");
   const statNotes = document.getElementById("menu-stat-notes");
 
-  if (statCompleted) statCompleted.textContent = `${completedCount} / ${totalLessonsCount || 120}`;
+  if (statCompleted) statCompleted.textContent = `${completedCount} / ${totalLessonsCount || 360}`;
   if (statCompletedBar) {
     const pct = totalLessonsCount > 0 ? Math.round((completedCount / totalLessonsCount) * 100) : 0;
     statCompletedBar.style.width = `${pct}%`;
@@ -2057,9 +2076,11 @@ function renderMainMenu(filter = "all") {
   // Filter exercises
   let visibleExercises = state.exercises;
   if (filter === "part1") {
-    visibleExercises = state.exercises.filter(e => e.number <= 10);
+    visibleExercises = state.exercises.filter(e => e.number <= 20);
   } else if (filter === "part2") {
-    visibleExercises = state.exercises.filter(e => e.number >= 11);
+    visibleExercises = state.exercises.filter(e => e.number >= 21 && e.number <= 43);
+  } else if (filter === "part3") {
+    visibleExercises = state.exercises.filter(e => e.number >= 44 && e.number <= 60);
   } else if (filter === "started") {
     visibleExercises = state.exercises.filter(e => {
       const lessons = allLessons[e.id] || [];

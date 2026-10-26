@@ -203,44 +203,41 @@ LESSONS_EX2 = [
     }
 ]
 
-EXERCISE_METADATA = [
-    (1, "Oefening N°1 in C", "Hanon Oefening 1: De Hanon Sprong", "Voorbereidende oefening voor soepelheid, onafhankelijkheid en gelijkmatigheid (Vingers 1-2 & 4-5)", 30, 233, "Exercise N°1 in C.pdf"),
-    (2, "Oefening N°2 in C", "Hanon Oefening 2: Vingeronafhankelijkheid (3-4)", "Specifieke versterking voor de 3e en 4e vinger - hef de vingers hoog en gelijkmatig op", 29, 225, "Exercise N°2 in C.pdf"),
-    (3, "Oefening N°3 in C", "Hanon Oefening 3: Vingeronafhankelijkheid (2-3-4)", "Vloeiende gelijkmatigheid en beheersing van vingers 2, 3 en 4", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (4, "Oefening N°4 in C", "Hanon Oefening 4: Zwakke Vingers Focus (3-4-5)", "Speciale training voor de fysiologisch zwakkere vingers 3, 4 en 5", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (5, "Oefening N°5 in C", "Hanon Oefening 5: Trillvoorbereiding & Hoge Heffing", "Alle 5 vingers - til de vingers hoog op als kleine hamertjes", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (6, "Oefening N°6 in C", "Hanon Oefening 6: Pinkversterking (Vinger 5)", "Versterking en gelijkmatige aanslag van de 5e vinger (pink)", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (7, "Oefening N°7 in C", "Hanon Oefening 7: Agiliteit Vingers 3-4-5", "Oefening van het hoogste belang voor de 3e, 4e en 5e vinger", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (8, "Oefening N°8 in C", "Hanon Oefening 8: Volledige Handbalans (1 t/m 5)", "Gelijkmatige heffing en klankkracht over alle vijf vingers", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (9, "Oefening N°9 in C", "Hanon Oefening 9: Vingerspreiding & Tertsensprong", "Uitbreiding van de spanwijdte tussen duim en pink", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (10, "Oefening N°10 in C", "Hanon Oefening 10: Trilltraining (3-4 & 4-5)", "Voorbereiding op de virtuoze trill tussen aangrenzende vingers", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (11, "Oefening N°11 in C", "Hanon Oefening 11: Dubbele Tertsen & Vingerontkoppeling", "Snelheid en flexibiliteit in gecombineerde intervallen", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (12, "Oefening N°12 in C", "Hanon Oefening 12: Flexibiliteit Duim & Pink (1-5)", "Zelfstandigheid van de buitenvingers met soepele pols", 30, 233, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (13, "Oefening N°13 in C", "Hanon Oefening 13: Soepelheid & Boogbeweging (3-4-5)", "Vloeiende vingerwisseling en ontspanning in de onderarm", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (14, "Oefening N°14 in C", "Hanon Oefening 14: Trilloefening Vingers 3 en 4", "Geavanceerde onafhankelijkheidstraining voor vingers 3 en 4", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (15, "Oefening N°15 in C", "Hanon Oefening 15: Spreiding 1-2 en 4-5", "Gelijkmatige extensie tussen duim-wijsvinger en ringvinger-pink", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (16, "Oefening N°16 in C", "Hanon Oefening 16: Tertsensprong & Vrijmaking Pink", "Rotatiebeweging van de pols en actieve pinkaanslag", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (17, "Oefening N°17 in C", "Hanon Oefening 17: Rotatie & Uitbreiding Vingers 1-5", "Volledige mobiliteit van het handgewricht", 28, 217, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (18, "Oefening N°18 in C", "Hanon Oefening 18: Snelle Vingerwisseling 1 t/m 5", "Gelijkmatige aanslag over het gehele register", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (19, "Oefening N°19 in C", "Hanon Oefening 19: Kracht & Dynamiek", "Krachtige, heldere toonvorming vanuit de vingertoppen", 29, 225, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-    (20, "Oefening N°20 in C", "Hanon Oefening 20: Meesterproef Deel 1 (Virtuoos)", "Bekroning van de voorbereidende oefeningen voor ultieme soepelheid", 31, 242, "IMSLP91547-PMLP03129-Hanon_Final.pdf"),
-]
+import os
+import json
 
-EXERCISES = [
-    {
-        "id": f"ex{num}",
-        "number": num,
-        "name": name,
-        "title": title,
-        "subtitle": subtitle,
-        "sheet_image": f"/static/sheet_ex{num}.png" if num <= 2 else "/static/sheet_ex1.png",
-        "pdf_file": pdf,
-        "total_measures": total_m,
-        "total_notes": total_n,
-        "default_bpm": 60
-    }
-    for num, name, title, subtitle, total_m, total_n, pdf in EXERCISE_METADATA
-]
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+_exercises_file = os.path.join(DATA_DIR, "exercises.json")
+_all_lessons_file = os.path.join(DATA_DIR, "all_lessons.json")
+
+if os.path.exists(_exercises_file):
+    with open(_exercises_file, "r", encoding="utf-8") as f:
+        EXERCISES = json.load(f)
+    EXERCISE_METADATA = [
+        (e["number"], e["name"], e["title"], e["subtitle"], e["total_measures"], e["total_notes"], e.get("pdf_file", "IMSLP91547-PMLP03129-Hanon_Final.pdf"))
+        for e in EXERCISES
+    ]
+else:
+    EXERCISE_METADATA = [
+        (1, "Oefening N°1 in C", "Hanon Oefening 1: De Hanon Sprong", "Voorbereidende oefening voor soepelheid, onafhankelijkheid en gelijkmatigheid (Vingers 1-2 & 4-5)", 30, 233, "Exercise N°1 in C.pdf"),
+        (2, "Oefening N°2 in C", "Hanon Oefening 2: Vingeronafhankelijkheid (3-4)", "Specifieke versterking voor de 3e en 4e vinger - hef de vingers hoog en gelijkmatig op", 29, 225, "Exercise N°2 in C.pdf"),
+    ]
+    EXERCISES = [
+        {
+            "id": f"ex{num}",
+            "number": num,
+            "name": name,
+            "title": title,
+            "subtitle": subtitle,
+            "part": 1 if num <= 20 else (2 if num <= 43 else 3),
+            "sheet_image": f"/static/sheet_ex{num}.png" if num <= 2 else "/static/sheet_ex1.png",
+            "pdf_file": pdf,
+            "total_measures": total_m,
+            "total_notes": total_n,
+            "default_bpm": 60
+        }
+        for num, name, title, subtitle, total_m, total_n, pdf in EXERCISE_METADATA
+    ]
 
 def _generate_lessons_for_exercise(ex_meta: tuple) -> List[Dict[str, Any]]:
     num, name, title, subtitle, total_m, total_n, _ = ex_meta
@@ -344,16 +341,19 @@ def _generate_lessons_for_exercise(ex_meta: tuple) -> List[Dict[str, Any]]:
         }
     ]
 
-ALL_LESSONS_MAP: Dict[str, List[Dict[str, Any]]] = {
-    "ex1": LESSONS_EX1,
-    "ex2": LESSONS_EX2
-}
-
-for meta in EXERCISE_METADATA:
-    num = meta[0]
-    ex_id = f"ex{num}"
-    if ex_id not in ALL_LESSONS_MAP:
-        ALL_LESSONS_MAP[ex_id] = _generate_lessons_for_exercise(meta)
+if os.path.exists(_all_lessons_file):
+    with open(_all_lessons_file, "r", encoding="utf-8") as f:
+        ALL_LESSONS_MAP = json.load(f)
+else:
+    ALL_LESSONS_MAP = {
+        "ex1": LESSONS_EX1,
+        "ex2": LESSONS_EX2
+    }
+    for meta in EXERCISE_METADATA:
+        num = meta[0]
+        ex_id = f"ex{num}"
+        if ex_id not in ALL_LESSONS_MAP:
+            ALL_LESSONS_MAP[ex_id] = _generate_lessons_for_exercise(meta)
 
 LESSONS: List[Dict[str, Any]] = []
 for ex_id, l_list in ALL_LESSONS_MAP.items():
@@ -366,8 +366,14 @@ def get_exercise_lessons(exercise_id: str = "ex1") -> List[Dict[str, Any]]:
     return ALL_LESSONS_MAP.get(exercise_id, LESSONS_EX1)
 
 def get_lesson(lesson_id: str, exercise_id: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    alt_id = None
+    if lesson_id.startswith("les1-"):
+        alt_id = lesson_id.replace("les1-", "les-")
+    elif lesson_id.startswith("les-"):
+        alt_id = lesson_id.replace("les-", "les1-")
+
     for l in LESSONS:
-        if l["id"] == lesson_id:
+        if l["id"] == lesson_id or (alt_id and l["id"] == alt_id):
             if exercise_id is None or l.get("exercise_id") == exercise_id:
                 return l
     return None
