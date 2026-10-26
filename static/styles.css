@@ -1625,6 +1625,25 @@ body {
 /* ==========================================================================
    Main Menu Dashboard & Lesson Navigator
    ========================================================================== */
+/* Clean minimal top bar when viewing the Main Menu */
+body.in-menu-view .control-unit,
+body.in-menu-view .header-actions,
+body.in-menu-view .mic-monitor-compact,
+body.in-menu-view .score-hud-compact {
+  display: none !important;
+}
+
+body.in-menu-view .app-header {
+  padding: 6px 20px;
+  background-color: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.in-menu-view .header-row-primary {
+  min-height: 38px;
+  justify-content: space-between;
+}
+
 .btn-menu {
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   color: #fff !important;

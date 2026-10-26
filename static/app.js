@@ -1968,12 +1968,14 @@ function toggleView(viewName) {
   const toggleBtnIcon = document.getElementById("toggle-menu-icon");
 
   if (viewName === "menu") {
+    document.body.classList.add("in-menu-view");
     if (menuView) menuView.style.display = "block";
     if (tutorView) tutorView.style.display = "none";
     if (toggleBtnText) toggleBtnText.textContent = "Naar Oefening";
     if (toggleBtnIcon) toggleBtnIcon.textContent = "🎹";
     renderMainMenu();
   } else {
+    document.body.classList.remove("in-menu-view");
     if (menuView) menuView.style.display = "none";
     if (tutorView) tutorView.style.display = "flex";
     if (toggleBtnText) toggleBtnText.textContent = "Hoofdmenu";
