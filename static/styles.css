@@ -671,6 +671,18 @@ body {
   fill: #64748b;
 }
 
+.vmeasure-group {
+  transition: opacity 0.25s ease;
+}
+
+.vmeasure-group.out-lesson {
+  opacity: 0.32;
+}
+
+.vmeasure-group.in-lesson {
+  opacity: 1;
+}
+
 .vmeasure-focus-box {
   fill: transparent;
   stroke: transparent;

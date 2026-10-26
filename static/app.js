@@ -239,8 +239,8 @@ function setupUIEventListeners() {
 
 // Global hook for vector notes click
 window.jumpToMeasureAndNote = function(measureNumber, noteIdx) {
-  if (!state.filteredNotes || state.filteredNotes.length === 0) return;
-  const targetIdx = state.filteredNotes.findIndex(n => n.measure === measureNumber && n.note_index === noteIdx);
+  const queue = state.activeNotesQueue || [];
+  const targetIdx = queue.findIndex(n => n.measure === measureNumber && n.note_index === noteIdx);
   if (targetIdx !== -1) {
     state.currentNoteIndex = targetIdx;
     updateTargetDisplay();
@@ -425,6 +425,12 @@ function loadLesson(lessonId) {
       });
     }
   });
+
+  // Update vector sheet lesson boundaries & auto-scroll
+  if (window.VectorSheetRenderer) {
+    window.VectorSheetRenderer.setLessonRange(startMeasure, endMeasure);
+    window.VectorSheetRenderer.scrollToMeasure(startMeasure);
+  }
   
   resetSession();
 }

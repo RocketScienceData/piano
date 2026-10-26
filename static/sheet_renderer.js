@@ -46,11 +46,11 @@
       
       // Layout geometry constants
       this.config = {
-        viewWidth: 980,
-        marginSide: 18,
-        measuresPerSystem: 2,
+        viewWidth: 1040,
+        marginSide: 16,
+        measuresPerSystem: 4,
         systemHeight: 185,
-        systemGap: 38,
+        systemGap: 36,
         systemTopPad: 24,
         
         // Treble staff lines (5 lines)
@@ -63,13 +63,16 @@
         bassTopLineY: 120, // Top line 5 (A3)
         // Bottom line 1 (G2) is at bassTopLineY + 4 * lineSpacing = 160px
         
-        noteHeadRx: 5.8,
-        noteHeadRy: 4.2,
-        stemLength: 32,
+        noteHeadRx: 5.6,
+        noteHeadRy: 4.0,
+        stemLength: 26,
         beamThickness: 3.2,
-        beamGap: 3.2,
-        ledgerLineExtra: 6.5
+        beamGap: 2.8,
+        ledgerLineExtra: 6.0
       };
+      
+      this.lessonStart = 1;
+      this.lessonEnd = 30;
     }
 
     /**
@@ -117,10 +120,33 @@
       this.container.appendChild(svg);
       this.svg = svg;
 
+      // Re-apply lesson boundaries if configured
+      if (this.lessonStart && this.lessonEnd) {
+        this.setLessonRange(this.lessonStart, this.lessonEnd);
+      }
+
       // Re-apply active target note if one exists
       if (this.activeNoteKey) {
         this.highlightNote(this.activeNoteKey);
       }
+    }
+
+    /**
+     * Highlight the measures within the active lesson and dim inactive measures.
+     */
+    setLessonRange(startMeasure, endMeasure) {
+      this.lessonStart = startMeasure;
+      this.lessonEnd = endMeasure;
+      if (!this.svg) return;
+
+      const allGroups = this.svg.querySelectorAll(".vmeasure-group");
+      allGroups.forEach(g => {
+        const m = parseInt(g.getAttribute("data-measure"), 10);
+        const inLesson = (m >= startMeasure && m <= endMeasure);
+        g.style.opacity = inLesson ? "1" : "0.32";
+        g.classList.toggle("in-lesson", inLesson);
+        g.classList.toggle("out-lesson", !inLesson);
+      });
     }
 
     /**
@@ -226,6 +252,12 @@
         const isTurnaround = (measure.type === "descending" && measure.measure === 15);
         const isFinalMeasure = (measure.type === "final" || measure.measure === this.currentData.total_measures);
 
+        // Group per measure for clean lesson targeting and styling
+        const mGroup = document.createElementNS(svgNS, "g");
+        mGroup.setAttribute("class", "vmeasure-group in-lesson");
+        mGroup.setAttribute("id", `vmeasure-group-${measure.measure}`);
+        mGroup.setAttribute("data-measure", measure.measure);
+
         // Measure focus rect (highlights active measure)
         const mFocusRect = document.createElementNS(svgNS, "rect");
         mFocusRect.setAttribute("x", mX);
@@ -235,32 +267,34 @@
         mFocusRect.setAttribute("rx", "6");
         mFocusRect.setAttribute("class", "vmeasure-focus-box");
         mFocusRect.setAttribute("id", `vmeasure-${measure.measure}`);
-        sysGroup.appendChild(mFocusRect);
+        mGroup.appendChild(mFocusRect);
 
         // Measure number badge
-        const mNumText = this.createText(mX + 6, trebleLine5Y - 6, `M${measure.measure}`, "measure-number");
-        sysGroup.appendChild(mNumText);
+        const mNumText = this.createText(mX + 6, trebleLine5Y - 6, `M.${measure.measure}`, "measure-number");
+        mGroup.appendChild(mNumText);
 
         // Render notes inside this measure
-        this.renderMeasureNotes(sysGroup, measure, mX, measureWidth, trebleLine1Y, bassLine1Y);
+        this.renderMeasureNotes(mGroup, measure, mX, measureWidth, trebleLine1Y, bassLine1Y);
 
         // Bar line at end of measure
         if (isFinalMeasure) {
           // Final double barline: thin bar + thick bar
-          sysGroup.appendChild(this.createLine(mRightX - 6, trebleLine5Y, mRightX - 6, trebleLine1Y, "bar-line", 1.5));
-          sysGroup.appendChild(this.createLine(mRightX - 6, bassLine5Y, mRightX - 6, bassLine1Y, "bar-line", 1.5));
-          sysGroup.appendChild(this.createLine(mRightX, trebleLine5Y, mRightX, bassLine1Y, "bar-line-thick", 4.0));
+          mGroup.appendChild(this.createLine(mRightX - 6, trebleLine5Y, mRightX - 6, trebleLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX - 6, bassLine5Y, mRightX - 6, bassLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX, trebleLine5Y, mRightX, bassLine1Y, "bar-line-thick", 4.0));
         } else if (isTurnaround) {
           // Double barline at turnaround
-          sysGroup.appendChild(this.createLine(mRightX - 4, trebleLine5Y, mRightX - 4, trebleLine1Y, "bar-line", 1.5));
-          sysGroup.appendChild(this.createLine(mRightX - 4, bassLine5Y, mRightX - 4, bassLine1Y, "bar-line", 1.5));
-          sysGroup.appendChild(this.createLine(mRightX, trebleLine5Y, mRightX, trebleLine1Y, "bar-line", 1.5));
-          sysGroup.appendChild(this.createLine(mRightX, bassLine5Y, mRightX, bassLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX - 4, trebleLine5Y, mRightX - 4, trebleLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX - 4, bassLine5Y, mRightX - 4, bassLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX, trebleLine5Y, mRightX, trebleLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX, bassLine5Y, mRightX, bassLine1Y, "bar-line", 1.5));
         } else {
           // Standard single barline across Treble and Bass staves
-          sysGroup.appendChild(this.createLine(mRightX, trebleLine5Y, mRightX, trebleLine1Y, "bar-line", 1.5));
-          sysGroup.appendChild(this.createLine(mRightX, bassLine5Y, mRightX, bassLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX, trebleLine5Y, mRightX, trebleLine1Y, "bar-line", 1.5));
+          mGroup.appendChild(this.createLine(mRightX, bassLine5Y, mRightX, bassLine1Y, "bar-line", 1.5));
         }
+
+        sysGroup.appendChild(mGroup);
       }
 
       svg.appendChild(sysGroup);
@@ -299,7 +333,7 @@
       }
 
       // Standard measure: 8 sixteenth notes in two beamed groups of 4 (Beat 1 & Beat 2)
-      const notePad = 24;
+      const notePad = 14;
       const availableWidth = mWidth - notePad * 2;
       const noteSpacing = availableWidth / (noteCount - 1);
 
@@ -326,36 +360,57 @@
       beatGroups.forEach(beat => {
         if (beat.length === 0) return;
 
-        // Treble stems UP: stems extend upward from noteheads
-        // Find highest note in beat to set beam height
+        const stemLen = cfg.stemLength; // 26px
+        
+        // RH (treble, stems pointing up)
+        const rhY0 = beat[0].rhY;
+        const rhY3 = beat[beat.length - 1].rhY;
+        const rhRawDiff = rhY3 - rhY0;
+        const rhSlant = Math.max(-8, Math.min(8, rhRawDiff));
+        
         let minRhY = 9999;
         beat.forEach(p => { if (p.rhY < minRhY) minRhY = p.rhY; });
-        const rhBeamY = Math.min(minRhY - cfg.stemLength, trebleLine1Y - 48);
+        const rhBaseBeamY = Math.min(rhY0 - stemLen, minRhY - (stemLen - 4));
+        const rhBeamY0 = rhBaseBeamY;
+        const rhBeamY1 = rhBaseBeamY + rhSlant;
 
-        // Bass stems DOWN: stems extend downward from noteheads
+        const rhStartX = beat[0].cx + 5.0;
+        const rhEndX = beat[beat.length - 1].cx + 5.0;
+
+        // Double 16th beam for RH
+        group.appendChild(this.createLine(rhStartX, rhBeamY0, rhEndX, rhBeamY1, "note-beam", cfg.beamThickness));
+        group.appendChild(this.createLine(rhStartX, rhBeamY0 + cfg.beamThickness + cfg.beamGap, rhEndX, rhBeamY1 + cfg.beamThickness + cfg.beamGap, "note-beam", cfg.beamThickness));
+
+        // LH (bass, stems pointing down)
+        const lhY0 = beat[0].lhY;
+        const lhY3 = beat[beat.length - 1].lhY;
+        const lhRawDiff = lhY3 - lhY0;
+        const lhSlant = Math.max(-8, Math.min(8, lhRawDiff));
+
         let maxLhY = -9999;
         beat.forEach(p => { if (p.lhY > maxLhY) maxLhY = p.lhY; });
-        const lhBeamY = Math.max(maxLhY + cfg.stemLength, bassLine1Y + 18);
+        const lhBaseBeamY = Math.max(lhY0 + stemLen, maxLhY + (stemLen - 4));
+        const lhBeamY0 = lhBaseBeamY;
+        const lhBeamY1 = lhBaseBeamY + lhSlant;
 
-        // Render double beams for Treble (RH)
-        const rhStartX = beat[0].cx + 5.2;
-        const rhEndX = beat[beat.length - 1].cx + 5.2;
-        group.appendChild(this.createLine(rhStartX, rhBeamY, rhEndX, rhBeamY, "note-beam", cfg.beamThickness));
-        group.appendChild(this.createLine(rhStartX, rhBeamY + cfg.beamThickness + cfg.beamGap, rhEndX, rhBeamY + cfg.beamThickness + cfg.beamGap, "note-beam", cfg.beamThickness));
+        const lhStartX = beat[0].cx - 5.0;
+        const lhEndX = beat[beat.length - 1].cx - 5.0;
 
-        // Render double beams for Bass (LH)
-        const lhStartX = beat[0].cx - 5.2;
-        const lhEndX = beat[beat.length - 1].cx - 5.2;
-        group.appendChild(this.createLine(lhStartX, lhBeamY, lhEndX, lhBeamY, "note-beam", cfg.beamThickness));
-        group.appendChild(this.createLine(lhStartX, lhBeamY - (cfg.beamThickness + cfg.beamGap), lhEndX, lhBeamY - (cfg.beamThickness + cfg.beamGap), "note-beam", cfg.beamThickness));
+        // Double 16th beam for LH
+        group.appendChild(this.createLine(lhStartX, lhBeamY0, lhEndX, lhBeamY1, "note-beam", cfg.beamThickness));
+        group.appendChild(this.createLine(lhStartX, lhBeamY0 - (cfg.beamThickness + cfg.beamGap), lhEndX, lhBeamY1 - (cfg.beamThickness + cfg.beamGap), "note-beam", cfg.beamThickness));
 
         // Render stems, ledger lines, note heads, and fingering
-        beat.forEach(p => {
-          // Stems
-          // RH stem: connects from (cx + 5.2, rhY) up to rhBeamY
-          group.appendChild(this.createLine(p.cx + 5.2, p.rhY, p.cx + 5.2, rhBeamY + cfg.beamThickness + cfg.beamGap, "note-stem", 1.4));
-          // LH stem: connects from (cx - 5.2, lhY) down to lhBeamY
-          group.appendChild(this.createLine(p.cx - 5.2, p.lhY, p.cx - 5.2, lhBeamY - (cfg.beamThickness + cfg.beamGap), "note-stem", 1.4));
+        beat.forEach((p, i) => {
+          const ratio = beat.length > 1 ? i / (beat.length - 1) : 0;
+          const noteRhBeamY = rhBeamY0 + rhSlant * ratio;
+          const noteLhBeamY = lhBeamY0 + lhSlant * ratio;
+
+          // RH stem: connects from (cx + 5.0, rhY) up to bottom of double beam
+          group.appendChild(this.createLine(p.cx + 5.0, p.rhY, p.cx + 5.0, noteRhBeamY + cfg.beamThickness + cfg.beamGap, "note-stem", 1.4));
+
+          // LH stem: connects from (cx - 5.0, lhY) down to top of double beam
+          group.appendChild(this.createLine(p.cx - 5.0, p.lhY, p.cx - 5.0, noteLhBeamY - (cfg.beamThickness + cfg.beamGap), "note-stem", 1.4));
 
           // Ledger lines
           this.renderLedgerLines(group, p.cx, p.rhStep, "treble", trebleLine1Y);
@@ -365,13 +420,10 @@
           this.renderNoteHead(group, p.cx, p.rhY, p.note, "rh", false);
           this.renderNoteHead(group, p.cx, p.lhY, p.note, "lh", false);
 
-          // Fingering numbers
-          // RH above beam
-          const rhFingY = rhBeamY - 8;
+          // Fingering numbers (placed directly above/below the respective beams)
+          const rhFingY = noteRhBeamY - 6;
+          const lhFingY = noteLhBeamY + 14;
           group.appendChild(this.createText(p.cx, rhFingY, `${p.note.rh.finger}`, "fingering-number fingering-rh"));
-
-          // LH below beam
-          const lhFingY = lhBeamY + 16;
           group.appendChild(this.createText(p.cx, lhFingY, `${p.note.lh.finger}`, "fingering-number fingering-lh"));
         });
       });
