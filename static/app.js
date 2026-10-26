@@ -304,6 +304,9 @@ function populateExerciseSelect() {
 
 async function switchExercise(exerciseId) {
   state.currentExerciseId = exerciseId;
+  if (typeof gtag === "function") {
+    gtag("event", "select_exercise", { exercise_id: exerciseId });
+  }
   await loadExerciseData(exerciseId);
 }
 
@@ -490,6 +493,15 @@ async function startLesson() {
   
   if (state.currentMode === "tempo") {
     startTempoMode();
+  }
+
+  if (typeof gtag === "function") {
+    gtag("event", "start_lesson", {
+      exercise_id: state.currentExerciseId,
+      lesson_id: state.currentLessonId,
+      hand: state.currentHand,
+      mode: state.currentMode
+    });
   }
 }
 
@@ -969,8 +981,18 @@ async function finishLesson() {
     });
   }
   
-  openModal("score-modal");
-}
+  // GA event tracking
+  if (typeof gtag === "function") {
+    gtag("event", "finish_lesson", {
+      exercise_id: state.currentExerciseId,
+      lesson_id: state.currentLessonId,
+      accuracy: accuracy,
+      stars: stars,
+      correct: state.correctCount,
+      wrong: state.wrongCount,
+      duration_seconds: Math.round(durationSec)
+    });
+  }
   
   openModal("score-modal");
 }
