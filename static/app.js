@@ -17,6 +17,7 @@ const state = {
   metronomeOn: true,
   audioSource: "browser-mic", // 'browser-mic', 'python-mic', 'web-midi', 'virtual'
   sensitivity: 12,
+  currentView: "menu", // 'menu', 'tutor'
   
   // Lesson execution
   isPlaying: false,
@@ -283,7 +284,9 @@ async function loadData() {
     await loadExerciseData(state.currentExerciseId);
     initMainMenu();
 
-    if (window.location.hash === "#menu") {
+    if (window.location.hash === "#tutor") {
+      toggleView("tutor");
+    } else {
       toggleView("menu");
     }
   } catch (err) {
