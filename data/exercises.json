@@ -10,7 +10,8 @@
     "pdf_file": "Exercise N\u00b01 in C.pdf",
     "total_measures": 30,
     "total_notes": 233,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex2",
@@ -23,7 +24,8 @@
     "pdf_file": "Exercise N\u00b02 in C.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex3",
@@ -36,7 +38,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex4",
@@ -49,7 +52,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex5",
@@ -62,7 +66,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex6",
@@ -75,7 +80,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex7",
@@ -88,7 +94,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex8",
@@ -101,7 +108,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex9",
@@ -114,7 +122,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex10",
@@ -127,7 +136,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex11",
@@ -140,7 +150,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex12",
@@ -153,7 +164,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 30,
     "total_notes": 233,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex13",
@@ -166,7 +178,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex14",
@@ -179,7 +192,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex15",
@@ -192,7 +206,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex16",
@@ -205,7 +220,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex17",
@@ -218,7 +234,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 28,
     "total_notes": 217,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex18",
@@ -231,7 +248,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex19",
@@ -244,7 +262,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 225,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex20",
@@ -257,7 +276,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 31,
     "total_notes": 242,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part1"
   },
   {
     "id": "ex21",
@@ -270,7 +290,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex22",
@@ -283,7 +304,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex23",
@@ -296,7 +318,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex24",
@@ -309,7 +332,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex25",
@@ -322,7 +346,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex26",
@@ -335,7 +360,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex27",
@@ -348,7 +374,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex28",
@@ -361,7 +388,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex29",
@@ -374,7 +402,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex30",
@@ -387,7 +416,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex31",
@@ -400,7 +430,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex32",
@@ -413,7 +444,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex33",
@@ -426,7 +458,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex34",
@@ -439,7 +472,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex35",
@@ -452,7 +486,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex36",
@@ -465,7 +500,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex37",
@@ -478,7 +514,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex38",
@@ -491,7 +528,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex39",
@@ -504,7 +542,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex40",
@@ -517,7 +556,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex41",
@@ -530,7 +570,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex42",
@@ -543,7 +584,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex43",
@@ -556,7 +598,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part2"
   },
   {
     "id": "ex44",
@@ -569,7 +612,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex45",
@@ -582,7 +626,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex46",
@@ -595,7 +640,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex47",
@@ -608,7 +654,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex48",
@@ -621,7 +668,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex49",
@@ -634,7 +682,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex50",
@@ -647,7 +696,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex51",
@@ -660,7 +710,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex52",
@@ -673,7 +724,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex53",
@@ -686,7 +738,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex54",
@@ -699,7 +752,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex55",
@@ -712,7 +766,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex56",
@@ -725,7 +780,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex57",
@@ -738,7 +794,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex58",
@@ -751,7 +808,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex59",
@@ -764,7 +822,8 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
-    "default_bpm": 60
+    "default_bpm": 60,
+    "book": "hanon-part3"
   },
   {
     "id": "ex60",
@@ -777,6 +836,1799 @@
     "pdf_file": "IMSLP91547-PMLP03129-Hanon_Final.pdf",
     "total_measures": 29,
     "total_notes": 449,
+    "default_bpm": 60,
+    "book": "hanon-part3"
+  },
+  {
+    "id": "cz1",
+    "book": "czerny-599",
+    "number": 1,
+    "name": "Etude N\u00b01 in C",
+    "title": "Eerste Toetsen & Rustige Hand",
+    "subtitle": "5-vinger positie binnen de omvang C4-G4 met gelijkmatige rustige aanslag",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz1.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
     "default_bpm": 60
+  },
+  {
+    "id": "cz2",
+    "book": "czerny-599",
+    "number": 2,
+    "name": "Etude N\u00b02 in C",
+    "title": "Legato Aanslag & Boogvoering",
+    "subtitle": "Zacht gebonden noten met ontspannen vingerheffing",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz2.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz3",
+    "book": "czerny-599",
+    "number": 3,
+    "name": "Etude N\u00b03 in C",
+    "title": "Wisselende Handco\u00f6rdinatie",
+    "subtitle": "Naadloze overdracht van de melodielijn tussen rechter- en linkerhand",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz3.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz4",
+    "book": "czerny-599",
+    "number": 4,
+    "name": "Etude N\u00b04 in C",
+    "title": "Phrasering in Driekwartsmaat",
+    "subtitle": "Walsgevoel en lichte puls op de eerste tel van de maat",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz4.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz5",
+    "book": "czerny-599",
+    "number": 5,
+    "name": "Etude N\u00b05 in C",
+    "title": "Gelijkheid van Vingers 1 t/m 5",
+    "subtitle": "Elke vinger produceert hetzelfde ronde klankvolume",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz5.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz6",
+    "book": "czerny-599",
+    "number": 6,
+    "name": "Etude N\u00b06 in C",
+    "title": "Ritmische Stabiliteit in 4/4",
+    "subtitle": "Metronomische precisie zonder schommelingen",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz6.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz7",
+    "book": "czerny-599",
+    "number": 7,
+    "name": "Etude N\u00b07 in C",
+    "title": "Contrasterende Frasering",
+    "subtitle": "Verschil tussen staccato accenten en zangerig legato",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz7.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz8",
+    "book": "czerny-599",
+    "number": 8,
+    "name": "Etude N\u00b08 in C",
+    "title": "Samenhang in Beide Handen",
+    "subtitle": "Beide handen spelen synchroon in parallelle beweging",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz8.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 60
+  },
+  {
+    "id": "cz9",
+    "book": "czerny-599",
+    "number": 9,
+    "name": "Etude N\u00b09 in C",
+    "title": "Kwartnoten Melodie met Vaste Pols",
+    "subtitle": "Rustige handpalm zonder wiebelende polsbeweging",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz9.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz10",
+    "book": "czerny-599",
+    "number": 10,
+    "name": "Etude N\u00b010 in C",
+    "title": "Zangerige Voordracht",
+    "subtitle": "Cantabile toonvorming vanuit het vingerkussentje",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz10.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz11",
+    "book": "czerny-599",
+    "number": 11,
+    "name": "Etude N\u00b011 in C",
+    "title": "Begeleiding in Akkoorden",
+    "subtitle": "Harmonische ondersteuning in de linkerhand met zachte aanslag",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz11.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz12",
+    "book": "czerny-599",
+    "number": 12,
+    "name": "Etude N\u00b012 in C",
+    "title": "Gebroken Drieklanken RH",
+    "subtitle": "Vloeiende golfbeweging over C-E-G",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz12.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz13",
+    "book": "czerny-599",
+    "number": 13,
+    "name": "Etude N\u00b013 in C",
+    "title": "Basmelodie Linkerhand",
+    "subtitle": "De linkerhand zingt de melodie terwijl rechts zacht begeleidt",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz13.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz14",
+    "book": "czerny-599",
+    "number": 14,
+    "name": "Etude N\u00b014 in C",
+    "title": "Terts- en Sextenbeweging",
+    "subtitle": "Harmonie in tertsen met synchrone vingeraanslag",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz14.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz15",
+    "book": "czerny-599",
+    "number": 15,
+    "name": "Etude N\u00b015 in C",
+    "title": "Tegenbeweging (Contrary Motion)",
+    "subtitle": "Handen bewegen symmetrisch uit elkaar en naar elkaar toe",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz15.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz16",
+    "book": "czerny-599",
+    "number": 16,
+    "name": "Etude N\u00b016 in C",
+    "title": "Achtste Noten Vloeiend",
+    "subtitle": "Versnelling van het tempo met behoud van helderheid",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz16.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz17",
+    "book": "czerny-599",
+    "number": 17,
+    "name": "Etude N\u00b017 in C",
+    "title": "Korte Frasen & Ademhaling",
+    "subtitle": "Duidelijk afbakenen van muzikale zinnen",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz17.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz18",
+    "book": "czerny-599",
+    "number": 18,
+    "name": "Etude N\u00b018 in C",
+    "title": "Vingeragiliteit & Snelheid",
+    "subtitle": "Hoge en snelle vingerheffing als kleine hamertjes",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz18.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 66
+  },
+  {
+    "id": "cz19",
+    "book": "czerny-599",
+    "number": 19,
+    "name": "Etude N\u00b019 in G",
+    "title": "Spreiding naar de Sext",
+    "subtitle": "Verruiming van de handboog over 6 opeenvolgende witte toetsen",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz19.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz20",
+    "book": "czerny-599",
+    "number": 20,
+    "name": "Etude N\u00b020 in G",
+    "title": "Octaafsfeer & Lichte Pols",
+    "subtitle": "Licht verend handgewricht bij grotere intervallen",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz20.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz21",
+    "book": "czerny-599",
+    "number": 21,
+    "name": "Etude N\u00b021 in C",
+    "title": "Alberti-Bas Begeleiding",
+    "subtitle": "Klassieke Mozart- en Beethoven-begeleidingsfiguur 5-1-3-1",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz21.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz22",
+    "book": "czerny-599",
+    "number": 22,
+    "name": "Etude N\u00b022 in F",
+    "title": "Cantabile in F-Majeur",
+    "subtitle": "Introductie van de zwarte toets Bes met zachte vingerzetting",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz22.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz23",
+    "book": "czerny-599",
+    "number": 23,
+    "name": "Etude N\u00b023 in F",
+    "title": "Toonladderfragmenten",
+    "subtitle": "Voorbereidende loopjes over 5 en 6 noten",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz23.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz24",
+    "book": "czerny-599",
+    "number": 24,
+    "name": "Etude N\u00b024 in C",
+    "title": "Dubbele Noten Legato",
+    "subtitle": "Gelijktijdige aanslag van twee noten met \u00e9\u00e9n hand",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz24.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz25",
+    "book": "czerny-599",
+    "number": 25,
+    "name": "Etude N\u00b025 in C",
+    "title": "Staccato & Loslating",
+    "subtitle": "Veerkrachtige staccato-aanslag vanuit de vingertop",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz25.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz26",
+    "book": "czerny-599",
+    "number": 26,
+    "name": "Etude N\u00b026 in G",
+    "title": "Sierlijke Frasering in G",
+    "subtitle": "Fis-toets integratie met natuurlijke muzikale buiging",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz26.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz27",
+    "book": "czerny-599",
+    "number": 27,
+    "name": "Etude N\u00b027 in C",
+    "title": "Gebroken Akkoorden met Handkruising",
+    "subtitle": "Elegante armbeweging over het middenregister",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz27.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz28",
+    "book": "czerny-599",
+    "number": 28,
+    "name": "Etude N\u00b028 in C",
+    "title": "Onafhankelijke Duimen",
+    "subtitle": "Beide duimen spelen ritmisch zelfstandige patronen",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz28.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz29",
+    "book": "czerny-599",
+    "number": 29,
+    "name": "Etude N\u00b029 in C",
+    "title": "Dynamische Contrasten (p en f)",
+    "subtitle": "Vlotte omschakeling tussen piano en forte",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz29.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz30",
+    "book": "czerny-599",
+    "number": 30,
+    "name": "Etude N\u00b030 in C",
+    "title": "Snelle Articulatie",
+    "subtitle": "Fonkelende helderheid in elke zestiende noot",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz30.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz31",
+    "book": "czerny-599",
+    "number": 31,
+    "name": "Etude N\u00b031 in C",
+    "title": "Overgang naar Duimonderzetting",
+    "subtitle": "Voorbereidende schuine vingerstand voor toonladders",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz31.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz32",
+    "book": "czerny-599",
+    "number": 32,
+    "name": "Etude N\u00b032 in C",
+    "title": "Duim onder Vinger 2",
+    "subtitle": "De fundamentele toonladderpas: duim glijdt onder wijsvinger",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz32.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz33",
+    "book": "czerny-599",
+    "number": 33,
+    "name": "Etude N\u00b033 in C",
+    "title": "Duim onder Vinger 3",
+    "subtitle": "Vergroting van het bereik: duim soepel onder middelvinger",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz33.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz34",
+    "book": "czerny-599",
+    "number": 34,
+    "name": "Etude N\u00b034 in G",
+    "title": "Doorlopende Toonladder G",
+    "subtitle": "Toonladder over twee octaven met vloeiende duimwissel",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz34.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz35",
+    "book": "czerny-599",
+    "number": 35,
+    "name": "Etude N\u00b035 in C",
+    "title": "Linkerhand Duimpassage",
+    "subtitle": "Duimtechniek in de bas voor opgaande toonladders",
+    "part": 1,
+    "sheet_image": "/static/sheet_cz35.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz36",
+    "book": "czerny-599",
+    "number": 36,
+    "name": "Etude N\u00b036 in F",
+    "title": "Repetitienoten 3-2-1",
+    "subtitle": "Snelle herhaling van dezelfde toets met vingerwissel",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz36.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 80
+  },
+  {
+    "id": "cz37",
+    "book": "czerny-599",
+    "number": 37,
+    "name": "Etude N\u00b037 in C",
+    "title": "Snelle Repetitie in Vlot Tempo",
+    "subtitle": "Veerkrachtig en licht repeteren zonder stijfheid",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz37.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 80
+  },
+  {
+    "id": "cz38",
+    "book": "czerny-599",
+    "number": 38,
+    "name": "Etude N\u00b038 in G",
+    "title": "Triolen Vingerwisseling",
+    "subtitle": "Vingerwisseling 3-2-1 in triolenbeweging",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz38.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 80
+  },
+  {
+    "id": "cz39",
+    "book": "czerny-599",
+    "number": 39,
+    "name": "Etude N\u00b039 in C",
+    "title": "Hoge Hulplijnen Treble",
+    "subtitle": "Lezen en trefzeker aanslaan boven de notenbalk",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz39.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz40",
+    "book": "czerny-599",
+    "number": 40,
+    "name": "Etude N\u00b040 in C",
+    "title": "Lage Hulplijnen Bas",
+    "subtitle": "Diepe basnoten tot groot C met volle klank",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz40.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz41",
+    "book": "czerny-599",
+    "number": 41,
+    "name": "Etude N\u00b041 in C",
+    "title": "Grote Registersprongen",
+    "subtitle": "Snel navigeren tussen bas en discant",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz41.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz42",
+    "book": "czerny-599",
+    "number": 42,
+    "name": "Etude N\u00b042 in C",
+    "title": "Volledige Klavierbeheersing",
+    "subtitle": "Vrij bewegen over het gehele klavierbereik",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz42.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 72
+  },
+  {
+    "id": "cz43",
+    "book": "czerny-599",
+    "number": 43,
+    "name": "Etude N\u00b043 in F",
+    "title": "F-Majeur met Bes",
+    "subtitle": "Vloeiende etude met vaste voortekening van 1 mol",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz43.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz44",
+    "book": "czerny-599",
+    "number": 44,
+    "name": "Etude N\u00b044 in G",
+    "title": "G-Majeur met Fis",
+    "subtitle": "Zonnige melodie met leidtoon Fis",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz44.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz45",
+    "book": "czerny-599",
+    "number": 45,
+    "name": "Etude N\u00b045 in D",
+    "title": "D-Majeur met Fis en Cis",
+    "subtitle": "Twee kruisen: trefzekerheid op de zwarte toetsen",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz45.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz46",
+    "book": "czerny-599",
+    "number": 46,
+    "name": "Etude N\u00b046 in Bes",
+    "title": "Bes-Majeur met Bes en Es",
+    "subtitle": "Twee mollen: evenwichtige handpositie",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz46.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz47",
+    "book": "czerny-599",
+    "number": 47,
+    "name": "Etude N\u00b047 in Am",
+    "title": "A-Mineur Melodisch & Harmonisch",
+    "subtitle": "Onderzoek naar de verhoogde 6e en 7e trap (Fis en Gis)",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz47.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz48",
+    "book": "czerny-599",
+    "number": 48,
+    "name": "Etude N\u00b048 in Dm",
+    "title": "D-Mineur Zangerig",
+    "subtitle": "Karaktervolle mineurklank met Cis-leidtoon",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz48.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz49",
+    "book": "czerny-599",
+    "number": 49,
+    "name": "Etude N\u00b049 in Em",
+    "title": "E-Mineur Melancholie",
+    "subtitle": "Expressieve cantilena met Dis-gevoeligheid",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz49.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz50",
+    "book": "czerny-599",
+    "number": 50,
+    "name": "Etude N\u00b050 in C",
+    "title": "Chromatische Verhogingen",
+    "subtitle": "Toevallige verhogingstekens en soepele halve-toon stappen",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz50.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz51",
+    "book": "czerny-599",
+    "number": 51,
+    "name": "Etude N\u00b051 in A",
+    "title": "A-Majeur met Drie Kruisen",
+    "subtitle": "Fis, Cis en Gis integratie in vloeiende arpeggio's",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz51.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz52",
+    "book": "czerny-599",
+    "number": 52,
+    "name": "Etude N\u00b052 in Es",
+    "title": "Es-Majeur met Drie Mollen",
+    "subtitle": "Bes, Es en As binnen een compacte handboog",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz52.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz53",
+    "book": "czerny-599",
+    "number": 53,
+    "name": "Etude N\u00b053 in C",
+    "title": "Gesyncopeerde Accenten",
+    "subtitle": "Accentverschuiving naar de lichte maattelling",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz53.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz54",
+    "book": "czerny-599",
+    "number": 54,
+    "name": "Etude N\u00b054 in G",
+    "title": "Akkoordomkeringen",
+    "subtitle": "Grondligging, sextakkoord en kwartsextakkoord",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz54.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz55",
+    "book": "czerny-599",
+    "number": 55,
+    "name": "Etude N\u00b055 in C",
+    "title": "Modulatie naar Dominant G",
+    "subtitle": "Harmonische overgang naar de toonsoort G-majeur",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz55.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz56",
+    "book": "czerny-599",
+    "number": 56,
+    "name": "Etude N\u00b056 in F",
+    "title": "Cadensformules",
+    "subtitle": "I-IV-V-I harmonische cadenzen met zekere vingers",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz56.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz57",
+    "book": "czerny-599",
+    "number": 57,
+    "name": "Etude N\u00b057 in C",
+    "title": "Romantische Cantilena",
+    "subtitle": "Voordrachtsetude met expressieve rubato-nuances",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz57.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 76
+  },
+  {
+    "id": "cz58",
+    "book": "czerny-599",
+    "number": 58,
+    "name": "Etude N\u00b058 in C",
+    "title": "Triolen in Tweekwartsmaat",
+    "subtitle": "Drie noten per tel met ritmische precisie",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz58.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz59",
+    "book": "czerny-599",
+    "number": 59,
+    "name": "Etude N\u00b059 in G",
+    "title": "Triolen in Driekwartsmaat",
+    "subtitle": "Walsritme met triolenmelodie in de rechterhand",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz59.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz60",
+    "book": "czerny-599",
+    "number": 60,
+    "name": "Etude N\u00b060 in C",
+    "title": "Triolen in Beide Handen",
+    "subtitle": "Parallelle triolenstroom in discant en bas",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz60.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz61",
+    "book": "czerny-599",
+    "number": 61,
+    "name": "Etude N\u00b061 in C",
+    "title": "Gepunteerde Achtste & Zestiende",
+    "subtitle": "Vurig, veerkrachtig ritme met strakke timing",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz61.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz62",
+    "book": "czerny-599",
+    "number": 62,
+    "name": "Etude N\u00b062 in F",
+    "title": "Siciliano Pastorale (6/8)",
+    "subtitle": "Wiegende 6/8 maatsoort met zachte frasering",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz62.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz63",
+    "book": "czerny-599",
+    "number": 63,
+    "name": "Etude N\u00b063 in D",
+    "title": "Polonaise Karakter",
+    "subtitle": "Koninklijk Pools dansritme met markante accenten",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz63.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz64",
+    "book": "czerny-599",
+    "number": 64,
+    "name": "Etude N\u00b064 in C",
+    "title": "Lopende Zestiende Triolen",
+    "subtitle": "Hoge vingervlugheid en egale klankstroom",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz64.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz65",
+    "book": "czerny-599",
+    "number": 65,
+    "name": "Etude N\u00b065 in G",
+    "title": "Syncope in de Rechterhand",
+    "subtitle": "Tegendraads ritme over een stevige basbegeleiding",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz65.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz66",
+    "book": "czerny-599",
+    "number": 66,
+    "name": "Etude N\u00b066 in C",
+    "title": "Syncope in de Linkerhand",
+    "subtitle": "Baslijn drijft de voorwaartse stuwkracht",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz66.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz67",
+    "book": "czerny-599",
+    "number": 67,
+    "name": "Etude N\u00b067 in C",
+    "title": "Alla Breve Marsch",
+    "subtitle": "Twee zware tellen per maat in vlot marstempo",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz67.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz68",
+    "book": "czerny-599",
+    "number": 68,
+    "name": "Etude N\u00b068 in G",
+    "title": "Staccato Triolen",
+    "subtitle": "Lichte parelende aanslag vanuit de handwortel",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz68.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz69",
+    "book": "czerny-599",
+    "number": 69,
+    "name": "Etude N\u00b069 in C",
+    "title": "Gedragen Melodie met Triolen",
+    "subtitle": "Twee klanklagen: zangerige sopraan boven zachte golven",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz69.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz70",
+    "book": "czerny-599",
+    "number": 70,
+    "name": "Etude N\u00b070 in C",
+    "title": "Scherzando Vlug & Guitig",
+    "subtitle": "Speelse voordracht met speelse dynamiek",
+    "part": 2,
+    "sheet_image": "/static/sheet_cz70.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 84
+  },
+  {
+    "id": "cz71",
+    "book": "czerny-599",
+    "number": 71,
+    "name": "Etude N\u00b071 in C",
+    "title": "Toonladder C-Majeur Velocitas",
+    "subtitle": "Snelle zestienden-loopjes over 3 octaven",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz71.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz72",
+    "book": "czerny-599",
+    "number": 72,
+    "name": "Etude N\u00b072 in G",
+    "title": "Toonladder G-Majeur Vlugheid",
+    "subtitle": "Trefzekere Fis bij hoge passagesnelheid",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz72.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz73",
+    "book": "czerny-599",
+    "number": 73,
+    "name": "Etude N\u00b073 in F",
+    "title": "Toonladder F-Majeur Vlugheid",
+    "subtitle": "Bes-onderzetting zonder accentverlies",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz73.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz74",
+    "book": "czerny-599",
+    "number": 74,
+    "name": "Etude N\u00b074 in D",
+    "title": "Toonladder D-Majeur Briljantie",
+    "subtitle": "Fonkelende discant-passages",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz74.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz75",
+    "book": "czerny-599",
+    "number": 75,
+    "name": "Etude N\u00b075 in Bes",
+    "title": "Toonladder Bes-Majeur Soepelheid",
+    "subtitle": "Egale zwarte-toetsen overgangen",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz75.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz76",
+    "book": "czerny-599",
+    "number": 76,
+    "name": "Etude N\u00b076 in C",
+    "title": "Korte Voorslagen (Acciaccatura)",
+    "subtitle": "Klassieke versieringen met bliksemsnelle toetsaanslag",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz76.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz77",
+    "book": "czerny-599",
+    "number": 77,
+    "name": "Etude N\u00b077 in G",
+    "title": "Lange Voorslagen (Appoggiatura)",
+    "subtitle": "Zangerige dissonanten die oplossen in consonanten",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz77.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz78",
+    "book": "czerny-599",
+    "number": 78,
+    "name": "Etude N\u00b078 in C",
+    "title": "Draainoten (Gruppetto)",
+    "subtitle": "Elegante vier-noten ornamenten rond de hoofdtoon",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz78.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz79",
+    "book": "czerny-599",
+    "number": 79,
+    "name": "Etude N\u00b079 in F",
+    "title": "Trillvoorbereiding in Snel Tempo",
+    "subtitle": "Spanningloos trillen tussen vingers 2 en 3",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz79.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz80",
+    "book": "czerny-599",
+    "number": 80,
+    "name": "Etude N\u00b080 in C",
+    "title": "Dubbele Versieringen",
+    "subtitle": "Gecombineerde versieringen in contrapunt",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz80.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 92
+  },
+  {
+    "id": "cz81",
+    "book": "czerny-599",
+    "number": 81,
+    "name": "Etude N\u00b081 in C",
+    "title": "Gebroken Drieklanken over Klavier",
+    "subtitle": "Arpeggio's die opklimmen naar het hoogste register",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz81.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz82",
+    "book": "czerny-599",
+    "number": 82,
+    "name": "Etude N\u00b082 in G",
+    "title": "Arpeggio's met Vloeiende Duimpassage",
+    "subtitle": "Grote spreiding zonder pauzes tussen handposities",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz82.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz83",
+    "book": "czerny-599",
+    "number": 83,
+    "name": "Etude N\u00b083 in F",
+    "title": "Gebroken Septiemakkoorden",
+    "subtitle": "Vierklanken vloeiend uitgerold over de toetsen",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz83.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz84",
+    "book": "czerny-599",
+    "number": 84,
+    "name": "Etude N\u00b084 in Dm",
+    "title": "D-Mineur Arpeggio Dramatiek",
+    "subtitle": "Expressieve harmonische breedte",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz84.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz85",
+    "book": "czerny-599",
+    "number": 85,
+    "name": "Etude N\u00b085 in C",
+    "title": "Gebroken Octaven",
+    "subtitle": "Wisselende duim en pink met soepele pols",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz85.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz86",
+    "book": "czerny-599",
+    "number": 86,
+    "name": "Etude N\u00b086 in G",
+    "title": "Gebroken Sexten Vloeiend",
+    "subtitle": "Romantische klankkleur met egale vingers",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz86.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz87",
+    "book": "czerny-599",
+    "number": 87,
+    "name": "Etude N\u00b087 in C",
+    "title": "Parelende Passages (Jeu Perl\u00e9)",
+    "subtitle": "De beroemde Czerny parelaanslag: kristalheldere noten",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz87.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz88",
+    "book": "czerny-599",
+    "number": 88,
+    "name": "Etude N\u00b088 in C",
+    "title": "Chromatische Loopjes Vluchtigheid",
+    "subtitle": "Vingerzetting 1-3-1-3-1-2-3 op topsnelheid",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz88.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz89",
+    "book": "czerny-599",
+    "number": 89,
+    "name": "Etude N\u00b089 in F",
+    "title": "Handwisseling in Snelle Vaart",
+    "subtitle": "Afwisselende linker- en rechterhand zestienden",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz89.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz90",
+    "book": "czerny-599",
+    "number": 90,
+    "name": "Etude N\u00b090 in C",
+    "title": "Grote Klavier-Overspanning",
+    "subtitle": "Virtuoos overbruggen van afstand zonder blik naar de handen",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz90.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 96
+  },
+  {
+    "id": "cz91",
+    "book": "czerny-599",
+    "number": 91,
+    "name": "Etude N\u00b091 in C",
+    "title": "Bravura & Briljantie",
+    "subtitle": "Krachtige, zelfverzekerde concertante voordracht",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz91.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz92",
+    "book": "czerny-599",
+    "number": 92,
+    "name": "Etude N\u00b092 in G",
+    "title": "Snelheid & Uithoudingsvermogen",
+    "subtitle": "Constante snelheid zonder verzuring van spieren",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz92.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz93",
+    "book": "czerny-599",
+    "number": 93,
+    "name": "Etude N\u00b093 in F",
+    "title": "Zestienden Vlucht in Beide Handen",
+    "subtitle": "Tweehandige passages op concerttempo",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz93.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz94",
+    "book": "czerny-599",
+    "number": 94,
+    "name": "Etude N\u00b094 in D",
+    "title": "Dubbele Noten Virtuositeit",
+    "subtitle": "Tertsen en sexten in levendig tempo",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz94.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz95",
+    "book": "czerny-599",
+    "number": 95,
+    "name": "Etude N\u00b095 in C",
+    "title": "Sprongtechniek & Trefzekerheid",
+    "subtitle": "Verre sprongen zonder aarzeling",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz95.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz96",
+    "book": "czerny-599",
+    "number": 96,
+    "name": "Etude N\u00b096 in G",
+    "title": "Polyfone Onafhankelijkheid",
+    "subtitle": "Twee stemmen in \u00e9\u00e9n hand met verschillende dynamiek",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz96.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz97",
+    "book": "czerny-599",
+    "number": 97,
+    "name": "Etude N\u00b097 in C",
+    "title": "Arpeggio Cascades",
+    "subtitle": "Waterval van gebroken akkoorden van hoog naar laag",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz97.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz98",
+    "book": "czerny-599",
+    "number": 98,
+    "name": "Etude N\u00b098 in F",
+    "title": "Briljante Trillketens",
+    "subtitle": "Doorlopende trills met melodie in de andere hand",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz98.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz99",
+    "book": "czerny-599",
+    "number": 99,
+    "name": "Etude N\u00b099 in C",
+    "title": "Grote Cadenza Virtuoso",
+    "subtitle": "Vrije meesterlijke solopassage vol bravour",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz99.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "cz100",
+    "book": "czerny-599",
+    "number": 100,
+    "name": "Etude N\u00b0100 in C",
+    "title": "Grand Finale Meesterproef",
+    "subtitle": "Bekroning van Czerny Op. 599: alle technieken verenigd in \u00e9\u00e9n meesterwerk!",
+    "part": 3,
+    "sheet_image": "/static/sheet_cz100.png",
+    "pdf_file": "Czerny-599.pdf",
+    "total_measures": 8,
+    "total_notes": 57,
+    "default_bpm": 108
+  },
+  {
+    "id": "bach1",
+    "book": "bach-first",
+    "number": 1,
+    "name": "1. Minuet in G (BWV Anh. 114)",
+    "title": "J.S. Bach - Minuet in G Major",
+    "subtitle": "BWV Anh. 114 uit het Notenb\u00fcchlein f\u00fcr Anna Magdalena Bach",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach1.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 84
+  },
+  {
+    "id": "bach2",
+    "book": "bach-first",
+    "number": 2,
+    "name": "2. Minuet in G minor (BWV Anh. 115)",
+    "title": "J.S. Bach - Minuet in G Minor",
+    "subtitle": "BWV Anh. 115 \u2022 Melancholisch contrapuntisch tegenstuk",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach2.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach3",
+    "book": "bach-first",
+    "number": 3,
+    "name": "3. Minuet in G (BWV Anh. 116)",
+    "title": "J.S. Bach - Minuet in G Major (No. 3)",
+    "subtitle": "BWV Anh. 116 \u2022 Elegante dansvorm met zangerige baslijn",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach3.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 88
+  },
+  {
+    "id": "bach4",
+    "book": "bach-first",
+    "number": 4,
+    "name": "4. Polonaise in F (BWV Anh. 117a)",
+    "title": "J.S. Bach - Polonaise in F Major",
+    "subtitle": "BWV Anh. 117a \u2022 Voornaam Pools hofdansritme",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach4.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach5",
+    "book": "bach-first",
+    "number": 5,
+    "name": "5. Minuet in B-flat (BWV Anh. 118)",
+    "title": "J.S. Bach - Minuet in B-flat Major",
+    "subtitle": "BWV Anh. 118 \u2022 Heldere cantabile stijl met twee mollen",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach5.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 84
+  },
+  {
+    "id": "bach6",
+    "book": "bach-first",
+    "number": 6,
+    "name": "6. Minuet in A minor (BWV Anh. 120)",
+    "title": "J.S. Bach - Minuet in A Minor",
+    "subtitle": "BWV Anh. 120 \u2022 Ritmische scherpte en pure barokpolyfonie",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach6.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 84
+  },
+  {
+    "id": "bach7",
+    "book": "bach-first",
+    "number": 7,
+    "name": "7. Minuet in C minor (BWV Anh. 121)",
+    "title": "J.S. Bach - Minuet in C Minor",
+    "subtitle": "BWV Anh. 121 \u2022 Ernstige, diepe expressie met drie mollen",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach7.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach8",
+    "book": "bach-first",
+    "number": 8,
+    "name": "8. Minuet in D minor (BWV Anh. 132)",
+    "title": "J.S. Bach - Minuet in D Minor",
+    "subtitle": "BWV Anh. 132 \u2022 Bekende melancholische dansmelodie",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach8.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach9",
+    "book": "bach-first",
+    "number": 9,
+    "name": "9. Minuet in G (BWV 822)",
+    "title": "J.S. Bach - Minuet in G Major (Suite BWV 822)",
+    "subtitle": "Uit de Franse Suite in G \u2022 Vloeiende zestiendenfiguren",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach9.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 88
+  },
+  {
+    "id": "bach10",
+    "book": "bach-first",
+    "number": 10,
+    "name": "10. Minuet in G (BWV 822 No. 2)",
+    "title": "J.S. Bach - Minuet in G (Alternatief)",
+    "subtitle": "BWV 822 \u2022 Lichtvoetige dansfrasering",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach10.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 88
+  },
+  {
+    "id": "bach11",
+    "book": "bach-first",
+    "number": 11,
+    "name": "11. Minuet in G minor (BWV 822)",
+    "title": "J.S. Bach - Minuet in G Minor",
+    "subtitle": "BWV 822 \u2022 Zachte schaduwkleur in mineur",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach11.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach12",
+    "book": "bach-first",
+    "number": 12,
+    "name": "12. March in D (BWV Anh. 122)",
+    "title": "C.P.E. Bach / J.S. Bach - Marsch in D Major",
+    "subtitle": "BWV Anh. 122 \u2022 Triomfantelijke marsch met fiere staccati",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach12.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 96
+  },
+  {
+    "id": "bach13",
+    "book": "bach-first",
+    "number": 13,
+    "name": "13. March in G (BWV Anh. 124)",
+    "title": "C.P.E. Bach / J.S. Bach - Marsch in G Major",
+    "subtitle": "BWV Anh. 124 \u2022 Vrolijke stapmaat met resolute baslijn",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach13.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 96
+  },
+  {
+    "id": "bach14",
+    "book": "bach-first",
+    "number": 14,
+    "name": "14. Polonaise in G minor (BWV Anh. 119)",
+    "title": "J.S. Bach - Polonaise in G Minor",
+    "subtitle": "BWV Anh. 119 \u2022 Karakteristieke vrouwelijke cadens",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach14.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 76
+  },
+  {
+    "id": "bach15",
+    "book": "bach-first",
+    "number": 15,
+    "name": "15. Polonaise in G minor (BWV Anh. 123)",
+    "title": "C.P.E. Bach - Polonaise in G Minor",
+    "subtitle": "BWV Anh. 123 \u2022 Expressieve empfindsamer Stil",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach15.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 76
+  },
+  {
+    "id": "bach16",
+    "book": "bach-first",
+    "number": 16,
+    "name": "16. Polonaise in G minor (BWV Anh. 125)",
+    "title": "C.P.E. Bach - Polonaise in G Minor (No. 3)",
+    "subtitle": "BWV Anh. 125 \u2022 Afsluiting van Eerste Lessen Deel 1",
+    "part": 1,
+    "sheet_image": "/static/sheet_bach16.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach17",
+    "book": "bach-first",
+    "number": 17,
+    "name": "17. Little Prelude in C (BWV 924)",
+    "title": "J.S. Bach - Praeludium in C Major",
+    "subtitle": "BWV 924 uit het Klavierb\u00fcchlein f\u00fcr Wilhelm Friedemann Bach",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach17.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 72
+  },
+  {
+    "id": "bach18",
+    "book": "bach-first",
+    "number": 18,
+    "name": "18. Little Prelude in D minor (BWV 926)",
+    "title": "J.S. Bach - Praeludium in D Minor",
+    "subtitle": "BWV 926 \u2022 Ruisende arpeggio's en dramatische cadens",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach18.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 84
+  },
+  {
+    "id": "bach19",
+    "book": "bach-first",
+    "number": 19,
+    "name": "19. Little Prelude in F (BWV 927)",
+    "title": "J.S. Bach - Praeludium in F Major",
+    "subtitle": "BWV 927 \u2022 Zonnige loopjes en polyfoon spel",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach19.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 88
+  },
+  {
+    "id": "bach20",
+    "book": "bach-first",
+    "number": 20,
+    "name": "20. Little Prelude in C (BWV 939)",
+    "title": "J.S. Bach - Praeludium in C Major (BWV 939)",
+    "subtitle": "Kort bondig meesterwerk met krachtige slotakkoorden",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach20.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 80
+  },
+  {
+    "id": "bach21",
+    "book": "bach-first",
+    "number": 21,
+    "name": "21. Little Prelude in C minor (BWV 999)",
+    "title": "J.S. Bach - Praeludium in C Minor",
+    "subtitle": "BWV 999 \u2022 Oorspronkelijk voor luit, tijdloze arpeggio-golf",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach21.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 76
+  },
+  {
+    "id": "bach22",
+    "book": "bach-first",
+    "number": 22,
+    "name": "22. Bourr\u00e9e in E minor (BWV 996)",
+    "title": "J.S. Bach - Bourr\u00e9e in E Minor",
+    "subtitle": "BWV 996 \u2022 Wereldberoemde dans met opmaat en ritmische drive",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach22.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 92
+  },
+  {
+    "id": "bach23",
+    "book": "bach-first",
+    "number": 23,
+    "name": "23. Musette in D (BWV Anh. 126)",
+    "title": "J.S. Bach - Musette in D Major",
+    "subtitle": "BWV Anh. 126 \u2022 Doedelzak-bourdon bas met jubelende sopraan",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach23.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 100
+  },
+  {
+    "id": "bach24",
+    "book": "bach-first",
+    "number": 24,
+    "name": "24. Sarabande in D minor (BWV 812)",
+    "title": "J.S. Bach - Sarabande in D Minor",
+    "subtitle": "Uit Franse Suite No. 1 \u2022 Plechtige, zware tweede tel",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach24.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 60
+  },
+  {
+    "id": "bach25",
+    "book": "bach-first",
+    "number": 25,
+    "name": "25. Gavotte in G (BWV 816)",
+    "title": "J.S. Bach - Gavotte in G Major",
+    "subtitle": "Uit Franse Suite No. 5 \u2022 Vrolijke hofdans met dubbele opmaat",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach25.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 92
+  },
+  {
+    "id": "bach26",
+    "book": "bach-first",
+    "number": 26,
+    "name": "26. Bourr\u00e9e in B minor (BWV 1002)",
+    "title": "J.S. Bach - Bourr\u00e9e in B Minor",
+    "subtitle": "Oorspronkelijk vioolpartita, gearrangeerd voor klavier",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach26.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 88
+  },
+  {
+    "id": "bach27",
+    "book": "bach-first",
+    "number": 27,
+    "name": "27. Two-Part Invention in C (BWV 772)",
+    "title": "J.S. Bach - Tweestemmige Inventie No. 1 in C",
+    "subtitle": "BWV 772 \u2022 De ultieme grondslag van contrapunt en dialoog",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach27.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 72
+  },
+  {
+    "id": "bach28",
+    "book": "bach-first",
+    "number": 28,
+    "name": "28. Two-Part Invention in F (BWV 779)",
+    "title": "J.S. Bach - Tweestemmige Inventie No. 8 in F",
+    "subtitle": "BWV 779 \u2022 Bekroning van First Lessons: sprankelend en virtuoos",
+    "part": 2,
+    "sheet_image": "/static/sheet_bach28.png",
+    "pdf_file": "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    "total_measures": 16,
+    "total_notes": 121,
+    "default_bpm": 88
   }
 ]

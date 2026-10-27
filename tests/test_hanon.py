@@ -548,7 +548,7 @@ class TestMultiBookCatalogAndHub(unittest.TestCase):
         self.assertIn("renderBooksHub", js)
         self.assertIn("openBook", js)
         self.assertIn("getBookProgress", js)
-        self.assertIn("renderMethodBookView", js)
+        self.assertIn("getBookExercises", js)
 
     def test_i18n_has_book_translations_across_all_languages(self):
         i18n_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "i18n.js")
@@ -576,6 +576,40 @@ class TestMultiBookCatalogAndHub(unittest.TestCase):
         resp_bach = main_app.get_pdf_bach()
         self.assertEqual(resp_bach.status_code, 200)
         self.assertEqual(resp_bach.media_type, "application/pdf")
+
+    def test_czerny_100_etudes_and_bach_28_pieces_in_catalog(self):
+        exs = get_exercises()
+        cz_exs = [e for e in exs if e["id"].startswith("cz")]
+        self.assertEqual(len(cz_exs), 100, "Must have all 100 Czerny Op. 599 etudes in catalog")
+        self.assertEqual(cz_exs[0]["name"], "Etude N°1 in C")
+        self.assertEqual(cz_exs[-1]["name"], "Etude N°100 in C")
+
+        bach_exs = [e for e in exs if e["id"].startswith("bach")]
+        self.assertEqual(len(bach_exs), 28, "Must have 28 Bach First Lessons pieces in catalog")
+        self.assertIn("BWV Anh. 114", bach_exs[0]["name"])
+
+    def test_api_endpoints_for_czerny_and_bach(self):
+        resp_cz = main_app.get_hanon_data(exercise="cz1")
+        body_cz = json.loads(resp_cz.body.decode("utf-8"))
+        self.assertEqual(body_cz["composer"], "Carl Czerny")
+        self.assertEqual(body_cz["number"], 1)
+        self.assertGreaterEqual(len(body_cz["measures"]), 8)
+
+        resp_bach = main_app.get_hanon_data(exercise="bach1")
+        body_bach = json.loads(resp_bach.body.decode("utf-8"))
+        self.assertEqual(body_bach["composer"], "J.S. Bach")
+        self.assertEqual(body_bach["number"], 1)
+        self.assertGreaterEqual(len(body_bach["measures"]), 16)
+
+    def test_app_js_book_filtering_and_custom_titles(self):
+        app_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "app.js")
+        with open(app_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("getBookExercises", js)
+        self.assertIn("Carl Czerny", js)
+        self.assertIn("J.S. Bach", js)
+        self.assertIn("Etude N°", js)
+
 
 
 if __name__ == "__main__":

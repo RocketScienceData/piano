@@ -5240,5 +5240,4201 @@
         "Adem rustig door in een vaste metronoomcadans."
       ]
     }
+  ],
+  "cz1": [
+    {
+      "id": "les-cz1-1",
+      "exercise_id": "cz1",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 1: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz1-2",
+      "exercise_id": "cz1",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b01 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz2": [
+    {
+      "id": "les-cz2-1",
+      "exercise_id": "cz2",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 2: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz2-2",
+      "exercise_id": "cz2",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b02 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz3": [
+    {
+      "id": "les-cz3-1",
+      "exercise_id": "cz3",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 3: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz3-2",
+      "exercise_id": "cz3",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b03 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz4": [
+    {
+      "id": "les-cz4-1",
+      "exercise_id": "cz4",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 4: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz4-2",
+      "exercise_id": "cz4",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b04 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz5": [
+    {
+      "id": "les-cz5-1",
+      "exercise_id": "cz5",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 5: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz5-2",
+      "exercise_id": "cz5",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b05 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz6": [
+    {
+      "id": "les-cz6-1",
+      "exercise_id": "cz6",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 6: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz6-2",
+      "exercise_id": "cz6",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b06 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz7": [
+    {
+      "id": "les-cz7-1",
+      "exercise_id": "cz7",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 7: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz7-2",
+      "exercise_id": "cz7",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b07 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz8": [
+    {
+      "id": "les-cz8-1",
+      "exercise_id": "cz8",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 45,
+      "objective": "Beheers de techniek van Czerny Etude 8: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz8-2",
+      "exercise_id": "cz8",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 60,
+      "objective": "De gehele Czerny Etude N\u00b08 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz9": [
+    {
+      "id": "les-cz9-1",
+      "exercise_id": "cz9",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 9: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz9-2",
+      "exercise_id": "cz9",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b09 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz10": [
+    {
+      "id": "les-cz10-1",
+      "exercise_id": "cz10",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 10: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz10-2",
+      "exercise_id": "cz10",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b010 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz11": [
+    {
+      "id": "les-cz11-1",
+      "exercise_id": "cz11",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 11: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz11-2",
+      "exercise_id": "cz11",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b011 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz12": [
+    {
+      "id": "les-cz12-1",
+      "exercise_id": "cz12",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 12: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz12-2",
+      "exercise_id": "cz12",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b012 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz13": [
+    {
+      "id": "les-cz13-1",
+      "exercise_id": "cz13",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 13: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz13-2",
+      "exercise_id": "cz13",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b013 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz14": [
+    {
+      "id": "les-cz14-1",
+      "exercise_id": "cz14",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 14: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz14-2",
+      "exercise_id": "cz14",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b014 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz15": [
+    {
+      "id": "les-cz15-1",
+      "exercise_id": "cz15",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 15: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz15-2",
+      "exercise_id": "cz15",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b015 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz16": [
+    {
+      "id": "les-cz16-1",
+      "exercise_id": "cz16",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 16: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz16-2",
+      "exercise_id": "cz16",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b016 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz17": [
+    {
+      "id": "les-cz17-1",
+      "exercise_id": "cz17",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 17: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz17-2",
+      "exercise_id": "cz17",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b017 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz18": [
+    {
+      "id": "les-cz18-1",
+      "exercise_id": "cz18",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 51,
+      "objective": "Beheers de techniek van Czerny Etude 18: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz18-2",
+      "exercise_id": "cz18",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 66,
+      "objective": "De gehele Czerny Etude N\u00b018 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz19": [
+    {
+      "id": "les-cz19-1",
+      "exercise_id": "cz19",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 19: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz19-2",
+      "exercise_id": "cz19",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b019 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz20": [
+    {
+      "id": "les-cz20-1",
+      "exercise_id": "cz20",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 20: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz20-2",
+      "exercise_id": "cz20",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b020 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz21": [
+    {
+      "id": "les-cz21-1",
+      "exercise_id": "cz21",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 21: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz21-2",
+      "exercise_id": "cz21",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b021 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz22": [
+    {
+      "id": "les-cz22-1",
+      "exercise_id": "cz22",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 22: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz22-2",
+      "exercise_id": "cz22",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b022 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz23": [
+    {
+      "id": "les-cz23-1",
+      "exercise_id": "cz23",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 23: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz23-2",
+      "exercise_id": "cz23",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b023 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz24": [
+    {
+      "id": "les-cz24-1",
+      "exercise_id": "cz24",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 24: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz24-2",
+      "exercise_id": "cz24",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b024 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz25": [
+    {
+      "id": "les-cz25-1",
+      "exercise_id": "cz25",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 25: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz25-2",
+      "exercise_id": "cz25",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b025 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz26": [
+    {
+      "id": "les-cz26-1",
+      "exercise_id": "cz26",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 26: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz26-2",
+      "exercise_id": "cz26",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b026 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz27": [
+    {
+      "id": "les-cz27-1",
+      "exercise_id": "cz27",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 27: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz27-2",
+      "exercise_id": "cz27",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b027 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz28": [
+    {
+      "id": "les-cz28-1",
+      "exercise_id": "cz28",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 28: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz28-2",
+      "exercise_id": "cz28",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b028 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz29": [
+    {
+      "id": "les-cz29-1",
+      "exercise_id": "cz29",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 29: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz29-2",
+      "exercise_id": "cz29",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b029 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz30": [
+    {
+      "id": "les-cz30-1",
+      "exercise_id": "cz30",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 30: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz30-2",
+      "exercise_id": "cz30",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b030 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz31": [
+    {
+      "id": "les-cz31-1",
+      "exercise_id": "cz31",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 31: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz31-2",
+      "exercise_id": "cz31",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b031 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz32": [
+    {
+      "id": "les-cz32-1",
+      "exercise_id": "cz32",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 32: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz32-2",
+      "exercise_id": "cz32",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b032 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz33": [
+    {
+      "id": "les-cz33-1",
+      "exercise_id": "cz33",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 33: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz33-2",
+      "exercise_id": "cz33",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b033 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz34": [
+    {
+      "id": "les-cz34-1",
+      "exercise_id": "cz34",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 34: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz34-2",
+      "exercise_id": "cz34",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b034 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz35": [
+    {
+      "id": "les-cz35-1",
+      "exercise_id": "cz35",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 35: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz35-2",
+      "exercise_id": "cz35",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b035 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz36": [
+    {
+      "id": "les-cz36-1",
+      "exercise_id": "cz36",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 65,
+      "objective": "Beheers de techniek van Czerny Etude 36: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz36-2",
+      "exercise_id": "cz36",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 80,
+      "objective": "De gehele Czerny Etude N\u00b036 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz37": [
+    {
+      "id": "les-cz37-1",
+      "exercise_id": "cz37",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 65,
+      "objective": "Beheers de techniek van Czerny Etude 37: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz37-2",
+      "exercise_id": "cz37",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 80,
+      "objective": "De gehele Czerny Etude N\u00b037 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz38": [
+    {
+      "id": "les-cz38-1",
+      "exercise_id": "cz38",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 65,
+      "objective": "Beheers de techniek van Czerny Etude 38: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz38-2",
+      "exercise_id": "cz38",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 80,
+      "objective": "De gehele Czerny Etude N\u00b038 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz39": [
+    {
+      "id": "les-cz39-1",
+      "exercise_id": "cz39",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 39: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz39-2",
+      "exercise_id": "cz39",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b039 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz40": [
+    {
+      "id": "les-cz40-1",
+      "exercise_id": "cz40",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 40: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz40-2",
+      "exercise_id": "cz40",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b040 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz41": [
+    {
+      "id": "les-cz41-1",
+      "exercise_id": "cz41",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 41: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz41-2",
+      "exercise_id": "cz41",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b041 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz42": [
+    {
+      "id": "les-cz42-1",
+      "exercise_id": "cz42",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 57,
+      "objective": "Beheers de techniek van Czerny Etude 42: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz42-2",
+      "exercise_id": "cz42",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 72,
+      "objective": "De gehele Czerny Etude N\u00b042 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz43": [
+    {
+      "id": "les-cz43-1",
+      "exercise_id": "cz43",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 43: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz43-2",
+      "exercise_id": "cz43",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b043 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz44": [
+    {
+      "id": "les-cz44-1",
+      "exercise_id": "cz44",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 44: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz44-2",
+      "exercise_id": "cz44",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b044 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz45": [
+    {
+      "id": "les-cz45-1",
+      "exercise_id": "cz45",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 45: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz45-2",
+      "exercise_id": "cz45",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b045 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz46": [
+    {
+      "id": "les-cz46-1",
+      "exercise_id": "cz46",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 46: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz46-2",
+      "exercise_id": "cz46",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b046 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz47": [
+    {
+      "id": "les-cz47-1",
+      "exercise_id": "cz47",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 47: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz47-2",
+      "exercise_id": "cz47",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b047 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz48": [
+    {
+      "id": "les-cz48-1",
+      "exercise_id": "cz48",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 48: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz48-2",
+      "exercise_id": "cz48",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b048 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz49": [
+    {
+      "id": "les-cz49-1",
+      "exercise_id": "cz49",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 49: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz49-2",
+      "exercise_id": "cz49",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b049 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz50": [
+    {
+      "id": "les-cz50-1",
+      "exercise_id": "cz50",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 50: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz50-2",
+      "exercise_id": "cz50",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b050 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz51": [
+    {
+      "id": "les-cz51-1",
+      "exercise_id": "cz51",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 51: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz51-2",
+      "exercise_id": "cz51",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b051 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz52": [
+    {
+      "id": "les-cz52-1",
+      "exercise_id": "cz52",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 52: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz52-2",
+      "exercise_id": "cz52",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b052 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz53": [
+    {
+      "id": "les-cz53-1",
+      "exercise_id": "cz53",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 53: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz53-2",
+      "exercise_id": "cz53",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b053 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz54": [
+    {
+      "id": "les-cz54-1",
+      "exercise_id": "cz54",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 54: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz54-2",
+      "exercise_id": "cz54",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b054 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz55": [
+    {
+      "id": "les-cz55-1",
+      "exercise_id": "cz55",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 55: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz55-2",
+      "exercise_id": "cz55",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b055 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz56": [
+    {
+      "id": "les-cz56-1",
+      "exercise_id": "cz56",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 56: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz56-2",
+      "exercise_id": "cz56",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b056 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz57": [
+    {
+      "id": "les-cz57-1",
+      "exercise_id": "cz57",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 61,
+      "objective": "Beheers de techniek van Czerny Etude 57: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz57-2",
+      "exercise_id": "cz57",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 76,
+      "objective": "De gehele Czerny Etude N\u00b057 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz58": [
+    {
+      "id": "les-cz58-1",
+      "exercise_id": "cz58",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 58: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz58-2",
+      "exercise_id": "cz58",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b058 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz59": [
+    {
+      "id": "les-cz59-1",
+      "exercise_id": "cz59",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 59: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz59-2",
+      "exercise_id": "cz59",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b059 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz60": [
+    {
+      "id": "les-cz60-1",
+      "exercise_id": "cz60",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 60: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz60-2",
+      "exercise_id": "cz60",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b060 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz61": [
+    {
+      "id": "les-cz61-1",
+      "exercise_id": "cz61",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 61: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz61-2",
+      "exercise_id": "cz61",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b061 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz62": [
+    {
+      "id": "les-cz62-1",
+      "exercise_id": "cz62",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 62: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz62-2",
+      "exercise_id": "cz62",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b062 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz63": [
+    {
+      "id": "les-cz63-1",
+      "exercise_id": "cz63",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 63: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz63-2",
+      "exercise_id": "cz63",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b063 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz64": [
+    {
+      "id": "les-cz64-1",
+      "exercise_id": "cz64",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 64: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz64-2",
+      "exercise_id": "cz64",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b064 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz65": [
+    {
+      "id": "les-cz65-1",
+      "exercise_id": "cz65",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 65: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz65-2",
+      "exercise_id": "cz65",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b065 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz66": [
+    {
+      "id": "les-cz66-1",
+      "exercise_id": "cz66",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 66: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz66-2",
+      "exercise_id": "cz66",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b066 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz67": [
+    {
+      "id": "les-cz67-1",
+      "exercise_id": "cz67",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 67: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz67-2",
+      "exercise_id": "cz67",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b067 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz68": [
+    {
+      "id": "les-cz68-1",
+      "exercise_id": "cz68",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 68: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz68-2",
+      "exercise_id": "cz68",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b068 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz69": [
+    {
+      "id": "les-cz69-1",
+      "exercise_id": "cz69",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 69: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz69-2",
+      "exercise_id": "cz69",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b069 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz70": [
+    {
+      "id": "les-cz70-1",
+      "exercise_id": "cz70",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 69,
+      "objective": "Beheers de techniek van Czerny Etude 70: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz70-2",
+      "exercise_id": "cz70",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 84,
+      "objective": "De gehele Czerny Etude N\u00b070 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz71": [
+    {
+      "id": "les-cz71-1",
+      "exercise_id": "cz71",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 71: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz71-2",
+      "exercise_id": "cz71",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b071 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz72": [
+    {
+      "id": "les-cz72-1",
+      "exercise_id": "cz72",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 72: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz72-2",
+      "exercise_id": "cz72",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b072 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz73": [
+    {
+      "id": "les-cz73-1",
+      "exercise_id": "cz73",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 73: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz73-2",
+      "exercise_id": "cz73",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b073 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz74": [
+    {
+      "id": "les-cz74-1",
+      "exercise_id": "cz74",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 74: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz74-2",
+      "exercise_id": "cz74",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b074 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz75": [
+    {
+      "id": "les-cz75-1",
+      "exercise_id": "cz75",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 75: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz75-2",
+      "exercise_id": "cz75",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b075 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz76": [
+    {
+      "id": "les-cz76-1",
+      "exercise_id": "cz76",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 76: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz76-2",
+      "exercise_id": "cz76",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b076 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz77": [
+    {
+      "id": "les-cz77-1",
+      "exercise_id": "cz77",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 77: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz77-2",
+      "exercise_id": "cz77",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b077 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz78": [
+    {
+      "id": "les-cz78-1",
+      "exercise_id": "cz78",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 78: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz78-2",
+      "exercise_id": "cz78",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b078 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz79": [
+    {
+      "id": "les-cz79-1",
+      "exercise_id": "cz79",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 79: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz79-2",
+      "exercise_id": "cz79",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b079 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz80": [
+    {
+      "id": "les-cz80-1",
+      "exercise_id": "cz80",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 77,
+      "objective": "Beheers de techniek van Czerny Etude 80: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz80-2",
+      "exercise_id": "cz80",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 92,
+      "objective": "De gehele Czerny Etude N\u00b080 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz81": [
+    {
+      "id": "les-cz81-1",
+      "exercise_id": "cz81",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 81: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz81-2",
+      "exercise_id": "cz81",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b081 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz82": [
+    {
+      "id": "les-cz82-1",
+      "exercise_id": "cz82",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 82: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz82-2",
+      "exercise_id": "cz82",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b082 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz83": [
+    {
+      "id": "les-cz83-1",
+      "exercise_id": "cz83",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 83: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz83-2",
+      "exercise_id": "cz83",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b083 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz84": [
+    {
+      "id": "les-cz84-1",
+      "exercise_id": "cz84",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 84: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz84-2",
+      "exercise_id": "cz84",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b084 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz85": [
+    {
+      "id": "les-cz85-1",
+      "exercise_id": "cz85",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 85: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz85-2",
+      "exercise_id": "cz85",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b085 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz86": [
+    {
+      "id": "les-cz86-1",
+      "exercise_id": "cz86",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 86: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz86-2",
+      "exercise_id": "cz86",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b086 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz87": [
+    {
+      "id": "les-cz87-1",
+      "exercise_id": "cz87",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 87: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz87-2",
+      "exercise_id": "cz87",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b087 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz88": [
+    {
+      "id": "les-cz88-1",
+      "exercise_id": "cz88",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 88: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz88-2",
+      "exercise_id": "cz88",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b088 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz89": [
+    {
+      "id": "les-cz89-1",
+      "exercise_id": "cz89",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 89: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz89-2",
+      "exercise_id": "cz89",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b089 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz90": [
+    {
+      "id": "les-cz90-1",
+      "exercise_id": "cz90",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 81,
+      "objective": "Beheers de techniek van Czerny Etude 90: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz90-2",
+      "exercise_id": "cz90",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 96,
+      "objective": "De gehele Czerny Etude N\u00b090 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz91": [
+    {
+      "id": "les-cz91-1",
+      "exercise_id": "cz91",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 91: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz91-2",
+      "exercise_id": "cz91",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b091 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz92": [
+    {
+      "id": "les-cz92-1",
+      "exercise_id": "cz92",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 92: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz92-2",
+      "exercise_id": "cz92",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b092 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz93": [
+    {
+      "id": "les-cz93-1",
+      "exercise_id": "cz93",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 93: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz93-2",
+      "exercise_id": "cz93",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b093 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz94": [
+    {
+      "id": "les-cz94-1",
+      "exercise_id": "cz94",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 94: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz94-2",
+      "exercise_id": "cz94",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b094 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz95": [
+    {
+      "id": "les-cz95-1",
+      "exercise_id": "cz95",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 95: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz95-2",
+      "exercise_id": "cz95",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b095 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz96": [
+    {
+      "id": "les-cz96-1",
+      "exercise_id": "cz96",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 96: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz96-2",
+      "exercise_id": "cz96",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b096 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz97": [
+    {
+      "id": "les-cz97-1",
+      "exercise_id": "cz97",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 97: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz97-2",
+      "exercise_id": "cz97",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b097 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz98": [
+    {
+      "id": "les-cz98-1",
+      "exercise_id": "cz98",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 98: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz98-2",
+      "exercise_id": "cz98",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b098 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz99": [
+    {
+      "id": "les-cz99-1",
+      "exercise_id": "cz99",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 99: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz99-2",
+      "exercise_id": "cz99",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b099 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "cz100": [
+    {
+      "id": "les-cz100-1",
+      "exercise_id": "cz100",
+      "title": "Les 1: Thema & Handpositie",
+      "subtitle": "Maat 1 t/m 4 (32 noten)",
+      "start_measure": 1,
+      "end_measure": 4,
+      "total_notes": 32,
+      "recommended_bpm": 93,
+      "objective": "Beheers de techniek van Czerny Etude 100: ontspannen handboog en egale vingerheffing.",
+      "tips": [
+        "Let op de rustige positie van de handpalm.",
+        "Sla elke noot vanuit de vingertop aan zonder polsknik.",
+        "Speel eerst rustig op half tempo voor zuivere intonatie."
+      ]
+    },
+    {
+      "id": "les-cz100-2",
+      "exercise_id": "cz100",
+      "title": "Les 2: Volledige Etude & Cadans",
+      "subtitle": "Maat 1 t/m 8 (57 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 57,
+      "recommended_bpm": 108,
+      "objective": "De gehele Czerny Etude N\u00b0100 vloeiend en foutloos op voordrachtstempo!",
+      "tips": [
+        "Blijf ademen tijdens de overgangen tussen de maten.",
+        "Let op de muzikale cadans en rond af met een volle slotnoot."
+      ]
+    }
+  ],
+  "bach1": [
+    {
+      "id": "les-bach1-1",
+      "exercise_id": "bach1",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 69,
+      "objective": "Leer het thema van 1. Minuet in G (BWV Anh. 114) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach1-2",
+      "exercise_id": "bach1",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 84,
+      "objective": "Speel 1. Minuet in G (BWV Anh. 114) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach2": [
+    {
+      "id": "les-bach2-1",
+      "exercise_id": "bach2",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 2. Minuet in G minor (BWV Anh. 115) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach2-2",
+      "exercise_id": "bach2",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 2. Minuet in G minor (BWV Anh. 115) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach3": [
+    {
+      "id": "les-bach3-1",
+      "exercise_id": "bach3",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 73,
+      "objective": "Leer het thema van 3. Minuet in G (BWV Anh. 116) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach3-2",
+      "exercise_id": "bach3",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 88,
+      "objective": "Speel 3. Minuet in G (BWV Anh. 116) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach4": [
+    {
+      "id": "les-bach4-1",
+      "exercise_id": "bach4",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 4. Polonaise in F (BWV Anh. 117a) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach4-2",
+      "exercise_id": "bach4",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 4. Polonaise in F (BWV Anh. 117a) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach5": [
+    {
+      "id": "les-bach5-1",
+      "exercise_id": "bach5",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 69,
+      "objective": "Leer het thema van 5. Minuet in B-flat (BWV Anh. 118) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach5-2",
+      "exercise_id": "bach5",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 84,
+      "objective": "Speel 5. Minuet in B-flat (BWV Anh. 118) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach6": [
+    {
+      "id": "les-bach6-1",
+      "exercise_id": "bach6",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 69,
+      "objective": "Leer het thema van 6. Minuet in A minor (BWV Anh. 120) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach6-2",
+      "exercise_id": "bach6",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 84,
+      "objective": "Speel 6. Minuet in A minor (BWV Anh. 120) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach7": [
+    {
+      "id": "les-bach7-1",
+      "exercise_id": "bach7",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 7. Minuet in C minor (BWV Anh. 121) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach7-2",
+      "exercise_id": "bach7",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 7. Minuet in C minor (BWV Anh. 121) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach8": [
+    {
+      "id": "les-bach8-1",
+      "exercise_id": "bach8",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 8. Minuet in D minor (BWV Anh. 132) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach8-2",
+      "exercise_id": "bach8",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 8. Minuet in D minor (BWV Anh. 132) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach9": [
+    {
+      "id": "les-bach9-1",
+      "exercise_id": "bach9",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 73,
+      "objective": "Leer het thema van 9. Minuet in G (BWV 822) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach9-2",
+      "exercise_id": "bach9",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 88,
+      "objective": "Speel 9. Minuet in G (BWV 822) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach10": [
+    {
+      "id": "les-bach10-1",
+      "exercise_id": "bach10",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 73,
+      "objective": "Leer het thema van 10. Minuet in G (BWV 822 No. 2) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach10-2",
+      "exercise_id": "bach10",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 88,
+      "objective": "Speel 10. Minuet in G (BWV 822 No. 2) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach11": [
+    {
+      "id": "les-bach11-1",
+      "exercise_id": "bach11",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 11. Minuet in G minor (BWV 822) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach11-2",
+      "exercise_id": "bach11",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 11. Minuet in G minor (BWV 822) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach12": [
+    {
+      "id": "les-bach12-1",
+      "exercise_id": "bach12",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 81,
+      "objective": "Leer het thema van 12. March in D (BWV Anh. 122) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach12-2",
+      "exercise_id": "bach12",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 96,
+      "objective": "Speel 12. March in D (BWV Anh. 122) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach13": [
+    {
+      "id": "les-bach13-1",
+      "exercise_id": "bach13",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 81,
+      "objective": "Leer het thema van 13. March in G (BWV Anh. 124) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach13-2",
+      "exercise_id": "bach13",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 96,
+      "objective": "Speel 13. March in G (BWV Anh. 124) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach14": [
+    {
+      "id": "les-bach14-1",
+      "exercise_id": "bach14",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 61,
+      "objective": "Leer het thema van 14. Polonaise in G minor (BWV Anh. 119) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach14-2",
+      "exercise_id": "bach14",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 76,
+      "objective": "Speel 14. Polonaise in G minor (BWV Anh. 119) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach15": [
+    {
+      "id": "les-bach15-1",
+      "exercise_id": "bach15",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 61,
+      "objective": "Leer het thema van 15. Polonaise in G minor (BWV Anh. 123) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach15-2",
+      "exercise_id": "bach15",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 76,
+      "objective": "Speel 15. Polonaise in G minor (BWV Anh. 123) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach16": [
+    {
+      "id": "les-bach16-1",
+      "exercise_id": "bach16",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 16. Polonaise in G minor (BWV Anh. 125) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach16-2",
+      "exercise_id": "bach16",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 16. Polonaise in G minor (BWV Anh. 125) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach17": [
+    {
+      "id": "les-bach17-1",
+      "exercise_id": "bach17",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 57,
+      "objective": "Leer het thema van 17. Little Prelude in C (BWV 924) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach17-2",
+      "exercise_id": "bach17",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 72,
+      "objective": "Speel 17. Little Prelude in C (BWV 924) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach18": [
+    {
+      "id": "les-bach18-1",
+      "exercise_id": "bach18",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 69,
+      "objective": "Leer het thema van 18. Little Prelude in D minor (BWV 926) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach18-2",
+      "exercise_id": "bach18",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 84,
+      "objective": "Speel 18. Little Prelude in D minor (BWV 926) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach19": [
+    {
+      "id": "les-bach19-1",
+      "exercise_id": "bach19",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 73,
+      "objective": "Leer het thema van 19. Little Prelude in F (BWV 927) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach19-2",
+      "exercise_id": "bach19",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 88,
+      "objective": "Speel 19. Little Prelude in F (BWV 927) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach20": [
+    {
+      "id": "les-bach20-1",
+      "exercise_id": "bach20",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 65,
+      "objective": "Leer het thema van 20. Little Prelude in C (BWV 939) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach20-2",
+      "exercise_id": "bach20",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 80,
+      "objective": "Speel 20. Little Prelude in C (BWV 939) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach21": [
+    {
+      "id": "les-bach21-1",
+      "exercise_id": "bach21",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 61,
+      "objective": "Leer het thema van 21. Little Prelude in C minor (BWV 999) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach21-2",
+      "exercise_id": "bach21",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 76,
+      "objective": "Speel 21. Little Prelude in C minor (BWV 999) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach22": [
+    {
+      "id": "les-bach22-1",
+      "exercise_id": "bach22",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 77,
+      "objective": "Leer het thema van 22. Bourr\u00e9e in E minor (BWV 996) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach22-2",
+      "exercise_id": "bach22",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 92,
+      "objective": "Speel 22. Bourr\u00e9e in E minor (BWV 996) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach23": [
+    {
+      "id": "les-bach23-1",
+      "exercise_id": "bach23",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 85,
+      "objective": "Leer het thema van 23. Musette in D (BWV Anh. 126) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach23-2",
+      "exercise_id": "bach23",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 100,
+      "objective": "Speel 23. Musette in D (BWV Anh. 126) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach24": [
+    {
+      "id": "les-bach24-1",
+      "exercise_id": "bach24",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 50,
+      "objective": "Leer het thema van 24. Sarabande in D minor (BWV 812) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach24-2",
+      "exercise_id": "bach24",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 60,
+      "objective": "Speel 24. Sarabande in D minor (BWV 812) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach25": [
+    {
+      "id": "les-bach25-1",
+      "exercise_id": "bach25",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 77,
+      "objective": "Leer het thema van 25. Gavotte in G (BWV 816) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach25-2",
+      "exercise_id": "bach25",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 92,
+      "objective": "Speel 25. Gavotte in G (BWV 816) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach26": [
+    {
+      "id": "les-bach26-1",
+      "exercise_id": "bach26",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 73,
+      "objective": "Leer het thema van 26. Bourr\u00e9e in B minor (BWV 1002) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach26-2",
+      "exercise_id": "bach26",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 88,
+      "objective": "Speel 26. Bourr\u00e9e in B minor (BWV 1002) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach27": [
+    {
+      "id": "les-bach27-1",
+      "exercise_id": "bach27",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 57,
+      "objective": "Leer het thema van 27. Two-Part Invention in C (BWV 772) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach27-2",
+      "exercise_id": "bach27",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 72,
+      "objective": "Speel 27. Two-Part Invention in C (BWV 772) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
+  ],
+  "bach28": [
+    {
+      "id": "les-bach28-1",
+      "exercise_id": "bach28",
+      "title": "Les 1: Thema & Melodielijn",
+      "subtitle": "Maat 1 t/m 8 (64 noten)",
+      "start_measure": 1,
+      "end_measure": 8,
+      "total_notes": 64,
+      "recommended_bpm": 73,
+      "objective": "Leer het thema van 28. Two-Part Invention in F (BWV 779) met zangerige polyfone articulatie.",
+      "tips": [
+        "Luister naar de dialoog tussen sopraan en baslijn.",
+        "Houd een heldere, niet-klevende barokaanslag aan."
+      ]
+    },
+    {
+      "id": "les-bach28-2",
+      "exercise_id": "bach28",
+      "title": "Les 2: Volledig Barokwerk",
+      "subtitle": "Maat 1 t/m 16 (121 noten)",
+      "start_measure": 1,
+      "end_measure": 16,
+      "total_notes": 121,
+      "recommended_bpm": 88,
+      "objective": "Speel 28. Two-Part Invention in F (BWV 779) geheel door met stijlgetrouwe dansfrasering.",
+      "tips": [
+        "Let op de lichte tel 1 in de dansmaten.",
+        "Behoud een rustige, trotse barokcadans tot de slotnoot."
+      ]
+    }
   ]
 }

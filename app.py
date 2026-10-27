@@ -115,15 +115,39 @@ def get_all_exercises_list():
     return JSONResponse(content=get_exercises())
 
 
+def _load_exercise_payload(exercise_id: str) -> Optional[Dict[str, Any]]:
+    if exercise_id in EXERCISE_DATA:
+        return EXERCISE_DATA[exercise_id]
+    candidates = [
+        f"hanon_{exercise_id}.json",
+        f"czerny_{exercise_id}.json",
+        f"bach_{exercise_id}.json",
+        f"{exercise_id}.json"
+    ]
+    for fn in candidates:
+        fp = os.path.join(DATA_DIR, fn)
+        if os.path.exists(fp):
+            try:
+                with open(fp, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    EXERCISE_DATA[exercise_id] = data
+                    return data
+            except Exception as e:
+                print(f"Error loading {fp}: {e}")
+    return None
+
 @app.get("/api/hanon")
 def get_hanon_data(exercise: str = Query("ex1")):
-    data = EXERCISE_DATA.get(exercise, HANON_EX1)
+    data = _load_exercise_payload(exercise)
+    if not data:
+        data = EXERCISE_DATA.get("ex1", HANON_EX1)
     return JSONResponse(content=data)
 
 @app.get("/api/hanon/{exercise_id}")
 def get_single_hanon_data(exercise_id: str):
-    if exercise_id in EXERCISE_DATA:
-        return JSONResponse(content=EXERCISE_DATA[exercise_id])
+    data = _load_exercise_payload(exercise_id)
+    if data:
+        return JSONResponse(content=data)
     return JSONResponse(content={"error": f"Oefening '{exercise_id}' niet gevonden"}, status_code=404)
 
 @app.get("/api/lessons")

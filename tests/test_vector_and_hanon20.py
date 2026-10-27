@@ -62,7 +62,7 @@ class TestHanon60AllParts(unittest.TestCase):
         self.assertEqual(total_lessons, 360, "Total lessons across all 60 exercises must be 360")
 
     def test_parts_distribution(self):
-        exs = get_exercises()
+        exs = [e for e in get_exercises() if e["id"].startswith("ex")]
         self.assertEqual(len(exs), 60, "Should have 60 total exercises in catalog")
         part1 = [e for e in exs if e.get("part") == 1]
         part2 = [e for e in exs if e.get("part") == 2]
@@ -74,7 +74,8 @@ class TestHanon60AllParts(unittest.TestCase):
     def test_api_endpoints_for_all_60(self):
         resp_all = main_app.get_all_exercises_list()
         body_all = json.loads(resp_all.body.decode("utf-8"))
-        self.assertEqual(len(body_all), 60)
+        hanon_all = [e for e in body_all if e["id"].startswith("ex")]
+        self.assertEqual(len(hanon_all), 60)
         
         # Test individual hanon endpoints for all 60 exercises
         for num in range(1, 61):
@@ -88,7 +89,7 @@ class TestHanon60AllParts(unittest.TestCase):
         # Test all lessons endpoint
         resp_lessons = main_app.get_all_lessons_map()
         body_lessons = json.loads(resp_lessons.body.decode("utf-8"))
-        self.assertEqual(len(body_lessons), 60)
+        self.assertGreaterEqual(len(body_lessons), 60)
         self.assertIn("ex1", body_lessons)
         self.assertIn("ex60", body_lessons)
 
