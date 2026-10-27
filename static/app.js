@@ -118,7 +118,9 @@ const state = {
   lessons: [],
   currentLessonId: "les-1",
   currentHand: "both", // 'both' (two hands) by default, 'rh', 'lh'
-  handDisplayMode: localStorage.getItem("hanon_keyboard_hand_mode") || "hands", // 'hands' (Flowkey animated hands) or 'badges' (traditional)
+  handDisplayMode: localStorage.getItem("hanon_keyboard_hand_mode") || "hands", // 'hands' (Flowkey moving hands) or 'blocks' (blocks under keyboard)
+  showHandsOnKeyboard: (localStorage.getItem("hanon_keyboard_hand_mode") || "hands") === "hands",
+  showBlocksUnder: (localStorage.getItem("hanon_keyboard_hand_mode") || "hands") === "blocks",
   currentMode: "wait", // 'wait', 'tempo'
   bpm: 60,
   metronomeOn: true,
@@ -259,7 +261,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   setupUIEventListeners();
   buildPianoKeys();
-  setKeyboardHandMode(state.handDisplayMode, false);
+  applyKeyboardLayoutVisibility(false);
   await loadData();
   updateAudioSourceSelectLabels();
   setupWaveformCanvas();
@@ -306,22 +308,22 @@ function setupUIEventListeners() {
     });
   });
 
-  // Flowkey Keyboard View Switcher (Badges vs Moving Hands)
-  const btnFingering = document.getElementById("btn-view-fingering");
-  if (btnFingering) {
-    btnFingering.addEventListener("click", () => setKeyboardHandMode("badges", true));
-  }
+  // Flowkey Keyboard View Switcher: Hands on Keyboard vs Blocks Below
   const btnHands = document.getElementById("btn-view-hands");
   if (btnHands) {
     btnHands.addEventListener("click", () => setKeyboardHandMode("hands", true));
   }
+  const btnBlocks = document.getElementById("btn-view-blocks");
+  if (btnBlocks) {
+    btnBlocks.addEventListener("click", () => setKeyboardHandMode("blocks", true));
+  }
 
-  // Keyboard shortcut: Press 'H' to toggle between Fingering Badges and Animated Moving Hands
+  // Keyboard shortcut: Press 'H' to toggle between Hands on Keyboard and Blocks Below
   window.addEventListener("keydown", (e) => {
     if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)) return;
     if (e.key === "h" || e.key === "H") {
       e.preventDefault();
-      const newMode = (state.handDisplayMode === "hands") ? "badges" : "hands";
+      const newMode = (state.handDisplayMode === "hands") ? "blocks" : "hands";
       setKeyboardHandMode(newMode, true);
     }
   });
@@ -486,14 +488,35 @@ function setupSettingsDrawer() {
     });
   });
 
-  // Drawer Keyboard Hand Mode buttons (Vingerzetting vs Bewegende Handen)
-  const drawerBtnBadges = document.getElementById("drawer-btn-mode-badges");
-  if (drawerBtnBadges) {
-    drawerBtnBadges.addEventListener("click", () => setKeyboardHandMode("badges", true));
-  }
+  // Drawer Keyboard Hand Mode buttons (Handen op Klavier vs Blokken Eronder)
   const drawerBtnHands = document.getElementById("drawer-btn-mode-hands");
   if (drawerBtnHands) {
     drawerBtnHands.addEventListener("click", () => setKeyboardHandMode("hands", true));
+  }
+  const drawerBtnBlocks = document.getElementById("drawer-btn-mode-blocks");
+  if (drawerBtnBlocks) {
+    drawerBtnBlocks.addEventListener("click", () => setKeyboardHandMode("blocks", true));
+  }
+
+  // Individual toggle switches
+  const toggleHands = document.getElementById("toggle-opt-hands");
+  if (toggleHands) {
+    toggleHands.checked = state.showHandsOnKeyboard;
+    toggleHands.addEventListener("change", (e) => {
+      state.showHandsOnKeyboard = e.target.checked;
+      state.handDisplayMode = state.showHandsOnKeyboard ? "hands" : "blocks";
+      applyKeyboardLayoutVisibility(false);
+    });
+  }
+
+  const toggleBlocks = document.getElementById("toggle-opt-blocks");
+  if (toggleBlocks) {
+    toggleBlocks.checked = state.showBlocksUnder;
+    toggleBlocks.addEventListener("change", (e) => {
+      state.showBlocksUnder = e.target.checked;
+      state.handDisplayMode = state.showBlocksUnder ? "blocks" : "hands";
+      applyKeyboardLayoutVisibility(false);
+    });
   }
 
   // Keyboard display toggles
@@ -1316,55 +1339,73 @@ function updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes) {
 // Flowkey Animated Moving Hands & Mode Switcher
 // ==========================================================================
 
-function setKeyboardHandMode(mode, notify = false) {
-  state.handDisplayMode = (mode === "badges") ? "badges" : "hands";
+function applyKeyboardLayoutVisibility(notify = false, customToast = null) {
   localStorage.setItem("hanon_keyboard_hand_mode", state.handDisplayMode);
+  localStorage.setItem("hanon_show_hands", state.showHandsOnKeyboard ? "true" : "false");
+  localStorage.setItem("hanon_show_blocks", state.showBlocksUnder ? "true" : "false");
 
   // Update header buttons
-  const btnFingering = document.getElementById("btn-view-fingering");
   const btnHands = document.getElementById("btn-view-hands");
-  if (btnFingering && btnHands) {
-    if (state.handDisplayMode === "hands") {
-      btnHands.classList.add("active");
-      btnFingering.classList.remove("active");
-    } else {
-      btnFingering.classList.add("active");
-      btnHands.classList.remove("active");
-    }
+  const btnBlocks = document.getElementById("btn-view-blocks");
+  if (btnHands && btnBlocks) {
+    btnHands.classList.toggle("active", state.handDisplayMode === "hands");
+    btnBlocks.classList.toggle("active", state.handDisplayMode === "blocks");
   }
 
-  // Update drawer buttons
-  const drawerBtnBadges = document.getElementById("drawer-btn-mode-badges");
+  // Update drawer segmented buttons
   const drawerBtnHands = document.getElementById("drawer-btn-mode-hands");
-  if (drawerBtnBadges && drawerBtnHands) {
-    if (state.handDisplayMode === "hands") {
-      drawerBtnHands.classList.add("active");
-      drawerBtnBadges.classList.remove("active");
-    } else {
-      drawerBtnBadges.classList.add("active");
-      drawerBtnHands.classList.remove("active");
-    }
+  const drawerBtnBlocks = document.getElementById("drawer-btn-mode-blocks");
+  if (drawerBtnHands && drawerBtnBlocks) {
+    drawerBtnHands.classList.toggle("active", state.handDisplayMode === "hands");
+    drawerBtnBlocks.classList.toggle("active", state.handDisplayMode === "blocks");
   }
 
-  // Toggle CSS class on piano container
+  // Update drawer checkboxes
+  const chkHands = document.getElementById("toggle-opt-hands");
+  const chkBlocks = document.getElementById("toggle-opt-blocks");
+  if (chkHands) chkHands.checked = state.showHandsOnKeyboard;
+  if (chkBlocks) chkBlocks.checked = state.showBlocksUnder;
+
+  // Piano container sizing
   const pianoContainer = document.getElementById("piano-container");
   if (pianoContainer) {
-    if (state.handDisplayMode === "hands") {
-      pianoContainer.classList.add("hands-mode");
-    } else {
-      pianoContainer.classList.remove("hands-mode");
-    }
+    pianoContainer.classList.toggle("hands-mode", state.showHandsOnKeyboard);
+  }
+
+  // Show/Hide blocks underneath the keyboard
+  const guideBar = document.getElementById("piano-hand-guide-bar");
+  if (guideBar) {
+    guideBar.style.display = state.showBlocksUnder ? "flex" : "none";
+  }
+
+  const placementWrapper = document.getElementById("hand-placement-wrapper");
+  if (placementWrapper) {
+    placementWrapper.style.display = state.showBlocksUnder ? "flex" : "none";
   }
 
   // Re-highlight piano target
   highlightPianoTarget();
 
   if (notify) {
-    const msg = (state.handDisplayMode === "hands")
-      ? ((window.I18N && window.I18N.t("toast_mode_hands")) || "Klavierweergave: Bewegende Handen 👐")
-      : ((window.I18N && window.I18N.t("toast_mode_badges")) || "Klavierweergave: Vingerzetting Badges 🖐");
+    const msg = customToast || (
+      (state.handDisplayMode === "hands")
+        ? ((window.I18N && window.I18N.t("toast_mode_hands")) || "Klavierweergave: Handen op Klavier 👐")
+        : ((window.I18N && window.I18N.t("toast_mode_blocks")) || "Klavierweergave: Blokken Eronder 📊")
+    );
     showToast(msg);
   }
+}
+
+function setKeyboardHandMode(mode, notify = false) {
+  state.handDisplayMode = (mode === "blocks") ? "blocks" : "hands";
+  if (state.handDisplayMode === "hands") {
+    state.showHandsOnKeyboard = true;
+    state.showBlocksUnder = false;
+  } else {
+    state.showHandsOnKeyboard = false;
+    state.showBlocksUnder = true;
+  }
+  applyKeyboardLayoutVisibility(notify);
 }
 
 function renderHandSvgMarkup(side, points, wristY, palmY) {
@@ -1487,8 +1528,8 @@ function updatePianoAnimatedHands(lhSpanNotes, rhSpanNotes, currentItem) {
     pianoKeys.appendChild(handsSvg);
   }
 
-  // If in badges mode, hide hands overlay completely
-  if (state.handDisplayMode !== "hands") {
+  // If moving hands are not enabled, hide hands overlay completely
+  if (!state.showHandsOnKeyboard) {
     handsSvg.style.display = "none";
     handsSvg.innerHTML = "";
     return;
@@ -2189,8 +2230,11 @@ function startDemo() {
   if (!state.activeNotesQueue || state.activeNotesQueue.length === 0) return;
   
   state.isDemo = true;
-  document.getElementById("btn-demo").innerHTML = "<span>⏹️ Stop Demo</span>";
-  document.getElementById("btn-demo").classList.add("btn-accent");
+  const btnDemo = document.getElementById("btn-demo");
+  if (btnDemo) {
+    btnDemo.innerHTML = "<span>⏹️ Stop Demo</span>";
+    btnDemo.classList.add("btn-accent");
+  }
   
   let demoIdx = 0;
   const intervalMs = (60000 / state.bpm) / 4; // 16th notes
@@ -2202,44 +2246,29 @@ function startDemo() {
     }
     
     const item = state.activeNotesQueue[demoIdx];
+    state.activeTarget = item;
+    state.currentNoteIndex = demoIdx;
     
     // Play synthesis tone
     if (state.currentHand === "both") {
-      playPianoTone(item.lh.midi, intervalMs / 1000);
-      playPianoTone(item.rh.midi, intervalMs / 1000);
+      if (item.lh && item.lh.midi) playPianoTone(item.lh.midi, intervalMs / 1000);
+      if (item.rh && item.rh.midi) playPianoTone(item.rh.midi, intervalMs / 1000);
     } else if (state.currentHand === "lh") {
-      playPianoTone(item.lh.midi, intervalMs / 1000);
+      if (item.lh && item.lh.midi) playPianoTone(item.lh.midi, intervalMs / 1000);
     } else {
-      playPianoTone(item.rh.midi, intervalMs / 1000);
+      if (item.rh && item.rh.midi) playPianoTone(item.rh.midi, intervalMs / 1000);
     }
     
     // Highlight sheet position
     highlightSheetPosition(item);
     
-    // Highlight piano target key(s)
-    if (state.currentHand === "both") {
-      document.querySelectorAll(".white-key, .black-key").forEach(k => {
-        k.classList.remove("active-target");
-        const badge = k.querySelector(".finger-badge");
-        if (badge) badge.remove();
-      });
-      [
-        { note: item.lh.note, finger: item.lh.finger },
-        { note: item.rh.note, finger: item.rh.finger }
-      ].forEach(t => {
-        const kEl = document.querySelector(`[data-note="${t.note}"]`);
-        if (kEl) {
-          kEl.classList.add("active-target");
-          const b = document.createElement("div");
-          b.className = "finger-badge";
-          b.textContent = t.finger;
-          kEl.appendChild(b);
-        }
-      });
-    } else {
-      const noteName = state.currentHand === "lh" ? item.lh.note : item.rh.note;
-      const finger = state.currentHand === "lh" ? item.lh.finger : item.rh.finger;
-      highlightPianoTarget(noteName, finger);
+    // Highlight piano target key(s) AND articulate animated moving hands!
+    highlightPianoTarget();
+    
+    // Update vector sheet if active
+    if (window.VectorSheetRenderer) {
+      window.VectorSheetRenderer.setTarget(item.measure, item.note_index, state.currentHand);
+      window.VectorSheetRenderer.scrollToMeasure(item.measure);
     }
     
     updateHandPlacementGuide(item);
@@ -2253,9 +2282,17 @@ function stopDemo() {
     clearInterval(state.demoTimer);
     state.demoTimer = null;
   }
-  document.getElementById("btn-demo").innerHTML = "<span>🎧 Speel Voor</span>";
-  document.getElementById("btn-demo").classList.remove("btn-accent");
+  const btnDemo = document.getElementById("btn-demo");
+  if (btnDemo) {
+    btnDemo.innerHTML = "<span>🎧 Speel Voor</span>";
+    btnDemo.classList.remove("btn-accent");
+  }
+  if (state.activeNotesQueue && state.activeNotesQueue.length > 0) {
+    state.currentNoteIndex = 0;
+    state.activeTarget = state.activeNotesQueue[0];
+  }
   updateTargetDisplay();
+  highlightPianoTarget();
 }
 
 // Web Audio Piano Tone Synthesis

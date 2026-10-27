@@ -500,15 +500,15 @@
           <span class="keyboard-subinfo">• Centrale C = C4</span>
         </div>
 
-        <!-- Flowkey Keyboard Hand View Switcher -->
-        <div class="keyboard-view-switch" id="keyboard-view-switch" role="group" aria-label="Klavier Handweergave Modus">
-          <button type="button" class="btn-key-view" id="btn-view-fingering" data-mode="badges" title="Toon vingerzetting badges op de toetsen (Sneltoets: H)">
-            <span class="btn-icon">🖐</span>
-            <span class="btn-label" data-i18n="view_mode_fingering">Vingerzetting</span>
-          </button>
-          <button type="button" class="btn-key-view active" id="btn-view-hands" data-mode="hands" title="Toon bewegende Flowkey handen op het klavier (Sneltoets: H)">
+        <!-- Flowkey Keyboard Hand View Switcher: Handen op Klavier vs Blokken Eronder -->
+        <div class="keyboard-view-switch" id="keyboard-view-switch" role="group" aria-label="Klavier Weergave Modus" title="Kies tussen bewegende handen op het klavier of vingerblokken eronder (Sneltoets: H)">
+          <button type="button" class="btn-key-view active" id="btn-view-hands" data-mode="hands" title="Toon bewegende handen op het klavier (Sneltoets: H)">
             <span class="btn-icon">👐</span>
-            <span class="btn-label" data-i18n="view_mode_hands">Bewegende Handen</span>
+            <span class="btn-label" data-i18n="view_mode_hands">Handen op Klavier</span>
+          </button>
+          <button type="button" class="btn-key-view" id="btn-view-blocks" data-mode="blocks" title="Toon vingergids blokken onder het klavier (Sneltoets: H)">
+            <span class="btn-icon">📊</span>
+            <span class="btn-label" data-i18n="view_mode_blocks">Blokken Eronder</span>
           </button>
         </div>
 
@@ -737,11 +737,19 @@
       <div class="drawer-section">
         <h3 class="section-label" data-i18n="section_keyboard">🎹 Klavier &amp; Notenbalk</h3>
         <div class="drawer-segmented-row">
-          <label class="drawer-row-label" data-i18n="opt_keyboard_hand_mode">Klavier Handweergave</label>
+          <label class="drawer-row-label" data-i18n="opt_keyboard_hand_mode">Klavier Weergavekeuze</label>
           <div class="drawer-segmented-group" id="drawer-hand-mode-group">
-            <button type="button" class="drawer-seg-btn" data-mode="badges" id="drawer-btn-mode-badges" data-i18n="view_mode_fingering">🖐 Vingerzetting</button>
-            <button type="button" class="drawer-seg-btn active" data-mode="hands" id="drawer-btn-mode-hands" data-i18n="view_mode_hands">👐 Bewegende Handen</button>
+            <button type="button" class="drawer-seg-btn active" data-mode="hands" id="drawer-btn-mode-hands" data-i18n="view_mode_hands">👐 Handen op Klavier</button>
+            <button type="button" class="drawer-seg-btn" data-mode="blocks" id="drawer-btn-mode-blocks" data-i18n="view_mode_blocks">📊 Blokken Eronder</button>
           </div>
+        </div>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-hands" data-i18n="opt_show_hands">Toon bewegende handen op het klavier</label>
+          <input type="checkbox" id="toggle-opt-hands" class="switch-input" checked>
+        </div>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-blocks" data-i18n="opt_show_blocks">Toon vingerblokken onder het klavier</label>
+          <input type="checkbox" id="toggle-opt-blocks" class="switch-input">
         </div>
         <div class="drawer-toggle-row">
           <label for="toggle-opt-brackets" data-i18n="opt_brackets">Toon zwevende handkaders boven toetsen</label>

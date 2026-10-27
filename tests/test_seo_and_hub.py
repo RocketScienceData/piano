@@ -82,11 +82,11 @@ class TestSeoAndHub(unittest.TestCase):
         with open(self.index_html_path, "r", encoding="utf-8") as f:
             html = f.read()
         self.assertIn('id="keyboard-view-switch"', html)
-        self.assertIn('id="btn-view-fingering"', html)
         self.assertIn('id="btn-view-hands"', html)
+        self.assertIn('id="btn-view-blocks"', html)
         self.assertIn('id="drawer-hand-mode-group"', html)
-        self.assertIn('id="drawer-btn-mode-badges"', html)
         self.assertIn('id="drawer-btn-mode-hands"', html)
+        self.assertIn('id="drawer-btn-mode-blocks"', html)
 
         with open(self.styles_css_path, "r", encoding="utf-8") as f:
             css = f.read()
@@ -99,6 +99,7 @@ class TestSeoAndHub(unittest.TestCase):
         with open(self.app_js_path, "r", encoding="utf-8") as f:
             js = f.read()
         self.assertIn("function setKeyboardHandMode", js)
+        self.assertIn("function applyKeyboardLayoutVisibility", js)
         self.assertIn("function renderHandSvgMarkup", js)
         self.assertIn("function updatePianoAnimatedHands", js)
         self.assertIn("piano-animated-hands-svg", js)
@@ -107,8 +108,15 @@ class TestSeoAndHub(unittest.TestCase):
         i18n_path = os.path.join(self.root_dir, "static", "i18n.js")
         with open(i18n_path, "r", encoding="utf-8") as f:
             i18n_content = f.read()
-        self.assertIn("view_mode_fingering", i18n_content)
         self.assertIn("view_mode_hands", i18n_content)
+        self.assertIn("view_mode_blocks", i18n_content)
+
+    def test_demo_mode_updates_target_and_hands(self):
+        with open(self.app_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("function startDemo()", js)
+        self.assertIn("state.activeTarget = item;", js)
+        self.assertIn("highlightPianoTarget();", js)
 
     def test_app_py_seo_routes(self):
         import app
