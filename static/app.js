@@ -126,6 +126,10 @@ const state = {
   metronomeOn: true,
   audioSource: "browser-mic", // 'browser-mic', 'python-mic', 'web-midi', 'virtual'
   sensitivity: 12,
+  laptopOnPianoMode: localStorage.getItem("hanon_laptop_piano_mode") !== "false", // On-piano acoustic protection
+  prevRms: 0,
+  lastAttackTime: 0,
+  hasNewAttackSinceLastNote: true,
   currentView: "hub", // 'hub', 'menu', 'tutor'
   
   // Lesson execution
@@ -581,6 +585,24 @@ function setupSettingsDrawer() {
       if (metroBtn) {
         metroBtn.style.color = state.metronomeOn ? "var(--accent-gold)" : "var(--text-muted)";
       }
+    });
+  }
+
+  // Laptop on Piano Mode toggle (in drawer & tutor header)
+  const toggleLaptopPiano = document.getElementById("toggle-opt-laptop-piano");
+  const btnToggleLaptopPiano = document.getElementById("btn-toggle-laptop-piano");
+
+  if (toggleLaptopPiano) {
+    toggleLaptopPiano.checked = state.laptopOnPianoMode;
+    toggleLaptopPiano.addEventListener("change", (e) => {
+      setLaptopPianoMode(e.target.checked, true);
+    });
+  }
+
+  if (btnToggleLaptopPiano) {
+    btnToggleLaptopPiano.classList.toggle("active", state.laptopOnPianoMode);
+    btnToggleLaptopPiano.addEventListener("click", () => {
+      setLaptopPianoMode(!state.laptopOnPianoMode, true);
     });
   }
 
@@ -1409,6 +1431,37 @@ function setKeyboardHandMode(mode, notify = false) {
   applyKeyboardLayoutVisibility(notify);
 }
 
+function setLaptopPianoMode(enabled, notify = false) {
+  state.laptopOnPianoMode = !!enabled;
+  localStorage.setItem("hanon_laptop_piano_mode", state.laptopOnPianoMode ? "true" : "false");
+  
+  const chk = document.getElementById("toggle-opt-laptop-piano");
+  if (chk) chk.checked = state.laptopOnPianoMode;
+  
+  const btn = document.getElementById("btn-toggle-laptop-piano");
+  if (btn) btn.classList.toggle("active", state.laptopOnPianoMode);
+
+  // Dynamically update audio filter settings if Web Audio is active
+  if (state.audioCtx && state.hpFilter1 && state.hpFilter2) {
+    const cutoff = state.laptopOnPianoMode ? 35 : 25;
+    state.hpFilter1.frequency.setValueAtTime(cutoff, state.audioCtx.currentTime);
+    state.hpFilter2.frequency.setValueAtTime(cutoff, state.audioCtx.currentTime);
+  }
+  if (state.audioCtx && state.compressor) {
+    const threshold = state.laptopOnPianoMode ? -16 : -24;
+    const ratio = state.laptopOnPianoMode ? 12 : 4;
+    state.compressor.threshold.setValueAtTime(threshold, state.audioCtx.currentTime);
+    state.compressor.ratio.setValueAtTime(ratio, state.audioCtx.currentTime);
+  }
+
+  if (notify) {
+    const msg = state.laptopOnPianoMode
+      ? ((window.I18N && window.I18N.t("toast_laptop_piano_on")) || "Laptop op piano modus ingeschakeld (trillingsdemping actief)")
+      : ((window.I18N && window.I18N.t("toast_laptop_piano_off")) || "Laptop op piano modus uitgeschakeld");
+    showToast(msg);
+  }
+}
+
 function renderHandSvgMarkup(side, points, wristY, palmY) {
   if (!points || points.length !== 5) return "";
   const isLh = (side === "lh");
@@ -1991,6 +2044,8 @@ function handlePlayedNote(playedNoteName, hz = 0, cents = 0) {
       `<span style="color: var(--accent-green);">${greatStr}</span> ${cleanStr}`;
     
     // Advance to next note
+    state.hasNewAttackSinceLastNote = false;
+    state.lastNoteTimestamp = Date.now();
     state.currentNoteIndex++;
     updateTargetDisplay();
   } else {
@@ -2546,12 +2601,28 @@ async function initBrowserMic() {
     const micSource = state.audioCtx.createMediaStreamSource(stream);
 
     // Audio Pre-processing Filter Chain for Acoustic Piano:
-    // 1. High-pass filter (25Hz) to strip rumble, DC offset & mechanical desk bumps
-    const hpFilter = state.audioCtx.createBiquadFilter();
-    hpFilter.type = "highpass";
-    hpFilter.frequency.value = 25;
+    // 1. Cascaded High-pass filters (35Hz) to strip low-end chassis rumble, DC offset & mechanical keybed/pedal shocks
+    const hpCutoff = state.laptopOnPianoMode ? 35 : 25;
+    const hpFilter1 = state.audioCtx.createBiquadFilter();
+    hpFilter1.type = "highpass";
+    hpFilter1.frequency.value = hpCutoff;
+    hpFilter1.Q.value = 0.707;
 
-    // 2. Low-pass filter (4200Hz) to strip ambient hiss & high computer fan whine above piano C8
+    const hpFilter2 = state.audioCtx.createBiquadFilter();
+    hpFilter2.type = "highpass";
+    hpFilter2.frequency.value = hpCutoff;
+    hpFilter2.Q.value = 0.707;
+
+    // 2. Studio Dynamics Compressor / Anti-Clipping Limiter:
+    // Prevents microphone clipping & distortion when the laptop sits directly on the piano soundboard
+    const compressor = state.audioCtx.createDynamicsCompressor();
+    compressor.threshold.setValueAtTime(state.laptopOnPianoMode ? -16 : -24, state.audioCtx.currentTime);
+    compressor.knee.setValueAtTime(10, state.audioCtx.currentTime);
+    compressor.ratio.setValueAtTime(state.laptopOnPianoMode ? 12 : 4, state.audioCtx.currentTime);
+    compressor.attack.setValueAtTime(0.003, state.audioCtx.currentTime); // 3ms fast attack
+    compressor.release.setValueAtTime(0.20, state.audioCtx.currentTime); // 200ms release
+
+    // 3. Low-pass filter (4200Hz) to strip ambient hiss & high computer fan whine above piano C8
     const lpFilter = state.audioCtx.createBiquadFilter();
     lpFilter.type = "lowpass";
     lpFilter.frequency.value = 4200;
@@ -2561,48 +2632,76 @@ async function initBrowserMic() {
     analyser.fftSize = 4096;
     analyser.smoothingTimeConstant = 0.0;
 
-    micSource.connect(hpFilter);
-    hpFilter.connect(lpFilter);
+    // Connect node chain: micSource -> hpFilter1 -> hpFilter2 -> compressor -> lpFilter -> analyser
+    micSource.connect(hpFilter1);
+    hpFilter1.connect(hpFilter2);
+    hpFilter2.connect(compressor);
+    compressor.connect(lpFilter);
     lpFilter.connect(analyser);
 
+    state.hpFilter1 = hpFilter1;
+    state.hpFilter2 = hpFilter2;
+    state.compressor = compressor;
+    state.lpFilter = lpFilter;
     state.analyser = analyser;
     state.pitchBuffer = new Float32Array(analyser.fftSize);
     state.lastDetectedNote = null;
     state.lastNoteTimestamp = 0;
     state.pitchHistory = [];
     state.ambientNoise = 0.008;
+    state.prevRms = 0;
+    state.hasNewAttackSinceLastNote = true;
     
     requestAnimationFrame(audioProcessLoop);
-    console.log("Microfoon met akoestische piano-optimalisatie geactiveerd!");
+    console.log("Microfoon met akoestische piano-optimalisatie (en laptop-op-piano bescherming) geactiveerd!");
   } catch (err) {
     console.error("Microfoontoegang geweigerd:", err);
     alert("Microfoontoegang is nodig om naar de piano te luisteren. Klik op 'Toestaan' in de adresbalk.");
   }
 }
 
-// Real-time audio loop with acoustic piano stability confirmation
+// Real-time audio loop with acoustic piano stability confirmation & onset detection
 function audioProcessLoop() {
   if (state.analyser && state.pitchBuffer && state.isPlaying) {
     state.analyser.getFloatTimeDomainData(state.pitchBuffer);
     
-    // 1. Calculate RMS energy
+    // 1. Calculate RMS energy & peak amplitude
     let sum = 0;
+    let peak = 0;
     for (let i = 0; i < state.pitchBuffer.length; i++) {
-      sum += state.pitchBuffer[i] * state.pitchBuffer[i];
+      const val = state.pitchBuffer[i];
+      sum += val * val;
+      const absVal = Math.abs(val);
+      if (absVal > peak) peak = absVal;
     }
     const rms = Math.sqrt(sum / state.pitchBuffer.length);
     
-    // 2. Track ambient background noise floor smoothly
+    // 2. Track energy delta (attack onset)
+    const prevRms = (state.prevRms !== undefined) ? state.prevRms : rms;
+    const deltaRms = rms - prevRms;
+    state.prevRms = rms;
+
+    // Detect new attack strike (energy surge: hammer striking string)
+    const isAttackOnset = (deltaRms > 0.008) || (prevRms > 0.002 && rms / prevRms > 1.35);
+    if (isAttackOnset) {
+      state.lastAttackTime = Date.now();
+      state.hasNewAttackSinceLastNote = true;
+    }
+
+    // 3. Track ambient background noise floor smoothly
     state.ambientNoise = state.ambientNoise ? (0.96 * state.ambientNoise + 0.04 * rms) : rms;
     
-    // 3. Dynamic adaptive strike threshold (adapting to sensitivity slider & room noise)
+    // 4. Dynamic adaptive strike threshold (adapting to sensitivity slider & room noise)
     const sensFactor = (state.sensitivity / 50.0); // 1..50
-    const baseGate = 0.008 + (0.024 * (1.0 - Math.min(1.0, sensFactor)));
-    const dynamicThreshold = Math.max(baseGate, state.ambientNoise * 1.5);
+    const baseGate = state.laptopOnPianoMode ? 0.006 : 0.008;
+    const dynamicThreshold = Math.max(
+      baseGate + (0.020 * (1.0 - Math.min(1.0, sensFactor))),
+      state.ambientNoise * (state.laptopOnPianoMode ? 1.35 : 1.5)
+    );
     
     if (rms > dynamicThreshold) {
       const result = detectPitchYIN(state.pitchBuffer, state.audioCtx.sampleRate);
-      if (result && result.freq >= 27.0 && result.freq <= 4200.0 && result.confidence >= 0.70) {
+      if (result && result.freq >= 27.0 && result.freq <= 4200.0 && result.confidence >= 0.68) {
         const midi = freqToMidi(result.freq);
         if (midi) {
           const roundedMidi = Math.round(midi);
@@ -2624,20 +2723,29 @@ function audioProcessLoop() {
           const now = Date.now();
           state.pitchHistory.push({ note: noteName, freq: result.freq, cents, time: now });
           
-          // Keep detections within last 70ms
-          state.pitchHistory = state.pitchHistory.filter(h => (now - h.time) <= 70);
+          // Keep detections within last 80ms
+          state.pitchHistory = state.pitchHistory.filter(h => (now - h.time) <= 80);
           
-          // If at least 2 consecutive detections agree on the note name
+          // If at least 2 consecutive detections agree on note name (~35ms of stable pitch)
           if (state.pitchHistory.length >= 2) {
             const lastNote = state.pitchHistory[state.pitchHistory.length - 1].note;
             const prevNote = state.pitchHistory[state.pitchHistory.length - 2].note;
             
             if (lastNote === prevNote) {
               const timeSinceLast = now - (state.lastNoteTimestamp || 0);
-              // Allow note if different or if at least 150ms has elapsed since identical strike
-              if (lastNote !== state.lastDetectedNote || timeSinceLast > 150) {
+              const isSameNote = (lastNote === state.lastDetectedNote);
+
+              // On acoustic pianos sitting directly under the laptop:
+              // 1. Distinct notes require at least 120ms between hits
+              // 2. The exact same note requires either a fresh hammer attack onset or 240ms decay
+              const allowNote = !isSameNote
+                ? (timeSinceLast >= 120)
+                : (state.hasNewAttackSinceLastNote || timeSinceLast >= 240);
+
+              if (allowNote) {
                 state.lastDetectedNote = lastNote;
                 state.lastNoteTimestamp = now;
+                state.hasNewAttackSinceLastNote = false;
                 handlePlayedNote(lastNote, result.freq, cents);
               }
             }
@@ -2706,7 +2814,7 @@ function detectPitchYIN(buffer, sampleRate) {
   
   // Step 4: Octave & Sub-harmonic Verification for Piano Strings
   // Pianos have strong 2nd/3rd harmonics. If an initial minimum is at tau1,
-  // check if a true fundamental subharmonic minimum exists near 2*tau1!
+  // check if a true fundamental subharmonic minimum exists near 2*tau1 or 3*tau1!
   let chosenTau = candidateMinima[0].tau;
   let chosenVal = candidateMinima[0].val;
   
@@ -2714,9 +2822,15 @@ function detectPitchYIN(buffer, sampleRate) {
     const c1 = candidateMinima[i];
     for (let j = i + 1; j < candidateMinima.length; j++) {
       const c2 = candidateMinima[j];
-      const ratio2 = c2.tau / c1.tau;
+      const ratio = c2.tau / c1.tau;
       // If c2 is an octave lower (~2.0 * tau1) and is a strong dip:
-      if (Math.abs(ratio2 - 2.0) < 0.08 && c2.val < 0.35) {
+      if (Math.abs(ratio - 2.0) < 0.08 && c2.val < 0.38) {
+        chosenTau = c2.tau;
+        chosenVal = c2.val;
+        break;
+      }
+      // If c2 is a twelfth lower (~3.0 * tau1, i.e. 3rd harmonic) and strong:
+      if (Math.abs(ratio - 3.0) < 0.08 && c2.val < 0.35) {
         chosenTau = c2.tau;
         chosenVal = c2.val;
         break;
@@ -2725,7 +2839,7 @@ function detectPitchYIN(buffer, sampleRate) {
   }
   
   const confidence = 1.0 - chosenVal;
-  if (confidence < 0.70) return null; // Reject non-periodic noise
+  if (confidence < 0.68) return null; // Reject non-periodic noise
   
   // Step 5: Parabolic Interpolation for Sub-sample Accuracy
   let betterTau = chosenTau;
@@ -2738,6 +2852,12 @@ function detectPitchYIN(buffer, sampleRate) {
       betterTau = chosenTau + (s2 - s0) / denom;
     }
   }
+  
+  return {
+    freq: sampleRate / betterTau,
+    confidence: confidence
+  };
+}
   
   return {
     freq: sampleRate / betterTau,

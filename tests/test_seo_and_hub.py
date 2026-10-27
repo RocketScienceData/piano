@@ -136,6 +136,33 @@ class TestSeoAndHub(unittest.TestCase):
         self.assertIn("state.currentMode === \"wait\"", js)
         self.assertIn("state.ambientNoise", js)
 
+    def test_laptop_on_piano_optimization(self):
+        with open(self.index_html_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        self.assertIn('id="toggle-opt-laptop-piano"', html)
+        self.assertIn('id="btn-toggle-laptop-piano"', html)
+
+        with open(self.styles_css_path, "r", encoding="utf-8") as f:
+            css = f.read()
+        self.assertIn(".badge-laptop-piano", css)
+        self.assertIn(".badge-laptop-piano.active", css)
+
+        with open(self.app_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("function setLaptopPianoMode", js)
+        self.assertIn("state.laptopOnPianoMode", js)
+        self.assertIn("createDynamicsCompressor()", js)
+        self.assertIn("hpFilter1", js)
+        self.assertIn("hpFilter2", js)
+        self.assertIn("state.hasNewAttackSinceLastNote", js)
+
+        i18n_path = os.path.join(self.root_dir, "static", "i18n.js")
+        with open(i18n_path, "r", encoding="utf-8") as f:
+            i18n = f.read()
+        self.assertIn("opt_laptop_piano", i18n)
+        self.assertIn("badge_laptop_piano", i18n)
+        self.assertIn("toast_laptop_piano_on", i18n)
+
     def test_app_py_seo_routes(self):
         import app
         

@@ -189,6 +189,9 @@
           <option value="web-midi">🎹 MIDI</option>
           <option value="virtual">💻 Scherm</option>
         </select>
+        <button id="btn-toggle-laptop-piano" class="badge-laptop-piano active" type="button" data-i18n-title="badge_laptop_piano_tip" title="Laptop op piano: mechanische trillingsfilter &amp; limiter actief">
+          <span data-i18n="badge_laptop_piano">💻 Piano-stand</span>
+        </button>
       </div>
 
       <!-- Hamburger Settings Menu Button (Always visible) -->
@@ -768,6 +771,10 @@
       <!-- Section: Audio & Detection -->
       <div class="drawer-section">
         <h3 class="section-label" data-i18n="section_audio">🎙️ Geluid &amp; Detectie</h3>
+        <div class="drawer-toggle-row">
+          <label for="toggle-opt-laptop-piano" data-i18n="opt_laptop_piano">💻 Laptop staat op de piano (Trillingsfilter &amp; Limiter)</label>
+          <input type="checkbox" id="toggle-opt-laptop-piano" class="switch-input" checked>
+        </div>
         <div class="drawer-slider-row">
           <div class="slider-label-group">
             <span data-i18n="opt_sensitivity">Microfoongevoeligheid</span>
