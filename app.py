@@ -77,6 +77,33 @@ def get_pdf_full():
         return FileResponse(path, media_type="application/pdf", filename="IMSLP91547-PMLP03129-Hanon_Final.pdf")
     return JSONResponse(status_code=404, content={"error": "PDF niet gevonden"})
 
+@app.get("/Czerny-599.pdf")
+@app.get("/pdf/czerny")
+def get_pdf_czerny():
+    path = "Czerny-599.pdf"
+    if not os.path.exists(path):
+        path = "IMSLP86518-PMLP177048-CZERNY_Practical_Method_for_Beginners_on_the_Pianoforte_Op._599.pdf"
+    if os.path.exists(path):
+        return FileResponse(path, media_type="application/pdf", filename="Czerny-Op599.pdf")
+    return JSONResponse(status_code=404, content={"error": "Czerny PDF niet gevonden"})
+
+@app.get("/IMSLP86518-PMLP177048-CZERNY_Practical_Method_for_Beginners_on_the_Pianoforte_Op._599.pdf")
+def get_pdf_czerny_imslp():
+    path = "IMSLP86518-PMLP177048-CZERNY_Practical_Method_for_Beginners_on_the_Pianoforte_Op._599.pdf"
+    if not os.path.exists(path):
+        path = "Czerny-599.pdf"
+    if os.path.exists(path):
+        return FileResponse(path, media_type="application/pdf", filename=os.path.basename(path))
+    return JSONResponse(status_code=404, content={"error": "Czerny PDF niet gevonden"})
+
+@app.get("/IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf")
+@app.get("/pdf/bach")
+def get_pdf_bach():
+    path = "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf"
+    if os.path.exists(path):
+        return FileResponse(path, media_type="application/pdf", filename="First_Lessons_in_Bach.pdf")
+    return JSONResponse(status_code=404, content={"error": "Bach PDF niet gevonden"})
+
 @app.get("/api/exercises")
 def get_exercises_list(all: bool = False):
     if all:

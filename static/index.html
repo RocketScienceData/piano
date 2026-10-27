@@ -24,16 +24,26 @@
   <header class="app-header">
     <!-- Top Row: Brand, Exercise & Lesson pickers, Hand & Mode buttons, Tempo, Actions, Mic Monitor -->
     <div class="header-row-primary">
-      <div class="brand">
+      <div class="brand" id="brand-home-link" title="Naar Boeken Bibliotheek" style="cursor: pointer;">
         <span class="brand-icon">🎹</span>
-        <span class="brand-title">Hanon AI</span>
+        <span class="brand-title" data-i18n="brand_title">Piano Academie</span>
       </div>
 
-      <!-- Main Menu toggle button -->
-      <button id="btn-toggle-menu" class="btn btn-sm btn-menu" title="Schakel tussen het hoofdmenu en de oefenruimte">
-        <span id="toggle-menu-icon">🎹</span>
-        <span id="toggle-menu-text" data-i18n="btn_to_tutor">Naar Oefening</span>
-      </button>
+      <!-- Quick View Navigation: Books Hub, Progress, Tutor -->
+      <div class="header-nav-views btn-group-micro" id="header-nav-views">
+        <button type="button" id="btn-nav-hub" class="active" title="Boeken Bibliotheek &amp; Overzicht">
+          <span data-i18n="btn_nav_books">📚 Boeken</span>
+        </button>
+        <button type="button" id="btn-nav-menu" title="Lesvoortgang van huidig boek">
+          <span data-i18n="btn_nav_progress">📋 Voortgang</span>
+        </button>
+        <button type="button" id="btn-nav-tutor" title="Interactieve Partituur &amp; Klavier">
+          <span data-i18n="btn_nav_practice">🎹 Oefenen</span>
+        </button>
+      </div>
+
+      <!-- Legacy toggle button alias kept for compatibility -->
+      <button id="btn-toggle-menu" style="display: none;"></button>
 
       <!-- Exercise select -->
       <div class="control-unit">
@@ -187,16 +197,103 @@
     </div>
   </header>
 
-  <!-- Main Menu View: Progress Dashboard & Lesson Navigator (Default View) -->
-  <div id="view-main-menu" class="main-menu-view" style="display: block;">
+  <!-- TIER 1: Academy Home / Boeken Hub (Wervende Index Pagina) -->
+  <div id="view-books-hub" class="books-hub-view" style="display: block;">
+    <div class="hub-container">
+      
+      <!-- Wervende Hero Sectie -->
+      <section class="hub-hero-card">
+        <div class="hub-hero-content">
+          <div class="hub-hero-badge">
+            <span class="hub-badge-sparkle">✨</span>
+            <span data-i18n="hub_hero_badge">100% Gratis Interactieve Piano Academie • Geen Account Nodig</span>
+          </div>
+          <h1 class="hub-hero-title" data-i18n="hub_hero_title">Leer Pianospelen Met Real-Time AI Feedback</h1>
+          <p class="hub-hero-subtitle" data-i18n="hub_hero_subtitle">
+            Speel op je eigen akoestische piano of digitale keyboard. Onze slimme microfoondetectie luistert direct mee en geeft live feedback op elke toets, vinger en timing. Kies een lesboek en begin meteen gratis met oefenen.
+          </p>
+          <div class="hub-hero-actions">
+            <button type="button" id="hub-btn-start-primary" class="btn btn-primary btn-lg">
+              <span data-i18n="hub_btn_start_hanon1">▶️ Start met Hanon Boek 1</span>
+            </button>
+            <a href="#books-catalog-section" class="btn btn-outline btn-lg" id="hub-btn-scroll-books">
+              <span data-i18n="hub_btn_explore_books">📚 Bekijk Alle Boeken</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 Visuele Feature Pilaren / Voordelen -->
+      <section class="hub-features-grid">
+        <div class="hub-feature-card">
+          <div class="hub-feature-icon-wrap">🎙️</div>
+          <div class="hub-feature-text">
+            <h3 class="hub-feature-title" data-i18n="hub_feature_mic_title">Microfoondetectie</h3>
+            <p class="hub-feature-desc" data-i18n="hub_feature_mic_desc">Geen speciale kabels nodig. Werkt via je browser met elke piano of keyboard.</p>
+          </div>
+        </div>
+        <div class="hub-feature-card">
+          <div class="hub-feature-icon-wrap">🎼</div>
+          <div class="hub-feature-text">
+            <h3 class="hub-feature-title" data-i18n="hub_feature_sheet_title">Vector Partituren</h3>
+            <p class="hub-feature-desc" data-i18n="hub_feature_sheet_desc">Haarscherpe, dynamische partituur die synchroon met jouw spel meeloopt.</p>
+          </div>
+        </div>
+        <div class="hub-feature-card">
+          <div class="hub-feature-icon-wrap">🎹</div>
+          <div class="hub-feature-text">
+            <h3 class="hub-feature-title" data-i18n="hub_feature_piano_title">88-Toetsen Klavier</h3>
+            <p class="hub-feature-desc" data-i18n="hub_feature_piano_desc">Toont live handposities en de exacte vingerzetting (vinger 1 t/m 5) per hand.</p>
+          </div>
+        </div>
+        <div class="hub-feature-card">
+          <div class="hub-feature-icon-wrap">🏆</div>
+          <div class="hub-feature-text">
+            <h3 class="hub-feature-title" data-i18n="hub_feature_free_title">Vrij &amp; Toegankelijk</h3>
+            <p class="hub-feature-desc" data-i18n="hub_feature_free_desc">100% gratis leergang: geen abonnement, geen betaalmuur, voor iedereen.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Boeken Bibliotheek Sectie -->
+      <section class="hub-books-section" id="books-catalog-section">
+        <div class="hub-section-header">
+          <div>
+            <h2 class="hub-section-title" data-i18n="hub_section_title">📚 Klassieke Lesmethodes &amp; Boeken</h2>
+            <p class="hub-section-sub" data-i18n="hub_section_desc">Kies een methode om de gestructureerde lessen, partituren en voortgang te openen</p>
+          </div>
+        </div>
+
+        <div class="books-grid" id="books-catalog-grid">
+          <!-- Dynamically populated from BOOKS_CATALOG with live progress -->
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- TIER 2: Main Menu View: Progress Dashboard for Selected Book -->
+  <div id="view-main-menu" class="main-menu-view" style="display: none;">
     <div class="menu-container">
+      
+      <!-- Top Navigation Breadcrumb back to Books Hub -->
+      <div class="menu-breadcrumb-bar">
+        <button type="button" id="btn-back-to-books" class="btn btn-sm btn-outline">
+          <span data-i18n="btn_back_to_books">⬅️ Terug naar Alle Boeken</span>
+        </button>
+        <div class="menu-breadcrumb-current">
+          <span id="current-book-crumb-badge" class="badge badge-cyan">Hanon Boek 1</span>
+          <span id="current-book-crumb-title" class="crumb-title">Voorbereidende Oefeningen (1 t/m 20)</span>
+        </div>
+      </div>
+
       <!-- Menu Hero Section -->
       <div class="menu-hero-card">
         <div class="menu-hero-content">
           <div class="menu-hero-header">
-            <span class="menu-hero-badge" data-i18n="hero_badge">🎓 C.L. Hanon: De Virtuoze Pianist</span>
-            <h1 class="menu-hero-title" data-i18n="hero_title">Hoofdmenu &amp; Lesvoortgang</h1>
-            <p class="menu-hero-subtitle" data-i18n="hero_subtitle">
+            <span class="menu-hero-badge" id="menu-book-badge" data-i18n="hero_badge">🎓 C.L. Hanon: De Virtuoze Pianist</span>
+            <h1 class="menu-hero-title" id="menu-book-title" data-i18n="hero_title">Hoofdmenu &amp; Lesvoortgang</h1>
+            <p class="menu-hero-subtitle" id="menu-book-subtitle" data-i18n="hero_subtitle">
               Beheers alle 60 oefeningen (Deel 1, Deel 2 en Deel 3) van C.L. Hanon stap voor stap. Ontwikkel ultieme virtuositeit, soepelheid, onafhankelijkheid en gelijkmatigheid in beide handen.
             </p>
           </div>
@@ -204,9 +301,12 @@
             <button id="menu-btn-resume" class="btn btn-primary btn-lg" title="Ga direct verder met de huidige les">
               <span data-i18n="btn_resume_lesson">▶️ Ga Verder Met Les</span>
             </button>
-            <button id="menu-btn-restart-ex1" class="btn btn-outline" title="Start vanaf Oefening 1 Les 1">
-              <span data-i18n="btn_start_les1">🔄 Start bij Les 1</span>
+            <button id="menu-btn-restart-ex1" class="btn btn-outline" title="Start vanaf de eerste les van dit boek">
+              <span data-i18n="btn_start_les1">🔄 Start bij Eerste Les</span>
             </button>
+            <a id="menu-book-pdf-link" href="./IMSLP91547-PMLP03129-Hanon_Final.pdf" target="_blank" class="btn btn-outline">
+              <span data-i18n="btn_view_pdf">📄 Bekijk Boek PDF</span>
+            </a>
           </div>
         </div>
 
@@ -252,14 +352,11 @@
       <!-- Filter & Search Toolbar -->
       <div class="menu-toolbar">
         <div class="menu-toolbar-left">
-          <span class="menu-section-title" data-i18n="menu_section_title">📚 Hanon Cursus (Deel 1, 2 &amp; 3 • 60 Oefeningen • 360 Lessen)</span>
+          <span class="menu-section-title" id="book-section-title">📚 Oefeningen &amp; Lessen</span>
           <span class="menu-section-desc" data-i18n="menu_section_desc">• Klik op een les om direct te starten</span>
         </div>
         <div class="btn-group-micro" id="menu-filter-group">
-          <button type="button" class="active" data-filter="all" data-i18n="filter_all">Alle 60 Oefeningen</button>
-          <button type="button" data-filter="part1" data-i18n="filter_part1">Deel 1 (1 t/m 20)</button>
-          <button type="button" data-filter="part2" data-i18n="filter_part2">Deel 2 (21 t/m 43)</button>
-          <button type="button" data-filter="part3" data-i18n="filter_part3">Deel 3 (44 t/m 60)</button>
+          <button type="button" class="active" data-filter="all">Alle Oefeningen</button>
           <button type="button" data-filter="started" data-i18n="filter_started">Alleen Begonnen</button>
         </div>
       </div>

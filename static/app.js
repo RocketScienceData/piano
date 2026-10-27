@@ -4,8 +4,112 @@
  * scrolling hand placement guide, and continuous course improvement telemetry.
  */
 
+// Classical Method Books Catalog
+const BOOKS_CATALOG = [
+  {
+    id: "hanon-part1",
+    author: "C.L. Hanon",
+    shortTitle: "Hanon Deel 1",
+    fullTitle: "C.L. Hanon — Deel 1: Voorbereidende Oefeningen (1 t/m 20)",
+    titleKey: "book_hanon1_title",
+    shortKey: "book_hanon1_short",
+    badgeKey: "book_hanon1_badge",
+    descKey: "book_hanon1_desc",
+    defaultBadge: "Essentiële Basis (1-20)",
+    defaultDesc: "Versterkt de zwakkere vingers (4 en 5), ontwikkelt onafhankelijkheid, souplesse en volkomen gelijkmatigheid in beide handen.",
+    totalExercises: 20,
+    totalLessons: 120,
+    range: [1, 20],
+    startExId: "ex1",
+    startLessonId: "les-1",
+    pdfFile: "IMSLP91547-PMLP03129-Hanon_Final.pdf",
+    icon: "🎹",
+    badgeClass: "badge-cyan"
+  },
+  {
+    id: "hanon-part2",
+    author: "C.L. Hanon",
+    shortTitle: "Hanon Deel 2",
+    fullTitle: "C.L. Hanon — Deel 2: Gevorderde Techniek & Toonladders (21 t/m 43)",
+    titleKey: "book_hanon2_title",
+    shortKey: "book_hanon2_short",
+    badgeKey: "book_hanon2_badge",
+    descKey: "book_hanon2_desc",
+    defaultBadge: "Toonladders & Arpeggio's (21-43)",
+    defaultDesc: "Duimdoorgang, alle 24 majeur- en mineurtoonladders, arpeggio's en grondige voorbereiding op het klassieke repertoire.",
+    totalExercises: 23,
+    totalLessons: 138,
+    range: [21, 43],
+    startExId: "ex21",
+    startLessonId: "les21-1",
+    pdfFile: "IMSLP91547-PMLP03129-Hanon_Final.pdf",
+    icon: "🎼",
+    badgeClass: "badge-gold"
+  },
+  {
+    id: "hanon-part3",
+    author: "C.L. Hanon",
+    shortTitle: "Hanon Deel 3",
+    fullTitle: "C.L. Hanon — Deel 3: Virtuoze Oefeningen & Meesterschap (44 t/m 60)",
+    titleKey: "book_hanon3_title",
+    shortKey: "book_hanon3_short",
+    badgeKey: "book_hanon3_badge",
+    descKey: "book_hanon3_desc",
+    defaultBadge: "Virtuoos Concertniveau (44-60)",
+    defaultDesc: "De ultieme virtuositeit: repeterende toetsen, dubbelnoten (tertsen, sexten), trillers, tremolo's en concertbravoure.",
+    totalExercises: 17,
+    totalLessons: 102,
+    range: [44, 60],
+    startExId: "ex44",
+    startLessonId: "les44-1",
+    pdfFile: "IMSLP91547-PMLP03129-Hanon_Final.pdf",
+    icon: "⚡",
+    badgeClass: "badge-green"
+  },
+  {
+    id: "czerny-599",
+    author: "Carl Czerny",
+    shortTitle: "Czerny Op. 599",
+    fullTitle: "Carl Czerny — Op. 599: Practical Method for Beginners on the Pianoforte",
+    titleKey: "book_czerny_title",
+    shortKey: "book_czerny_short",
+    badgeKey: "book_czerny_badge",
+    descKey: "book_czerny_desc",
+    defaultBadge: "100 Melodische Etudes",
+    defaultDesc: "Dé beroemdste beginnersmethode ter wereld. Leert je noten lezen in viool- en bassleutel, zangerig spel en muzikaal gevoel.",
+    totalExercises: 100,
+    totalLessons: 100,
+    range: null,
+    isMethodBook: true,
+    pdfFile: "IMSLP86518-PMLP177048-CZERNY_Practical_Method_for_Beginners_on_the_Pianoforte_Op._599.pdf",
+    altPdf: "Czerny-599.pdf",
+    icon: "📖",
+    badgeClass: "badge-purple"
+  },
+  {
+    id: "bach-first",
+    author: "J.S. Bach (Walter Carroll)",
+    shortTitle: "Bach First Lessons",
+    fullTitle: "J.S. Bach — First Lessons in Bach (Walter Carroll Edition)",
+    titleKey: "book_bach_title",
+    shortKey: "book_bach_short",
+    badgeKey: "book_bach_badge",
+    descKey: "book_bach_desc",
+    defaultBadge: "Polyfonie & Zangstijl",
+    defaultDesc: "Ontwikkel echte tweestemmige onafhankelijkheid en muzikale zangstijl met de Menuetten en Musettes van Johann Sebastian Bach.",
+    totalExercises: 28,
+    totalLessons: 28,
+    range: null,
+    isMethodBook: true,
+    pdfFile: "IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf",
+    icon: "🎻",
+    badgeClass: "badge-amber"
+  }
+];
+
 // Global App State
 const state = {
+  currentBookId: localStorage.getItem("hanon_current_book") || "hanon-part1",
   currentExerciseId: "ex1",
   exercises: [],
   hanonData: null,
@@ -17,7 +121,7 @@ const state = {
   metronomeOn: true,
   audioSource: "browser-mic", // 'browser-mic', 'python-mic', 'web-midi', 'virtual'
   sensitivity: 12,
-  currentView: "menu", // 'menu', 'tutor'
+  currentView: "hub", // 'hub', 'menu', 'tutor'
   
   // Lesson execution
   isPlaying: false,
@@ -514,12 +618,8 @@ function showToast(msg) {
 
 // Hook for language changed
 window.onLanguageChanged = function(lang) {
-  const toggleBtnText = document.getElementById("toggle-menu-text");
-  if (toggleBtnText) {
-    toggleBtnText.textContent = (state.currentView === "menu") 
-      ? ((window.I18N && window.I18N.t("btn_to_tutor")) || "Naar Oefening")
-      : ((window.I18N && window.I18N.t("btn_to_menu")) || "Hoofdmenu");
-  }
+  renderBooksHub();
+  renderMainMenu();
   populateExerciseSelect();
   populateLessonSelect();
   updateAudioSourceSelectLabels();
@@ -602,8 +702,10 @@ async function loadData() {
 
     if (window.location.hash === "#tutor") {
       toggleView("tutor");
-    } else {
+    } else if (window.location.hash === "#menu" || window.location.hash === "#progress") {
       toggleView("menu");
+    } else {
+      toggleView("hub");
     }
   } catch (err) {
     console.error("Fout bij inladen data:", err);
@@ -2409,11 +2511,182 @@ function getLessonProgressMap() {
   return progress;
 }
 
+function getBookProgress(book) {
+  const progressMap = getLessonProgressMap();
+  const allLessons = state.allLessonsMap || {};
+  let completed = 0;
+  let total = 0;
+
+  if (book.range) {
+    const [minEx, maxEx] = book.range;
+    state.exercises.forEach(ex => {
+      if (ex.number >= minEx && ex.number <= maxEx) {
+        const lessons = allLessons[ex.id] || [];
+        total += lessons.length;
+        lessons.forEach(l => {
+          const prog = progressMap[`${ex.id}_${l.id}`];
+          if (prog && prog.completed) completed += 1;
+        });
+      }
+    });
+  } else {
+    total = book.totalLessons || 100;
+  }
+
+  const totalCount = total || book.totalLessons || 1;
+  const pct = Math.round((completed / totalCount) * 100);
+  return { completed, total: totalCount, pct };
+}
+
+function renderBooksHub() {
+  const grid = document.getElementById("books-catalog-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  const t = (k, def) => {
+    if (window.I18N) {
+      const trans = window.I18N.t(k);
+      if (trans && trans !== k) return trans;
+    }
+    return def;
+  };
+
+  BOOKS_CATALOG.forEach(book => {
+    const prog = getBookProgress(book);
+    const title = t(book.titleKey, book.fullTitle);
+    const badge = t(book.badgeKey, book.defaultBadge);
+    const desc = t(book.descKey, book.defaultDesc);
+    const openLabel = t("btn_open_book", "▶️ Open Boek & Lessen");
+    const pdfLabel = t("btn_view_pdf", "📄 Bekijk Boek PDF");
+    const progressTxt = (window.I18N && window.I18N.t("book_progress_fmt", {
+      done: prog.completed,
+      total: prog.total,
+      pct: prog.pct
+    })) || `${prog.completed} / ${prog.total} lessen voltooid (${prog.pct}%)`;
+
+    const card = document.createElement("div");
+    card.className = `book-card ${book.id === state.currentBookId ? 'active-book-card' : ''}`;
+    card.dataset.bookId = book.id;
+
+    card.innerHTML = `
+      <div class="book-card-top">
+        <div class="book-card-icon-wrap">${book.icon}</div>
+        <div class="book-card-meta">
+          <div class="book-meta-pills">
+            <span class="badge ${book.badgeClass}">${badge}</span>
+            <span class="book-author">${book.author}</span>
+          </div>
+          <h3 class="book-title">${title}</h3>
+        </div>
+      </div>
+
+      <p class="book-description">${desc}</p>
+
+      <div class="book-progress-box">
+        <div class="book-progress-bar-track">
+          <div class="book-progress-bar-fill" style="width: ${prog.pct}%;"></div>
+        </div>
+        <div class="book-progress-label">${progressTxt}</div>
+      </div>
+
+      <div class="book-card-actions">
+        <button type="button" class="btn btn-primary btn-open-book" data-book-id="${book.id}">
+          ${openLabel}
+        </button>
+        <a href="./${encodeURIComponent(book.pdfFile)}" target="_blank" class="btn btn-outline btn-book-pdf" title="${pdfLabel}">
+          ${pdfLabel}
+        </a>
+      </div>
+    `;
+
+    const btnOpen = card.querySelector(".btn-open-book");
+    if (btnOpen) {
+      btnOpen.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openBook(book.id);
+      });
+    }
+
+    card.addEventListener("click", () => {
+      openBook(book.id);
+    });
+
+    const pdfLink = card.querySelector(".btn-book-pdf");
+    if (pdfLink) {
+      pdfLink.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    }
+
+    grid.appendChild(card);
+  });
+}
+
+function openBook(bookId) {
+  const book = BOOKS_CATALOG.find(b => b.id === bookId) || BOOKS_CATALOG[0];
+  state.currentBookId = book.id;
+  localStorage.setItem("hanon_current_book", book.id);
+
+  if (book.range) {
+    const [minEx, maxEx] = book.range;
+    const curEx = state.exercises.find(e => e.id === state.currentExerciseId);
+    if (!curEx || curEx.number < minEx || curEx.number > maxEx) {
+      const firstExInBook = state.exercises.find(e => e.number >= minEx && e.number <= maxEx);
+      if (firstExInBook) {
+        state.currentExerciseId = firstExInBook.id;
+        state.currentLessonId = (firstExInBook.id === "ex1") ? "les-1" : `${firstExInBook.id.replace('ex', 'les')}-1`;
+      }
+    }
+  }
+
+  toggleView("menu");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function initMainMenu() {
+  const brandHome = document.getElementById("brand-home-link");
+  if (brandHome) {
+    brandHome.addEventListener("click", () => toggleView("hub"));
+  }
+
+  const btnNavHub = document.getElementById("btn-nav-hub");
+  if (btnNavHub) {
+    btnNavHub.addEventListener("click", () => toggleView("hub"));
+  }
+
+  const btnNavMenu = document.getElementById("btn-nav-menu");
+  if (btnNavMenu) {
+    btnNavMenu.addEventListener("click", () => toggleView("menu"));
+  }
+
+  const btnNavTutor = document.getElementById("btn-nav-tutor");
+  if (btnNavTutor) {
+    btnNavTutor.addEventListener("click", () => toggleView("tutor"));
+  }
+
+  const btnBackToBooks = document.getElementById("btn-back-to-books");
+  if (btnBackToBooks) {
+    btnBackToBooks.addEventListener("click", () => toggleView("hub"));
+  }
+
+  const hubBtnStartPrimary = document.getElementById("hub-btn-start-primary");
+  if (hubBtnStartPrimary) {
+    hubBtnStartPrimary.addEventListener("click", () => openBook("hanon-part1"));
+  }
+
+  const hubBtnScrollBooks = document.getElementById("hub-btn-scroll-books");
+  if (hubBtnScrollBooks) {
+    hubBtnScrollBooks.addEventListener("click", (e) => {
+      e.preventDefault();
+      const sec = document.getElementById("books-catalog-section");
+      if (sec) sec.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
   const btnToggle = document.getElementById("btn-toggle-menu");
   if (btnToggle) {
     btnToggle.addEventListener("click", () => {
-      toggleView(state.currentView === "menu" ? "tutor" : "menu");
+      toggleView(state.currentView === "tutor" ? "menu" : "tutor");
     });
   }
 
@@ -2427,7 +2700,10 @@ function initMainMenu() {
   const btnRestart = document.getElementById("menu-btn-restart-ex1");
   if (btnRestart) {
     btnRestart.addEventListener("click", async () => {
-      await selectExerciseAndLesson("ex1", "les-1");
+      const book = BOOKS_CATALOG.find(b => b.id === state.currentBookId) || BOOKS_CATALOG[0];
+      const startEx = book.startExId || "ex1";
+      const startLes = book.startLessonId || "les-1";
+      await selectExerciseAndLesson(startEx, startLes);
     });
   }
 
@@ -2452,20 +2728,40 @@ function initMainMenu() {
 
 function toggleView(viewName) {
   state.currentView = viewName;
+  const hubView = document.getElementById("view-books-hub");
   const menuView = document.getElementById("view-main-menu");
   const tutorView = document.getElementById("view-tutor");
   const toggleBtnText = document.getElementById("toggle-menu-text");
   const toggleBtnIcon = document.getElementById("toggle-menu-icon");
 
-  if (viewName === "menu") {
+  const btnNavHub = document.getElementById("btn-nav-hub");
+  const btnNavMenu = document.getElementById("btn-nav-menu");
+  const btnNavTutor = document.getElementById("btn-nav-tutor");
+
+  if (btnNavHub) btnNavHub.classList.toggle("active", viewName === "hub");
+  if (btnNavMenu) btnNavMenu.classList.toggle("active", viewName === "menu");
+  if (btnNavTutor) btnNavTutor.classList.toggle("active", viewName === "tutor");
+
+  if (viewName === "hub") {
+    document.body.classList.add("in-menu-view", "in-hub-view");
+    if (hubView) hubView.style.display = "block";
+    if (menuView) menuView.style.display = "none";
+    if (tutorView) tutorView.style.display = "none";
+    if (toggleBtnText) toggleBtnText.textContent = (window.I18N && window.I18N.t("btn_to_tutor")) || "Naar Oefening";
+    if (toggleBtnIcon) toggleBtnIcon.textContent = "🎹";
+    renderBooksHub();
+  } else if (viewName === "menu") {
     document.body.classList.add("in-menu-view");
+    document.body.classList.remove("in-hub-view");
+    if (hubView) hubView.style.display = "none";
     if (menuView) menuView.style.display = "block";
     if (tutorView) tutorView.style.display = "none";
     if (toggleBtnText) toggleBtnText.textContent = (window.I18N && window.I18N.t("btn_to_tutor")) || "Naar Oefening";
     if (toggleBtnIcon) toggleBtnIcon.textContent = "🎹";
     renderMainMenu();
   } else {
-    document.body.classList.remove("in-menu-view");
+    document.body.classList.remove("in-menu-view", "in-hub-view");
+    if (hubView) hubView.style.display = "none";
     if (menuView) menuView.style.display = "none";
     if (tutorView) tutorView.style.display = "flex";
     if (toggleBtnText) toggleBtnText.textContent = (window.I18N && window.I18N.t("btn_to_menu")) || "Hoofdmenu";
@@ -2490,14 +2786,159 @@ async function selectExerciseAndLesson(exerciseId, lessonId) {
   toggleView("tutor");
 }
 
+function renderMethodBookView(book, grid) {
+  grid.innerHTML = "";
+  const t = (k, def) => (window.I18N ? window.I18N.t(k) : def);
+  const card = document.createElement("div");
+  card.className = "menu-method-book-card";
+
+  const isCzerny = book.id === "czerny-599";
+  const title = t(book.titleKey, book.fullTitle);
+  const badge = t(book.badgeKey, book.defaultBadge);
+
+  let contentHtml = "";
+  if (isCzerny) {
+    contentHtml = `
+      <div class="method-card-hero">
+        <div class="method-card-badge-row">
+          <span class="badge ${book.badgeClass}">${badge}</span>
+          <span class="method-badge-level">Eerste Beginselen tot Elementair</span>
+        </div>
+        <h2 class="method-title">${title}</h2>
+        <p class="method-lead">
+          Carl Czerny (leerling van Beethoven en leermeester van Franz Liszt) schreef met Op. 599 de meest beproefde beginnersmethode uit de pianogeschiedenis. De 100 etudes bouwen stap voor stap op van de eerste vingerposities tot vloeiende, zangerige voordracht.
+        </p>
+      </div>
+
+      <div class="method-chapters-grid">
+        <div class="method-chapter-box">
+          <div class="chapter-num">Etudes 1 t/m 8</div>
+          <h4>Eerste Vingerbeheersing</h4>
+          <p>Rustige handhouding binnen de 5-toetsen positie. Onafhankelijkheid van vinger 1 t/m 5 in beide handen.</p>
+        </div>
+        <div class="method-chapter-box">
+          <div class="chapter-num">Etudes 9 t/m 18</div>
+          <h4>Twee Handen Samen &amp; Vioolsleutel</h4>
+          <p>Parallelle en tegengestelde beweging. Vlotte overgang tussen kwart-, achtste- en zestiendenoten.</p>
+        </div>
+        <div class="method-chapter-box">
+          <div class="chapter-num">Etudes 19 t/m 35</div>
+          <h4>Eerste Toonladders &amp; Akkoorden</h4>
+          <p>Duimwissel, gebroken drieklanken en begeleidingsfiguren in de linkerhand.</p>
+        </div>
+        <div class="method-chapter-box">
+          <div class="chapter-num">Etudes 36 t/m 100</div>
+          <h4>Muzikale Expressie &amp; Bravoure</h4>
+          <p>Dubbelgrepen, versieringen, dynamiek (piano/forte) en cantabile zangtechniek.</p>
+        </div>
+      </div>
+
+      <div class="method-actions-bar">
+        <a href="./IMSLP86518-PMLP177048-CZERNY_Practical_Method_for_Beginners_on_the_Pianoforte_Op._599.pdf" target="_blank" class="btn btn-primary btn-lg">
+          📄 Open Volledig IMSLP Boek PDF (100 Etudes)
+        </a>
+        <a href="./Czerny-599.pdf" target="_blank" class="btn btn-outline btn-lg">
+          📄 Download Compacte Bladmuziek PDF
+        </a>
+        <button type="button" class="btn btn-secondary btn-lg" id="btn-practice-companion">
+          🎹 Start Voorbereidende Oefening
+        </button>
+      </div>
+    `;
+  } else {
+    contentHtml = `
+      <div class="method-card-hero">
+        <div class="method-card-badge-row">
+          <span class="badge ${book.badgeClass}">${badge}</span>
+          <span class="method-badge-level">Elementair tot Halfgevorderd</span>
+        </div>
+        <h2 class="method-title">${title}</h2>
+        <p class="method-lead">
+          Walter Carroll stelde uit het befaamde <em>Notenbuch der Anna Magdalena Bach</em> en de kleine preludes deze geliefde selectie samen. Het is de ultieme brug naar polyfoon pianospel: beide handen spelen een gelijkwaardige, zingende melodielijn.
+        </p>
+      </div>
+
+      <div class="method-chapters-grid">
+        <div class="method-chapter-box">
+          <div class="chapter-num">Stuk 1 t/m 10</div>
+          <h4>Menuetten &amp; Dansvormen</h4>
+          <p>Beroemde Menuetten in G majeur en G mineur (BWV Anh. 114/115). Focus op zangerige articulatie en puls.</p>
+        </div>
+        <div class="method-chapter-box">
+          <div class="chapter-num">Stuk 11 t/m 18</div>
+          <h4>Musettes &amp; Marsen</h4>
+          <p>Onafhankelijke baslijn met bourdon-begeleiding. Scherpe ritmische precisie en contrasterende frasering.</p>
+        </div>
+        <div class="method-chapter-box">
+          <div class="chapter-num">Stuk 19 t/m 28</div>
+          <h4>Kleine Preludes &amp; Polonaises</h4>
+          <p>Voorbereiding op de Twee- en Driestemmige Inventies van J.S. Bach. Volwaardige contrapuntische zangstijl.</p>
+        </div>
+      </div>
+
+      <div class="method-actions-bar">
+        <a href="./IMSLP302296-PMLP489228-BACH-Carroll_First_Lessons_in_Bach_PF.pdf" target="_blank" class="btn btn-primary btn-lg">
+          📄 Open Volledige Partituur PDF (Walter Carroll)
+        </a>
+        <button type="button" class="btn btn-secondary btn-lg" id="btn-practice-companion">
+          🎹 Start Voorbereidende Oefening
+        </button>
+      </div>
+    `;
+  }
+
+  card.innerHTML = contentHtml;
+  grid.appendChild(card);
+
+  const btnPractice = card.querySelector("#btn-practice-companion");
+  if (btnPractice) {
+    btnPractice.addEventListener("click", async () => {
+      await selectExerciseAndLesson("ex1", "les-1");
+    });
+  }
+}
+
 function renderMainMenu(filter = "all") {
   const grid = document.getElementById("menu-exercises-grid");
   if (!grid || !state.exercises.length) return;
 
+  const t = (k, def) => (window.I18N ? window.I18N.t(k) : def);
+  const book = BOOKS_CATALOG.find(b => b.id === state.currentBookId) || BOOKS_CATALOG[0];
+
+  // Update Breadcrumb Bar
+  const crumbBadge = document.getElementById("current-book-crumb-badge");
+  const crumbTitle = document.getElementById("current-book-crumb-title");
+  if (crumbBadge) {
+    crumbBadge.textContent = t(book.shortKey, book.shortTitle);
+    crumbBadge.className = `badge ${book.badgeClass}`;
+  }
+  if (crumbTitle) crumbTitle.textContent = t(book.titleKey, book.fullTitle);
+
+  // Update Hero Section for this Book
+  const menuBookBadge = document.getElementById("menu-book-badge");
+  const menuBookTitle = document.getElementById("menu-book-title");
+  const menuBookSubtitle = document.getElementById("menu-book-subtitle");
+  const menuBookPdfLink = document.getElementById("menu-book-pdf-link");
+
+  if (menuBookBadge) menuBookBadge.textContent = t(book.badgeKey, book.defaultBadge);
+  if (menuBookTitle) menuBookTitle.textContent = t(book.titleKey, book.fullTitle);
+  if (menuBookSubtitle) menuBookSubtitle.textContent = t(book.descKey, book.defaultDesc);
+  if (menuBookPdfLink) menuBookPdfLink.href = `./${encodeURIComponent(book.pdfFile)}`;
+
   const progressMap = getLessonProgressMap();
   const allLessons = state.allLessonsMap || {};
 
-  // Compute stats across all exercises
+  // If this is a classical method book like Czerny or Bach:
+  if (book.isMethodBook) {
+    renderMethodBookView(book, grid);
+    return;
+  }
+
+  // Filter exercises for this book (e.g. Hanon Part 1: 1-20, Part 2: 21-43, Part 3: 44-60)
+  const [minEx, maxEx] = book.range || [1, 20];
+  let bookExercises = state.exercises.filter(e => e.number >= minEx && e.number <= maxEx);
+
+  // Compute stats across this book
   let totalLessonsCount = 0;
   let completedCount = 0;
   let totalStars = 0;
@@ -2508,11 +2949,14 @@ function renderMainMenu(filter = "all") {
   try {
     const sessions = JSON.parse(localStorage.getItem("hanon_piano_sessions") || "[]");
     sessions.forEach(s => {
-      totalNotesPlayed += (s.correct_notes || 0) + (s.wrong_notes || 0);
+      const exNum = parseInt((s.exercise_id || "").replace("ex", ""), 10);
+      if (exNum >= minEx && exNum <= maxEx) {
+        totalNotesPlayed += (s.correct_notes || 0) + (s.wrong_notes || 0);
+      }
     });
   } catch(e) {}
 
-  state.exercises.forEach(ex => {
+  bookExercises.forEach(ex => {
     const lessons = allLessons[ex.id] || [];
     lessons.forEach(l => {
       totalLessonsCount += 1;
@@ -2535,7 +2979,7 @@ function renderMainMenu(filter = "all") {
   const statAcc = document.getElementById("menu-stat-accuracy");
   const statNotes = document.getElementById("menu-stat-notes");
 
-  if (statCompleted) statCompleted.textContent = `${completedCount} / ${totalLessonsCount || 360}`;
+  if (statCompleted) statCompleted.textContent = `${completedCount} / ${totalLessonsCount || book.totalLessons}`;
   if (statCompletedBar) {
     const pct = totalLessonsCount > 0 ? Math.round((completedCount / totalLessonsCount) * 100) : 0;
     statCompletedBar.style.width = `${pct}%`;
@@ -2545,16 +2989,10 @@ function renderMainMenu(filter = "all") {
   const langLocale = (window.I18N && window.I18N.currentLang === "en") ? "en-US" : (window.I18N && window.I18N.currentLang === "de") ? "de-DE" : (window.I18N && window.I18N.currentLang === "fr") ? "fr-FR" : (window.I18N && window.I18N.currentLang === "es") ? "es-ES" : "nl-NL";
   if (statNotes) statNotes.textContent = totalNotesPlayed.toLocaleString(langLocale);
 
-  // Filter exercises
-  let visibleExercises = state.exercises;
-  if (filter === "part1") {
-    visibleExercises = state.exercises.filter(e => e.number <= 20);
-  } else if (filter === "part2") {
-    visibleExercises = state.exercises.filter(e => e.number >= 21 && e.number <= 43);
-  } else if (filter === "part3") {
-    visibleExercises = state.exercises.filter(e => e.number >= 44 && e.number <= 60);
-  } else if (filter === "started") {
-    visibleExercises = state.exercises.filter(e => {
+  // Filter exercises (inside this book)
+  let visibleExercises = bookExercises;
+  if (filter === "started") {
+    visibleExercises = bookExercises.filter(e => {
       const lessons = allLessons[e.id] || [];
       return lessons.some(l => progressMap[`${e.id}_${l.id}`]);
     });

@@ -516,6 +516,68 @@ class TestI18nAndSettingsAndLightMode(unittest.TestCase):
         self.assertIn('data-i18n="threshold"', html)
 
 
+class TestMultiBookCatalogAndHub(unittest.TestCase):
+    def test_index_html_synchronization(self):
+        root_index = os.path.join(os.path.dirname(os.path.dirname(__file__)), "index.html")
+        static_index = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "index.html")
+        with open(root_index, "r", encoding="utf-8") as f1, open(static_index, "r", encoding="utf-8") as f2:
+            self.assertEqual(f1.read(), f2.read(), "root index.html and static/index.html must be strictly identical")
+
+    def test_books_hub_dom_elements(self):
+        index_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "index.html")
+        with open(index_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        self.assertIn('id="view-books-hub"', html)
+        self.assertIn('id="books-catalog-grid"', html)
+        self.assertIn('id="btn-nav-hub"', html)
+        self.assertIn('id="btn-nav-menu"', html)
+        self.assertIn('id="btn-nav-tutor"', html)
+        self.assertIn('id="btn-back-to-books"', html)
+        self.assertIn('id="current-book-crumb-title"', html)
+
+    def test_books_catalog_in_app_js(self):
+        app_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "app.js")
+        with open(app_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("BOOKS_CATALOG", js)
+        self.assertIn("hanon-part1", js)
+        self.assertIn("hanon-part2", js)
+        self.assertIn("hanon-part3", js)
+        self.assertIn("czerny-599", js)
+        self.assertIn("bach-first", js)
+        self.assertIn("renderBooksHub", js)
+        self.assertIn("openBook", js)
+        self.assertIn("getBookProgress", js)
+        self.assertIn("renderMethodBookView", js)
+
+    def test_i18n_has_book_translations_across_all_languages(self):
+        i18n_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "i18n.js")
+        with open(i18n_path, "r", encoding="utf-8") as f:
+            i18n = f.read()
+        keys = [
+            "hub_hero_title",
+            "hub_btn_start_hanon1",
+            "hub_btn_explore_books",
+            "book_hanon1_title",
+            "book_hanon2_title",
+            "book_hanon3_title",
+            "book_czerny_title",
+            "book_bach_title",
+            "btn_back_to_books",
+        ]
+        for key in keys:
+            self.assertIn(key, i18n, f"i18n key '{key}' should be defined")
+
+    def test_pdf_endpoints(self):
+        resp_cz = main_app.get_pdf_czerny()
+        self.assertEqual(resp_cz.status_code, 200)
+        self.assertEqual(resp_cz.media_type, "application/pdf")
+
+        resp_bach = main_app.get_pdf_bach()
+        self.assertEqual(resp_bach.status_code, 200)
+        self.assertEqual(resp_bach.media_type, "application/pdf")
+
+
 if __name__ == "__main__":
     unittest.main()
 
