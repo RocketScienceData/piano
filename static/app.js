@@ -1994,7 +1994,14 @@ function handlePlayedNote(playedNoteName, hz = 0, cents = 0) {
     state.currentNoteIndex++;
     updateTargetDisplay();
   } else {
-    // WRONG!
+    // In Wait (practice) mode: Patiently wait for the correct note without buzzing or penalizing!
+    if (state.currentMode === "wait") {
+      document.getElementById("coach-message").innerHTML = 
+        `<span style="color: var(--accent-gold);">${playedNoteName} gehoord</span> • Speel <strong>${targetNote}</strong> (${targetFinger})`;
+      return;
+    }
+
+    // In Tempo mode: Measure timing and count wrong note
     state.wrongCount++;
     state.streak = 0;
     playAudioFeedback("wrong");
@@ -2517,11 +2524,14 @@ function playPianoTone(midi, duration = 0.3) {
   }
 }
 
-// BROWSER MICROPHONE & YIN PITCH DETECTION
+// BROWSER MICROPHONE & ENHANCED ACOUSTIC PIANO PITCH DETECTION
 async function initBrowserMic() {
   try {
     if (!state.audioCtx) {
       state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (state.audioCtx.state === "suspended") {
+      await state.audioCtx.resume();
     }
     
     const stream = await navigator.mediaDevices.getUserMedia({
@@ -2534,50 +2544,103 @@ async function initBrowserMic() {
     state.micStream = stream;
     
     const micSource = state.audioCtx.createMediaStreamSource(stream);
+
+    // Audio Pre-processing Filter Chain for Acoustic Piano:
+    // 1. High-pass filter (25Hz) to strip rumble, DC offset & mechanical desk bumps
+    const hpFilter = state.audioCtx.createBiquadFilter();
+    hpFilter.type = "highpass";
+    hpFilter.frequency.value = 25;
+
+    // 2. Low-pass filter (4200Hz) to strip ambient hiss & high computer fan whine above piano C8
+    const lpFilter = state.audioCtx.createBiquadFilter();
+    lpFilter.type = "lowpass";
+    lpFilter.frequency.value = 4200;
+
+    // Analyser: fftSize 4096 gives halfBufferSize 2048 (down to 23.4Hz at 48kHz, covering A0=27.5Hz)
     const analyser = state.audioCtx.createAnalyser();
-    analyser.fftSize = 2048;
-    micSource.connect(analyser);
+    analyser.fftSize = 4096;
+    analyser.smoothingTimeConstant = 0.0;
+
+    micSource.connect(hpFilter);
+    hpFilter.connect(lpFilter);
+    lpFilter.connect(analyser);
+
     state.analyser = analyser;
     state.pitchBuffer = new Float32Array(analyser.fftSize);
+    state.lastDetectedNote = null;
+    state.lastNoteTimestamp = 0;
+    state.pitchHistory = [];
+    state.ambientNoise = 0.008;
     
     requestAnimationFrame(audioProcessLoop);
-    console.log("Microfoon succesvol geactiveerd!");
+    console.log("Microfoon met akoestische piano-optimalisatie geactiveerd!");
   } catch (err) {
     console.error("Microfoontoegang geweigerd:", err);
     alert("Microfoontoegang is nodig om naar de piano te luisteren. Klik op 'Toestaan' in de adresbalk.");
   }
 }
 
-// Real-time audio loop
+// Real-time audio loop with acoustic piano stability confirmation
 function audioProcessLoop() {
-  if (state.analyser && state.pitchBuffer) {
+  if (state.analyser && state.pitchBuffer && state.isPlaying) {
     state.analyser.getFloatTimeDomainData(state.pitchBuffer);
     
-    // Calculate RMS energy
+    // 1. Calculate RMS energy
     let sum = 0;
     for (let i = 0; i < state.pitchBuffer.length; i++) {
       sum += state.pitchBuffer[i] * state.pitchBuffer[i];
     }
     const rms = Math.sqrt(sum / state.pitchBuffer.length);
     
-    // Noise threshold from slider (scaled)
-    const threshold = (state.sensitivity / 1000.0) * 0.8;
+    // 2. Track ambient background noise floor smoothly
+    state.ambientNoise = state.ambientNoise ? (0.96 * state.ambientNoise + 0.04 * rms) : rms;
     
-    if (rms > threshold) {
-      const pitch = detectPitchYIN(state.pitchBuffer, state.audioCtx.sampleRate);
-      if (pitch && pitch >= 27.5 && pitch <= 4200) {
-        const midi = freqToMidi(pitch);
+    // 3. Dynamic adaptive strike threshold (adapting to sensitivity slider & room noise)
+    const sensFactor = (state.sensitivity / 50.0); // 1..50
+    const baseGate = 0.008 + (0.024 * (1.0 - Math.min(1.0, sensFactor)));
+    const dynamicThreshold = Math.max(baseGate, state.ambientNoise * 1.5);
+    
+    if (rms > dynamicThreshold) {
+      const result = detectPitchYIN(state.pitchBuffer, state.audioCtx.sampleRate);
+      if (result && result.freq >= 27.0 && result.freq <= 4200.0 && result.confidence >= 0.70) {
+        const midi = freqToMidi(result.freq);
         if (midi) {
           const roundedMidi = Math.round(midi);
           const cents = (midi - roundedMidi) * 100.0;
           const noteName = midiToNoteName(roundedMidi);
           
+          // Real-time HUD reflection
+          const liveNameEl = document.getElementById("live-note-name");
+          if (liveNameEl) liveNameEl.textContent = noteName;
+          const liveHzEl = document.getElementById("live-hz");
+          if (liveHzEl) liveHzEl.textContent = `${result.freq.toFixed(1)} Hz`;
+          const liveCentsEl = document.getElementById("live-cents-desc");
+          if (liveCentsEl) {
+            liveCentsEl.textContent = Math.abs(cents) > 3 ? `${cents > 0 ? '+' : ''}${cents.toFixed(0)} ct` : "Stemming 🎯";
+          }
+          
+          // Multi-frame pitch consensus buffer (eliminates hammer transients & speech blips)
+          state.pitchHistory = state.pitchHistory || [];
           const now = Date.now();
-          // Debounce: prevent triggering same note more than once per 120ms
-          if (noteName !== state.lastDetectedNote || (now - state.lastNoteTimestamp) > 130) {
-            state.lastDetectedNote = noteName;
-            state.lastNoteTimestamp = now;
-            handlePlayedNote(noteName, pitch, cents);
+          state.pitchHistory.push({ note: noteName, freq: result.freq, cents, time: now });
+          
+          // Keep detections within last 70ms
+          state.pitchHistory = state.pitchHistory.filter(h => (now - h.time) <= 70);
+          
+          // If at least 2 consecutive detections agree on the note name
+          if (state.pitchHistory.length >= 2) {
+            const lastNote = state.pitchHistory[state.pitchHistory.length - 1].note;
+            const prevNote = state.pitchHistory[state.pitchHistory.length - 2].note;
+            
+            if (lastNote === prevNote) {
+              const timeSinceLast = now - (state.lastNoteTimestamp || 0);
+              // Allow note if different or if at least 150ms has elapsed since identical strike
+              if (lastNote !== state.lastDetectedNote || timeSinceLast > 150) {
+                state.lastDetectedNote = lastNote;
+                state.lastNoteTimestamp = now;
+                handlePlayedNote(lastNote, result.freq, cents);
+              }
+            }
           }
         }
       }
@@ -2586,59 +2649,100 @@ function audioProcessLoop() {
   requestAnimationFrame(audioProcessLoop);
 }
 
-// High-accuracy YIN Pitch Algorithm
+// High-accuracy Enhanced YIN Pitch Algorithm with Acoustic Piano Sub-harmonic & Octave Verification
 function detectPitchYIN(buffer, sampleRate) {
   const bufferSize = buffer.length;
   const halfBufferSize = Math.floor(bufferSize / 2);
   const yinBuffer = new Float32Array(halfBufferSize);
   
-  // Step 1: Difference Function
-  for (let tau = 0; tau < halfBufferSize; tau++) {
+  // Frequency search boundaries for 88-key piano: A0 (27.5 Hz) to C8 (4186 Hz)
+  const minPeriod = Math.max(2, Math.floor(sampleRate / 4200.0));
+  const maxPeriod = Math.min(halfBufferSize - 2, Math.floor(sampleRate / 27.0));
+  
+  // Step 1: Difference Function (stride 2 for high performance with 4096 buffer)
+  for (let tau = 0; tau <= maxPeriod; tau++) {
     yinBuffer[tau] = 0;
   }
-  for (let tau = 1; tau < halfBufferSize; tau++) {
-    for (let i = 0; i < halfBufferSize; i++) {
+  for (let tau = minPeriod; tau <= maxPeriod; tau++) {
+    let sum = 0;
+    for (let i = 0; i < halfBufferSize; i += 2) {
       const delta = buffer[i] - buffer[i + tau];
-      yinBuffer[tau] += delta * delta;
+      sum += delta * delta;
     }
+    yinBuffer[tau] = sum * 2;
   }
   
   // Step 2: Cumulative Mean Normalized Difference
   yinBuffer[0] = 1;
   let runningSum = 0;
-  for (let tau = 1; tau < halfBufferSize; tau++) {
+  for (let tau = 1; tau <= maxPeriod; tau++) {
     runningSum += yinBuffer[tau];
     yinBuffer[tau] = runningSum > 0 ? (yinBuffer[tau] * tau) / runningSum : 1;
   }
   
-  // Step 3: Absolute Threshold
-  const threshold = 0.15;
-  let tauEstimate = -1;
-  for (let tau = 2; tau < halfBufferSize; tau++) {
-    if (yinBuffer[tau] < threshold) {
-      while (tau + 1 < halfBufferSize && yinBuffer[tau + 1] < yinBuffer[tau]) {
-        tau++;
+  // Step 3: Find Candidate Local Minima
+  const threshold = 0.20;
+  const candidateMinima = [];
+  let globalMinVal = 1.0;
+  let globalMinTau = -1;
+  
+  for (let tau = minPeriod + 1; tau < maxPeriod; tau++) {
+    if (yinBuffer[tau] < yinBuffer[tau - 1] && yinBuffer[tau] <= yinBuffer[tau + 1]) {
+      if (yinBuffer[tau] < threshold) {
+        candidateMinima.push({ tau, val: yinBuffer[tau] });
       }
-      tauEstimate = tau;
-      break;
+      if (yinBuffer[tau] < globalMinVal) {
+        globalMinVal = yinBuffer[tau];
+        globalMinTau = tau;
+      }
     }
   }
   
-  if (tauEstimate === -1) return null;
+  if (candidateMinima.length === 0 && globalMinVal < 0.28) {
+    candidateMinima.push({ tau: globalMinTau, val: globalMinVal });
+  }
   
-  // Step 4: Parabolic Interpolation for Sub-sample Accuracy
-  let betterTau = tauEstimate;
-  if (tauEstimate > 0 && tauEstimate < halfBufferSize - 1) {
-    const s0 = yinBuffer[tauEstimate - 1];
-    const s1 = yinBuffer[tauEstimate];
-    const s2 = yinBuffer[tauEstimate + 1];
+  if (candidateMinima.length === 0) return null;
+  
+  // Step 4: Octave & Sub-harmonic Verification for Piano Strings
+  // Pianos have strong 2nd/3rd harmonics. If an initial minimum is at tau1,
+  // check if a true fundamental subharmonic minimum exists near 2*tau1!
+  let chosenTau = candidateMinima[0].tau;
+  let chosenVal = candidateMinima[0].val;
+  
+  for (let i = 0; i < candidateMinima.length; i++) {
+    const c1 = candidateMinima[i];
+    for (let j = i + 1; j < candidateMinima.length; j++) {
+      const c2 = candidateMinima[j];
+      const ratio2 = c2.tau / c1.tau;
+      // If c2 is an octave lower (~2.0 * tau1) and is a strong dip:
+      if (Math.abs(ratio2 - 2.0) < 0.08 && c2.val < 0.35) {
+        chosenTau = c2.tau;
+        chosenVal = c2.val;
+        break;
+      }
+    }
+  }
+  
+  const confidence = 1.0 - chosenVal;
+  if (confidence < 0.70) return null; // Reject non-periodic noise
+  
+  // Step 5: Parabolic Interpolation for Sub-sample Accuracy
+  let betterTau = chosenTau;
+  if (chosenTau > 1 && chosenTau < halfBufferSize - 1) {
+    const s0 = yinBuffer[chosenTau - 1];
+    const s1 = yinBuffer[chosenTau];
+    const s2 = yinBuffer[chosenTau + 1];
     const denom = 2 * (2 * s1 - s0 - s2);
     if (denom !== 0) {
-      betterTau = tauEstimate + (s2 - s0) / denom;
+      betterTau = chosenTau + (s2 - s0) / denom;
     }
   }
   
-  return sampleRate / betterTau;
+  return {
+    freq: sampleRate / betterTau,
+    confidence: confidence
+  };
 }
 
 // Waveform visualizer

@@ -128,6 +128,14 @@ class TestSeoAndHub(unittest.TestCase):
         self.assertIn("function playPhysicalModelingGrand", js)
         self.assertIn("function preloadGrandPianoSamples", js)
 
+    def test_enhanced_piano_pitch_detection(self):
+        with open(self.app_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("analyser.fftSize = 4096", js)
+        self.assertIn("state.pitchHistory", js)
+        self.assertIn("state.currentMode === \"wait\"", js)
+        self.assertIn("state.ambientNoise", js)
+
     def test_app_py_seo_routes(self):
         import app
         

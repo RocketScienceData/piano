@@ -22,10 +22,10 @@ def midi_to_note_name(midi_val: float) -> Tuple[str, int, float]:
     octave = (rounded // 12) - 1
     return f"{NOTE_NAMES[note_idx]}{octave}", rounded, cents
 
-def autocorrelation_pitch(buffer: np.ndarray, sample_rate: int = 44100, min_freq: float = 60.0, max_freq: float = 2000.0) -> Optional[float]:
+def autocorrelation_pitch(buffer: np.ndarray, sample_rate: int = 44100, min_freq: float = 27.0, max_freq: float = 4200.0) -> Optional[float]:
     """
     Normalized Square Difference / Autocorrelation pitch detector.
-    Ideal for acoustic piano fundamental frequencies.
+    Optimized for full 88-key acoustic piano fundamental frequencies (A0 to C8).
     """
     n = len(buffer)
     if n < 256:
@@ -94,7 +94,7 @@ def autocorrelation_pitch(buffer: np.ndarray, sample_rate: int = 44100, min_freq
 
 
 class MicPitchDetector:
-    def __init__(self, sample_rate: int = 44100, buffer_size: int = 2048, on_pitch_callback: Optional[Callable] = None):
+    def __init__(self, sample_rate: int = 44100, buffer_size: int = 4096, on_pitch_callback: Optional[Callable] = None):
         self.sample_rate = sample_rate
         self.buffer_size = buffer_size
         self.on_pitch_callback = on_pitch_callback
