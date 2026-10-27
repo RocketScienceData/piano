@@ -3,7 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hanon Piano Tutor - De Virtuoze Pianist</title>
+  <title>Piano Academie • Gratis Online Pianoles met AI | Hanon, Czerny &amp; Bach</title>
+  <meta name="description" content="Leer gratis piano spelen met real-time akoestische microfoonherkenning. Complete leergang van C.L. Hanon (60 oefeningen), Carl Czerny (Op. 599, 100 etudes) en J.S. Bach (First Lessons). Direct in je browser, zonder account of abonnement.">
+  <meta name="keywords" content="pianoles, gratis online pianoles, piano leren spelen, hanon de virtuoze pianist, czerny op 599, first lessons in bach, interactieve piano app, flowkey alternatief, bladmuziek meelezen, microfoon piano herkenning, midi piano tutor">
+  <meta name="author" content="Piano Academie">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#090d16">
+  <link rel="canonical" href="https://rocketsciencedata.github.io/piano/">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rocketsciencedata.github.io/piano/">
+  <meta property="og:title" content="Piano Academie • Gratis Online Pianoles met AI">
+  <meta property="og:description" content="Speel piano op je eigen akoestische piano of keyboard met live microfoonherkenning. Oefen Hanon, Czerny en Bach gratis in je browser.">
+  <meta property="og:image" content="https://rocketsciencedata.github.io/piano/static/sheet.png">
+  <meta property="og:site_name" content="Piano Academie">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rocketsciencedata.github.io/piano/">
+  <meta name="twitter:title" content="Piano Academie • Gratis Online Pianoles met AI">
+  <meta name="twitter:description" content="Leer meesterlijk piano spelen met Hanon, Czerny en Bach via real-time akoestische herkenning. Direct in je browser.">
+  <meta name="twitter:image" content="https://rocketsciencedata.github.io/piano/static/sheet.png">
+
+  <!-- Structured Data: JSON-LD for WebApplication & Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://rocketsciencedata.github.io/piano/#webapp",
+        "name": "Piano Academie - Hanon, Czerny & Bach Tutor",
+        "url": "https://rocketsciencedata.github.io/piano/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires Web Audio API and Web MIDI API support",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "description": "Gratis interactieve piano academie met real-time audio- en microfoonherkenning voor akoestische piano en MIDI keyboards."
+      },
+      {
+        "@type": "Course",
+        "@id": "https://rocketsciencedata.github.io/piano/#course",
+        "name": "Klassieke Pianomethodes & Virtuositeit",
+        "description": "Complete interactieve leergang met 188 lessen verdeeld over C.L. Hanon (Deel 1-3), Carl Czerny (Op. 599) en J.S. Bach (First Lessons in Bach).",
+        "provider": {
+          "@type": "Organization",
+          "name": "Piano Academie",
+          "sameAs": "https://rocketsciencedata.github.io/piano/"
+        },
+        "isAccessibleForFree": true
+      }
+    ]
+  }
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERTNVSN444"></script>
@@ -197,75 +259,107 @@
     </div>
   </header>
 
-  <!-- TIER 1: Academy Home / Boeken Hub (Wervende Index Pagina) -->
+  <!-- TIER 1: Academy Home / Boeken Hub (Netflix & Flowkey Classical Experience) -->
   <div id="view-books-hub" class="books-hub-view" style="display: block;">
     <div class="hub-container">
       
-      <!-- Wervende Hero Sectie -->
-      <section class="hub-hero-card">
+      <!-- Flowkey & Netflix Cinematic Hero Section -->
+      <section class="hub-hero-card flowkey-hero">
         <div class="hub-hero-content">
           <div class="hub-hero-badge">
             <span class="hub-badge-sparkle">✨</span>
             <span data-i18n="hub_hero_badge">100% Gratis Interactieve Piano Academie • Geen Account Nodig</span>
           </div>
-          <h1 class="hub-hero-title" data-i18n="hub_hero_title">Leer Pianospelen Met Real-Time AI Feedback</h1>
+          <h1 class="hub-hero-title" data-i18n="hub_hero_title">
+            Leer Meesterlijk Pianospelen Met <span class="gradient-text">Real-Time AI &amp; Luisterfunctie</span>
+          </h1>
           <p class="hub-hero-subtitle" data-i18n="hub_hero_subtitle">
-            Speel op je eigen akoestische piano of digitale keyboard. Onze slimme microfoondetectie luistert direct mee en geeft live feedback op elke toets, vinger en timing. Kies een lesboek en begin meteen gratis met oefenen.
+            Speel op je eigen akoestische piano of keyboard. Onze intelligente luistertechnologie volgt je spel noot voor noot via je microfoon. Kies een klassiek lesboek van Hanon, Czerny of Bach en start direct gratis — zonder abonnement of registratie.
           </p>
+
           <div class="hub-hero-actions">
-            <button type="button" id="hub-btn-start-primary" class="btn btn-primary btn-lg">
-              <span data-i18n="hub_btn_start_hanon1">▶️ Start met Hanon Boek 1</span>
+            <button type="button" id="hub-btn-start-primary" class="btn btn-primary btn-xl hub-play-btn">
+              <span class="play-icon-triangle">▶</span>
+              <span data-i18n="hub_btn_start_hanon1">Direct Starten met Hanon Deel 1</span>
             </button>
-            <a href="#books-catalog-section" class="btn btn-outline btn-lg" id="hub-btn-scroll-books">
-              <span data-i18n="hub_btn_explore_books">📚 Bekijk Alle Boeken</span>
+            <a href="#books-catalog-section" class="btn btn-outline btn-lg hub-browse-btn" id="hub-btn-scroll-books">
+              <span data-i18n="hub_btn_explore_books">📚 Bekijk Alle 5 Lesboeken</span>
             </a>
           </div>
-        </div>
-      </section>
 
-      <!-- 4 Visuele Feature Pilaren / Voordelen -->
-      <section class="hub-features-grid">
-        <div class="hub-feature-card">
-          <div class="hub-feature-icon-wrap">🎙️</div>
-          <div class="hub-feature-text">
-            <h3 class="hub-feature-title" data-i18n="hub_feature_mic_title">Microfoondetectie</h3>
-            <p class="hub-feature-desc" data-i18n="hub_feature_mic_desc">Geen speciale kabels nodig. Werkt via je browser met elke piano of keyboard.</p>
-          </div>
-        </div>
-        <div class="hub-feature-card">
-          <div class="hub-feature-icon-wrap">🎼</div>
-          <div class="hub-feature-text">
-            <h3 class="hub-feature-title" data-i18n="hub_feature_sheet_title">Vector Partituren</h3>
-            <p class="hub-feature-desc" data-i18n="hub_feature_sheet_desc">Haarscherpe, dynamische partituur die synchroon met jouw spel meeloopt.</p>
-          </div>
-        </div>
-        <div class="hub-feature-card">
-          <div class="hub-feature-icon-wrap">🎹</div>
-          <div class="hub-feature-text">
-            <h3 class="hub-feature-title" data-i18n="hub_feature_piano_title">88-Toetsen Klavier</h3>
-            <p class="hub-feature-desc" data-i18n="hub_feature_piano_desc">Toont live handposities en de exacte vingerzetting (vinger 1 t/m 5) per hand.</p>
-          </div>
-        </div>
-        <div class="hub-feature-card">
-          <div class="hub-feature-icon-wrap">🏆</div>
-          <div class="hub-feature-text">
-            <h3 class="hub-feature-title" data-i18n="hub_feature_free_title">Vrij &amp; Toegankelijk</h3>
-            <p class="hub-feature-desc" data-i18n="hub_feature_free_desc">100% gratis leergang: geen abonnement, geen betaalmuur, voor iedereen.</p>
+          <!-- Flowkey Classical Trust Highlights Strip -->
+          <div class="hub-trust-strip">
+            <div class="trust-item">
+              <span class="trust-icon">🎹</span>
+              <span class="trust-text"><strong>188</strong> Interactieve Lessen</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">🎙️</span>
+              <span class="trust-text"><strong>Microfoon</strong> &amp; MIDI Herkenning</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">🎼</span>
+              <span class="trust-text"><strong>Dynamische</strong> Vector Notenbalk</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">🔓</span>
+              <span class="trust-text"><strong>100% Vrij</strong> Zonder Betaalmuur</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Boeken Bibliotheek Sectie -->
+      <!-- Flowkey 3-Stappen Leermethode (The Flowkey Experience) -->
+      <section class="flowkey-method-section">
+        <div class="hub-section-header text-center">
+          <span class="hub-eyebrow">DE METHODE</span>
+          <h2 class="flowkey-method-title">Hoe Je Sneller Leert Met Onze Academie</h2>
+          <p class="flowkey-method-sub">Geïnspireerd op de beproefde methodes van de grote conservatoria en interactieve luistertechnologie</p>
+        </div>
+
+        <div class="flowkey-steps-grid">
+          <div class="flowkey-step-card">
+            <div class="step-badge">1</div>
+            <div class="step-icon-wrap">🎙️</div>
+            <h3 class="step-title">Speel Op Je Eigen Piano</h3>
+            <p class="step-desc">
+              Plaats je telefoon, tablet of laptop bij je piano. De microfoon herkent elke toonhoogte akoestisch in realtime, zonder kabels of speciale apparatuur.
+            </p>
+          </div>
+
+          <div class="flowkey-step-card">
+            <div class="step-badge">2</div>
+            <div class="step-icon-wrap">⏳</div>
+            <h3 class="step-title">Interactieve Wachtmodus</h3>
+            <p class="step-desc">
+              De muziek wacht geduldig op jouw tempo. Neem de tijd voor je vingerzetting en handboog; zodra je de noot correct aanslaat, gaat de partituur verder.
+            </p>
+          </div>
+
+          <div class="flowkey-step-card">
+            <div class="step-badge">3</div>
+            <div class="step-icon-wrap">👐</div>
+            <h3 class="step-title">Hand voor Hand Oefenen</h3>
+            <p class="step-desc">
+              Isoleer eerst de rechterhand voor melodiegevoel, oefen de linkerhand voor een solide bascadans, en voeg beide handen harmonieus samen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Netflix Style Categorieën & Boeken Rails -->
       <section class="hub-books-section" id="books-catalog-section">
         <div class="hub-section-header">
           <div>
-            <h2 class="hub-section-title" data-i18n="hub_section_title">📚 Klassieke Lesmethodes &amp; Boeken</h2>
-            <p class="hub-section-sub" data-i18n="hub_section_desc">Kies een methode om de gestructureerde lessen, partituren en voortgang te openen</p>
+            <span class="hub-eyebrow">BIBLIOTHEEK</span>
+            <h2 class="hub-section-title" data-i18n="hub_section_title">📚 Kies Je Klassieke Lesmethode</h2>
+            <p class="hub-section-sub" data-i18n="hub_section_desc">Selecteer een methode om direct te starten met gestructureerde etudes en voortgangstracking</p>
           </div>
         </div>
 
-        <div class="books-grid" id="books-catalog-grid">
-          <!-- Dynamically populated from BOOKS_CATALOG with live progress -->
+        <!-- Netflix-Style Curated Grid -->
+        <div class="netflix-books-grid books-grid" id="books-catalog-grid">
+          <!-- Dynamically populated from BOOKS_CATALOG with Netflix poster cards -->
         </div>
       </section>
 
@@ -304,9 +398,6 @@
             <button id="menu-btn-restart-ex1" class="btn btn-outline" title="Start vanaf de eerste les van dit boek">
               <span data-i18n="btn_start_les1">🔄 Start bij Eerste Les</span>
             </button>
-            <a id="menu-book-pdf-link" href="./IMSLP91547-PMLP03129-Hanon_Final.pdf" target="_blank" class="btn btn-outline">
-              <span data-i18n="btn_view_pdf">📄 Bekijk Boek PDF</span>
-            </a>
           </div>
         </div>
 
@@ -363,7 +454,7 @@
 
       <!-- Exercise Cards Grid -->
       <div class="menu-exercises-grid" id="menu-exercises-grid">
-        <!-- Dynamically rendered 60 exercise cards with 6 lessons each (360 structured lessons) -->
+        <!-- Dynamically rendered exercise cards with structured lessons -->
       </div>
     </div>
   </div>
@@ -375,15 +466,12 @@
       <div class="sheet-header">
         <div class="sheet-header-left">
           <span id="sheet-title">🎼 C. L. Hanon - The Virtuoso Pianist • Oefening N°1 in C</span>
-          <a id="sheet-pdf-link" href="./Exercise%20N%C2%B01%20in%20C.pdf" target="_blank" class="badge badge-cyan" title="Open PDF van deze oefening" data-i18n="sheet_pdf_btn">
-            📄 Oefening PDF
-          </a>
           <div class="sheet-view-toggle btn-group-micro" id="sheet-view-toggle">
             <button type="button" class="active" id="btn-view-vector" data-view="vector" title="Dynamische vector notenbalk (haarscherp, interactief)" data-i18n="sheet_vector_toggle">
               🎼 Dynamische Notenbalk (Vector)
             </button>
-            <button type="button" id="btn-view-pdf" data-view="pdf" title="Originele PDF scan" data-i18n="sheet_pdf_toggle">
-              📄 PDF Scan
+            <button type="button" id="btn-view-pdf" data-view="pdf" title="Originele partituur scan" data-i18n="sheet_pdf_toggle">
+              📄 Partituur Scan
             </button>
           </div>
         </div>

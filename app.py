@@ -9,7 +9,7 @@ import asyncio
 from typing import List, Dict, Any, Optional
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Query
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from core.lessons import LESSONS, get_lesson, get_exercises, get_exercise_lessons
@@ -51,6 +51,18 @@ app.mount("/data", StaticFiles(directory="data"), name="data")
 @app.get("/")
 def get_index():
     return FileResponse("static/index.html")
+
+@app.get("/robots.txt")
+def get_robots():
+    if os.path.exists("robots.txt"):
+        return FileResponse("robots.txt", media_type="text/plain")
+    return PlainTextResponse(content="User-agent: *\nAllow: /\n")
+
+@app.get("/sitemap.xml")
+def get_sitemap():
+    if os.path.exists("sitemap.xml"):
+        return FileResponse("sitemap.xml", media_type="application/xml")
+    return JSONResponse(status_code=404, content={"error": "sitemap.xml niet gevonden"})
 
 # PDF endpoints so user can view / download original PDFs directly in browser
 @app.get("/Exercise N°1 in C.pdf")

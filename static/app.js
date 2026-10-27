@@ -2628,70 +2628,93 @@ function renderBooksHub() {
     return def;
   };
 
-  BOOKS_CATALOG.forEach(book => {
+  BOOKS_CATALOG.forEach((book, bIdx) => {
     const prog = getBookProgress(book);
     const title = t(book.titleKey, book.fullTitle);
     const badge = t(book.badgeKey, book.defaultBadge);
     const desc = t(book.descKey, book.defaultDesc);
-    const openLabel = t("btn_open_book", "▶️ Open Boek & Lessen");
-    const pdfLabel = t("btn_view_pdf", "📄 Bekijk Boek PDF");
+    const openLabel = t("btn_open_book", "▶️ Start Methode");
     const progressTxt = (window.I18N && window.I18N.t("book_progress_fmt", {
       done: prog.completed,
       total: prog.total,
       pct: prog.pct
-    })) || `${prog.completed} / ${prog.total} lessen voltooid (${prog.pct}%)`;
+    })) || `${prog.completed} / ${prog.total} lessen (${prog.pct}%)`;
 
     const card = document.createElement("div");
-    card.className = `book-card ${book.id === state.currentBookId ? 'active-book-card' : ''}`;
+    card.className = `netflix-book-card book-card ${book.id === state.currentBookId ? 'active-book-card' : ''}`;
     card.dataset.bookId = book.id;
 
+    // Determine Netflix-style cover motif
+    let coverThemeClass = "theme-sapphire";
+    let genreTag = "Techniek";
+    let levelTag = "Beginner";
+    if (book.id === "hanon-part1") {
+      coverThemeClass = "theme-sapphire";
+      genreTag = "Essentiële Basis";
+      levelTag = "Niveau 1";
+    } else if (book.id === "hanon-part2") {
+      coverThemeClass = "theme-amethyst";
+      genreTag = "Toonladders & Akkoorden";
+      levelTag = "Niveau 2";
+    } else if (book.id === "hanon-part3") {
+      coverThemeClass = "theme-amber";
+      genreTag = "Concertvirtuositeit";
+      levelTag = "Niveau 3";
+    } else if (book.id === "czerny-599") {
+      coverThemeClass = "theme-emerald";
+      genreTag = "100 Melodische Etudes";
+      levelTag = "Alle Niveaus";
+    } else if (book.id === "bach-first") {
+      coverThemeClass = "theme-ruby";
+      genreTag = "Barok Meesterrepertoire";
+      levelTag = "Klassiek";
+    }
+
     card.innerHTML = `
-      <div class="book-card-top">
-        <div class="book-card-icon-wrap">${book.icon}</div>
-        <div class="book-card-meta">
-          <div class="book-meta-pills">
-            <span class="badge ${book.badgeClass}">${badge}</span>
-            <span class="book-author">${book.author}</span>
+      <div class="netflix-card-poster ${coverThemeClass}">
+        <div class="poster-overlay-glow"></div>
+        <div class="poster-badge-row">
+          <span class="poster-badge-pill">${genreTag}</span>
+          <span class="poster-level-pill">${levelTag}</span>
+        </div>
+        <div class="poster-icon-center">${book.icon}</div>
+        <div class="poster-hover-play">
+          <div class="netflix-play-trigger">▶</div>
+        </div>
+        <div class="poster-author-label">${book.author}</div>
+      </div>
+
+      <div class="netflix-card-body">
+        <h3 class="netflix-card-title">${title}</h3>
+        <p class="netflix-card-desc">${desc}</p>
+
+        <div class="netflix-card-progress">
+          <div class="netflix-progress-track">
+            <div class="netflix-progress-fill" style="width: ${prog.pct}%;"></div>
           </div>
-          <h3 class="book-title">${title}</h3>
+          <div class="netflix-progress-meta">
+            <span class="netflix-progress-pct">${prog.pct}% voltooid</span>
+            <span class="netflix-progress-count">${prog.completed}/${prog.total} lessen</span>
+          </div>
         </div>
-      </div>
 
-      <p class="book-description">${desc}</p>
-
-      <div class="book-progress-box">
-        <div class="book-progress-bar-track">
-          <div class="book-progress-bar-fill" style="width: ${prog.pct}%;"></div>
+        <div class="netflix-card-footer">
+          <button type="button" class="btn btn-primary btn-block btn-netflix-action" data-book-id="${book.id}">
+            ${openLabel}
+          </button>
         </div>
-        <div class="book-progress-label">${progressTxt}</div>
-      </div>
-
-      <div class="book-card-actions">
-        <button type="button" class="btn btn-primary btn-open-book" data-book-id="${book.id}">
-          ${openLabel}
-        </button>
-        <a href="./${encodeURIComponent(book.pdfFile)}" target="_blank" class="btn btn-outline btn-book-pdf" title="${pdfLabel}">
-          ${pdfLabel}
-        </a>
       </div>
     `;
-
-    const btnOpen = card.querySelector(".btn-open-book");
-    if (btnOpen) {
-      btnOpen.addEventListener("click", (e) => {
-        e.stopPropagation();
-        openBook(book.id);
-      });
-    }
 
     card.addEventListener("click", () => {
       openBook(book.id);
     });
 
-    const pdfLink = card.querySelector(".btn-book-pdf");
-    if (pdfLink) {
-      pdfLink.addEventListener("click", (e) => {
+    const btnAction = card.querySelector(".btn-netflix-action");
+    if (btnAction) {
+      btnAction.addEventListener("click", (e) => {
         e.stopPropagation();
+        openBook(book.id);
       });
     }
 
@@ -3014,8 +3037,6 @@ function renderMainMenu(filter = "all") {
     const progressTxt = (window.I18N && window.I18N.t("lessons_progress_fmt", { done: exCompleted, total: lessons.length, pct: exPct }))
       || `${exCompleted} / ${lessons.length} lessen (${exPct}%)`;
 
-    const exPdf = ex.pdf_file || book.pdfFile || "Czerny-599.pdf";
-
     card.innerHTML = `
       <div class="menu-ex-card-header">
         <div>
@@ -3023,9 +3044,6 @@ function renderMainMenu(filter = "all") {
           <h3 class="menu-ex-title">${exTitle}</h3>
           <p class="menu-ex-sub">${focusSub}</p>
         </div>
-        <a href="./${encodeURIComponent(exPdf)}" target="_blank" class="badge badge-cyan" title="PDF">
-          📄 PDF
-        </a>
       </div>
 
       <div class="menu-ex-progress-bar">
