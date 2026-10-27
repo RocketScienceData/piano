@@ -118,6 +118,16 @@ class TestSeoAndHub(unittest.TestCase):
         self.assertIn("state.activeTarget = item;", js)
         self.assertIn("highlightPianoTarget();", js)
 
+    def test_grand_piano_sound_engine(self):
+        with open(self.app_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("GRAND_PIANO_SAMPLES", js)
+        self.assertIn("SALAMANDER_BASE_URL", js)
+        self.assertIn("function findClosestPianoSample", js)
+        self.assertIn("function playSampleBuffer", js)
+        self.assertIn("function playPhysicalModelingGrand", js)
+        self.assertIn("function preloadGrandPianoSamples", js)
+
     def test_app_py_seo_routes(self):
         import app
         

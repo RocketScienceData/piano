@@ -265,6 +265,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadData();
   updateAudioSourceSelectLabels();
   setupWaveformCanvas();
+  preloadGrandPianoSamples();
   window.addEventListener("beforeunload", () => {
     if (state.telemetryQueue && state.telemetryQueue.length > 0) {
       flushTelemetry();
@@ -2295,30 +2296,225 @@ function stopDemo() {
   highlightPianoTarget();
 }
 
-// Web Audio Piano Tone Synthesis
-function playPianoTone(midi, duration = 0.3) {
+// ==========================================================================
+// Concert Grand Piano Sound Engine (Yamaha C5 Samples + Physical Modeling)
+// ==========================================================================
+
+const GRAND_PIANO_SAMPLES = [
+  { note: "A0", midi: 21, file: "A0.mp3" },
+  { note: "C1", midi: 24, file: "C1.mp3" },
+  { note: "D#1", midi: 27, file: "Ds1.mp3" },
+  { note: "F#1", midi: 30, file: "Fs1.mp3" },
+  { note: "A1", midi: 33, file: "A1.mp3" },
+  { note: "C2", midi: 36, file: "C2.mp3" },
+  { note: "D#2", midi: 39, file: "Ds2.mp3" },
+  { note: "F#2", midi: 42, file: "Fs2.mp3" },
+  { note: "A2", midi: 45, file: "A2.mp3" },
+  { note: "C3", midi: 48, file: "C3.mp3" },
+  { note: "D#3", midi: 51, file: "Ds3.mp3" },
+  { note: "F#3", midi: 54, file: "Fs3.mp3" },
+  { note: "A3", midi: 57, file: "A3.mp3" },
+  { note: "C4", midi: 60, file: "C4.mp3" },
+  { note: "D#4", midi: 63, file: "Ds4.mp3" },
+  { note: "F#4", midi: 66, file: "Fs4.mp3" },
+  { note: "A4", midi: 69, file: "A4.mp3" },
+  { note: "C5", midi: 72, file: "C5.mp3" },
+  { note: "D#5", midi: 75, file: "Ds5.mp3" },
+  { note: "F#5", midi: 78, file: "Fs5.mp3" },
+  { note: "A5", midi: 81, file: "A5.mp3" },
+  { note: "C6", midi: 84, file: "C6.mp3" },
+  { note: "D#6", midi: 87, file: "Ds6.mp3" },
+  { note: "F#6", midi: 90, file: "Fs6.mp3" },
+  { note: "A6", midi: 93, file: "A6.mp3" },
+  { note: "C7", midi: 96, file: "C7.mp3" },
+  { note: "D#7", midi: 99, file: "Ds7.mp3" },
+  { note: "F#7", midi: 102, file: "Fs7.mp3" },
+  { note: "A7", midi: 105, file: "A7.mp3" },
+  { note: "C8", midi: 108, file: "C8.mp3" }
+];
+
+const SALAMANDER_BASE_URL = "https://tonejs.github.io/audio/salamander/";
+const pianoAudioBufferCache = new Map();
+const pendingSampleLoads = new Map();
+
+function findClosestPianoSample(targetMidi) {
+  let closest = GRAND_PIANO_SAMPLES[0];
+  let minDiff = Math.abs(targetMidi - closest.midi);
+  for (let i = 1; i < GRAND_PIANO_SAMPLES.length; i++) {
+    const s = GRAND_PIANO_SAMPLES[i];
+    const diff = Math.abs(targetMidi - s.midi);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closest = s;
+    }
+  }
+  return closest;
+}
+
+async function loadPianoSampleBuffer(sampleDef) {
+  if (pianoAudioBufferCache.has(sampleDef.file)) {
+    return pianoAudioBufferCache.get(sampleDef.file);
+  }
+  if (pendingSampleLoads.has(sampleDef.file)) {
+    return pendingSampleLoads.get(sampleDef.file);
+  }
+
+  const loadPromise = (async () => {
+    try {
+      if (!state.audioCtx) {
+        state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      const ctx = state.audioCtx;
+      const res = await fetch(`${SALAMANDER_BASE_URL}${sampleDef.file}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const arrayBuffer = await res.arrayBuffer();
+      const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+      pianoAudioBufferCache.set(sampleDef.file, audioBuffer);
+      pendingSampleLoads.delete(sampleDef.file);
+      return audioBuffer;
+    } catch (err) {
+      pendingSampleLoads.delete(sampleDef.file);
+      return null;
+    }
+  })();
+
+  pendingSampleLoads.set(sampleDef.file, loadPromise);
+  return loadPromise;
+}
+
+function preloadGrandPianoSamples() {
+  const coreFiles = ["C2.mp3", "Ds2.mp3", "A2.mp3", "C3.mp3", "Ds3.mp3", "Fs3.mp3", "A3.mp3", "C4.mp3", "Ds4.mp3", "Fs4.mp3", "A4.mp3", "C5.mp3"];
+  GRAND_PIANO_SAMPLES.filter(s => coreFiles.includes(s.file)).forEach(sampleDef => {
+    loadPianoSampleBuffer(sampleDef).catch(() => {});
+  });
+}
+
+function playSampleBuffer(buffer, sampleMidi, targetMidi, duration = 0.3) {
   if (!state.audioCtx) return;
   const ctx = state.audioCtx;
   const now = ctx.currentTime;
-  const freq = midiToFreq(midi);
   
-  // 3-harmonic piano oscillator
-  [1, 2, 3].forEach((harmonic, idx) => {
+  const source = ctx.createBufferSource();
+  source.buffer = buffer;
+  
+  // Pitch shift from recorded sample to target note
+  const semitones = targetMidi - sampleMidi;
+  source.playbackRate.value = Math.pow(2, semitones / 12);
+  
+  // Concert grand soundboard & damper release envelope
+  const gainNode = ctx.createGain();
+  gainNode.gain.setValueAtTime(0.001, now);
+  gainNode.gain.linearRampToValueAtTime(0.85, now + 0.004);
+  
+  const sustainDuration = Math.max(0.18, duration);
+  const releaseStart = now + sustainDuration;
+  gainNode.gain.setValueAtTime(0.75, releaseStart);
+  gainNode.gain.exponentialRampToValueAtTime(0.0001, releaseStart + 0.38);
+  
+  source.connect(gainNode);
+  gainNode.connect(ctx.destination);
+  
+  source.start(now);
+  source.stop(releaseStart + 0.4);
+}
+
+function playPhysicalModelingGrand(midi, duration = 0.3) {
+  if (!state.audioCtx) return;
+  const ctx = state.audioCtx;
+  const now = ctx.currentTime;
+  const f0 = midiToFreq(midi);
+
+  const masterGain = ctx.createGain();
+  masterGain.connect(ctx.destination);
+
+  // Dynamic lowpass filter to mimic felt hammer hardness & string brightness
+  const filter = ctx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(4500, now);
+  filter.frequency.exponentialRampToValueAtTime(900, now + Math.max(0.2, duration));
+  filter.Q.value = 1.8;
+  filter.connect(masterGain);
+
+  // 1. Triple-string unison chorus beating (real grand piano trichord strings)
+  const detunes = [-0.9, 0, 0.9];
+  detunes.forEach((cents, i) => {
     const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = idx === 0 ? "triangle" : "sine";
-    osc.frequency.setValueAtTime(freq * harmonic, now);
-    
-    const amp = (0.2 / (idx + 1));
-    gain.gain.setValueAtTime(amp, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
-    
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    
+    const g = ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(f0, now);
+    osc.detune.setValueAtTime(cents, now);
+
+    g.gain.setValueAtTime(0.22 / (i + 1), now);
+    const releaseTime = now + Math.max(0.2, duration);
+    g.gain.exponentialRampToValueAtTime(0.0001, releaseTime + 0.3);
+
+    osc.connect(g);
+    g.connect(filter);
     osc.start(now);
-    osc.stop(now + duration);
+    osc.stop(releaseTime + 0.32);
   });
+
+  // 2. High harmonic chime (2nd, 3rd, 4th harmonics)
+  [2, 3, 4].forEach(h => {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(f0 * h, now);
+    g.gain.setValueAtTime(0.09 / h, now);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + Math.min(0.25, duration));
+    osc.connect(g);
+    g.connect(filter);
+    osc.start(now);
+    osc.stop(now + duration + 0.1);
+  });
+
+  // 3. Felt hammer percussive click transient
+  const hammerOsc = ctx.createOscillator();
+  const hammerGain = ctx.createGain();
+  hammerOsc.type = "sine";
+  hammerOsc.frequency.setValueAtTime(2800, now);
+  hammerOsc.frequency.exponentialRampToValueAtTime(200, now + 0.015);
+  hammerGain.gain.setValueAtTime(0.12, now);
+  hammerGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.018);
+  hammerOsc.connect(hammerGain);
+  hammerGain.connect(masterGain);
+  hammerOsc.start(now);
+  hammerOsc.stop(now + 0.02);
+
+  // Master envelope
+  masterGain.gain.setValueAtTime(0.001, now);
+  masterGain.gain.linearRampToValueAtTime(0.85, now + 0.003);
+  const releaseStart = now + Math.max(0.18, duration);
+  masterGain.gain.setValueAtTime(0.7, releaseStart);
+  masterGain.gain.exponentialRampToValueAtTime(0.0001, releaseStart + 0.35);
+}
+
+// Web Audio Concert Grand Piano Player
+function playPianoTone(midi, duration = 0.3) {
+  if (!midi) return;
+  try {
+    if (!state.audioCtx) {
+      state.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    const ctx = state.audioCtx;
+    if (ctx.state === "suspended") {
+      ctx.resume().catch(() => {});
+    }
+
+    const sampleDef = findClosestPianoSample(midi);
+    const cachedBuffer = pianoAudioBufferCache.get(sampleDef.file);
+
+    if (cachedBuffer) {
+      playSampleBuffer(cachedBuffer, sampleDef.midi, midi, duration);
+    } else {
+      // Warm up this sample for upcoming notes
+      loadPianoSampleBuffer(sampleDef);
+      // Play high-fidelity acoustic concert grand fallback
+      playPhysicalModelingGrand(midi, duration);
+    }
+  } catch (e) {
+    console.warn("Piano tone playback error:", e);
+  }
 }
 
 // BROWSER MICROPHONE & YIN PITCH DETECTION
