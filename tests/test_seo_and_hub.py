@@ -78,6 +78,38 @@ class TestSeoAndHub(unittest.TestCase):
         self.assertIn('[data-theme="light"] .flowkey-step-card', css)
         self.assertIn('[data-theme="light"] .netflix-book-card', css)
 
+    def test_flowkey_animated_hands_and_switcher(self):
+        with open(self.index_html_path, "r", encoding="utf-8") as f:
+            html = f.read()
+        self.assertIn('id="keyboard-view-switch"', html)
+        self.assertIn('id="btn-view-fingering"', html)
+        self.assertIn('id="btn-view-hands"', html)
+        self.assertIn('id="drawer-hand-mode-group"', html)
+        self.assertIn('id="drawer-btn-mode-badges"', html)
+        self.assertIn('id="drawer-btn-mode-hands"', html)
+
+        with open(self.styles_css_path, "r", encoding="utf-8") as f:
+            css = f.read()
+        self.assertIn(".keyboard-view-switch", css)
+        self.assertIn(".piano-container.hands-mode", css)
+        self.assertIn(".piano-animated-hands-overlay", css)
+        self.assertIn(".hand-finger-active", css)
+        self.assertIn(".finger-press-ripple", css)
+
+        with open(self.app_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("function setKeyboardHandMode", js)
+        self.assertIn("function renderHandSvgMarkup", js)
+        self.assertIn("function updatePianoAnimatedHands", js)
+        self.assertIn("piano-animated-hands-svg", js)
+
+        # Check i18n
+        i18n_path = os.path.join(self.root_dir, "static", "i18n.js")
+        with open(i18n_path, "r", encoding="utf-8") as f:
+            i18n_content = f.read()
+        self.assertIn("view_mode_fingering", i18n_content)
+        self.assertIn("view_mode_hands", i18n_content)
+
     def test_app_py_seo_routes(self):
         import app
         

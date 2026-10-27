@@ -877,6 +877,224 @@ body {
   font-size: 9.5px;
 }
 
+/* Flowkey Hand Display Switcher (Header) */
+.keyboard-view-switch {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.btn-key-view {
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  padding: 2.5px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.btn-key-view:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-key-view.active {
+  background: linear-gradient(135deg, #0284c7 0%, #0891b2 100%);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.4);
+}
+
+.btn-key-view#btn-view-hands.active {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0f172a;
+  box-shadow: 0 1px 6px rgba(245, 158, 11, 0.45);
+}
+
+/* Hands Mode Keyboard Sizing */
+.piano-container.hands-mode {
+  height: 116px;
+}
+
+.piano-container.hands-mode .piano-keys,
+.piano-container.hands-mode .piano-88-keys {
+  height: 108px;
+}
+
+.piano-container.hands-mode .black-key {
+  height: 64px;
+}
+
+/* In hands-mode: hide or soften static key badges and brackets */
+.piano-container.hands-mode .piano-hand-bracket {
+  opacity: 0.15;
+}
+
+.piano-container.hands-mode .finger-badge:not(.active-finger-badge) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.piano-container.hands-mode .hand-tag {
+  opacity: 0;
+}
+
+/* Animated Hands SVG Overlay */
+.piano-animated-hands-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+  overflow: visible;
+}
+
+.animated-hand-group {
+  transition: opacity 0.22s ease;
+}
+
+/* Hand anatomical components */
+.hand-forearm {
+  fill: url(#hand-skin-grad);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+}
+
+.hand-palm-path {
+  fill: url(#hand-skin-grad);
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 0.8px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.5));
+}
+
+.hand-wrist-badge {
+  font-size: 8.5px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.hand-wrist-pill {
+  rx: 4px;
+  ry: 4px;
+}
+
+.hand-lh .hand-wrist-pill {
+  fill: rgba(8, 145, 178, 0.85);
+  stroke: #38bdf8;
+  stroke-width: 1px;
+}
+
+.hand-rh .hand-wrist-pill {
+  fill: rgba(217, 119, 6, 0.85);
+  stroke: #fde68a;
+  stroke-width: 1px;
+}
+
+.hand-finger-shaft {
+  fill: url(#hand-skin-grad);
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 0.8px;
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hand-finger-knuckle {
+  stroke: rgba(0, 0, 0, 0.18);
+  stroke-width: 1px;
+}
+
+.hand-fingertip-pad {
+  transition: all 0.14s ease-out;
+  cursor: pointer;
+}
+
+.hand-lh .hand-fingertip-pad {
+  fill: #0284c7;
+  stroke: #38bdf8;
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 2px 4px rgba(2, 132, 199, 0.4));
+}
+
+.hand-rh .hand-fingertip-pad {
+  fill: #d97706;
+  stroke: #fde68a;
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.4));
+}
+
+.hand-finger-num {
+  font-size: 8.5px;
+  font-weight: 900;
+  fill: #ffffff;
+  user-select: none;
+}
+
+/* Active Finger State */
+.hand-finger-active .hand-finger-shaft {
+  transform: translateY(3.5px);
+}
+
+.hand-finger-active .hand-fingertip-pad {
+  transform: translateY(3.5px) scale(1.08);
+}
+
+.hand-lh .hand-finger-active .hand-fingertip-pad {
+  fill: #06b6d4 !important;
+  stroke: #ffffff !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 10px #06b6d4) !important;
+}
+
+.hand-rh .hand-finger-active .hand-fingertip-pad {
+  fill: #f59e0b !important;
+  stroke: #ffffff !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0 0 12px #f59e0b) !important;
+}
+
+.hand-finger-active .hand-finger-num {
+  fill: #0f172a !important;
+  font-weight: 900;
+  transform: translateY(3.5px);
+}
+
+/* Concentric Strike Ripple */
+.finger-press-ripple {
+  fill: none;
+  pointer-events: none;
+  animation: pressRipple 0.55s ease-out forwards;
+}
+
+.ripple-lh {
+  stroke: #06b6d4;
+}
+
+.ripple-rh {
+  stroke: #f59e0b;
+}
+
+@keyframes pressRipple {
+  0% {
+    r: 6px;
+    opacity: 0.95;
+    stroke-width: 3.5px;
+  }
+  100% {
+    r: 24px;
+    opacity: 0;
+    stroke-width: 1px;
+  }
+}
+
 .piano-container {
   position: relative;
   height: 86px;
@@ -3576,6 +3794,55 @@ body.in-menu-view .header-row-primary {
   font-weight: 700;
 }
 
+[data-theme="light"] .keyboard-view-switch {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+[data-theme="light"] .btn-key-view {
+  color: #475569;
+}
+
+[data-theme="light"] .btn-key-view:hover {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .btn-key-view.active {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+[data-theme="light"] .btn-key-view#btn-view-hands.active {
+  background: #d97706;
+  color: #ffffff;
+}
+
+[data-theme="light"] .drawer-segmented-group {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+[data-theme="light"] .drawer-seg-btn {
+  color: #475569;
+}
+
+[data-theme="light"] .drawer-seg-btn:hover {
+  color: #0f172a;
+}
+
+[data-theme="light"] .drawer-seg-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .hand-forearm,
+[data-theme="light"] .hand-palm-path,
+[data-theme="light"] .hand-finger-shaft {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+}
+
 [data-theme="light"] .drawer-toggle-row label {
   color: #334155;
 }
@@ -3801,6 +4068,56 @@ body.in-menu-view .header-row-primary {
   background: rgba(245, 158, 11, 0.15);
   border-color: var(--accent-gold);
   color: var(--accent-gold);
+}
+
+/* Drawer Segmented Control */
+.drawer-segmented-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 0;
+}
+
+.drawer-row-label {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.drawer-segmented-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.drawer-seg-btn {
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.drawer-seg-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.drawer-seg-btn.active {
+  background: var(--accent-gold);
+  color: #0f172a;
+  box-shadow: 0 1px 4px rgba(245, 158, 11, 0.3);
 }
 
 /* Toggle row */

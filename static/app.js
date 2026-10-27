@@ -118,6 +118,7 @@ const state = {
   lessons: [],
   currentLessonId: "les-1",
   currentHand: "both", // 'both' (two hands) by default, 'rh', 'lh'
+  handDisplayMode: localStorage.getItem("hanon_keyboard_hand_mode") || "hands", // 'hands' (Flowkey animated hands) or 'badges' (traditional)
   currentMode: "wait", // 'wait', 'tempo'
   bpm: 60,
   metronomeOn: true,
@@ -258,6 +259,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   setupUIEventListeners();
   buildPianoKeys();
+  setKeyboardHandMode(state.handDisplayMode, false);
   await loadData();
   updateAudioSourceSelectLabels();
   setupWaveformCanvas();
@@ -300,7 +302,28 @@ function setupUIEventListeners() {
       btn.classList.add("active");
       state.currentHand = btn.dataset.hand;
       updateTargetDisplay();
+      highlightPianoTarget();
     });
+  });
+
+  // Flowkey Keyboard View Switcher (Badges vs Moving Hands)
+  const btnFingering = document.getElementById("btn-view-fingering");
+  if (btnFingering) {
+    btnFingering.addEventListener("click", () => setKeyboardHandMode("badges", true));
+  }
+  const btnHands = document.getElementById("btn-view-hands");
+  if (btnHands) {
+    btnHands.addEventListener("click", () => setKeyboardHandMode("hands", true));
+  }
+
+  // Keyboard shortcut: Press 'H' to toggle between Fingering Badges and Animated Moving Hands
+  window.addEventListener("keydown", (e) => {
+    if (["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)) return;
+    if (e.key === "h" || e.key === "H") {
+      e.preventDefault();
+      const newMode = (state.handDisplayMode === "hands") ? "badges" : "hands";
+      setKeyboardHandMode(newMode, true);
+    }
   });
   
   // Mode selector
@@ -462,6 +485,16 @@ function setupSettingsDrawer() {
       }
     });
   });
+
+  // Drawer Keyboard Hand Mode buttons (Vingerzetting vs Bewegende Handen)
+  const drawerBtnBadges = document.getElementById("drawer-btn-mode-badges");
+  if (drawerBtnBadges) {
+    drawerBtnBadges.addEventListener("click", () => setKeyboardHandMode("badges", true));
+  }
+  const drawerBtnHands = document.getElementById("drawer-btn-mode-hands");
+  if (drawerBtnHands) {
+    drawerBtnHands.addEventListener("click", () => setKeyboardHandMode("hands", true));
+  }
 
   // Keyboard display toggles
   const toggleBrackets = document.getElementById("toggle-opt-brackets");
@@ -1279,6 +1312,294 @@ function updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes) {
   }
 }
 
+// ==========================================================================
+// Flowkey Animated Moving Hands & Mode Switcher
+// ==========================================================================
+
+function setKeyboardHandMode(mode, notify = false) {
+  state.handDisplayMode = (mode === "badges") ? "badges" : "hands";
+  localStorage.setItem("hanon_keyboard_hand_mode", state.handDisplayMode);
+
+  // Update header buttons
+  const btnFingering = document.getElementById("btn-view-fingering");
+  const btnHands = document.getElementById("btn-view-hands");
+  if (btnFingering && btnHands) {
+    if (state.handDisplayMode === "hands") {
+      btnHands.classList.add("active");
+      btnFingering.classList.remove("active");
+    } else {
+      btnFingering.classList.add("active");
+      btnHands.classList.remove("active");
+    }
+  }
+
+  // Update drawer buttons
+  const drawerBtnBadges = document.getElementById("drawer-btn-mode-badges");
+  const drawerBtnHands = document.getElementById("drawer-btn-mode-hands");
+  if (drawerBtnBadges && drawerBtnHands) {
+    if (state.handDisplayMode === "hands") {
+      drawerBtnHands.classList.add("active");
+      drawerBtnBadges.classList.remove("active");
+    } else {
+      drawerBtnBadges.classList.add("active");
+      drawerBtnHands.classList.remove("active");
+    }
+  }
+
+  // Toggle CSS class on piano container
+  const pianoContainer = document.getElementById("piano-container");
+  if (pianoContainer) {
+    if (state.handDisplayMode === "hands") {
+      pianoContainer.classList.add("hands-mode");
+    } else {
+      pianoContainer.classList.remove("hands-mode");
+    }
+  }
+
+  // Re-highlight piano target
+  highlightPianoTarget();
+
+  if (notify) {
+    const msg = (state.handDisplayMode === "hands")
+      ? ((window.I18N && window.I18N.t("toast_mode_hands")) || "Klavierweergave: Bewegende Handen 👐")
+      : ((window.I18N && window.I18N.t("toast_mode_badges")) || "Klavierweergave: Vingerzetting Badges 🖐");
+    showToast(msg);
+  }
+}
+
+function renderHandSvgMarkup(side, points, wristY, palmY) {
+  if (!points || points.length !== 5) return "";
+  const isLh = (side === "lh");
+
+  const minX = Math.min(...points.map(p => p.x));
+  const maxX = Math.max(...points.map(p => p.x));
+  const cx = (minX + maxX) / 2;
+
+  // Wrist dimensions
+  const wristW = 44;
+  const wristLeft = cx - (wristW / 2);
+  const wristRight = cx + (wristW / 2);
+  const wristBaseY = wristY + 12;
+
+  // Calculate knuckles along top palm arch
+  const knuckles = points.map((p, idx) => {
+    const kx = cx + (p.x - cx) * 0.74;
+    const archOffset = (idx === 2) ? 6 : ((idx === 1 || idx === 3) ? 4 : 0);
+    const ky = palmY - archOffset;
+    return { kx, ky, p };
+  });
+
+  // Palm path
+  const k0 = knuckles[0];
+  const k4 = knuckles[4];
+  const palmPathD = `
+    M ${wristLeft} ${wristBaseY}
+    L ${wristLeft} ${palmY + 8}
+    Q ${wristLeft - 4} ${k0.ky + 6} ${k0.kx - 6} ${k0.ky}
+    Q ${knuckles[1].kx} ${knuckles[1].ky - 4} ${knuckles[2].kx} ${knuckles[2].ky - 4}
+    Q ${knuckles[3].kx} ${knuckles[3].ky - 4} ${k4.kx + 6} ${k4.ky}
+    Q ${wristRight + 4} ${k4.ky + 6} ${wristRight} ${palmY + 8}
+    L ${wristRight} ${wristBaseY}
+    Z
+  `;
+
+  // Forearm gradient path
+  const forearmPathD = `
+    M ${wristLeft - 3} ${wristBaseY + 16}
+    L ${wristLeft} ${wristBaseY - 4}
+    L ${wristRight} ${wristBaseY - 4}
+    L ${wristRight + 3} ${wristBaseY + 16}
+    Z
+  `;
+
+  // Wrist badge text
+  const badgeLabel = isLh ? "✋ LH" : "🤚 RH";
+  const badgePill = `
+    <g class="hand-wrist-badge-group">
+      <rect x="${cx - 19}" y="${wristY - 14}" width="38" height="13" class="hand-wrist-pill" />
+      <text x="${cx}" y="${wristY - 4.5}" text-anchor="middle" class="hand-wrist-badge" fill="#ffffff">${badgeLabel}</text>
+    </g>
+  `;
+
+  // 5 Fingers markup
+  let fingersHtml = "";
+  knuckles.forEach(({ kx, ky, p }) => {
+    const fx = p.x;
+    const fy = p.y;
+    const isActive = p.isActive;
+
+    const dx = fx - kx;
+    const dy = fy - ky;
+    const len = Math.sqrt(dx * dx + dy * dy) || 1;
+    const nx = -dy / len;
+    const ny = dx / len;
+
+    const wKnuckle = 6.8;
+    const wTip = 5.6;
+
+    const p1x = (kx - nx * wKnuckle).toFixed(1);
+    const p1y = (ky - ny * wKnuckle).toFixed(1);
+    const p2x = (fx - nx * wTip).toFixed(1);
+    const p2y = (fy - ny * wTip).toFixed(1);
+    const p3x = (fx + nx * wTip).toFixed(1);
+    const p3y = (fy + ny * wTip).toFixed(1);
+    const p4x = (kx + nx * wKnuckle).toFixed(1);
+    const p4y = (ky + ny * wKnuckle).toFixed(1);
+
+    const fingerPathD = `M ${p1x} ${p1y} L ${p2x} ${p2y} Q ${fx} ${fy - 3} ${p3x} ${p3y} L ${p4x} ${p4y} Z`;
+    const mx = (kx + fx) / 2;
+    const my = (ky + fy) / 2;
+    const creaseD = `M ${(mx - nx * 4.5).toFixed(1)} ${(my - ny * 4.5).toFixed(1)} L ${(mx + nx * 4.5).toFixed(1)} ${(my + ny * 4.5).toFixed(1)}`;
+
+    const rippleHtml = isActive ? `<circle cx="${fx.toFixed(1)}" cy="${fy.toFixed(1)}" class="finger-press-ripple ${isLh ? 'ripple-lh' : 'ripple-rh'}" />` : "";
+
+    fingersHtml += `
+      <g class="hand-finger-group ${isActive ? 'hand-finger-active' : ''}">
+        ${rippleHtml}
+        <path d="${fingerPathD}" class="hand-finger-shaft" />
+        <path d="${creaseD}" class="hand-finger-knuckle" />
+        <circle cx="${fx.toFixed(1)}" cy="${fy.toFixed(1)}" r="7.5" class="hand-fingertip-pad" />
+        <text x="${fx.toFixed(1)}" y="${(fy + 3.2).toFixed(1)}" text-anchor="middle" class="hand-finger-num">${p.f}</text>
+      </g>
+    `;
+  });
+
+  return `
+    <g id="group-hand-${side}" class="animated-hand-group hand-${side}" filter="url(#hand-depth-shadow)">
+      <path d="${forearmPathD}" class="hand-forearm" />
+      <path d="${palmPathD}" class="hand-palm-path" />
+      ${badgePill}
+      ${fingersHtml}
+    </g>
+  `;
+}
+
+function updatePianoAnimatedHands(lhSpanNotes, rhSpanNotes, currentItem) {
+  const pianoKeys = document.getElementById("piano-keys");
+  const pianoContainer = document.getElementById("piano-container");
+  if (!pianoKeys || !pianoContainer) return;
+
+  let handsSvg = document.getElementById("piano-animated-hands-svg");
+  if (!handsSvg) {
+    handsSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    handsSvg.id = "piano-animated-hands-svg";
+    handsSvg.setAttribute("class", "piano-animated-hands-overlay");
+    pianoKeys.appendChild(handsSvg);
+  }
+
+  // If in badges mode, hide hands overlay completely
+  if (state.handDisplayMode !== "hands") {
+    handsSvg.style.display = "none";
+    handsSvg.innerHTML = "";
+    return;
+  }
+
+  handsSvg.style.display = "block";
+
+  const defsHtml = `
+    <defs>
+      <linearGradient id="hand-skin-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#dfb18c" stop-opacity="0.92" />
+        <stop offset="50%" stop-color="#f5d6bf" stop-opacity="0.96" />
+        <stop offset="100%" stop-color="#fff2e8" stop-opacity="0.98" />
+      </linearGradient>
+      <filter id="hand-depth-shadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="5" stdDeviation="4.5" flood-color="rgba(0,0,0,0.5)" />
+      </filter>
+    </defs>
+  `;
+
+  function getKeyPos(noteName, fallbackX, fallbackY) {
+    if (!noteName) return { x: fallbackX, y: fallbackY, isBlack: false };
+    const el = pianoKeys.querySelector(`[data-note="${noteName}"]`);
+    if (!el) return { x: fallbackX, y: fallbackY, isBlack: false };
+    const isBlack = el.classList.contains("black-key");
+    const x = el.offsetLeft + (el.offsetWidth / 2);
+    const y = isBlack ? 42 : 72;
+    return { x, y, isBlack };
+  }
+
+  const keysHeight = pianoKeys.offsetHeight || 108;
+  const wristY = keysHeight;
+  const palmY = wristY - 26;
+
+  // Render Left Hand
+  let lhHtml = "";
+  if (state.currentHand === "lh" || state.currentHand === "both") {
+    const lhFingerOrder = [5, 4, 3, 2, 1];
+    const lhPoints = [];
+    const fToNote = {};
+    Object.entries(lhSpanNotes || {}).forEach(([n, f]) => { fToNote[f] = n; });
+
+    let anchorX = 280;
+    for (let f of lhFingerOrder) {
+      if (fToNote[f]) {
+        const p = getKeyPos(fToNote[f], 0, 0);
+        if (p.x > 0) {
+          anchorX = p.x;
+          break;
+        }
+      }
+    }
+
+    lhFingerOrder.forEach((f, idx) => {
+      const note = fToNote[f];
+      const defaultOffset = (idx - 2) * 19;
+      const pos = getKeyPos(note, anchorX + defaultOffset, 72);
+      const isActive = currentItem && currentItem.lh && (currentItem.lh.finger === f);
+      lhPoints.push({
+        f,
+        note,
+        x: pos.x,
+        y: pos.y + (isActive ? 4 : 0),
+        isBlack: pos.isBlack,
+        isActive
+      });
+    });
+
+    lhHtml = renderHandSvgMarkup("lh", lhPoints, wristY, palmY);
+  }
+
+  // Render Right Hand
+  let rhHtml = "";
+  if (state.currentHand === "rh" || state.currentHand === "both") {
+    const rhFingerOrder = [1, 2, 3, 4, 5];
+    const rhPoints = [];
+    const fToNote = {};
+    Object.entries(rhSpanNotes || {}).forEach(([n, f]) => { fToNote[f] = n; });
+
+    let anchorX = 480;
+    for (let f of rhFingerOrder) {
+      if (fToNote[f]) {
+        const p = getKeyPos(fToNote[f], 0, 0);
+        if (p.x > 0) {
+          anchorX = p.x;
+          break;
+        }
+      }
+    }
+
+    rhFingerOrder.forEach((f, idx) => {
+      const note = fToNote[f];
+      const defaultOffset = (idx - 2) * 19;
+      const pos = getKeyPos(note, anchorX + defaultOffset, 72);
+      const isActive = currentItem && currentItem.rh && (currentItem.rh.finger === f);
+      rhPoints.push({
+        f,
+        note,
+        x: pos.x,
+        y: pos.y + (isActive ? 4 : 0),
+        isBlack: pos.isBlack,
+        isActive
+      });
+    });
+
+    rhHtml = renderHandSvgMarkup("rh", rhPoints, wristY, palmY);
+  }
+
+  handsSvg.innerHTML = defsHtml + lhHtml + rhHtml;
+}
+
 // Dynamic Hand Zone Brackets directly over keyboard keys
 function updatePianoHandBrackets(lhSpanNotes, rhSpanNotes) {
   const pianoKeys = document.getElementById("piano-keys");
@@ -1380,6 +1701,13 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
       keyEl.appendChild(badge);
       centerKeyInPianoView(keyEl);
     }
+    const singleFingerNum = parseInt(singleFinger) || 1;
+    const dummyLh = (state.currentHand === "lh" || state.currentHand === "both") ? { [singleNote]: singleFingerNum } : {};
+    const dummyRh = (state.currentHand === "rh" || state.currentHand === "both") ? { [singleNote]: singleFingerNum } : {};
+    updatePianoAnimatedHands(dummyLh, dummyRh, {
+      lh: { note: singleNote, finger: singleFingerNum },
+      rh: { note: singleNote, finger: singleFingerNum }
+    });
     return;
   }
   
@@ -1478,6 +1806,9 @@ function highlightPianoTarget(singleNote = null, singleFinger = null) {
 
   // 5. Update floating Hand Zone Brackets directly on the piano keyboard
   updatePianoHandBrackets(lhSpanNotes, rhSpanNotes);
+
+  // 5.5 Update Animated Flowkey Moving Hands directly on the piano keyboard
+  updatePianoAnimatedHands(lhSpanNotes, rhSpanNotes, currentItem);
 
   // 6. Update the dedicated Hand Guide Bar below the piano
   updatePianoHandGuideBar(currentItem, lhSpanNotes, rhSpanNotes);
@@ -2267,6 +2598,15 @@ function buildPianoKeys() {
   bracketRh.className = "piano-hand-bracket bracket-rh";
   bracketRh.style.display = "none";
   pianoKeysContainer.appendChild(bracketRh);
+
+  // Create Animated Hands SVG overlay
+  let handsSvg = document.getElementById("piano-animated-hands-svg");
+  if (!handsSvg) {
+    handsSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    handsSvg.id = "piano-animated-hands-svg";
+    handsSvg.setAttribute("class", "piano-animated-hands-overlay");
+    pianoKeysContainer.appendChild(handsSvg);
+  }
 
   // Auto-center 88-key piano on Middle C (C4) so user immediately sees playable range
   requestAnimationFrame(() => {

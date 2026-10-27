@@ -499,6 +499,19 @@
           <span class="keyboard-title">🎹 Volledig 88-Toetsen Klavier (A0 - C8)</span>
           <span class="keyboard-subinfo">• Centrale C = C4</span>
         </div>
+
+        <!-- Flowkey Keyboard Hand View Switcher -->
+        <div class="keyboard-view-switch" id="keyboard-view-switch" role="group" aria-label="Klavier Handweergave Modus">
+          <button type="button" class="btn-key-view" id="btn-view-fingering" data-mode="badges" title="Toon vingerzetting badges op de toetsen (Sneltoets: H)">
+            <span class="btn-icon">🖐</span>
+            <span class="btn-label" data-i18n="view_mode_fingering">Vingerzetting</span>
+          </button>
+          <button type="button" class="btn-key-view active" id="btn-view-hands" data-mode="hands" title="Toon bewegende Flowkey handen op het klavier (Sneltoets: H)">
+            <span class="btn-icon">👐</span>
+            <span class="btn-label" data-i18n="view_mode_hands">Bewegende Handen</span>
+          </button>
+        </div>
+
         <span id="keyboard-legend" class="keyboard-legend">
           <span class="legend-pill pill-lh">✋ Linkerhand (Cyaan)</span>
           <span class="legend-pill pill-rh">🤚 Rechterhand (Amber)</span>
@@ -723,6 +736,13 @@
       <!-- Section: Keyboard & Sheet Options -->
       <div class="drawer-section">
         <h3 class="section-label" data-i18n="section_keyboard">🎹 Klavier &amp; Notenbalk</h3>
+        <div class="drawer-segmented-row">
+          <label class="drawer-row-label" data-i18n="opt_keyboard_hand_mode">Klavier Handweergave</label>
+          <div class="drawer-segmented-group" id="drawer-hand-mode-group">
+            <button type="button" class="drawer-seg-btn" data-mode="badges" id="drawer-btn-mode-badges" data-i18n="view_mode_fingering">🖐 Vingerzetting</button>
+            <button type="button" class="drawer-seg-btn active" data-mode="hands" id="drawer-btn-mode-hands" data-i18n="view_mode_hands">👐 Bewegende Handen</button>
+          </div>
+        </div>
         <div class="drawer-toggle-row">
           <label for="toggle-opt-brackets" data-i18n="opt_brackets">Toon zwevende handkaders boven toetsen</label>
           <input type="checkbox" id="toggle-opt-brackets" class="switch-input" checked>
