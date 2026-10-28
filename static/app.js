@@ -794,15 +794,33 @@ async function loadData() {
     await loadExerciseData(state.currentExerciseId);
     initMainMenu();
 
-    if (window.location.hash === "#tutor") {
-      toggleView("tutor");
-    } else if (window.location.hash === "#menu" || window.location.hash === "#progress") {
-      toggleView("menu");
-    } else {
-      toggleView("hub");
-    }
+    handleRouteHash();
+    window.addEventListener("hashchange", handleRouteHash);
   } catch (err) {
     console.error("Fout bij inladen data:", err);
+  }
+}
+
+function handleRouteHash() {
+  const hash = window.location.hash;
+  if (hash === "#tutor") {
+    toggleView("tutor");
+  } else if (hash === "#menu" || hash === "#progress") {
+    toggleView("menu");
+  } else {
+    toggleView("hub");
+    if (hash && hash !== "#hub") {
+      setTimeout(() => {
+        try {
+          const targetEl = document.querySelector(hash);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: "smooth" });
+          }
+        } catch (e) {
+          // ignore non-selector hashes
+        }
+      }, 80);
+    }
   }
 }
 
@@ -2858,12 +2876,6 @@ function detectPitchYIN(buffer, sampleRate) {
     confidence: confidence
   };
 }
-  
-  return {
-    freq: sampleRate / betterTau,
-    confidence: confidence
-  };
-}
 
 // Waveform visualizer
 function setupWaveformCanvas() {
@@ -3440,6 +3452,7 @@ function renderBooksHub() {
     const card = document.createElement("div");
     card.className = `netflix-book-card book-card ${book.id === state.currentBookId ? 'active-book-card' : ''}`;
     card.dataset.bookId = book.id;
+    card.id = book.id;
 
     // Determine Netflix-style cover motif
     let coverThemeClass = "theme-sapphire";

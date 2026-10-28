@@ -163,6 +163,21 @@ class TestSeoAndHub(unittest.TestCase):
         self.assertIn("badge_laptop_piano", i18n)
         self.assertIn("toast_laptop_piano_on", i18n)
 
+    def test_javascript_syntax_and_routing(self):
+        import subprocess
+        # Check all JS files for syntax errors using node --check
+        js_files = ["static/app.js", "static/i18n.js", "static/sheet_renderer.js"]
+        for js_file in js_files:
+            file_path = os.path.join(self.root_dir, js_file)
+            res = subprocess.run(["node", "--check", file_path], capture_output=True, text=True)
+            self.assertEqual(res.returncode, 0, f"Syntax error in {js_file}: {res.stderr}")
+
+        with open(self.app_js_path, "r", encoding="utf-8") as f:
+            js = f.read()
+        self.assertIn("function handleRouteHash", js)
+        self.assertIn("window.addEventListener(\"hashchange\", handleRouteHash)", js)
+        self.assertIn("card.id = book.id;", js)
+
     def test_app_py_seo_routes(self):
         import app
         
